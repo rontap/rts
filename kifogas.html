@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="main.css">
+		
+
+		<title>Ha egy jó kifogást akarsz!</title>
+		<meta name="description" content="" />
+		<meta name="author" content="rontap" />
+		<script>
+		appver="TapCalk2.2\n TAPIS/calkr.js 1.6 ";		
+		navname="Kifogásgyártó"; //hogy jelenik majd meg		
+		coa=false;		
+		pack="rontap.mainHelp/tapcalk2";
+		moretag=true;
+		//holvan
+		specnav='<a href="lipusm.html">linka</a><a href="tc2.html">linkb</a>';
+		manimg="f_icons/graphic.svg";
+	//	specnav='<a href="rtsdocumentation.html">Dokumentáció</a>  <a href="rtsapis.html">Alkalmazás</a> <a href="#notyet">Letöltés</a> <a href="testrts.html">Példaoldal</a>'
+rjsx_nohomepage="true";
+		</script>
+		
+	<style>
+
+	</style>
+	</head>
+
+<div id="navbar" >
+
+</div> 
+	
+	<body >
+
+
+<div id="body">
+	
+<rts>
+<meta charset="UTF-8">
+<div id="kim">
+<span id="kezdc" onClick='kezdc.innerHTML=kezd[Math.floor(Math.random()*kezd.length)]+" ";'>itt</span>
+<span id="szemc" onClick='szemc.innerHTML=szem[Math.floor(Math.random()*szem.length)]+" ";'>lesz</span>
+<span id="mittc" onClick='mittc.innerHTML=mitt[Math.floor(Math.random()*mitt.length)]+" !";'>a mentség</span>
+<br>
+<br>
+<button onClick="barom()" class="btn-b">új kifogás!</button>
+<button onClick="newt()" class="btn-green" disabled>Adj hozzá te is! Klikk ide!</button>
+</div>
+<hr>
+Made by <span onclick="document.location='http://elemential.net'">rontap</span> (2013-07-14). Based on kifogasgyarto. Jelenleg <span id="combo"></span> kombináció érhető el
+<script>
+function newt() {
+	kim.innerHTML='Melyik részhez szeretnél beküldeni?<select name="tipus" id="tip" class="inp-text"><option value="kezd">eleje (bocsáss meg, de)</option><option value="szem">ki csináta (a mumus,)</option><option value="mitt">mit tett (ellopta a biciklimet)</option></select>';
+	kim.innerHTML+="<input class='inp-text'placeholder='ird ide a szöveget amit kitaláltál!'>";
+	kim.innerHTML+='<br><button class="btn-green">beküldés!</button>'
+}
+console.log('<--WELCOME-->');
+console.log("Ahoy! This code is under CC licence, so you can modify it");
+console.log("Üdv! A kifogásgyártó kódja CC liszensz alatt, van , tahát nyugodtan adj hozzá, szerkeszd, de a forrást (ezt az oldald tüntesd fel!)");
+console.log('<---DEBUG--->');
+kezd=new Array();
+kezd=["Ne haradudj, de","Bocsáss meg, de","Elnézést kérek, de","Sajnálom, de","Tudod hogy általában nem jellemző rám, viszont","Nem fogod elhinni, de","Találd ki mi történt!","Basszus! Képzeld el, hogy","Van egy kis probléma","Én csak tettem a dolgom, mint mindig, erre bumm!","A legdurvább dolog esett meg ami létezhet:","Bocsi, de egy kicsit késni fogok, mert","Sajnos nem fogok tudni segíteni, ugyanis","Tudom, hogy rossz kifogás, azonban","Ez most kicsit hülyén fog hangzeni, de","Úristen!","Esküszöm, nem az én hibám, viszont","Teljesen elvesztettem az időérzékem, ugyanis","Borzalmasam érzem magam, ennek ellenére","Sajnos megváltoztak a körülmények, mivel","Tényleg nem tehetek róla, de","Mentségemre szóljon, hogy"]
+
+szem=new Array();
+szem=["az anyukád","Adolf hiler szelleme","a mumus","Jehova tanúja","Godzilla","egy csapat agresszív Fradi szurkoló","egy fogyatékos pasas","egy Károly nevű triceratopsz","a 101 kiskutya rendezője","az anyukám","egy szörny","egy hatújjú ember","egy ufó","Kádár János szelleme","Adolf hitler szelleme","a komplett római birodalom","Dzsudzsák Balázs bal lába","egy japán túrista","Peter Griffin","a Mátrix","egy arab terrorosta","Kevin tarantulája a reszkessetek betörőkből","a blikk egyit riportele","Schmidt pál szakdolgozata"]
+
+mitt=new Array();
+mitt=["kiszívta a nyakam","gint rakott az italomba","kiégette cigivel a pulcsimat","épp előttem esett össze","olcsó parfümöt akart rámsózni","meg akart erőszakolni","feljelentett gyorshajtásért","ellopta a biciklimet","athajtott rajtam egy kotrógéppel","teleposztolta pronó videóval a facebook oldalam","írt egy felmondólevelet a főnökömnek ","megpróbált megölni","el akart csábítani","eltépte az adóvevallásomat","gyomorszájon vágott","hashajtót kevert az italomba","összeveszett a buszsoförrel","rasszista viccekkel zaklatott a telefonomon","megkergetett a blahán","részegen ordibált az ablakom alatt","betuszkolt egy lopot rendörautóba és o**lis kielégítést ajánlott fel","Segített megtalálni Jézust"]
+
+function barom()
+{
+kezdc.innerHTML=kezd[Math.floor(Math.random()*kezd.length)]+" ";
+szemc.innerHTML=szem[Math.floor(Math.random()*szem.length)]+" ";
+mittc.innerHTML=mitt[Math.floor(Math.random()*mitt.length)]+"!";
+}
+barom();
+combo.innerHTML=szem.length*mitt.length*kezd.length;
+</script>
+<style>
+ #kim span:hover {
+background:#48F;
+
+cursor:pointer
+}
+input {
+width:250px;
+}
+#kim span {
+padding:1px;
+-webkit-transition:background .3s;
+border-radius:4px;
+}
+</style>
+	<script src="random.js" type="text/javascript"></script>
+	<script src="main.rjsx" type="text/javascript"></script>
+	</body>
+</html>

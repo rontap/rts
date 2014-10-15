@@ -1,0 +1,669 @@
+<!DOCTYPE HTML>
+<HTML>
+    <Head>
+        <title>RTS apis</title>
+      <meta charset="UTF-8">
+        <meta name="author" content="TAP">
+      <meta name="description" content="rontap">
+        <meta name="keywords" content="rontap,linux,TaPium,tapsite,rts,rjsx">
+     <script src="goog.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+
+ 
+    </Head>
+    <div id="navbar">
+    </div>
+    <body class=" _doc" id="body">
+    
+<script>
+        appver="RJSX\n TAPIS/calkr.js 1.6 ";
+        navname="RJSX Dokumentáció"; //hogy jelenik majd meg
+        coa=false;      
+        moretag=true;
+        //holvan
+        manimg='f_icons/rts.png';
+//rjsxlocation='http://rtsapi.elemential.net/';
+specnav='<a href="rtsdocumentation.html">Dokumentáció</a>  <a href="rtscreator.html">Weboldalba ágyazás</a> <a href="#notyet">Letöltés</a> <a href="testrts.html">Példaoldal</a>';
+specnavi = new Array("Dokumentáció","Az rjsx-ről","Letöltés","Példaoldal");
+specnavil = new Array("rtsdocumentation.html","rtsapis.html","#notyet","testrts.html");
+rjsx_nohomepage="true";
+
+    
+   
+</script>
+
+<style>
+        #content {font-family:Courier;
+        margin-left:10%;
+        margin-right:10%;
+        box-shadow:0px 0px 5px #444;
+        border-radius:4px;
+        }
+        i u y, i u g, i u r{
+        float:right;
+        padding-right:5px;
+            padding-left:5px;
+            -webkit-transition:background .3s;
+        }
+        i u y:hover, i u g:hover , i u r:hover{
+        background:#444;
+        }
+        .phold:first-child {
+        border-top-right-radius:4px;
+        border-top-left-radius:4px;
+        }
+        .ptitle {
+        font-family:Courier;
+        padding-top:3px;
+        }
+        r {color:#F44;}
+        </style>
+<rts></rts>
+	<div class="dochold">
+		<ul>
+		<li>
+		RJSX 7
+			<ul>
+			<li><a class="noa" href="#r735">7.35 Lightbulb</a></li>
+			<li><a class="noa" href="#r73" >7.3 Lightbulb</a></li>
+			<li><a class="noa" href="#r715">7.15 Millenium</a></li>
+			<li><a class="noa" href="#r71 ">7.1 Millenium</a></li>
+			<li><a class="noa" href="#r70 ">7.0 Ikarus</a></li>
+			</ul>
+		</li>
+		<br>
+		<li>
+		RJSX 6
+			<ul>
+			<li><a class="noa" href="#r66" >6.6 Ikarus-pre</a></li>
+			<li><a class="noa" href="#r65" >6.5 Goethe</a></li>
+			<li><a class="noa" href="#r64" >6.4 KitKat</a></li>
+			<li><a class="noa" href="#r635">6.35 KitKat</a></li>
+			<li><a class="noa" href="#r63" >6.3 EDC3</a></li>
+			<li><a class="noa" href="#r62" >6.2 EDC3</a></li>
+			<li><a class="noa" href="#r61" >6.1 Stein</a></li>
+			</ul>
+		</li>
+		<br>
+		<li>
+		RJSX 5
+			<ul>
+			<li><a class="noa" href="#r57">5.7</a> </li>
+			<li><a class="noa" href="#r55">5.5 EDC2</a></li>
+			<li><a class="noa" href="#r51">5.1</a> </li>
+			<li><a class="noa" href="#r50">5.0</a> </li>
+			</ul>
+		</li>
+		
+		</ul>
+	</div>
+    <div class="utitle" >Itt az <blue>RJSX</blue> verziói, és annak új funkciói találhatóak.</div><br>
+     <div class="ptitle" id="r735"><b>RJSX 7.4  [MARC 14] [kódnév: Tahr]</b>
+        </div>
+        <div class="ptext">
+        <ol>
+                <li>
+               speciális navigációs szín (<code>navcolor</code>)</li>
+              <li> oldalsó sáv (navigáció)</li>
+              <li> smooth scroll a tetejére [Ha az oldal képére kattint]</li>
+              <li>beállítások ikon eltűnt</li>
+              <li>minimális átmenet</li>
+
+        </div>
+      <div class="ptitle" id="r73"><b>RJSX 7.3 <y>Alpha</y> [FEB 14 - MARC 15] [kódnév: ] <i><u><g>Mindegyik frissült erre</i></u></b>
+        </div>
+        <div class="ptext">
+        <ol>
+                <li>
+                @media hibák kijavítva 
+                </li>
+                
+        </div>
+    <div class="ptitle" id="r73"><b>RJSX 7.3 <y>Alpha</y> [JAN 14-22] [kódnév: LightBulb] <i><u><g>Mindegyik frissült erre</i></u></b>
+        </div>
+        <div class="ptext">
+        <ol>
+                <li>
+                RTS @media átméretezés
+                </li>
+                <li>
+                bugfixek (törött link, beállítások, footer)
+                </li>
+                <li>
+                globálisak lettek az eddig class-ban lévő RJSX-objektumok pl(.btn-b=&gt;button)
+                </li>
+                <li>
+                fake betöltés csík
+                </li>
+                <li>
+                <b>Egymásba ágyazható menüelemek</b> (mind2 design)
+                </li>
+                <li>
+                árnyékolás, átofolyás megszűntetve
+                </li>
+                <li>
+                új mobil design, @media-val; 3vonal menü
+                </li>
+                <li>
+                _square class és _* classok a beállításokra (fejlesztés alatt))
+                </li>
+                <hr><b>RJSX 7.35<g>RC</g> Jan21</b><br>
+                <li>
+                Egymásba ágyazható menüelemek mindenhova kiterjesztve (még bugos)
+                </li>                
+        </div>
+    <div class="ptitle" id="r715"><b>RJSX 7.15  [JAN 12] [kódnév: Millenium]</b>
+        </div>
+        <div class="ptext">
+        <ol>
+                <li>
+                RTS teljesen kitakarítva, 6000
+                </li>
+                <li>
+                rts.html a kezdőlap
+                </li>
+        </div>
+    <div class="ptitle" id="r71"><b>RJSX 7.1  [DEC 26] [kódnév: Millenium]</b>
+        </div>
+        <div class="ptext">
+        <ol>
+                <li>
+                Bugfixek
+                </li>
+                <li>
+                Holo téma, holotheme változó true-ra állításával sötét lesz a téma
+                </li>
+        </div>
+        
+    <div class="ptitle" id="r70"><b>RJSX 7 ALPHA [Nov16-Nov22] [kódnév: Ikarus]</b> 
+        </div>
+        <div class="ptext">
+            <ol>
+                <li>
+                <b>teljesen új, 0-ás fajta design, már tömböket használ, új beállítások</b>
+                </li>
+                <li>
+                    Felfrissítve pár UI element.
+                </li>
+                <li>
+                    <b>értesítés függvény</b>
+                </li>
+                <li>
+                     FBX felfrissítve 
+                </li>
+                <li>
+                    A kód objektumorientáltabb lett, nagyon sok szemét, régi kód kidobva
+                </li>
+                <li>
+                    Új felhasználó felület elemek (uline big ubuntu), és sok felfrsissítva
+                </li>
+                <hr><b>RJSX 7<g>RC</g> Nov22</b><br>
+                <li>
+                    Design integrálása az RJSXbe
+                </li>
+                <li>
+                    blue tag hozzáadva, és {uline big ubuntu} helyettesíthető utitle-vel
+                </li>
+                <li>
+                    btn-- tulajdonságok hozzáadása
+                </li>
+                
+            </ol>
+        </div>
+    <br><br />
+        <div class="ptitle" id="r66"><b>RJSX 6.6 PREPARE TO 7    [Nov08-] [kódnév: Ikarus-pre]</b></g>
+        </div>
+        <div class="ptext">
+            <ol>
+                <li>
+                2-es dizájnban sok hiba kijavítása
+                </li>
+                <li>
+                RTS oldalak felfrissítése
+                </li>
+                <li>
+                oldalak kompatibilissé tevése
+                </li>
+                
+                
+            </ol>
+        </div>
+        
+        <div class="ptitle" id="r65"><b>RJSX 6.5 STABLE [Sept29-(Nov08)] [kódnév: Goethe]</b><i><u><r>rontap.netne.net/goethe</i></u></r>
+        </div>
+        <div class="ptext">
+            <ol>
+                <li>
+                Sok-sok bugfix a rjsx design-ban
+                </li>
+                <li>
+                Szépítések, TAB gombbal kompatibilissé vált.
+                </li>
+                <li>
+                keresés implementálása (design)
+                </li>
+                <li>
+                jsGET elkészítése (a #-ből csinál _GET-et)<br>
+                majd jsGETphp (deesnow) által készített vezió implementálása
+                </li>
+                <li>
+                a 2. design teljes újrairása, világosabb témával.
+                </li>
+                <li>
+                Új input: type=range. saját design.
+                </li>
+                <hr><b>RJSX 7.1 webnotes update</b><br>
+                <li>
+                    Összes webnotes-specifikus kód eltávolítva
+                </li>
+            </ol>
+        </div>
+        
+        <div class="phold" >
+        <div class="ptitle" id="r64"><b>RJSX 6.4 BETA [Sept10-26] [kódnév: KitKat]</b><i><u><y>rontap.netne.net/kitkat</i></u></y>
+        </div>
+        <div class="ptext">
+            <ol>
+                
+                <li>
+                átirányító oldal (redir.html)
+                </li>
+                <li>
+                új, kék, legördítésnél megjelenő oldalcím (animációkkal)
+                </li>
+                <li>
+                sok kis változás (ter-en árnyék)
+                </li>
+                <li>
+                btn-b újradesignolás: google-stílus
+                </li>
+                <li>
+                scrollbar flat-ebb lett
+                </li>
+                <li>
+                <i>kódmérés</i>
+                </li>
+                <hr><b>RJSX 6.42 bugfix update</b><br>
+                <li>
+                a kék, legördítésnél megjelenő oldalcím csak chromeban működött; mostmár megy FF-ben is. Opera kérdéses
+                </li>
+                <hr><b>RJSX 6.45  update [20-26]</b><br>
+                <li>
+                Legőrdítésnél áttetsző #ter
+                </li><li>
+                Más a :hover-je a gomboknak
+                </li><li>
+                select-tag-et utánzó menü, testrts.html-ben bennevan<br>
+                </li>
+                
+            </ol>
+        </div>
+        </div>  
+        
+        <div class="phold" id="r635">
+        <div class="ptitle"><b>RJSX 6.35 BETA   [Sept5-10] [kódnév: KitKat]</b><i><u><r>rontap.elemential.net/year</i></u></r>
+        </div>
+        <div class="ptext">
+            <ol>
+                <li>
+                <b>Szövegszerkesztő, óriási lehetőségekkel</b>
+                </li>
+                <li>
+                új, 3. generációs gomb
+                </li>
+                <li>
+                Tiszításra került a rjsx
+                </li>
+                
+            </ol>
+        </div>
+        </div>  
+    
+        <div class="phold"id="r63" >
+        <div class="ptitle">    
+            <b>RJSX 6.3 BETA [Aug29-Sept1] [kódnév: EDC3]</b><i><u><r>stein.rontap.elemential.net</i></u></r>
+        </div>
+        <div class="ptext">
+            <ol>
+                <li>
+                Teljesen új mobil nézet, jelenleg nem működik
+                </li>
+                <li>
+                Betöltődési csík (jelenleg ugyancsak nincs értelme)
+                </li>
+                <li>
+                Elemential szövege frissítve
+                </li>
+                
+            </ol>
+        </div>
+        </div>  
+    
+        <div class="phold" id="r62">
+        <div class="ptitle" >    
+            <b>RJSX 6.2 ALPHA [Aug27-29] [kódnév: EDC3]</b>
+        </div>
+        <div class="ptext">
+            <ol>
+                <li>
+                Javítva töb bug, főleg az új témákhoz.
+                </li>
+                <li>
+                Specnav átalakítva, két tömbben tároljuk az adatokat.
+                </li>
+                <li>
+                FF kompatibilitás hozzáadva
+                </li>
+            </ol>
+        </div>
+        </div>  
+    
+    
+    
+        <div class="phold" id="r61">
+        <div class="ptitle">    
+            <b>RJSX 6.1 ALPHA [Aug25] [kódnév: STEIN]<i><u><g></i></u></g></b>
+        </div>
+        <div class="ptext">
+            <ol>
+                <li>
+                <b>Új, opcionális design. Kinézetre a navbar-ra hasonlít</b>
+                </li>
+                <li>
+                Még egy, kompakt design, jelejnleg a navbar.minned.html -ben érhető el, implementálása nehéz, kompatibilitási okok miatt
+                </li>
+                <li>
+                Elemential.net leállt, a rtsapis.html javítva lett.
+                </li>
+                <li>
+                Témák opcionálisan hozzá lettek adva
+                </li>
+            </ol>
+        </div>
+        </div>  
+    
+        <div class="phold" id="r60">
+        <div class="ptitle">    
+            <b>RJSX 6 PRE [Juli31] [kódnév: STEIN]</b>
+        </div>
+        <div class="ptext">
+            <ol>
+                <li>
+                éjszakai mód visszatért!
+                </li>
+                <li>
+                Kész az ikon az rjsx6 hoz
+                </li>
+                <li>
+                <b>Stabil állapotban leáll egy időre a fejlesztés.</b>
+            </ol>
+        </div>
+        </div>
+        
+        <div class="phold"id="r57" >
+        <div class="ptitle" >    
+            <b>RJSX 5.7 STABLE  [Juli31] </b>
+        </div>
+        <div class="ptext">
+            <ol>
+                <li>
+                nagyon sok kisebb változtatás (magasabb a #ter, a gomboknak szebb a :hover-je)
+                </li>
+                <li>
+                A rtsdokumentáció is elkészült
+                </li>
+                <li>
+                Elkészült a rtscreator, amiben WYSIWYG alapon lehet oldalt készíteni
+                </li>
+                <li>
+                Több, régi Rjsx-hez kapcsolódó oldal törölve lett
+                </li>
+                <li>
+                Alert dobozok, class-os személyreszabhatósággel
+                </li>
+                <li>
+                új class: .p : bekezdésszépítő
+                </li>
+                <li>
+                kis részben implementálásra került a grundwork api
+                </li>
+                
+            </ol>
+        </div>
+        </div>
+    
+        <div class="phold" id="r55">
+        <div class="ptitle">    
+            <b>RJSX 5.5 STABLE [kódnév:EDC2] [Juli16] </b>
+        </div>
+        <div class="ptext">
+            <ol>
+                <li>
+                Több személyreszabhatósági változó
+                </li>
+                <li>
+                navbar eltávolítva határozatlan időre, like gomb hozzáadva
+                </li>
+                <li>
+                New button design
+                </li>
+                <li>
+                Új, legördülő menü
+                </li>
+                <li>
+                Frissült az rtsapi (részben)
+                </li>
+                <li>
+                betűtípusváltás
+                </li>
+            </ol>
+        </div>
+        </div>
+        <div class="phold" id="r51">
+        <div class="ptitle">    
+            <b>RJSX 5.1 BETA [Juli5]</b>
+        </div>
+        <div class="ptext">
+            <ol>
+                <li>
+                bugfix
+                </li>
+                <li>
+                night mode disabled
+                </li>
+                <li>
+                a jquery autómatikus hozzáadása
+                </li>
+                
+            </ol>
+        </div>
+    
+    <div class="phold"id="r50" onclick="opent2();" >
+        <div class="ptitle" i>    
+            <b>RJSX 5 ALPHA [Juni29] </b>
+        </div>
+        <div class="ptext">
+            <ol>
+                <li>
+                <b>Teljesen új design.</b> többek közt: új gombdesign, sccrollbar, &lt;rts>
+                </li>
+                <li>
+                az oldal tetejére gomb
+                </li>
+                <li>
+                Google analitics kód hozzáadva
+                </li>
+                <li>
+                <i>Sok más újítás amire nem emlékszem</i>
+                </li>
+            </ol>
+        </div>
+    </div>
+    <br>
+
+    </div>
+    
+    <br>
+    <div class="utitle" id="ro">Régebbi verziók</div>
+    <br>
+    <div id="content">
+    <div class="phold"id="ph2" onclick="opent2();">
+        <div class="ptitle">    
+            <b>RJSX 4 versions [kódnév:UNIT-ELEMENITIAL] </b>
+        </div>
+        <div class="ptext">
+            <ul>
+                <li> 4.0 Night Mode implemented</li>
+                <li> 4.2 [STABLE] Mobile+Save mobile implemented</li>
+                <li> 4.2RC1 bugfix for GG</li>
+            </ul>
+        </div>
+    </div>
+    <div class="phold"id="ph2" onclick="opent2();">
+        <div class="ptitle">    
+            <b>RJSX 3 versions [UNITY] <i><u><r>rontap.netne.net</r></u></i></b>
+        </div>
+        <div class="ptext">
+            <ul>
+                <li> 3.0BC merged with ROPI.RJSX</li>
+                <li> 3.0 NAVBAR adding</li>
+                <li> 3.1 implementing to: esysite; </li>
+                <li> 3.2 implementing to: lapis; navbar2</li>
+                <li> 3.4 <b>RTSAPI</b> made</li>
+                <li> 3.5 Browser detection (UA) is added</li>
+                <li> 3.6 Navbar relevant links</li>
+                <li> 3.7RC1 scroll>fixed elementd (few bugs), added JQuery2.0.0</li>
+                <li> 3.7RC2 shrinked</li>
+            </ul>
+        </div>
+    </div>
+    <div class="phold"id="ph2" onclick="opent2();">
+        <div class="ptitle">    
+            <b>RJSX 2 versions [HAXEL-FLOW] <i><u><r>flow.rontap.netne.net</r></u></i></b>
+        </div>
+        <div class="ptext">
+            <ul>
+                <li> 0.20 added more eszperente</li>
+                <li> 0.22 [BIGBUILD] added help on pages </li>
+                <li> 0.23 ROPI implementing, random.rjsx out</li>
+                <li> 0.24 optional logo</li>
+                <li> 0.25 STDall(true) for killing [2013 04 01]</li>
+                <li> 0.27 EXISTS függvény , RDR redirect</li>
+                <li> 0.29RC1 DELETED terminal, log and <i>unused</i> things (filesize: 10->7)</li>
+                <li> 0.29RC2 SIMPLFIED , created rtsapis.html</li>
+            </ul>
+        </div>
+    </div>
+    <div class="phold"id="ph2" onclick="opent2();">
+        <div class="ptitle">    
+            <b>RJSX 1 versions [NIGHTY-HAXEL] <i><u><r>haxel.rontap.netne.net</r></u></i></b>
+        </div>
+        <div class="ptext">
+            <ul>
+                <li>  0.1 starting project codename RON-JS [Dec12]</li>
+                <li>  0.12 implementing to tapcalk. and adding rts tag from rtsapi.html/css</li>
+                <li>  0.14 renamed to rjsx. added RJSX terminal and IEBlock </li>
+                <li>  0.15 [DEBUG] [DEV] version for debug</li>
+                <li>  0.16 added personalisable rts tag and personalisable ver/packages</li>
+                <li>  0.18 added more RJSX options, changed VER system to RC</li>
+                <li>  0.19RC1 more personable RTS, moretag</li>
+                <li>  0.19RC2 [STABLE] Collapse RTS, rework RTS a bit</li>
+                <li>  0.19RC3 change Skins</li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+    <script>
+		    
+    $('a').click(function() {    // Change to needed selector
+        $("html, body").animate({    // Need both for full browser support
+            scrollTop: $( $(this).attr("href") ).offset().top - 100 // Extra 100px
+        }, 500);    // Change to desired scroll time in ms
+        console.log('hi');
+        return false;    // Prevents the dreaded jump/flash
+    });
+		
+        /*    
+opened3=false;
+    function opent3() {
+if (opened3){
+ph3.style.height="30px";
+opened3=false;
+pimg3.src="plus.gif"
+}
+
+else {
+    ph3.style.height=ph3h+"px"
+    opened3=true;
+    pimg3.src="minus.gif"
+    }
+}
+            
+    ph3h=$("#ph3").height();
+   // ph3.style.height="30px";
+//ph3.style.height="30px";
+//2 
+        opened2=false;
+function opent2() {
+if (opened2){
+ph2.style.height="30px";
+opened2=false;
+pimg2.src="plus.gif"
+}
+
+else {
+    ph2.style.height=ph2h+"px"
+    opened2=true;
+    pimg2.src="minus.gif"
+    }
+}
+            
+    ph2h=$("#ph2").height();
+    ph2.style.height="30px";
+    
+    
+//1
+    opened=false;
+function opent1() {
+if (opened){
+ph1.style.height="30px";
+opened=false;
+pimg.src="plus.gif"
+}
+
+else {
+    ph1.style.height=ph1h+"px"
+    opened=true;
+    pimg.src="minus.gif"
+    }
+}
+            
+    ph1h=$("#ph1").height();
+    ph1.style.height="30px";
+    */
+    function aL()
+    {
+    
+    $('a').click(function() {    // Change to needed selector
+        $("html, body").animate({    // Need both for full browser support
+            scrollTop: $( $(this).attr("href") ).offset().top - 57 // Extra 100px
+        }, 500);    // Change to desired scroll time in ms
+        console.log('hi');
+        return false;    // Prevents the dreaded jump/flash
+    });
+
+}
+
+setTimeout(function(){
+	aL();
+	console.log(2);
+	},500);
+    </script>
+    <script onload=""src="main.js" type="text/javascript"></script>
+
+    </Body>
+
+</HTML>

@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<!--LAPISLOGIN v2-->
+<HTML>
+	<Head>
+		<title>Login/Register</title>
+	  <meta charset="UTF-8">
+		<meta name="author" content="TAP">
+	  <meta name="description" content="rontap">
+		<meta name="keywords" content="rontap,linux,TaPium,tapsite,rts,rjsx">
+	 <script src="goog.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	
+	</Head>
+
+<script>
+		appver="LAPIS";
+		sited="ttest.html";
+		navname="Lapis"; //hogy jelenik majd meg
+		navplus="2 számológép";
+		coa=false;		
+		pack="rontap.mainHelp/tapcalk2";
+		moretag=false;
+		//holvan
+		manimg="calc.png";
+</script>
+
+<div id="navbar" >
+
+</div> 
+	
+	<body >
+
+<style>
+body {
+background:#DDD;
+padding:0;
+margin:0;
+}
+#top {
+background:#BBB;
+border-bottom:1px solid #999;
+height:50px;
+}
+.l
+{
+color: #000000;
+padding:3px;
+margin:5px;
+border-radius:3px;
+-webkit-transition:background-color 0.3s,color 0.3s;
+}
+.l:visited
+{
+color: #202020;
+}
+.l:hover
+{
+color: #b0b0b0;
+padding:3px;
+margin:5px;
+background-color:#26F;
+box-shadow:0px 0px 3px black inset;
+}
+#log {
+text-align:center;
+}
+#log button {
+width:150px;
+margin:2px;
+}
+img:hover {
+
+}
+
+	@-webkit-keyframes scroll
+	{
+	0%   {margin-bottom:0px;}
+	100% {margin-bottom:60px;}
+	}
+	
+	.down {
+		-webkit-animation: scroll 0.4s;
+		-moz-animation: scroll 0.5s;
+		-o-animation: scroll 0.5s;
+		margin-bottom:0px;
+		}
+	@-webkit-keyframes scrollx
+	{
+	0%   {margin-bottom:60px;}
+	100% {margin-bottom:50px;}
+	}
+	
+	.downm {
+		-webkit-animation: scrollx 0.4s;
+		-moz-animation: scrollx 0.5s;
+		-o-animation: scrollx 0.5s;
+		/*margin-bottom:0px;*/
+		}
+		#back {
+			/*  */
+			transition:background .2s;
+			padding:8px 10px 10px 10px;
+		  }
+		  #back:hover {
+		  	background:#48F;
+		  	cursor:pointer
+		  }
+</style>
+<div id="body">
+<div id="top">
+	<img src="back4.png" style="position: fixed;" id="back"/>
+	<img src="lapis.png" height="100px" style="margin-left:55px;"> 
+</div>
+<br><br>
+<div id="log">
+	 <div id="regis">
+<input type="text" class="inp-text" placeholder="username">	<br>
+<input type="password" class="inp-text" placeholder="*******">	<br>
+	</div><br>
+<button class="btn-b">Login</button>		<br>
+<button class="btn-r" onClick="reg();" id="register">Register</button>	 <br>
+<button class="btn-r" onClick="re();" id="registe">Google login</button>	
+	<br><br>
+
+<a class="l" onClick="forgot();">forgot?</a>
+</div>	
+	
+
+<script>
+function reg() {
+	register.onclick='';
+	setTimeout(function(){
+	regis.innerHTML+='<input type="password" class="inp-text" placeholder="password again">	<br>';
+	regis.innerHTML+='<input type="text" class="inp-text" placeholder="email">	<br>';
+	
+	},405);
+	
+	document.getElementById('regis').className="down";
+	
+}
+function forgot() {
+	register.onclick='';
+x('regis');
+	setTimeout(function(){
+	regis.innerHTML='Jelszó visszaállítás:<br><input type="text" class="inp-text" placeholder="email">	<br>';
+	
+	
+	},405);
+	
+	document.getElementById('regis').className="downm";
+	
+}
+</script>
+	<script src="main.rjsx" type="text/javascript"></script>
+	</Body>
+</HTML>

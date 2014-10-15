@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<HTML>
+	<Head>
+		<title>PAINT super II</title>
+	  <meta charset="UTF-8">
+		<meta name="author" content="TAP">
+	  <meta name="description" content="--autók--">
+		<meta name="keywords" content="rontap,linux,TaPium,tapsite,car,autó,játék">
+	  <link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="rtsapiCSS.css">
+	<script src="goog.js" type="text/javascript"></script>
+	</Head>
+	<Body>
+<script>
+	appver="GAMit\n TAPIS/calkr.js 1.6 ";
+	sited="ttest.html";
+	navname="PAINT super"; //hogy jelenik majd meg
+	navplus=" edition 2";
+	coa=false;		
+	pack="rontap.mainHelp/cars2";
+	moretag=true;
+	//holvan
+	vit_start="Játékok";
+	vit_tema="Paint";
+
+	chg1="Fizcalk";
+	chg2="easycalk";
+	chg3="Start";
+	chg1l="fizcalk.html";
+	chg2l="esycalk.html";
+	chg3l="start.html";
+	manimg='f_icons/gimp.png'
+</script>
+<style>
+.un,.uns  {
+	border:1px solid #999999;
+	border-bottom:0px;
+	border-right:0px;
+	font-size:14px;
+	width:8px;
+	height:8px;
+}
+.uns {
+	
+	}
+.un:hover{
+	background-color:rgba(100,100,100,0.5);
+	
+}
+table {margin:0px;
+border-spacing: 0px;
+}
+
+#cg {
+background-color:#11FF11;
+}
+#cr {
+background-color:#FF1111;
+}
+#cw {
+background-color:#FFFFFF;
+}
+#cb {
+background-color:#1111FF;
+color:white;
+}
+#cbl {
+background-color:#000000;
+color:white;
+}
+#o {
+background-color:#FF9900;
+color:white;
+}
+#y {
+background-color:#FFEE00;
+
+}
+#textinput {
+width:70px;
+
+}
+#ywidth,#xwidth {
+width:35px;
+}
+</style>
+<span  id="body">
+
+<rts>
+
+</span>
+<button class="btn-b" onClick="draw();">rajzol</button>
+( hánysor hányas
+<input type="number" class="inp-text" id="ywidth" value="20" max="99" min="11">×
+<input type="number" class="inp-text" id="xwidth" value="20"  max="99" min="11">
+)
+<hr>
+<button id="cg" onClick="ccol('#00FF00');">zöld</button>
+<button id="cr" onClick="ccol('#FF0000');">piros</button>
+<button id="cw" onClick="ccol('#FFFFFF');">fehér</button>
+<button id="cb" onClick="ccol('#0000FF');">kék</button>
+<button id="cbl" onClick="ccol('#000000');">fekete</button>
+<button id="cw" onClick="ccol('#DDD');">alapértelmezett</button>
+|
+<button id="o" onClick="ccol('#FF9900');">n.sárga</button>
+<button id="y" onClick="ccol('#FFEE00');">sárga</button>
+<br>
+	egyéni [00-tól FF-ig ; piros,zöld,kék ; minél több annál több abból a színból; előtte # van példa:#EF99D5
+	<input type="text" id="textinput" value="#EF99D5">
+	<button id="" onClick="ccol(textinput.value);textinputcolor();">beállítás</button>
+<br>
+	<form>
+	<input type="checkbox" id="overcheck" onClick="">GyorsRajz (SpeedDraw)
+	</form>
+	
+  <canvas id="myCanvas" width="578" height="200" onClick="nemir(event);"onmousemove="$SpeedDrawEr(corx,cory);">
+  Végzetes hiba: [E105] A böngészője nem kompatibilis a HTML5CANVAS technológiával.<br>
+  így a SuperPaint II nem fog működni.<br>
+  Javasoljuk a <a href="haxel.rontap.netne.net/paint.html">SuperPaint I </a>kipróbálástát
+  </canvas>
+<script>
+//V2 MOTOR REPLACED!!
+//v1: rjsx-tableDraw
+//v2: HTML5CANVAS ([canvas rjsx])
+/*  
+
+//NEMUSE
+function save()
+{
+alert(gt[Number(hol.charAt(1)+hol.charAt(2))][Number(hol.charAt(3)+hol.charAt(4))]);
+}
+/*VER:HIST
+v0.1 [PORT] from CAR
+v0.2 onecolorgen added motor called [rjsx-tableDraw]
+v0.3 4colot
+v0.3B costum color
+v0.4 SpeedDraw
+v0.5 Speedtest
+
+v1.0 [OFFICAL] Angle changed to 5*5, fired DRAW event
+v1.1 changed app.
+v1.2 changable X/Y angle
+v1.3 disable buttons at start
+v1.4 TABLE tweaks
+v1.5 save system
+v1.6 fixed changable X/Y angle
+
+v2.0 CTRL key added for swicth SpeedDraw
+v2.1 alap Y/X is now 20+10/20+10
+v2.2 [PUBLISHED] [SUSPEND]
+----
+v3.0 [PORT] REPLACED  [rjsx-tableDraw] motor to HTML5[rjsx-canvas]
+v3.1 Deleted old code, new JS motor.
+v3.2 some features backported /color select, custom color (from old paint code database)/
+v3.3 SpeedDraw Re-Implemented
+*/
+	hover=false;
+   run=false;
+    function $SpeedDrawEr(x,y)
+    {
+    if (overcheck.checked==true) {hover=true;}//megnezzuk, be van e kapcsolva
+	else {hover=false;}
+	
+		if (hover==true)//megnezzuk
+		{
+		if (run==false)//futottal mar?
+			{
+			startx=x;
+			starty=y;
+			run=true;
+			}
+		else {//ha igen rajzolj!
+				$DrawLine(x,y);
+					run=false;
+			}
+		}
+    }
+     function $DrawEr(x,y)
+    {
+    if (run==false)
+    	{
+    	startx=x;
+    	starty=y;
+    	run=true;
+    	}
+    else {
+    		$DrawLine(x,y);
+    			run=false;
+    	}
+    }
+    
+    function $DrawLine(endx,endy)//VONAL RAJZOLÓ
+    {
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+//VONAL
+      context.beginPath();	//új cucc
+      context.moveTo(endx,endy); //kurzor mozgatása oda
+      context.lineTo(startx, starty);  //vonal rajzolása
+      context.lineWidth = 4; //vastagság
+      context.strokeStyle = kivszin; //szín
+       context.lineCap = 'round'; //lekerekítés
+      context.stroke(); //RAJZ
+     }
+     
+     
+     //CANVAS_API:REPLACE
+             
+      function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+      }
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      canvas.addEventListener('mousemove', function(evt) {
+        var mousePos = getMousePos(canvas, evt);
+         corx=mousePos.x; 
+         cory=mousePos.y;
+       
+      }, false);
+      //backports from older vers
+      function ccol(szin)//színválasztás
+		{
+		textinput.value=szin;
+		kivszin=szin;
+		textinputcolor();
+		}
+    function textinputcolor() {
+document.getElementById("textinput").setAttribute('style', 'border:2px solid '+textinput.value+'; ');
+}
+function nemir(event)//terminal Ctrl open
+		{	
+		if (event.ctrlKey==1)
+			 {
+		
+			if (overcheck.checked==true) {overcheck.checked=false;hover=false;}
+			else {overcheck.checked=true;hover=true;}
+			 }
+		
+		}
+		
+</script>
+
+</footer>
+	<script src="main.rjsx" type="text/javascript"></script>
+	</Body>
+</HTML>

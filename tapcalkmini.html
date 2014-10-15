@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="rtsapiCSS.css">
+		<script src="calk.js" type="text/javascript"></script>
+		<script src="goog.js" type="text/javascript"></script>
+
+<style>
+	#mennyik {
+		width:150px;
+		}
+	#mennyi,#mennyi2 {
+	width:150px;
+	font-size:18px;
+	height:25px;
+	}
+	#shortBTN {
+	float:right;
+	}
+	body {
+	/*background-color:rgba(20,50,220,0.6);*/
+	}
+	#buttons {
+	background-color:rgba(200,200,200,0.5);
+box-shadow:0px 0px 10px  rgba(200,200,200,0.5);
+	margin:-5px;
+	padding:10px;
+	margin-top:-15px; 
+	
+	}
+	footer {
+	position:absolute;
+	bottom:5px;	
+	width:98%;
+	}
+
+	.btn-b, .btn-green,.btn-r,.btn-b:hover, .btn-green:hover,.btn-r:hover {
+		font-size:18px;
+		margin:2px;
+		min-width:25px;
+		box-shadow:none;
+		border-radius:0px;
+		padding-left:10px;
+		padding-right:10px;
+		}
+	span {
+	
+		}
+	#red {color:red;}
+	rtf {
+		text-align:center;
+	}
+	#footimg {
+	z-index:-10;
+	}
+
+
+#outputTEXT , #output{
+margin-left:20px;
+
+}
+#output {
+	font-size:20px;
+	font-weight:750;
+} 
+</style>
+		<title>tapcalk  3 MOBLIE </title>
+		<meta name="description" content="" />
+		<meta name="author" content="rontap" />
+		<script>
+		appver="TapCalk2.2\n TAPIS/calkr.js 1.6 ";
+		sited="ttest.html";
+		navname="TapCalk 3"; //hogy jelenik majd meg
+		navplus="2 számológép";
+		coa=false;		
+		pack="rontap.mainHelp/tapcalk2";
+		moretag=true;
+		//holvan
+		
+		chg1="Fizcalk";
+		chg2="easycalk";
+		chg3="Start";
+		chg1l="fizcalk.html";
+		chg2l="esycalk.html";
+		chg3l="start.html";
+		
+		manimg="calc.png";
+		</script>
+		
+	
+	</head>
+
+<div id="navbar" >
+
+</div> 
+	
+	<body >
+
+
+<div id="body">
+
+<br>
+
+<!----[if IE]>
+<h1 class="iekill">sajnos ez a weblap nem tekinthető meg Internet Explorerrel. :(<br>tölts le egy gyorsabb és biztonságosabb böngészőt, a Google Chromeot</h2>
+<![endif]-->
+<comment>
+<!-- Place this tag in your head or just before your close body tag. -->
+
+
+<!-- Place this tag where you want the +1 button to render. -->
+
+
+
+ 			<div>			
+			</div>
+
+		<div id="buttons">
+		
+		<span class="btn-green" onclick="kiball();">
+		<img src="logos/menu.png" width="20px"  ">
+		Összes mutatása
+		</span>
+		
+		<button class="btn-b" onclick="kib('alm')">Alapműveletek...</button>
+		<button class="btn-b" onclick="kib('sor')">Sorozatok...</button>
+		<button class="btn-b" onclick="kib('geo')">Geometria...</button>
+		<button class="btn-b" onclick="kib('pri')">Prímszámok...</button>
+		<button class="btn-b" onclick="kib('ext')">Extrák...</button>
+		<button class="btn-b" onclick="kib('cnst')">konstasok...</button>
+		<hr>
+		<div id="act_cont">
+		</div>
+		
+		<div id="sorozat">
+			<button class="btn-b" onclick="calcSPIN()">spinkvantumszam</button>
+			<button class="btn-b" onclick="calcFIBO()">fibonacci</button>
+			<button class="btn-b" onclick="calcNEGY()">negyzetszamok</button>
+			<button class="btn-b" onclick="sornCALK()">sorozat</button>
+			<button class="btn-b" onclick="sorgCALK()">görbe sorozat</button>
+			<br>
+		</div>
+		
+	<div id="cns">
+			<button class="btn-b" onclick="chgPI()">&pi; beszúrása</button>
+			<button class="btn-b" onclick="chgGY()">√2 beszúrása</button>
+
+			<br>
+		</div>
+
+	<div id="extr">
+			<button class="btn-b" onclick="calcGYOK()">ket gyok alatt levo szam osszeadasa</button>
+			<button class="btn-b" onclick="calcRAND()">random szám</button>
+			<button class="btn-b" onclick="calcLNKO()">LNKO {}</button>
+			<br>
+	</div>
+
+
+
+<div id="geom">
+
+	geometria: 3szöggel műveletek:
+	<button class="btn-r" onclick="geo3MAG()">magasság</button>
+	<button class="btn-r" onclick="geo3TER()">terület</button>
+	<button class="btn-r" onclick="geo3PIT()">pit. tétel</button>
+	<br>
+	Kör (sugár van megadva)
+	<button class="btn-r" onclick="geoKKER()">Kör kerülete</button>
+	<button class="btn-r" onclick="geoKTER()">Kör területe</button>
+</div>
+
+
+
+<div id="prims">
+prímszámok:
+	<button class="btn-b" onclick="primCALC()">prím-e</button>
+	<button class="btn-b" onclick="primSZAM()">prímsz</button>
+	<button class="btn-b"  onclick="primFELX();">felbontás</button><!--onclick="primFELB()"-->
+	<br>
+</div>
+
+<br>
+<div id="am">
+	alapműveletek
+	<button class="btn-green" onclick="addGYOK()">√</button>
+	<button class="btn-green" onclick="addSZOR()">×</button>
+	<button class="btn-green" onclick="addOSZT()">/</button>
+	<button class="btn-green" onclick="addVON()">-</button>
+	<button class="btn-green" onclick="addADD()">+</button>
+	<button class="btn-green" onclick="addNEGY()">x<sup>2</sup></button>
+	<button class="btn-green" onclick="addYNEG()">x<sup>y</sup></button>
+	<button class="btn-green" onclick="addAPB2()">(x+y)<sup>2</sup></button>
+	<button class="btn-green" onclick="addAMB2()">(x-y)<sup>2</sup></button>
+	<button class="btn-green" onclick="addA2B2()">x<sup>2</sup>-y<sup>2</sup></button>
+	<button class="btn-green" onclick="calcFAKT()">!</button>
+	<br>
+</div>
+
+<hr>
+
+
+szám 1:
+<input type="number" id="mennyi2" value="2" onmouseout="updateLENGHT2()" onkeyup="updateLENGHT2()"><br>
+szám 2:	
+<input type="number" id="mennyi"value="15" onmouseout="updateLENGHT()" onkeyup="updateLENGHT()">
+
+
+</div>
+
+	<br><hr>
+	<div id="outputTEXT">
+		szamoljunk!
+	<br>
+	A TapCalk Mini egy összetett számológép.
+	legKülömbözőbb dolgokat számol
+	<br>
+	Működése:
+	<li>beirod a bemeneti mezobe a szamot (szamokat ha olyan műveletet végzel (szorzás))</li>
+	<li>Ráklikkelsz a gombra. A TapCalk ki is számolja!</li>
+ 	</div>
+	<span id="output">
+
+
+ 	</span>
+
+<footer id="footerX" >
+	<br>
+<br>
+<br>
+
+	<hr>
+ver	<span id="footname">TapCalK3.2 MINI+MOBILE  . relase:2013apr</span>
+	 <a href="#" onClick="gox('ver.html')" class="footlink">verziók</a> | 
+	 <a href="#"  onclick="helpIT();" class="footlink">több infó az utolsó műveletről</a> | 
+	 <a href="#"  onclick="showsave();" class="footlink">előzmények</a>
+	
+	
+	
+	</footer>
+		</div>
+
+</comment>
+
+	
+	<script src="tapcalk_utils.js" type="text/javascript"></script>			
+	<script src="main.rjsx" type="text/javascript"></script>
+	</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE HTML>
+<HTML>
+	<Head>
+		<title>canvas</title>
+	  <meta charset="UTF-8">
+		<meta name="author" content="TAP">
+	  <meta name="description" content="rontap">
+		<meta name="keywords" content="rontap,linux,TaPium,tapsite,rts,rjsx">
+	 <script src="goog.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="rtsapiCSS.css">
+	</Head>
+	<Body id="body">
+<script>
+appver="TapCalk API BUNDLE\n TAPIS/canvas.js \n TAPIS/DrawER API ";
+		sited="ttest.html";
+		navname="Geometria"; //hogy jelenik majd meg
+		navplus=" Rajzoló és számoló gép";
+		coa=false;		
+		pack="rontap.mainHelp/canvas";
+		moretag=true;
+		//holvan
+		vit_start="Start";
+		vit_tema="Matematikai feladatok";
+		specnav='<a href="tapcalk.html">TapCalk</a><a href="easycalk.html">Tapcalk Mini</a>'; 
+		chg1="Tapcalk";
+		chg2="Paint II";
+		chg3="Start";
+		chg1l="tapcalk.html";
+		chg2l="paint.html";
+		chg3l="start.html";
+		manimg='f_icons/canvas.png';
+</script>
+
+<rts>
+
+
+
+<style>
+
+#myCanvas {
+cursor:crosshair;
+
+
+}
+canvas {
+border:1px solid red;
+position:fixed;
+}
+#Hatso {
+position:fixed;
+left:9px;
+cursor:crosshair;
+}
+
+#vvc {
+padding-top:5px;
+padding-bottom:-2px;
+color:#123;
+border:1px solid green;
+}
+#vvastag {
+    -webkit-appearance: slider-horizontal;
+}
+#kor {
+font-size:20px;
+}
+</style>
+<button id="" onClick="select='vonal';" class="btn-b">vonal</button>
+<button id="" onClick="select='kor';" class="btn-b">kor</button>
+<button id="" onClick="$DrawIt(1,1,'pont');select='pont'" class="btn-b">pont</button>
+
+pont neve<input type="text" id="ponttext" class="inp-text-short" value="a">
+szín<input type="color" name="favcolor" id="szin">
+vonalvastagság:
+<span id="vvc">
+
+<input id="vvastag" type="range" name="points" min="1" max="10" value="4" onchange="vvdata.innerHTML=vvastag.value">
+<span id="vvdata">4</span></span>
+
+<br>
+<span id="kor">
+P1(x<input type="number" id="iax" class="inp-text-short" value="10">;y
+<input type="number" id="iay" class="inp-text-short" value="20">)
+P2(x<input type="number" id="ibx" class="inp-text-short" value="20">;y
+<input type="number" id="iby" class="inp-text-short" value="80">)
+<button id="" onClick="$Solve$Egyenes();" class="btn-b">egyenes lerakása</button>
+</span>
+
+
+<hr>
+  <canvas id="myCanvas" width="400" height="400" onClick=""></canvas>
+  
+<canvas id="Hatso" width="400" height="400" onmouseover="ListenMouse();"onClick=" ListenMouse();CClick=true;$DrawIt(corx,cory,select);" ></canvas>
+  <hr>
+  <span id="alertbox"></span>
+    <script>
+/*
+VER-HIST
+v1.0-1.5 Getting in Ported from PAINT-II and from canvas                         [2013FEB20]
+v1.6 ghost cursor follover
+v1.7 vonal added
+v1.8 kor added 	                                                                 [2013FEB21]
+v1.9 change ability [BUGGED]
+v2.0 debug 																		 [2013FEB22]
+v2.1A point 
+v2.1B point names
+v2.2A color draw                                                                 [2013FEB23]
+v2.2B vvastag
+v2.3 enchanted UI
+v3.5 																			 [2013MAR30]
+*/
+	koord=true;
+    run=false;
+ 	function testinput() {
+ 	alert(vvastag.value);
+ 	alert(szin.value);
+ 	}
+//-------------------------------------------------------------------------------
+/*EGYENES VONAL <canvas id="Hatso" width="578" height="200" onClick="CClick=true;$DrawEr(corx,cory);" ></canvas>*/
+//-------------------------------------------------------------------------------
+ 	
+    function $DrawIt(corx,cory,select) {//KIVALASZTJA MIVEL HUZZUK A VONALAT
+   
+   	
+ 	switch (select)
+    {
+    case 'vonal': $DrawEr$Line(corx,cory); break;
+    case 'kor': $DrawEr$Kor(corx,cory); break;
+    case 'pont': $DrawEr$Point(corx,cory); break;
+    }   
+  
+    }
+   
+   /*KOR*/ 
+    
+    
+    function $CurPos$Kor(corx,cory) {
+    if (run==true && select=='kor')
+		{
+	
+		var canvas = document.getElementById('Hatso');
+		var context = canvas.getContext('2d');
+	//VONAL
+	
+ 	 xtav=Math.abs(startx-corx);
+	 ytav=Math.abs(starty-cory);
+	 fill=Math.abs(Math.sqrt(xtav*ytav));
+	
+	context.beginPath();	//új cucc	 
+	  context.clearRect(0, 0, canvas.width, canvas.height); 
+
+     context.arc(startx, starty, fill, 0, 2 * Math.PI, false);
+     context.strokeStyle = '#555'; //szín
+     context.lineCap = 'round'; //lekerekítés
+     context.stroke(); //RAJZ
+	 //console.info('$DrawErKor RUN');
+		  if (CClick=true)
+		  {
+		  clearInterval();
+		  }
+      }
+    }
+    function $DrawEr$Kor(x,y)
+    {
+    if (run==false)
+    	{
+    	CClick=false;
+    	startx=x;
+    	starty=y;
+    	run=true;
+			setInterval(function(){$CurPos$Kor(corx,cory)},100);
+    	}
+    else {
+    		CClick=true;
+    		$DrawKor(x,y);
+    		run=false;
+    	    console.info('$DrawErKor click');
+    	}
+    }
+    
+    function $DrawKor(endx,endy)//VONAL RAJZOLÓ
+    {
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+//VONAL
+	xtav=Math.abs(startx-corx);
+	ytav=Math.abs(starty-cory);
+	fill=Math.sqrt(xtav*ytav);
+	 context.beginPath();	//új cucc
+     context.arc(startx, starty, fill, 0, 2 * Math.PI, false);
+      context.strokeStyle = szin.value; //szín
+     context.lineWidth = vvastag.value; //vastagság
+      context.stroke(); //RAJZ
+     }
+     
+//-------------------------------------------------------------------------------   
+/*VONAL*/
+//-------------------------------------------------------------------------------
+ function $CurPos$Line(corx,cory) {//GYROSFRISSITO, ELOLNEZET
+    if (run==true && select=='vonal')
+		{
+	
+		var canvas = document.getElementById('Hatso');
+		  var context = canvas.getContext('2d');
+	//VONAL
+ 		   context.clearRect(0, 0, canvas.width, canvas.height);
+		  context.beginPath();	//új cucc
+		  context.moveTo(startx,starty); //kurzor mozgatása oda
+		  context.lineTo(corx, cory);  //vonal rajzolása
+		  context.lineWidth = 2; //vastagság
+		  context.strokeStyle = '#555'; //szín
+		   context.lineCap = 'round'; //lekerekítés
+		  context.stroke(); //RAJZ
+		 // console.info('$DrawErLine move');
+		  if (CClick=true)
+		  {
+		  clearInterval();
+		  }
+		  if (koord==true){//ha engedélyezve van a kordináta
+		  $DrawKR();
+		  }
+      }
+    }
+    function $DrawEr$Line(x,y)//RAJZOLÓ
+    {
+   
+		if (run==false)
+			{
+			CClick=false;
+			startx=x;
+			starty=y;
+			run=true;
+				setInterval(function(){$CurPos$Line(corx,cory)},100);
+			}
+		else {
+				CClick=true;
+				$DrawLine(x,y);
+				run=false;
+				console.info('$DrawErLine click');
+			}
+    
+    }
+    
+    function $DrawLine(endx,endy)//VONAL RAJZOLÓ
+    {
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+//VONAL
+      context.beginPath();	//új cucc
+      context.moveTo(endx,endy); //kurzor mozgatása oda
+      context.lineTo(startx, starty);  //vonal rajzolása
+      context.lineWidth = vvastag.value; //vastagság
+      context.strokeStyle = szin.value; //szín
+       context.lineCap = 'round'; //lekerekítés
+      context.stroke(); //RAJZ
+     }
+     
+ //-------------------------------------------------------------------------------   
+/*PONT*/
+//-------------------------------------------------------------------------------   
+       
+    function $CurPos$Point(corx,cory) {
+    if (run==true && select=='pont')
+		{
+	
+		var canvas = document.getElementById('Hatso');
+		var context = canvas.getContext('2d');
+	//VONAL
+	
+ 	
+	context.beginPath();	//új cucc	 
+	  context.clearRect(0, 0, canvas.width, canvas.height); 
+
+   
+      context.font = 'bold 10pt sans';
+      context.fillText(ponttext.value, corx, cory);
+       
+	 //console.info('$DrawErLine RUN');
+		  if (CClick=true)
+		  {
+		  clearInterval();
+		  }
+      }
+    }
+    function $DrawEr$Point(x,y)
+    {
+    if (run==false)
+    	{
+    	CClick=false;
+    	startx=x;
+    	starty=y;
+    	run=true;
+ 
+			setInterval(function(){$CurPos$Point(corx,cory)},70);
+    	}
+    else {
+    		CClick=true;
+    		$DrawPoint(x,y);
+    		run=false;
+    	    console.info('$DrawErPoint click');
+    	}
+    }
+     function $DrawKR() {//koordinata rendszer
+     	var canvas2 = document.getElementById('Hatso');
+      var context2 = canvas.getContext('2d');
+       context2.lineWidth = 2; //vastagság
+      context2.strokeStyle = '#222'; //szín
+      context2.moveTo(200,0); //kurzor mozgatása oda
+      context2.lineTo(200,400);  //vonal rajzolása
+       context2.moveTo(0,200); //kurzor mozgatása oda
+      context2.lineTo(400,200);  //vonal rajzolása
+       context2.lineCap = 'round'; //lekerekítés
+      context2.stroke(); //RAJZ
+		//VONAL  
+		}
+	function $Solve$Egyenes(ax,ay,bx,by) {
+	$DrawKR();
+	ax=Number(iax.value);///10;
+	ay=Number(iay.value);///20;
+	bx=Number(ibx.value);///20;
+	by=Number(iby.value);///80;
+	xx=200;
+	xy=200;
+	ax=ax+200;
+	ay=ay+200;
+	bx=bx+200;
+	by=by+200;
+	//emelkedes mertekenek meghatarozasa
+	mx=ax-bx;
+	my=ay-by;	
+	szumm=my/mx;
+	alertbox.innerHTML='az emelkedés mértéke:'+szumm;
+	
+		var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      context.moveTo(ax,ay); //kurzor mozgatása oda
+      context.lineTo(bx,by);  //vonal rajzolása
+   
+       context.lineCap = 'round'; //lekerekítés
+         context.lineWidth = vvastag.value; //vastagság
+      context.strokeStyle = szin.value; //szín
+      context.stroke(); //RAJZ
+      
+      
+	}
+  
+     
+     
+    function $DrawPoint(endx,endy)//VONAL RAJZOLÓ
+    {
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+//VONAL  
+
+   context.beginPath();	//új cucc
+      context.font = 'bold 10pt sans';
+      context.strokeStyle = szin.value;
+     
+      context.fillText(ponttext.value, corx, cory);
+	 
+     }
+    
+    
+    //-------------------------ENDOFSC---- 
+     
+
+      
+      ///     
+   /*  KOR var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      var centerX = canvas.width / 2;
+      var centerY = canvas.height / 2;
+      var radius = 70;
+
+      context.beginPath();
+      context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+      context.fillStyle = 'green';
+      context.fill();
+      context.lineWidth = 5;
+      context.strokeStyle = '#003300';
+      context.stroke();*/
+  //WOIS
+
+      function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+      }
+      var canvas = document.getElementById('Hatso');
+      var context = canvas.getContext('2d');
+
+      canvas.addEventListener('mousemove', function(evt) {
+        var mousePos = getMousePos(canvas, evt);
+         corx=mousePos.x; 
+         cory=mousePos.y;
+       kim.innerHTML=  cory+' '+corx;
+      }, false);
+      
+      function ListenMouse() {
+       var canvas = document.getElementById('Hatso');
+      var context = canvas.getContext('2d');
+
+      canvas.addEventListener('mousemove', function(evt) {
+        var mousePos = getMousePos(canvas, evt);
+         corx=mousePos.x; 
+         cory=mousePos.y;
+       kim.innerHTML=  cory+' '+corx;
+      }, false);
+      console.info('ListenMouse');
+      }
+      
+     
+    </script>
+
+<span id="kim"></span>
+
+
+	</Body>
+		<script src="main.rjsx" type="text/javascript">
+		 ListenMouse();
+		</script>
+		
+</HTML>

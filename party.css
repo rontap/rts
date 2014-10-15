@@ -1,0 +1,13 @@
+tr:hover {
+	background-color:#BBB;
+	}
+	#dw:hover,#dw2:hover {
+	background-color:#999;
+	}
+	th {background-color:#999;
+	
+	}
+table {
+border:1px solid #555;
+	}
+	#dw2 {text-align:center;}

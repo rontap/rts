@@ -1,0 +1,433 @@
+
+<!DOCTYPE HTML>
+<HTML>
+	<Head>
+		<title>VPG felmérés: 2012/2013</title>
+	  <meta charset="UTF-8">
+		<meta name="author" content="TAP">
+	  <meta name="description" content="rontap">
+		<meta name="keywords" content="rontap,linux,TaPium,tapsite,felmeres">
+	<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+	<script>
+		appver="ALAPRTS\n RJSX 6.3";
+		sited="ttest.html";
+		navname="VPG felmérés"; //hogy jelenik majd meg
+		coa=false;		
+		moretag=true;
+		//holvan
+		manimg="f_icons/dia.svg";
+specnavi = new Array("Grafikon készítő");
+specnavil = new Array("gchart.html");
+specnavimg = new Array("f_icons/file.svg");
+</script>
+	</Head>
+
+
+
+
+
+	
+	<body >
+	<div id="navbar">
+	 </div>
+	
+
+<div id="body">
+<rts>
+
+ <style>
+ body {
+ 		background-image:none;
+ 		background-color:#DDDDDD;}
+
+ #backgomb {float:right;
+ 			right:2%;
+ 			bottom:2%;
+ 			
+ 			position:fixed;
+ 			}
+ </style>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+	
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Chrome', 32],
+          ['Firefox', 10],
+          ['IE', 2],
+          ['Safari', 3],
+          ['Más', 1],
+        ]);
+
+        // Set chart options
+        var options = {'title':'böngésző',
+                       'width':500,
+                       'height':450};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_brow'));
+        chart.draw(data, options);
+      }
+    </script>
+        <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Win7', 24],
+          ['WinXP', 12],
+          ['Linux', 8],
+          ['Mac', 4],
+        ]);
+
+        // Set chart options
+        var options = {'title':'OS (operációs rendszer)',
+                       'width':500,
+                       'height':450};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_os'));
+        chart.draw(data, options);
+      }
+    </script>
+    
+        <script type="text/javascript">
+//GAMESSSS
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+         google.load("visualization", "1", {packages:["corechart"]});
+    	  google.setOnLoadCallback(drawChart);
+      	function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Minecraft', 14],
+          ['CoD', 11],
+          ['CS', 5],
+          ['lol', 4],
+          ['Netes', 12],
+          ['GTA', 6],
+          ['Telós', 6],
+          ['NFS', 3],
+          ['FIFA', 6],
+          ['Más.. (RPG/FPS vagy 3 nál kevesebb választás)', 16],
+        ]);
+
+        // Set chart options
+        var options = {'title':'játékok',
+                       'width':500,
+                       'height':450};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_os'));
+        chart.draw(data, options);
+      } }
+    </script>
+            <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['GMail', 42],
+          ['Freemail', 7],
+          ['Indamail', 4],
+          ['Citromail', 3],
+          ['Más...',4],
+        ]);
+
+        // Set chart options
+        var options = {'title':'Levelezőrendszer',
+                       'width':500,
+                       'height':450};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_mail'));
+        chart.draw(data, options);
+      }
+    </script>
+                <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Blackberry', 2],
+          ['iOS', 6],
+          ['Mas (regi)', 16],
+          ['Android', 22],
+        ]);
+
+        // Set chart options
+        var options = {'title':'TElefon/OS',
+                       'width':500,
+                       'height':450};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_phos'));
+        chart.draw(data, options);
+      }
+    </script>
+                        <script type="text/javascript">
+//GEP
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+
+        
+          ['Samsung', 14],
+          ['Nokia', 10],
+            ['Apple', 6],
+          ['Sony(Ericsson)', 5],
+          ['htc', 2],
+          ['blackberry', 2],
+          ['Más...',3],
+
+
+        ]);
+
+        // Set chart options
+        var options = {'title':'TElefon/GYARTO',
+                       'width':550,
+                       'height':500};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_phm'));
+        chart.draw(data, options);
+      }
+    </script>
+                    <script type="text/javascript">
+ google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+  		 ['',15],
+  		 ['Minecraft', 14],
+          ['CoD', 11],
+          ['CS', 5],
+          ['lol', 4],
+          ['Netes', 12],
+          ['GTA', 6],
+          ['Telós', 6],
+          ['NFS', 3],
+          ['FIFA', 6],
+          ['TF2', 2],
+          ['Más.. ', 14],
+        ]);
+
+        var options = {
+          title: 'Játékok',
+          hAxis: {title: ' ', titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_games'));
+        chart.draw(data, options);
+      }
+ //--GEPIDO 
+ </script>
+ <script>    
+      function drawVisualization() {
+        var wrapper = new google.visualization.ChartWrapper({
+          chartType: 'ColumnChart',
+            dataTable: [['', '3-5', '5-10', '10-15', '15-20', '20-25', '25-30', '30-35','35-40','40+'],
+              			  ['', 7, 2, 5, 2, 7, 5, 5, 3 ,6]],
+                          options: {'title': 'mennyit gépezel? (jobb-->bal több)'},
+          containerId: 'visualization'
+        });
+        wrapper.draw();
+      }
+      
+      
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+           <script type="text/javascript">
+//YOUTUBE
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['0', 1],
+          ['0-10', 10],
+          ['10-20', 5],
+          ['20-30', 3],
+          ['30-60', 5],
+          ['60-80', 4],
+          ['80+', 7],
+        ]);
+
+        // Set chart options
+        var options = {'title':'Youtube videómegtekintés/hét',
+                       'width':600,
+                       'height':500};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_yt'));
+        chart.draw(data, options);
+      }
+      
+      //
+      var text
+      
+      text="Az adatokban max5% eltérés lehet<br>A felmért (részben felmért) osztályok: 8a,5a,(10c),7a,(8b)<br>---<br>";
+     
+      text+="A kérdések (zárojelben azok, amiknél csak 40 megkérdezett volt):<br>(Mennyi youtube videót nézel hetente?)<br> Milyen email címed van?<br> Milyen Operációs rendszert használsz?<br> Milyen böngészőt használsz?<br> Milyen telefonod van? [cég/oprendszer]<br> (mennyit gépezel hetente össz)<br> (milyen játékokkal játszass). ";
+   	  text+="<br>---<br>A használattal elfogadod a ÁSZF-et amelyet jogunkban áll bármikor megváltoztatni<br>A helyesírási hibákért felelősséget nem vállalunk.<br>készítette: rontap emailcím: rontap@rontap.netne.net";
+   
+
+	
+    </script>
+  </head>
+
+  <body>
+
+
+  <h1 id="start" ">diagrammok az operációs rendszerekről, telefonokról és az intenet használatáról a  VPG-ben</h1>
+ <p class="p">
+  <b>Az adatokat 2013 jan 7-9 között rögzítettük, ~60 VPG-s tanuló megkérdezésével.</b><br>
+  
+	készítette: /rontap/ grafikonok:/GoogleCharts/<br>Köszönöm az összes Válaszolónak és megketintőnek!<br>
+	2013/2014-es tanévben is sor kerül egy ilyen kérdőívre, csak nagyobb pontossággal
+		
+		<div class="phold"id="ph2" onclick="opent2();">
+		<div class="ptitle">	
+			<b>További infóért kattints ide</b><img src="plus.gif" height="20px" id="pimg2">
+		</div>
+			<div class="ptext">
+			A kérdések (zárojelben azok, amiknél csak 40 megkérdezett volt):<br>(Mennyi youtube videót nézel hetente?)<br> Milyen email címed van?<br> Milyen Operációs rendszert használsz?<br> Milyen böngészőt használsz?<br> Milyen telefonod van? [cég/oprendszer]<br> (mennyit gépezel hetente össz)<br> (milyen játékokkal játszass).<br>---<br>A használattal elfogadod a ÁSZF-et amelyet jogunkban áll bármikor megváltoztatni<br>A helyesírási hibákért felelősséget nem vállalunk.<br>készítette: rontap emailcím: rontap@rontap.netne.net<br>
+			
+			</div>
+		
+		</div>
+		
+	</p>	
+	<hr>
+	Ugrás:<br><br>
+	<a class="btn-b" class="btn-b" href="#chart_os">OPerációs rendszer</a>
+	<a class="btn-b" href="#chart_mail">Email szolgáltató</a>
+	<a class="btn-green" href="#chart_phos">Telefon OP.rendszer</a><br><br>
+	<a class="btn-green" href="#chart_phm">Telefongyártók</a>
+	<a class="btn-b" href="#chart_games">Játékok</a>
+	<a class="btn-r" href="#chart_yt">Youtube&nbsp;megtekintések</a>
+	<hr>
+    <span id="chart_brow" href="brow"></span>
+     <span id="chart_mail"></span>
+    <span id="chart_os"  href="os"></span><br>
+   
+    <span id="chart_phos"></span><br>
+    <span id="chart_phm"></span>
+    <div id="chart_games"  style="width: 950px; height: 500px;"></div>
+    azok a játékok, amelyekre 2-nél kevesebben szavaztek,  "más kategóriába kerültek"<br>
+    <div id="visualization" style="height: 500px;"></div>
+    <div id="chart_yt"></div>
+       
+       <script>
+          	opened2=false;
+function opent2() {
+if (opened2){
+ph2.style.height="30px";
+opened2=false;
+pimg2.src="plus.gif"
+}
+
+else {
+
+	
+	ph2.style.height=ph2h+"px"
+	opened2=true;
+	pimg2.src="minus.gif"
+	}
+}
+			
+	ph2h=Number($("#ph2").height());
+	ph2h+=60;
+	ph2.style.height="30px";
+	</script>
+     <script src="main.rjsx" type="text/javascript"></script>
+        </body>
+</html>

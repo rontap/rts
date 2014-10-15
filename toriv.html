@@ -1,0 +1,1572 @@
+<!DOCTYPE HTML>
+<HTML>
+    <Head>
+        <title>Történelem vizsga</title>
+      <meta charset="UTF-8">
+        <meta name="author" content="Elemential">
+      <meta name="description" content="rontap">
+        <meta name="keywords" content="">
+<link rel="stylesheet" type="text/css" href="main.css">
+    <script>
+        appver="ALAPRTS\n RJSX 7";
+        navname="Töri vizsga"; //hogy jelenik majd meg
+        coa=false;      
+        moretag=true;
+        //holvan
+        specnav=true;
+        manimg="f_icons/template.svg";
+        specnavi=["Pihenés","Idővonal a vizsgához ","E-Alkalmazások"];
+        specnavil=["szemkieg.html","timeline.html","rts.html"];
+         
+</script><script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+    </Head>
+
+
+    
+    <body >
+    <div id="body">
+       
+    <rts></rts>
+		<style>
+			#ttable {
+				text-align:center;
+				width:60%;
+				margin:auto;
+				font-weight:300;
+				}
+		#ttable tr td{
+			width:25%;
+			}
+		#ttable #date {
+			font-size:60px;
+			}
+		</style>
+		 <div class="utitle c">Töri vizsgaelőkészítő és tesztelő</div>
+       <center>Szöveg, fogalmazás: Lengyel Petra, Dhillon Vikram, Karas Lívia. Weboldal: Tatai Áron</center>
+       <br>
+		
+	
+		
+        
+       
+       <div class="c">
+         Téma: <div class="slide slideflat c steme hideprint">     
+        <input type="checkbox" value="None" id="slide" >     
+        <label  onclick="MobileS();" for="slide"></label> 
+    </div>
+     <br><br>
+    <b>oldalmagyarázat: </b>A.: ötödikes, Horváth Péter Törikönyv. I,II,III.: Száray-s könyvek<br>
+    </div>
+      
+       
+       
+       <TABLE id="navig">
+        <tr id="hold">
+         <th>Kész?</th>
+         <th>#</th>
+         <th>Lecke neve</th>
+         <th>Lecke helye</th>
+        </tr>
+		<tr>
+		 <td colspan="4" class="c">Az első 20 lecke a lenti "összes lecke megjelenítése" gombbal tekinthető meg</td>
+		</tr>
+
+       </TABLE>
+       <br>
+       <span class="_square hideprint">
+       <button onclick="fi();tetelupd(35,0);" id="l">összes lecke megjelenítése</button>
+        <button onclick="opclose();" id="l2">meglévő leckék be/kibontása</button>
+       <a href="tori_0324.pdf" target="_blank"  class="noa btn-menu big ubuntu" style="padding: 8px;vertical-align: -1px;"><img src="f_icons/package.png" width="50px"> Letöltés PDF formátumban</a>
+        <br><br>
+         <a href="vikram.doc" target="_blank"  class="noa btn-menu big ubuntu" style="padding: 8px;vertical-align: -1px;"><img src="f_icons/package.png" width="50px">Vikram tételeinek letöltése (fogalmazás)</a>
+         <a href="livi.zip" target="_blank"  class="noa btn-menu big ubuntu" style="padding: 8px;vertical-align: -1px;"><img src="f_icons/package.png" width="50px">Lívia tételeinek letöltése (jegyzet)</a>
+        </span>
+       <br>
+       <script>
+       function fi() {
+		  a=' <tr id="hold">';
+         a+='<th>Kész?</th>';
+         a+='<th>#</th>';
+         a+='<th>Lecke neve</th>';
+         a+='<th>Lecke helye</th>';
+         a+=' </tr>';
+         l.disabled=true;
+		  navig.innerHTML=a ;
+		   }
+		   
+		   allclose=false;
+		   
+		   function opclose() {
+			   if (allclose==true) 
+				{
+					allclose=false; console.log(allclose);
+					} 
+				else { 
+					allclose=true; console.log(allclose);
+				} 
+			   for (i=0;i<document.getElementsByTagName("details").length;i++)
+		   {
+				
+				document.getElementsByTagName("details")[i].open=allclose;
+		   }
+			   }
+		  </script>
+       
+		  
+       </script>
+       <content>
+          <txt / >
+			  
+	<details>
+		<summary class="utitle cs">I.-X. Lecke</summary>
+		  
+		<details>
+          <summary class="utitle ca" id="1">I.: Az Ókori Egyiptom története</summary>
+
+		 Afrika ÉK-i része: Vörös tenger, Földközi tenger, Szahara veszi körül elszigetelve a többi civilizációtól.<br>
+		 Élet szorosan kapcsolódik a Nílushoz: <b>öntözéses földművelés.</b>
+         <div class="floatbox fbx-red ">3 évszak: aratás, sarjadás, forróság</div>
+         Kő : építőnyag, szerszám.<br>
+         <br>
+         <span class="x">
+		<div class="big ubuntu">Archaikus kor (Kr.e. 3000-2700)</div>
+		jégkorszakban füves puszta
+		<div class="floatbox fbx-black">KŐKOR</div>
+      a terület sivataggá alakult <blue>ezért</blue> népek Nílushoz vándoroltak.<br>
+       <b>Neolitikumban:</b> földművelő falvak
+        Alsó és Felső-Egyiptom kialakul. Harc köztük; <b>Kr.e.2900</b> Ménész egyesíti Egyiptomot.<br>
+		Vallás, írás, művészet többek közt ebben az időszakban alakul ki.
+		<div class="floatbox fbx-blue">Politeizmus: Többistenhit</div>
+		<p>
+			Politeista, tériomorf vallás. Fáraó: Istenként tisztelték, hatalmának a jelképe: Piramis<br>
+			Vallás: halál utáni élethez kell a test is (mumifikálás),  sok tudományos megállapítás <g>pl.:</g> vérkeringés<br>
+					
+			hieroglif írás = szent véset (<i>Mássalhangzóírás</i>)		
+			
+		</p><br>
+		<br>
+		</span>
+		<span class="x">
+        <div class="big ubuntu">Óbirodalom (Kr.e. 2700-2200)</div>
+		A fáraó despotikus hatalom: istenként tisztelik, egész ország fölött rendelkezik, kegyétől függenek az emberek.
+		<div class="floatbox fbx-black">RÉZKOR</div>
+		<b>Hierarchia:</b>
+		<ol>
+			<li>Fáraó</li>
+			<li>Papok</li>
+			<li>Hivatalnokok</li>
+			<li>Szabadok</li>
+			<li>Rabszolgák (hadi foglyok)</li>
+		</ol>
+		
+
+		<br>
+		</span>
+		<span class="x">
+        <div class="big ubuntu">Középbirodalom (Kr.e 2060-1780)</div>
+        <div class="floatbox fbx-red ">Óbirodalom felbomlása utáni átmeneti időszak</div>
+		<b>Megerősödött papi hatalom: de a fáraó hatalma csökkent.</b>
+		<blue>oka:</blue> öntözéses földművelés miatt egységes irányítás kell<br>		
+		papi+hivatalnoki réteg  nem lehet visszaszorítani : saját birtokok a gazdagoknak<br>
+		Középbirodalom megbukik: <i>hükszószok</i> miatt (palesztin nép)<br>
+		<div class="floatbox fbx-black">BRONZKOR</div>
+		
+		<br>
+		</span>
+		<span class="x">
+        <div class="big ubuntu">Újbirodalom (Kr.e. 1550-1000)</div>
+		hükszószoktól átveszik a fegyvereket: Thébából kiindulva létrehozzák az újbirodalmat<br>
+        <b>Önállóság:gazdasági fellendülés </b> <br>
+        <ul>
+			<li>Új állatok: juh, teve, ló (harci szekerek elé)</li>
+			<li>Ekés földművelés</li>
+			<li>hódítás: Palesztina+D felé: vezető réteg befolyása nő</li>
+        </ul> 
+        <blue>ezért:</blue> Egyiptom nagyhatalmi kora 
+		<div class="floatbox fbx-black">VASKOR</div>
+		II Ramszesz Kr.e. XIII sz. csata és építkezés<br>
+		Késöb konfliktusok: <u>Amon papság</u> vs Ehnaton (egyistenhit)<br>
+		<blue>majd:</blue> tengeri népek bevándorlása: innentől Egyiptomot-t idegen népek uralják<br>
+		</span>
+<br>
+<hr>
+<br>
+</details>
+<!--																	Második lecke-->
+<details>
+<summary class="utitle ca" id="2">II.: Spárta állama</summary>	
+
+	<b>Dórok</b> alapítják, akhájokat győzik le  (<blue>annak ellenére hogy</blue> 10x nagyobb az akháj sereg)<br>
+     belső egység megőrzése fontos: Minden Spártai Polgár egyenlő részt kap az állami földekből<br>
+     <div class="floatbox fbx-red">De nincs teljes egyenlőség: birtokos arisztokrata réteg vezet</div>
+     Cél:  harcossá válni: fenntartani a hatalmat. teljes jogú polgársághoz: katonáskodás kell!<br>
+     <br>
+     
+     <span class="x">
+     <div class="big ubuntu">Társadalom</div>
+
+	<b>Körüllakók</b>:
+	<p>szabad jogállásúak, nincs polgárjog<br>
+		dór eredetűek, sokkal többen, mint a szabad polgárok, peremterületeken élnek<br>
+		Kézműipari termékek, bányászattal foglalkoznak<br>
+		nincs politikai joguk de adót fizetnek.
+	</p>
+	<b>Helóták</b>
+	<p>
+		legtöbben FÖLDMŰVESEK az állam által kiosztott parcellán <blue>és</blue><br>
+		az állam tulajdonát képezik<br>
+		termés felét beszolgáltatni a parcellát birtokló spártai polgárnak<br>
+		családban éltek és saját házuk volt, vagyonuk örökíthető<br>
+		<b>Jogfosztott őslakók</b>: nincs politikai jog, megölhetik őket büntetlenül
+	</p>
+	Sokkal többen vannak mint a spártaiak<br>
+   
+	<br>
+	</span>
+	<span class="x">
+	 <div class="big ubuntu">Az állam</div>
+
+
+	
+	<blue>I.:</blue> Népgyűlés: 30 év feletti polgár csatlakozhat, szavazás közfelkiáltással.
+	Feladata: elfogadhatja vagy elutasíthatja a javaslatokat <blue>amiket</blue> a <br>
+	 <div class="floatbox fbx-red">2 király: elsősorban fővezérek</div>
+	<blue>II.</blue> Vének tanácsa terjeszt fel. Vének tanácsának a felépítése:  2 király+28 vén (<i>60 év feletti</i>)	</br>
+  
+	<blue>III.</blue> 5 felügyelő: Állam tényleges irányítói  1 évre a népgyűlésből. Feladata: bíráskodás , királyok és tisztviselők ellenőrzése.
+	<br>
+
+	
+ <div class="floatbox fbx-blue">Peloponnészoszi szövetség: Kr.e. VI sz.   Spárta hatalmi súlyát biztosítja és támogatja arisztokratikus államokat</div>
+
+<br>
+</span>
+<span class="x">
+<div class="big ubuntu">Spártai nevelés</div>
+Az életképtelen csecsemőket kiteszik (taigetosz-ra)<br>
+                          lány szerepe: katonát nevelő anya<br>
+                          <ul>
+							<LI>anyaság miatt nagy tisztelet</LI>
+							<li>szabadon választhatnak férjet</li>
+							<li>szadad: testedzés, dalok, tánc</li>
+                          </ul>
+                          fiú szerepe: katona <blue>ezárt</blue> 7 éves kortól állam neveli katonának
+                          <div class="floatbox fbx-orange"><b>Krüpteia</b> -  rejtőzködés : felnőtté válási ceremónia a fiúknál</div>
+                          <ul>
+							<li>nehéz körülmények</li>
+							<li>könyörtelenség+szigor</li>
+							<li>30 éves koráig családtól távol - felséget titokban látogathat</li>
+							<li>60 éves korig katonaköteles</li>
+                          </ul> 
+                          </span
+   
+   <br>
+<hr>
+<br>  
+</details>                                                               
+<!--																	Harmadik lecke-->
+<details>
+<summary class="utitle ca" id="3">III.: Görög-perzsa háborúk</summary>	
+<span class="x">
+	<div class="big ubuntu">Első szaksz: Kr.e. 492-490</div>
+	perzsa terjeszkedés: Földközi-tenger melletti kereskedelemben érintett poliszok <g>pl.:</g> <br>
+	Elvágják a fő kereskedelmi utakat (a perzsák) <blue>Ezért</blue>
+	
+	<img src="sword.png" width="15px"> Perzsák vs Athén, mert A segített I Dareiosz ellen lázadó kis-ázsiai görög jón lakosságnak<br>
+	<img src="sword.png" width="15px"> Perzsák vs <u>thrákok</u> (Kr.e. 492) megsemisül a hajóhad<br>
+	<img src="sword.png" width="15px"> Marathón Kr.e. 490:
+		 <div class="floatbox fbx-orange"><b>falanx:</b> zárt hadrend</div>
+	 
+	<table>
+		<tr>
+			<th></th>
+			<th>Dareiosz  </th>
+			<th><u>Miltiádész</u></th>
+		</tr>
+		<tr>
+			<th>ember</th>
+			<td>20000-25000  </td>
+			<td>9000</td>
+		</tr>
+				<tr>
+			<th>Egységek</th>
+			<td>lovas+gyalogos </td>
+			<td>hoplita
+			<div class="floatbox fbx-orange"><b>hoplita:</b> - nehézfegyverzetű gyalogos</div>
+			</td>
+		</tr>
+
+		<tr>
+			<th>Táv</th>
+			<td>távolról (nyílzápor)</td>
+			<td>közelről (pajzs)</td>
+		</tr>
+	</table>
+	
+          <br>
+	Görögök: Perzsa bir újra támad :  - szf-i hadsereg megerősítése <blue>mert</blue>
+	<b>arisztokrácia</b>: földjeik védelme és politikai befolyás miatt.<br>	
+	Ariszteidész: kereskedők és kézműves réteg.<br>
+	Themiszotklész: hajóhad fejlesztése = kereskedelem fejlődése. <g>VS </g><br>
+		 		
+	Teisztoklész ötletét tartják jónak <b>cserépszevazás</b>, <blue>ezért</blue> Ariszteidészt száműzik.<br>
+	<br>
+	</span>
+	<span class="x">
+		<div class="big ubuntu">Második szakasz: Kr.e. 480-479</div>
+   <img src="sword.png" width="15px"> Xerxész vs <u>Görögök</u>   Kr.e.  480<br>
+    sok városállam behódol Perzsiának <green class="ubuntu">DE</green> Athén és Spárta ellenáll<br>
+   <img src="sword.png" width="15px"> Thermopülai csata: <u>Xerxész</u> vs Leónidasz  (300 emberrel, vesztenek)<br>
+    <blue>ezért is</blue> a görögök  szárazföldiek <i>Isztmoszig</i> visszavonulnak és <b>feladják Athént</b>
+           <br>                                                                         
+    <img src="sword.png" width="15px">Themisztoklész csatát eszközöl ki a tengeren <blue>ahol</blue> a görögök nyernek
+Xerxész csapata egy részével visszavonul, maradék megsemmisül (Palataia Kr.e. 479)<br>
+    <img src="sword.png" width="15px"> Mükalé-hegyfok  görög hajóhad: Kr.e. 479:  Égei tengeren fölény
+
+</span>
+
+<br><br>
+<span class="x">
+<div class="big ubuntu">Befejező szakasz Kr.e. 479-448</div>
+
+ Poliszok+Athén (vezető) megalapítja a <b>Déloszi-szövetség</b>et (változó eredményeket ér el)  Kr.e. 478<br>
+      <div class="floatbox fbx-red">Déloszban van a kincstár</div>                                     
+ Spárta ellenzi a további háborúzást, mert Athén megerősödik
+                                       
+  Kr.e. 448: <b>Béke: </b>  
+	<blue>I.:</blue>Perzsák lemondanak: égei-tengeri jelenlét, tengerszorosok, jón városok feletti uralom<br>
+     <blue>II.:</blue>    Athén lemond a perzsák elleni támadásról   <br>                
+     
+</details>
+<details>
+<summary class="utitle ca" id="7">VI.: A római köztársaság kiépülése és működése</summary>
+
+	
+<span class="x">
+	
+	<b>Köztársaság váltásban, felváltotta a császárság</b><br>
+	előkészítője: <b>Julius Caesar</b>. Ő nem volt császár.<br>
+	Sikeres hadvezér, nagy vagyon <blue>tehát</blue> nagy hatalom
+	 <div class="floatbox fbx-red">birodalomhoz csatolta Galliát (mai Franciaország)</div>
+	 <br>
+	 Zűrzavar ekkor: Senki nem tud rendet tenni <blue>közben</blue>
+	 Caesar egész Itáliát hatalmába kerítette (hadsereg)<br>
+	 <blue>Ezért</blue> a szenátus örök teljhatalmat szavaztak meg.<br>
+	 Béke, a köztársaság megszűnése. <blue>De!</blue> sokan vissza 
+	 <div class="floatbox fbx-blue">Március idusa</div>akarták szerezni a hatalmát/vagyonát <blue>ezért</blue>	 
+	  Kr.e. 44. március 15-én merényletet szerveztek ellene.
+	 <br><br>
+<div class="big ubuntu">Az isteni augustus</div>	 
+<div class="floatbox fbx-red">Ceasar unokaöccse és fogadott fia</div> 
+	 Kiújultak a belső harcok. (hatalmi harc)<br> 
+	 
+	 Győztes: <b>Octavianus</b> Teljes hatalommal
+	  
+	 . Felvehette az Augustus nevet.<br>	  
+	 Róma első császára Kr.e. 27-től Kr.u. 14-ig uralkodott<br>
+	 <div class="floatbox fbx-orange">isteni, fenséges</div>
+	 Zsoldoshadsereg, ő a vezetője. Kincstár vezetője.<br>
+	 A népgyűlés elveszti hatalmát, a szenátusnak is csak látszólagos hatalma van.<br>
+	 <div class="floatbox fbx-blue">cicus játékok<br>segítette a szegényeket</div>
+	 Béke, és jólét
+		 
+      <br><br>
+ <div class="big ubuntu">Hadsereg</div>
+ 	   25 légió. 6ezer fő/légió. 
+ 	   <b>Zsold</b>, leszereléskor <b>föld</b>et igényelhetnek.<br>
+ 	   Szolgálat: 20-25 év
+ 	     <div class="floatbox fbx-red">veteránok ismét fegyvert fogtak, ha a császár hívta őket</div>
+       <br><br>
+ <div class="big ubuntu">Provinciák</div>  
+		A császárság elő százada: terjeszkedés.:<br>
+		Egyiptomot, a teljes Hispániát, Britanniát és Pannóniát (Dunántúl) és a Földközi tenger partvidékét foglalták el.<br>
+		<b>Legnagyobb kiterjedés:</b> Kr.u.100, egységes birodalom.
+		Peremterületeken sánc, kiváló utak<br>
+		<div class="floatbox fbx-orange">erődrendszer (limes) </div>
+ <br>   <br>
+ 
+  <div class="big ubuntu">Római világ</div>  
+	<b>Művelődés:</b> magas szintű, görögöktől átvett.<br>
+	<div class="floatbox fbx-red">A cirkusz és a cirkus maximus nem ugyanaz, az utóbbiból csak egy volt, Rómában</div>
+	Latin betűs írás, -nyelv elterjedt, provinciákban is. Provinciákban is "nagyvárosok", rómaiak támogatták<sup title="nemtudom miért">?</sup><br>
+	tudomány <abbr title="ugyanúgy">uu.</abbr> görög mintára<br>
+		 Lívius,  142   Róma története.<br>
+		 Cicero (Kr.e.I.század) 
+	<br>    
+	<b>Építkezések:</b> vízvezeték, színház, kövezett utcák, cirkuszok, könyvtárak (pergamenre irtak) és fürdők<br>
+	  <div class="floatbox fbx-blue">
+	  történetírók pergamenre, kézzel írt könyveit (és tekercseit) 
+	 </div>
+	 <b>Utak</b>
+	 Használták <blue>többek közt</blue>
+	 <li>légiók</li> 
+	 <li>kereskedők : hispániából, galliából érceket ; északról	bőröket, prémeket</li> 
+	 <div class="floatbox fbx-orange">Borostyánkő-út (balti tengerig)</div>
+	 <b><blue>DE!</blue> egyszerűbb és olcsódd a tengeri szállítás</b><br>
+	 <li>Gabona : Egyiptom, Afrika</li>
+	 <li>Itáliában inkább szőlőt, olajat és gyümölcsöt termeltek</li>
+	<li>Utazók</li>
+	
+	<br><br>
+  <div class="big ubuntu">A császárkor <i>Árnyai</i>, Róma városa</div> 
+    <div class="floatbox fbx-orange">Néró "véres kültő", <grey>666</grey></div>
+  Biztonság, <blue>DE</blue> veszély: Hatalomvágy.<br>
+  <b>Néró</b>	
+	 Kr.u. az első század közepén<br>
+	 Örült. Azt hitte, hogy: nemcsak hatalmas uralkodó, hanem egyben kiváló költő, énekes és kocsiversenyző. (a kételkedőket megölte)<br>
+	  Tűvész: leégett róma nagy érsze.
+	  <br>
+	  <b>Róma városa</b> görög minta, nagyváros. "Az örök város"
+	  <br>
+	  Központja: Forum Romanum. <blue>amit</blue> piacként, gyűléstérként használtak. Levéltár (ugyanitt): határozatok tárolása, szenátus itt ülésezett<br>
+	  Amfiteátrum = körszínház
+	  <div class="floatbox fbx-blue">
+	   Colosseum egyik legnagyobb
+	 </div>
+	 <b>A házak</b> 3-5 emeletes bérház, nem kénylemes. Kevés bútor. Ágy: alvás evés írás.<br>
+	  <br><br>
+	</span>
+	</details>
+	<details>
+	<summary class="utitle ca" id="8">VIII.: Julius Caesar hatalma - az egyeduralom kiépítése és Augustus principátusa	</summary>	
+<span class="x">
+	Julis Caesar: Patrícius, előkelő, Néppárti.<br>
+	Késöbb játékok szervezésével tömeg rokonszenvét megnyeri, pénzét elveszti. <blue>megoldása</blue> Hispánia provinciát kihasználta.<br>
+	Grassus és Pompeius (hadvezér) kibékiti egymást, szövetség: <b>triumvirátus</b>
+	<div class="floatbox fbx-orange">Három férfi uralma</div>
+	Caesar konzul, majd helytartó<br><br>
+	<div class="big ubuntu">Caesar egyeduralma</div>
+	Crassus meghal (-53) <blue>ezért</blue> megszűnik a Triumvirátus.<br><div class="floatbox fbx-blue">Mert C. ütőképes, hozzá hű hadsereget szervezett</div>
+	Pompeius a szenátus oldalára áll<br>	
+	Mikor hazarendelték, átlépte a Rubikont (A kocka el van vetve) <blue>ezért (is)</blue> polgárháború tör ki.<br>
+	Caesar egész Itáliát hatalmába kerítette (hadsereg)<br>
+	 <blue>Ezért</blue> a szenátus örök teljhatalmat szavaztak meg.<br>
+	 Béke, a köztársaság megszűnése, aranypénz veretése, föld osztás volt az intézkedései között.
+	 Adott római polgárjogot adott sok provinciabelinek
+	 <div class="floatbox fbx-orange">900-ra</div><br>
+	 
+	 Csökkentette a szenátus befolyását: növelte a létszámát 
+	 <br>
+	 <b>Naptárreform</b> szököév.<br>
+	 <br> <blue>DE</blue> 
+	 egy köztársaságpárti összeesküvés során Brutus és Cassius vezetésével megölték (Kr.e.44-ben)
+	 
+	 kiújultak a belső harcok. (hatalmi harc)<br> 
+	 <br>
+	 <div class="big ubuntu">Az isteni augustus</div>	
+	 II. Triumvirátus (-43), felosztották a birodalma, <blue>de </blue> hatalmi harc (fegyveres is)<br>
+	 <div class="floatbox fbx-blue">Actiumnál került sor a döntő csatára  (-31)</div>
+	 Győztes: <b>Octavianus</b> Teljes hatalommal (rómaiak támogatták)<br>
+	 . Felvehette az Augustus nevet.<br>	  
+	 Róma első császára Kr.e. 27-től Kr.u. 14-ig uralkodott<br>
+	 <div class="floatbox fbx-orange">isteni, fenséges</div>
+	 <br>
+	 <div class="big ubuntu">augustus egyeduralma</div>	
+	 Fennttartja a köztársaság látszatát<br> <blue>de közben</blue>
+	  <div class="floatbox fbx-red">Rendszerét a köztársasági formákkal leplezett egyeduralmat principátusnak nevezezzük.</div> 
+	 sérthetetlen néptribunus, vétójog. Censor is volt.
+	 Zsoldoshadsereg, ő a vezetője. Kincstár vezetője.<br>
+	 A népgyűlés elveszti hatalmát, a szenátusnak is csak látszólagos hatalma van.<br>
+	 
+	 Béke, és jólét, circus, szegények segítés
+	
+	<br>
+</span>
+</details>
+<details>
+<summary class="utitle ca" id="9">IX(/1).: A Római Birodalom bukása és a Frank Bir. kialakulása</summary>	
+<span class="x">
+
+	Lelassult a terjeszkedés, II.sz. legnagyobb kiterjedését elérte.<br>Állandó védekezés (katonaszűkség) <blue>ráadásul</blue> a császári hatalom meggyendült
+	 <div class="floatbox fbx-red">Hadsereg beleavatkozott a politikába</div> 
+	<br>
+	Kevesebb volt a rabszolga, emiatt a nagybirtokok távoli kis parcellánkat, terményhányad fejében szabad bérlőknek (colonusoknak) adták ki művelésre<br>
+	Kereskedelem lebénult: Provinciák is fejlettek, nincs szűkség ra. Kül.ker.: Luxuscikkek <blue>amiért</blue> arannyal fizettek <blue>vagyis</blue> kiáramlott a pénz az országból
+	<br>
+	Munkaerőhiány: A rabszolgák helyett a kisparasztok és a földbérlők dolgoztak<br>
+	<b>Próbálták megállítani a hanyatlást</b> <g>pl</g> Nagy Konstantin.: Átszervezés, barbárok bevonása a hadseregbe, <b>új birodalmi főváros</b>: Konsantinápoly.
+	<div class="floatbox fbx-blue">Bir. keleti része</div> <br>
+	Tovább gyengül a birodalom, nem képes védekezésre: Kettészakad 
+	<div class="floatbox fbx-blue">Theodosius 395</div>
+	a birodalom.  Nyugati terület veszélyeztetettebb, fejletlenebb<br>
+	<br>
+	<div class="big ubuntu">Hunok és a NyR bir. bukása</div>	
+	Beözönlöttek a germán népek: Visszaszorult a R. civilizáció, eléptelenedtek egyes vidékek<br>
+	<u>Hunok</u> vs Gótok: Nagy népvándorlást idéztek elő. <blue>Késöbb</blue> a Kárpátokban hatalmas birodalom<br>
+	<u>Róma</u> vs Hunok (451) . Bár Róma nyert, fel lett dúlva<br>
+	<div class="floatbox fbx-black">KÖZÉPKOR kezdete</div>
+	476.: Odoakker germán vezér lemondatta trónjáról az utolsó császárt, Romulus Augustulust. 
+	<br>
+	Figyelem! a ix. tétel nincs végig kidolgozva, csak a NyR bir bukásáig!<br>
+	</details>
+	
+	
+
+</span>
+<details>
+<summary class="utitle ca" id="10">X.:A pápaság és a császárság politikai küzdelme a XI-XIII. században</summary>	
+<span class="x">
+	<b>Német-Római Bir.</b> 962 : Európa legjelentősebb hatalma
+	<li>Tartományi felépítés</li>
+	<li>Császár hatalmai: Saját tartomány és egyházi hűbér</li>
+	<div class="floatbox fbx-blue">Invesztitúra: beleszól a pápa megválasztásába</div>
+	Invesztitúra jog: császár gyakorolja<br>
+
+	Egyház tekintélye csökken: <b>elvilágiasodik</b> <blue>ezért</blue> csökken a tekintélye
+		<br>
+	 Cluny reform: egyház megújítása: (bencés kolostor)
+	 <li>Szimónia: egyházi méltóságok megvásárlásának eltörlése</li>
+	 <li>colibátus: papi nőtlenség bevezetése</li>
+	<br>
+	<div class="big ubuntu">Az invesztíturaharc</div>
+	<blue>Cél</blue> csökkenteni a függést a császártól: Ne szóljon bele a császár a pápaválaszásba<br>
+	VII.Gergely pápa (1073-1085): A bíborosoké legyen az invesztitúrajog. egyház hatalmának újboli megerősítése <b>VS</b><br>
+	IV.Henrik császár (1056-1105) ellenszegül: NrB egy része az hűbéreseken nyugszik<br>
+	<blue>nyer:</blue> IV. Henrik: német főpapokkal együtt megfosztja Gergelyt a tróntól
+	<blue>erre</blue> Gergely kiátkozza. <blue>azaz</blue> az alattvalóinak nem kellett engedelmeskedni
+	<div class="floatbox fbx-red">Canossa-járás, 1077</div>
+	<br>Gergely feloldozza Henriket, de kiújulnak a viták:
+	Végül Gergely és Henrik újabb harcok után kompromisszumra kényszerülnek:<br>
+	<b>Wormsi konkordátum 1122</b>: megosztott invesztitúrajog<br>
+	<li>egyházi hatalmat a pápától kapnak a főpapok</li>
+	<div class="floatbox fbx-red">Továbbra is a császár hűbéresei</div>
+	<li>császár ikatja be őket</li>
+	<blue>Azaz</blue> a pápaság meg tudta őrizni a függetlenségét a világi hatalommal szemben
+	<br><br>
+	<div class="big ubuntu">Az Pápaság fénykora</div>
+	III. Ince  (1198-1216) alatt fénykor<br>
+	XIII. század: <b>koldulórendek:</b>
+	Prédikálnak, tanítanak és koldulásból tartják fennt magukat.<br>
+	<li>Assisi Szent Ferenc: ferencesek</li>
+	<li>Szent Domonkos: domonkor rend</li>
+	<br>
+	Mozgalom, ami a fennálló társ. berendezkedést tagadja: <b>eretnek</b><br>
+	Pápaság 1215-ben  (a IV. lateráni zsinaton) bevezeti az <b>inkvizíciót</b> <grey><i>(juhéé...)</i></grey><br>
+	<blue>azaz</blue> az egyházi bíróságot, ami kínvallatást is alkalmazott.
+	<br><br><div class="floatbox fbx-blue">nagyon sok tartomány</div>
+	<div class="big ubuntu">NrB</div>
+	
+	Császári cím névlegesség degradálódott<br>
+	<div class="floatbox fbx-blue">családjának adományozta a területeket</div>
+	Habsburg Rudolf 1273 császár: kevés birtok. <blue>ezért</blue> birtokok növelése (hatalom növelése)<br>
+	
+	<img src="sword.png" width="15px" id="morva"> <u>H.R.</u> vs II. Ottokár  (cseh, 1273, Morvamező)<br>
+	H.R. Kialakítja a Habsburg dinasztiát<br>
+	<div class="floatbox fbx-orange">7 választófejedelem</div>
+	<blue>majd a trónon</blue> IV. Károly: Német Aranybulla (1356): császárválasztás
+</span>
+</details>
+</details>	<!---------------------------------------------------első-tíz-lecke-határa------------>
+	<details>
+		<summary class="utitle cs">XI.-XX. Lecke</summary>
+<details>
+<summary class="utitle ca" id="11">XI.: A Városok kialakulása Európában</summary>	
+<span class="x">
+	<div class="big ubuntu">Gazdasági fellendülés</div>
+	mez.gaz. fejlődés: 2-3 nyomásos gazdálkodás egyre nagyobb területen<br>
+	Nőtt a népesség 38-ről 75-re<br>
+	<div class="floatbox fbx-orange">hospesek:
+	 fejlett területekről kivándorló telepesek</div>
+	Vizimalom: erőgépként használják, technikai forradalom<br>
+	<br>
+	<div class="big ubuntu">Városok születése</div>
+	Ókori városok elpusztultak, emberek egyházi/királyi birtokok körül vannak <br>
+	Vagy nemeses vagy jobbágy<br>
+	<div class="floatbox fbx-blue">DE! nem önállóak</div>
+	Létrejöttük: <blue>első ok:</blue> távolság. A kereskedők áruik védelmére. <blue>majd</blue> csatlakoznak a kézművesek<br>
+	Szervezett közösségeket hoznak létre (<a class="noa l">kommunákat</a>). Kiharcolják az önállóságukat: <b>városi önkormányzat</b><br>
+	Kiváltságok: 
+	<li>függetlenítik a városlakókat a kötöttségeiktől</li>
+	<li>választják bíróikat</li>
+	<li>egy összegben adóznak</li>
+	<li>városi polgár: sem nemes sem jobbágy</li>
+
+	A városlakók többségét a városi politikából kizárt szegények (plebs) alkották (ők is szavazhattak<sup>?</sup>). Nagyobb városok az uralkodótol függtek<br><br>
+	<div class="big ubuntu">Céhek</div>
+	
+	<div class="floatbox fbx-orange">Céh:
+	 érdekvédelmi szervezet</div>
+	 szakmánként más, szigorú minőség, céhen belül nincs verseny<br>
+	 nincs verseny <blue>ezért</blue> munkaidő és árak szabályozása<br>
+	 <b>ranglétra:</b>
+	 <ol><li>Inas</li>
+	 <li>Legény</li>
+	 <li>Mester :  remekmunka és vándorút szűkséges</li></ol>
+	 Céhen kívüli iparűzőket (kontárokat) üldözik<br>
+	 Céh: fontos szerep a város életében:
+	 <li>rendfenntartás</li>
+	 <li>fal örzése</li>
+	 <li>szociális feladatok</li>
+	 	<br>
+	<div class="big ubuntu">"Élet" a városban, Kerekedelem</div>
+	 <b>fal:</b> védelem. Fal melletti többemeletes házak közti terület: sikátorok
+	 <div class="floatbox fbx-blue">Nincs csatorna: járvány :/</div><br>
+	 Városok száma <abbr title="Nyugat Európa">NyE.</abbr>-ban és <abbr title="Itália">It.</abbr> gyorsan nő<br>
+	 <li>Közepes városok: 4-5e ember</li>
+	 <li>Nagyvárosok: 10-15e ember ; árumegállító jog</li>
+	 Fizetőezköz: aranypénz. Kerekedelem:  Piac és távolsági <blue>ami</blue> veszélyes <blue>de</blue> nagy haszon<br>
+	 Vizi utazás kezdetleges <blue>ezért</blue> zarándokvonalak:<br>
+	 <b>Levantei</b><br>
+	<p>
+		Legnagyobb jelentőségű ker. vonal<br>
+		Velence genova uralja<br>
+		fűszerek és luxuscikk szállítása, arannyal és iparcikkel fizettek
+	</p><br>
+	 <b>Hanza</b><br>
+	 <div class="floatbox fbx-blue">gabona, hering, visz, kátrány</div>
+	<p>
+		Balti tengernél:<br> nyersanyak + élelmiszer nyugatra<br>
+		Észak-Németország és Flandria városaiból iparcikkeket (posztó, fegyver, szerszám) Angliából gyapjút (textilipar alapanyaga) szállítottak keletre<br>		
+		1161 Hanza-szövetség
+	</p>
+	<br>
+	A kettő vizi ker. utat egy szf.-i kötötte össze.
+	<li>kezdetben Champagneban</li>
+	<li>késöbb délnémet piacok is (<g>pl</g> Augsburg)</li>
+	Köz.Eu Bécsen keresztül kapcsolódott be.
+	</span>
+	</details>
+
+
+
+<details>
+<summary class="utitle ca" id="12">XII.: Az iszlám megjelenése és térhódítása</summary>	
+<span class="x">
+	<div class="ubuntu big">Az iszlám kialakulása</div>
+	Arab félszigeten Nomád arabok (beduinok)<br>
+	Harc egymással: Vízért, állatokért, oázisokért.<br>
+	<div class="floatbox fbx-blue">Ősi zarándokhely</div>
+	<b>Tömjénút</b>: ker. útvonal. Mentén városok jöttek létre. Mekka: egyik legjelentősebb ker. város.<br>
+	<b>Mohamed</b> 570-632: Új tanok: ISZLÁM. Zsidó, keresztény és pogány arab hitvilágból/hagyományokból alakította ki.<br>
+	<div class="floatbox fbx-orange">Iszlám:
+	 endedelmesség istennek</div>
+	 <b>egység gondolata</b> Istenben való hit fontosabb mint a vérségi kötelék. Végítéletről beszél.<br>
+	 Elesettek gyámolítására szólítja fel a kereskedőket <blue>ezért</blue> kiüzik Mekkából <blue>ami</blue> a mohamedán időszámítás kezdete (kr.u. 622)<br>
+	 Visszaengedik Mekkába: Kába tiszteletét + mekkai zarándoklatot közelezővé teszi<br><br>
+	 <div class="ubuntu big">A Korán <i>(hirdetés, zsolozsmálás)</i></div>
+	szigorú  <abbr title="egyistenhit">monoteizmus</abbr>. Alapszabályok:<br>
+	<ol>
+	 <li>Allahban, az egyetlen istenben, s prófétájában, Mohamedben való hit.</li>
+	 <li>Napi ötszöri ima a szent város, Mekka felé fordulva. Ezt rituális mosakodás előzi meg.</li>
+	 <li>Kötelező alamizsnaosztás a szegények támogatására.</li>
+	 <li>A Ramadán havi böjt betartása, mikor napkeltétől napnyugtáig tilos enni és inni.</li>
+	 <li>Minden igazhitű életében legalább egyszer zarándokoljon el Mekkába.</li>
+	</ol>
+	Tilos:
+	<ul>
+		<li>sertéshús, alkohol fogyasztása</li>
+		<li>többnejűség (maximum 4...)</li>
+	</ul>
+	Hit  terjesztése <blue>akár</blue> erőszakosan is: <b>dzsihád</b>
+	<div class="floatbox fbx-red">elesett katonák azonnal a paradicsomba kerülnek</div>
+	<br>papok: nem közvetítenek Isten-ember között <b>csak</b> vezetik a szertartást<br>
+	<b>Összeolvadt</b> az államhatalommal, az élet szinte minden megnyilvánulását a vallás szabályozta. <br>
+	Kalifa: Állami <b>és</b> vallási vezetők
+	Kádi: bíró <div class="floatbox fbx-blue">a korán alapján ítélkeznek</div><br><br>
+	 <div class="ubuntu big">Az arab bir.</i></div>
+	 Közel Kelet-et elfoglalja. Nagy siker <blue>mert</blue> bizánci bir. VS perzsa bir. kimerülnek<br>
+	 <div class="floatbox fbx-blue">kereskedőik egész világot bejárják</div>
+	 emberek túladóztatása <blue>viszont ennek ellenére</blue> felszabadítókként tekintettek rájuk.<br>
+	 ~100 év alatt létrejön az <b>arab birodalom</b>: Hispániától Indiáig. Előretörés megállítói: Frankok. 
+	 <img src="sword.png" width="15px"> 732/740 Poitiers /Bizánc
+	 <div class="floatbox fbx-red">Poitiersben Martell Kalapács Károly</div>.<br>
+	 Kalifák: <b>Despotikus</b> uralkodók lettek<br>
+	 Arisztokrácia: Katonai vezető réteg földbirtokkal<br>
+	 Földbűvelők: szabadok és rabszolgák<br>
+	 Virágzás: Selyemút felügyelete, fejlett kézműipar
+	  <div class="floatbox fbx-red">damaszkuszi acél, kordován csizma, muszlin szövet</div>	 
+
+	 <br><br>
+	 <div class="ubuntu big">Az arab kultúra</div>
+		Türelmes más kultúrákkal szemben.<br>
+		Fejlett: Matek, Kémia és csillagászat<br>
+		Az arab kultúra megőrizte az antik műveltséget, és később közvetíthette az ismét felemelkedő Európa felé.
+	
+	</span>
+	</details>
+<!--																	Negyedik lecke-->
+	
+	<details>
+<summary class="utitle ca" id="13">XIII(/1).: Közép-EU fogalma és története a XI-XV. században</summary>	
+<span class="x">
+	A <b>történelmi régiókat</b> társadalmi, gazdasági és kulturális tartalmak jellemzik. Ahogy ezek az összetevők változnak, úgy módosulnak a régiók határai is.<br>
+	Akkori határ: Cseho. Lo. Mo. . A katilicizmus és az ortodoxia közti átmenet területe<br>
+	<b>Jellemzői:</b><br>
+	<p>
+		Ritkábban vannak városok<br>
+		Alacsonyabba népsűrüség <grey>járványok miatt késöbb fontos</grey><br>
+		Kevesebb: rendiség, önkormányzat, céh, egyetem, gótika
+	</p><br>
+	XI-XIII: Fejlődés, majd XIV. Kezdi utolérni nyugatot (+városok, rendiség)<br>
+	"Előny": alacsony népsűrüség <blue>emiatt</blue> a járványok nem tudnak terjedni<br>
+	<br>
+	<br><div class="ubuntu big">Csehország</div>
+	<abbr title="Német-római Birodalom">NrB</abbr> része lett.<br>
+	Császár hűbéresei: Premysl fejedelem. Késöbb a NrB meggyendülése miatt királyi címet szereznek <blue>azaz</blue>
+	részleges önállóságot szerez<br>
+	A Dinasztia legjelentősebb  uralkodója II. Ottokár (1253-1278) elfoglalta az Osztrák tartományokat<br>
+	<blue>de</blue> Habs. Rudolf (1278) visszafoglalta <br>
+	<div class="floatbox fbx-blue">Csehország fénykora</div>
+	Kihal a Premysl Dinasztia: Luxemburgiak: IV. Károly (1346-1378) egyben NrCsászár, Német aranybulla<br>
+	ebben az időszakban:
+	<li>Prágai egyetem 1348</li>
+	<li>Burgonyagazdálkozás <blue>ami</blue> erdőirtást okoz</li>
+	<li>bányászat és Céhek</li>
+	<br><br>
+	<div class="ubuntu big">Vallási reformtörekvések</div>
+	Avigoni fogság vége: pápa visszamehet Rómába 1378. <blue>DE!</blue> ront a helyzeten:<br>
+	Fro.-ban <b>ellenpápát</b> választanak <blue>amiatt</blue><br>
+	<b class="ubuntu">nagy nyugati egyházszakadás (1378-1417) </b>
+	<blue>amire a megoldás</blue><br>
+	Konstanzi Zsinat <br><b>NrB</b> császár: Luxemburgi Zsigmond 1410-1487 hívja össze: Felszámolja az egyházszakadást
+	<br><br>
+	<div class="ubuntu big">Reformok , Huszita háború</div>
+	John Wyclif 1320-1384:<br><p class="p-black">
+		Angol prédikátor, oxfordi tanár. Kétségbevonja a pápaság szerepét.<br>
+		<b>anyanyelvű igehirdetés</b>
+		</p>
+	<div class="floatbox fbx-orange">Két szín alatt áldozás: kenyeret (Krisztus testét) és a bort (Krisztus vérét) szolgálják ki a világi hívőknek is</div>
+	<br>Husz János 1369-1415:<br>
+	
+	<p class="p-black">
+		Elvetette mindazt ami nem volt a bibliában, de hirdették<br>
+		  
+		Elítélte az egyház világi szerepét., két szín alatti áldozás<br>
+		<b>anyanyelvű igehirdetés</b> (cseh)
+		</p>
+	<br>
+	
+	Husz Jánost meghívják a Konstanzi Zsinatra 
+	<blue>DE!</blue> (eljön és:)  eretneknek nyilvánítják és máglyán megölik (1415)
+	<blue>amitől</blue> Katolikus és németellenesség Cseho.-ban <blue>amire válaszul</blue> Zsigmond (pápai jóváhagyással) hadjáratot indít <blue>ahol</blue> veszít.<br>
+	<b>Husziták</b>:
+	<br><span class="p">
+	<p class="p-red">Kelyhesek: módosabb, mérsékeltebb polgárok </p>
+	<p class="p-red">Táboriták: szegényebb, radikálisabb polgárok </p>
+	</span>
+	<br>
+	
+	<b>Huszita</b> harcmodor: gyalogosok és szekérvár
+	<div class="utitle c">széttagolt Lo. nincs meg!</div><br>
+	</span>
+	</details>
+<!--																	Ötödik lecke-->
+	<details>
+<summary class="utitle ca" id="14">XIV.:Az Oszmán Török Bir.</summary>	
+<span class="x">
+	XI.: Bizánc megerősődik (balkán + kisázsia)<br>
+	<b>fénykor:</b> Mánuel cs. 1143-1180. Halála után belső harcok, nő az Ita. városok befolyása<br>
+	<br>
+	<div class="big ubuntu">Az oszmán birodalom felemelkedése és felépítése</div>
+	XIII.: Mongol terjeszkedés: iszlám vallású harcos törzsek Kis-ázsia felé<br>
+	<div class="floatbox fbx-orange">Oszmán szervezte meg</div>
+	Gyors terjeszkedésük oka: Biz.Bir hanyatlása. A vezetők despotikus uralkodók <grey>lásd iszlám kialakulása és elterjedése</grey><br>
+	Államszervezetének előnye: fejletlen területeket is a hadsereg szolgálatába tudták állítani<br>
+	Elvben: A teljes birodalom minden földje a szultáné<br>
+	<b>szpáhi:</b> könnyűlovas, földjét a szultántól kapja<br>
+	<b>janicsár:</b> elitalakulat, átnevelt keresztény gyerekek<br>
+	<b>defterdár:</b> adószedő hivatalnok, fejlett szervezés<br>
+	<div class="floatbox fbx-orange">10 évenként állapították meg a jövedelmeket és az adókat</div>
+	<b>kádi:</b> bíró, korán alapján itélkezik<br><br>
+	<div class="big ubuntu">A világbirodalom</div>
+	A bir. a hadseregre épül. <blue>ezért</blue> folyamatos hóditás<br>
+	 <img src="sword.png" width="15px"><u>I. Murád (1359-1389)</u> <blue>vs</blue> szerbek Rigómező (1389). <br>
+	 <div class="floatbox fbx-blue">A törökök megerősödtek a Balkánnál</div>
+	 Magyarország <b>ütközőállam</b> lett. Zsigmond hadsereget toboroz:<br> <img src="sword.png" width="15px"> vereség Nikápolynál (<u>I. Bajezid</u>)<br>
+ 	 Törököket tatárok megtámadják (és vesztenek) <blue>de</blue> Mo. tehermentesedik egy időre.
+ 	 II.Mohamed (1451-1481):  1453  Konstantinápolyt elfoglalja: szabad az út Eu.-ba<br>
+ 	 Bosznia, Szerbia, Havasalföld török hűbéres lett
+ 	 <br><br>
+ 	 <div class="big ubuntu">A birodalom fénykora és a bukása</div>
+ 	 XVI.: Szíria + Egyiptom elfoglalása: meg2×-ezte a területét, megvámolja a kereskedelmet (Levantei) és több területet kaptak a szpáhik.
+ 	  <div class="floatbox fbx-blue">Mekka elfoglalása után: szultán=kalifa</div>
+ 	  Katonai és gazdasági fénykor:  <b>I. (Törvényhozó) Szulejmán (1520-1566)</b>
+ 	 <p>
+		Meghóditotta Mo. középső részét, 150éves török uralom <grey>stb.</grey><br>
+		Keleten harc a perzsákkal
+ 	 </p><br>
+ 	 <blue>DE</blue> a Levantei ker. hanyatlása: kevesebb vám
+ 	 <div class="floatbox fbx-blue">Az O-Tör.Bir. Nyugat nyersanyagszállótájává vált</div>
+ 	  és kiáramoltak a nyersanyagok, és elvesztette kereskedelmi jelentőségét (Fro. vette át). 
+ 	  Gazdasági gyengülés: Despotizmus akadályozta a fejlődést<br>
+ 	  1571, Lepanto: veszít az O-Tör Bir.: <b>Megáll a hóditás végleg</b>: nem fizetnek zsoldot<br>
+ 	  Köprülü Mehmed megszilárdítja a rendet kegyetlen módszerekkel <blue>de</blue> a hanyatlást nem tudta megállítani<br>
+ 	  XVII.: Habsburgok "felszabadítják" Magyarországot és Oroszo. megerősödik<br>
+ 	  <b>A birodalom már csak védekezni tudott, elvesztette nagy6almi szerepét</b>
+	</span>
+</details>
+		<details>
+<summary class="utitle ca" id="15">XV.:A magyar nép őstörténete a kezdetektől a honfoglalás végéig</summary>	
+<span class="x">
+		<p>
+		<b>Finnugor kor</b> (kre. 3 évezred)<br>
+		Urál-Ob folyó között, finnugor népek őshazája<br>
+		vadászat, halászat. Kutya társ.<br>
+		Csiszolóezközök, néma kereskedelem
+		</p><br>
+		<p>
+		<b>Ugor kor</b> (kre. 2 évezred)<br>
+		Urál-Tobol-Irtisz<br>
+		vándorlás túlnépesedés, éghajlatváltozás (hidegebb lesz) miatt.<br>
+		Megjenelik a ló, nomád állattenyésztés; szétválik az ugorság.
+		 <div class="floatbox fbx-orange">sztyepp = (orosz) puszta<br>kurigan = halomsír</div>
+		</p>
+		
+		 <div class="big ubuntu">A styeppei élet</div>
+		 Füves puszták: Kínától Kárpát medencéig.<br>
+		 <li>északon: finnugor népek</li>
+		<li>keleten: úzok, besenyők</li>
+		<li>középen: bolgárok, törökök</li>
+		<div class="floatbox fbx-blue"><code>-670</code> Török-Bolgár birodalom szétesése után kazár bir.</div>
+		<li>délen: Kazár Birodalom</li>			
+		<li>nyugaton szláv törzsek</li>
+		Népvándorlás oka: Hunok (<code>-370</code>-re Kárpátoknál), új területek, túlnépesedés.<br>
+		<div class="floatbox fbx-red">nyelvemlékek: hat-<b>van</b>, het-<b>ven</b></div>
+		<p>
+		Magyarok <code>+/-500</code> népmozgás elsodorja: Volga-Káma vidék, Baskíriába (ma tatárok élnek ott). <b>Magna Hungaria</b>: török hatás, törzsi szerveződés</b>	
+		</p>
+		<br>
+		<div class="floatbox fbx-red">Kende (szellemi hatalom) és Gyula (katonai hatalom)</div>
+		<p><b>Levédia</b>-ba vándoroltak, Don-Volga vidéke<br>
+		Kazár kapcsolat: kétfejedelemség, rovásírás, mezgaz ismeretek.<br>
+		Török, Kazár hatás.		
+		</p><br>
+		<div class="floatbox fbx-orange">kabar = lázadó</div>
+		<p><b>Etelköz</b> Don-Duna között<br>
+		Csatlakoznak a Mo.khoz a kabarok, segédhadtestként.<br>
+		<b>Vérszerződés</b> a törzsszövetség tagjai között: <abbr title="Hapci, Szundi, Szende, Tudor, Vidor, Morgó és Kuka">Álomos, Előd, Ond, Kond, Tas, Huba, Töhötöm.</abbr><br>
+		Saját területeken teljhatalom, háború esetén összefogás		
+		</p><br>
+		 <div class="big ubuntu">A kárpát medence</div>
+		Attila meghal <code>453</code> : szétesik a Hun birodalom, szétszórodnak keletre a hunok. Helyükre germán népek, majd avarok <code>568</code> telepednek le.
+		<div class="floatbox fbx-blue">Kengyelt őt hozták ve EU-ba</div>
+		 Az avarok végigrabolják a balkánt, <blue>amivel</blue> helyet		
+		hagynak a szlávoknak <code>680</code>.<br> 
+		Nagy Károly szétveri az avar bir.-t. Helyére Pannóniai őrgrófság.<br>
+		Kisebb szláv államok <g>pl:</g> Pribina állama, Zalavár központtal, akik elismerték a Frank fennhatóságot.<br>
+		Szlávok vs Morvák: mind2en a magyarokat hívták segítségül. Szvatopluk morva vezető halálával szétesett a birodalma, így <b>akkor nem létezett jelentő államalakulat a Kárpátokban.</b><br>
+		<br>
+		 <div class="big ubuntu">A honfoglalás</div>
+		<b><code>895-899</code> honfoglalás</b> besenyők elől. Tervezett utazás. Árpád vezetésével Vereckei hágón át.<br>
+		<img src="sword.png" width="15px"> Bolgár cár vs. Árpád+Bizánciak.<br>
+		A többi magyar Etelközben: Erdélybe menekül Besenyők elől. A kárpát medencében
+		<b>Garam-Duna vonaláig</b> letelepedve, több éven át tart a berendezkedés.
+		<br>
+		<code>898</code> Keleti frank ur.: szorítsuk vissza Itáliát. <br> Bajor területek megszerzése: Pozsony közelében nyerünk <code>907</code>.<br>
+		Elsöpörték a szláv hűbérfejedelemségeket, meghódították a dunándtúlt.
+		
+		<p class="p-green">
+		<b>Élet</b><br>
+			<span class="p">
+		Gazdagok: jurta<br>
+		Szegények: vályogház<br>
+		Szolgák: földbe vájt ház
+			</span><br>
+		Leánykérés: ősi szokás szerint<br>
+		<b>Pusztaszer:</b> I. OGY
+		</p>
+		<img 
+	</span>
+	</details>
+<!--																	Hatodik lecke-->
+	<details>
+<summary class="utitle ca" id="16">XVI.: A magyar állam megalapítása és politikai élete</summary>	
+	<span class="x">
+		Mo. portyákat indít szomszédai ellen: évente ismétlő portyák<br>
+		 <div class="floatbox fbx-blue">Siker oka: Országok széttagolva (belső harcok)</div>
+		<p>
+		<b>Leggyakrabban Ny és D felé</b><br>
+		Bajoro., Szászo., DItália., Fro., Bizánc<br>
+		</p>
+		<b>Cél</b> zsákmányszerzés: arany, szövet, foglyok <blue>amiket</blue> rabszolgáknak adnak el.
+		<br>
+		<br>
+		<b>Nomád harcmodor</b>: nyugatiaknak nem ismert
+		 <div class="floatbox fbx-blue">Sokszor felkérik a Mo.kat</div>
+		<li>heves támadás</li>
+		<li>színlelt menekülés</li>
+		<b><blue>DE!</blue></b> Nyi uralkodók összefognak a Mo.k ellen :<br>
+		<u>I. Madarász Henrik (szász)</u> <b>vs</b> magyarok [Merseburg] 933<br>
+		<u>I. Nagy Ottó</u> <b>vs</b> magyarok [Augsburg] 955, portyázás végetér<br>
+		<br>
+		<div class="big ubuntu">Az államalapítás</div>
+		<b>Törzsszövetság</b>: kende + gyula kettős szöv megszűnik Kurszán, Árpád 
+		vetélytársa halála után (904)<sup title="? melyik volt árpád">?</sup><br>
+		Választás: Nomád törzsi szervezet vagy keresztény európához csatlakoznak<br>
+		 <div class="floatbox fbx-red">kíséret eltartásához szűkséges javak biztosítása</div>
+		<p class="p-red">
+			<b>Törzsi szervezet</b> bomlásnakindult<br>
+			<span class="p">
+			tőzsfő: bőségben él, kísérői: jobbágy fegyveresek<br>
+			ínség: szolgálatra kényszerítette szabadok<br>
+			</span>
+			
+			Had: törzsfő + fegyveresek
+			<b>szeniorátus</b>: a nemzetség legidősebb tagja örökli a haralmat		
+		</p>
+		<b>Géza</b> 972: törzsfők hatalmának fegyveres megtörése (meghal 997)<br> 
+		<div class="floatbox fbx-blue">Gizella: Nr hercegnő</div>
+		Gyula lánya <b>(Sarolta + Géza) fia (István</b> + Gizella )<br>
+		973: I.Nagy Ottóhoz: Hittéritőket kérnek, lemondott Géza a Lajtán túli területekről.<br>
+		Halálakor az Árpád házé az ország legnagyobb része, <blue>de</blue> Koppány (István nagybátja) lázad:<br>
+		Vajk <blue>azaz</blue> István fellép ellene idegen lovagok belevonásával.<br>
+		 <div class="floatbox fbx-blue">Megszilárdul a hatalma,</div>
+		II. Szilveszertől korona (1000-1001 fordulóján) megkoronázzák <blue>vagyis</blue> Mo. <grey>hivatalosan is</grey> keresztény lesz.<br>
+		István hatalma tovább nő: <li>Erdélyből kiszorítja Gyulát (István nagybátja)</li>
+		<li>Temes-Maros vidékének urát (Ajtony)-t is legyőzi</li>
+		Az ország 2/3-a a kezén van.
+		<br><br>
+		<div class="big ubuntu">Közigazgatás<sup title="csak Petra jegyzetei"><abbr>*</abbr></sup></div>
+		<abbr title="közigazgatási egységek">Vármegyék</abbr>: várak körül az ország belső részén<br>
+		 <li>árak, birtokok <b>várispánságok</b> az élén ispán</li>
+		 <div class="floatbox fbx-red">Ispán: biráskodik és katonai vezető. Részvehetett a kir. tanácsban</div>
+		 <li>Fontosabb várak élén: <b>megyésispán(ság)</b></li>
+		 <li>Királyi udvar ispánja: <b>nádorispán</b></li><br>
+		 Hadsereg alapja: várak fegyveresei. <br>
+		 <b>Vitézek:</b> Közvetlen a király alá alárendelt réteg
+		 
+		 		<br><br>
+		<div class="big ubuntu">Kül- és Belpolitika<sup title="csak Petra jegyzetei"><abbr>*</abbr></sup></div>
+		 Kedvező <abbr title="külpolitikai">külp.-i</abbr> helyzet: besenyők nem támadnak, hanem betelepülnek<br>
+		 Gizella (István felesége) révén jó kapcsolat a NrB-al <blue>de</blue> másik uralkodóház <blue>am</blue> megtámadja Mo.-t. <blue>Ami ellen</blue> <b>égetett föld taktika:</b><br>
+		 István visszaveri a támadást (1030)<br>
+		 Trónörökös: Imre <abbr title="herceg">hcg.</abbr> vadászat közben meghal (1031). Új utód: Orseolo Péter
+		  <div class="floatbox fbx-blue">István unokatestvérét Vazult megvakítja. (így nem lehet örökös)</div>
+		  <br>
+		  Vazul miatt elmenekülnek fiai: <b>A</b>ndrás <b>B</b>éla <b>L</b>evente : <b>Trónviszály</b><br><br>
+		  <b>Trónviszály miatt I: </b>
+		  <li>hívek szerzéséért földadomány</li>
+		  <li>csökken a kir.-i birtokállomány</li>
+		  <li>megerősödik a földbirtokos réteg</li>
+		  Emiatt: belviszályok. Megoldás: külső segítség <blue>ami veszélyes mert</blue> hűbéres függésbe kerülhetett <b>volna</b>.
+	<br><b>Trónviszály miatt II </b>: Társadalomban Sülyedő szabadok felkelése (1046). Vezető: Békési Vata. Ők ölik meg Szent Gellért püspököt <grey>a Gellért hegyen</grey><br>
+	<div class="floatbox fbx-blue">Vata a Pogányságot akarja visszaállítani</div>  
+	Vazul fia, I. András (1046-4060) felszámolja a mozgalmat, visszaveri a német támadásokat (Vértes hg. (1051) és Pozsony (1052))
+	<br>Béla megkapja hercegségként a királyság egyharmadát. Céja: trónviszályok felszámolása
+	<div class="floatbox fbx-orange">dukátus</div>	<br>
+	<blue><b>DE!</b></blue> András <b>vs</b> Béla. És a fiaik között is (Salamon vs Géza vs László ) 
+ 	</span>
+	</details>
+	
+		<details >
+<summary class="utitle ca" id="18">XVIII.: A rendiség születése Angliában és Fro.-ban és a százéves háború<sup title="csak Vikram jegyzetei">*</sup></summary>	
+	<span class="x">
+		
+		Normand hcg. <b>I. (Hódító) Vilmos</b> 1066-1087 Britanniátmeghódítja<br>
+		<img src="sword.png" width="15px"> Hastings 1066 Angolszász uralkodó vs <u>Vilmos</u><br>
+		Az elfoglalt földeket Vilmos lovagjainak adta <blue>ezzel</blue> meghonosította a hűbériséget.
+		<div class="floatbox fbx-blue">De nem alakult ki a hűbéri lánc</div>
+		Mindenki a királytól kapta birtokait <blue>ezért</blue> erős királyi hatalom jött létre:<br>
+		Kormányzás: uralkodó+főnemes+főpap= Királyi tanács<br>
+		oklevélkiadás: kancellária végezte<br>
+		megyéket (grófságokat): sheriff irányítja<br>
+		<div class="floatbox fbx-blue">Pajzspénz: hadjárattól távol maradt hűbéres pénzbeli megváltása</div>
+		Vilmos halála után: Fro. hűbérese: betagozódott a pártharcokba.<br><br>
+		<div class="big ubuntu">Az angol rendiség kialakulása</div>
+		II. Henrik utódai:
+		<li>Oroszlánszívű Richárd</li> 
+		<li>Földnélküli János</li>
+		elvesztették a Fro. birtokukat <blue>ami</blue> a nemesség elégedetlenségéhezt vezetett
+		<div class="floatbox fbx-blue">A lordok számára beleszólás a hatalomba, ellenállás joga</div>
+		<br>
+		<b>Magna Chart Libertatum</b> (nagy szabadságlevél): 1215 Földnélküli János adta ki a főnemesség nyomására.
+		
+		<br>
+		Nem vethet ki a király adót a tanács beleegyezése nélkül<br>
+		Önkényesen adót vetett ki: 1264 fellázadt a főnemesség, felléptek a király ellen<br>
+		<div class="floatbox fbx-red">összehívták a parlamentet</div>
+		A lázadás elbukott <blue>de</blue> megerősödött a kir. hatalom korlátozásának gondolata<br>
+		<b>Rendek: érdekeiket érvényesíteni képes, azonos jogú, azonos érdekű társadalmi csoportok</b><br>
+		I. Edward (1272-1307) Wales és Skócia meghódítója: összehívta a parlamentet (1295) <b><blue>innen kezdve</blue></b> a rendekkel együtt komrányzott és kialakult a rendi monarchia.<br><br >
+		
+		
+		<div class="big ubuntu">A széttagold Franciaország és a Fr. rendiség</div>
+		Karolingok kihaltak. <b>Capeting</b>-dinasztia kerül trónra, de igazából csak a Párizs körülötti részt uralták <i>(<grey>Nem ez volt az Ǐle-de France?</grey>)</i>. A többi terület nagyhűbéreseké.<br>
+		II. Fülöp Ágost (1180-1223) kiszorította az Angolokat az országból (1214) és megtörte a nagyűbéresek hatalmát az erős városokra és az egyházra támaszkodva. Nőtt a király hatalm<br>
+		XIII sz.: csak a kiráy verethet pénzt <blue>amitől</blue> több pénze lett <blue>amiből</blue> testőréget hozott létre<br>
+		IV. Szép Fülöp (1285-1314<sup title="milyen jó évszámok">:)</sup>) el akarta foglalni Flandriát
+		<div class="floatbox fbx-blue">Flandria meggazdagodott a posztóiparából</div> <blue>de</blue> legyőzték Fülöpot (1302)<br>
+		Új rend: <b>papság</b> mert meg akarta adóztatni az uralkodó az egyházat<br>
+		XIV sz.: EU-nagyhatalom, elősegítette a NrB hanyatlását, Avigoni fogság (lásd: X. Tétel)<br><br >
+		
+		
+		<div class="big ubuntu">A rendi dualizmus</div>
+		Lényege: A hatalom megosztása a király és a rendek között, együtt hozzák meg a fontosabb törvényeket<br>
+		legfőbb szerve: országgyülés (OGY)<br>
+		Adómegajánlás: rendek joga, korlátozták a király hatalmát<br>
+		<b>Egy és kétkamarás rendi gyűlések:</b><br>
+		<p>Kétkamarás: <g>pl</g> Angolok<br>
+		I.: Lordok háza: születésük, tisztségük alapján személyesek kerültek be a: főnemesek -papok<br>
+		II.: Alsóház: választás alapján: lovagok és jómódú polgárok
+		</p><br>
+		<p>Kétkamarás: <g>pl</g> Franciák<br>
+		A három rend külön ülésezett <blue>de</blue> együtt szavazott
+		</p>
+		<div class="floatbox fbx-blue">Angol OGY=Parlament</div><br>
+		Külügy, hadsereg, pénzügy király felségjog<br>
+		A középszintű igazgatás az önkormányzatok kezében voltak<br>
+		Rendek: korlátozhatták a királyt, de a király vissza is szoríthatta a főnemesség és az egyház hatalmátí<sup title="ennyi derül ki Vikram jegyzetéből">?</sup> 
+		<br><br><div class="big ubuntu">Gazdasági válság a XIV. sz-ban</div>
+		Átmeneti hanyatlás. Éhinségek, a népesség gyorsabban nőtt mint a mez.gaz.<br>
+		Hideg telek: rossz termés. Pestis is megjelent: 75-80Mill-ről 55-60Milil-re csökkent.
+		<br><br><div class="big ubuntu">A ~Százéves háború 1337-1453</div>
+		IV. Fülöp (Fr.) halála: kihalt a Capeting dinasztia ff-i ága, III Edward (Angol) igényt tart a trónra<br>
+		<b>Háború okai: </b>
+		<li>trónviszály</li>
+		<li>Flandria feletti uralom kérdése</li>
+		Angolok Flandriában nyernek, ezért a Fr.-k engedményeket tettek<br>
+		Falusi szegénység helyzete rossz: 1358 parasztfelkelés. +Párizs csatlakozott, és erőre kapott a Francia királyság. Kiszorította majdnem az Angolokat Fro.-ból. Fegyverszünet 1375. <br><blue>De</blue> XV.sz. harcok kiújulnak: elfoglalják az Angolok Párizst.<br>
+		<div class="floatbox fbx-blue">VII Károly, a trónörökös elmenekül</div>
+		Jeanne d`arc (francia paraszt<b>lány</b>) angolellenes mozgalma megerősítette a Fr. hadsereket.<br>
+		Megmentették Orleans-t és Rhemis-t (városok). Jeanne fogságba esett 1430-ban majd a <grey>kedves</grey> francia egyház együttműködésével eretnekként mágján megégették 1431-ben Rouen városában. 
+		</span>
+	</details>
+		<details>
+<summary class="utitle ca" id="19">XIX: Mo. a XI-XII. században<sup title="csak Vikram jegyzetei">*</sup></summary>	
+	<span class="x">
+			
+	
+I.István  (997-1038) : hatalma az egész országra kiterjed, a földek jelentős része királyi birtok.<br>
+Latin egyházszervezet,  egyházmegyék (püspökségek) megszervezése: az egyházar hatalmas földadományokkal erősítette meg.<br> Tized bevezetése, 10 falunként egy templom,  kötelező: bőjt, gyónás, misén való részvétel<br>
+Az esztergomi püspökséget:  érsekséggé lesz, <blue>és</blue> független a Nr egyházszervezettől.<br>
+Bencés kolostorok (Pannonhalma, Pécsvárad) alapítása, István támogatja őket.
+<div class="floatbox fbx-orange">Testület=kanonok</div>
+Létrejöttek a székesegyházak mellett működő <b>káptalanok</b>. Ezek a testületek  a püspökök munkáját segítették és oklevélkiadásban közjegyzők
+<br><br>
+<p class="p-black"> 
+<span class="big">Kövekező</span><br>
+<code>Ezt a rész Vikram itt, Petra viszont a XVI. tételbe rakta, az ott van leirva. Az a rész a közigazgatástól egyezik a Vikram itteni jegyzetével!<br>
+</code>
+	</p>
+	</details>
+<details open>
+<summary class="utitle ca" id="20" >XX.: Az aranybulla mozgalom</summary>	
+	<span class="x">	
+	III. Béla: megszilárdította a kir. hatalmat. Írásbeliség kiterjesztése modernizálta az államot.<br>
+	<div class="floatbox fbx-orange">hospesek=vendégek</div>
+	<b>kancellária</b> királyi oklevélkiadó. Élén a kancellár, aki az esztergomi püspök.
+	<br>
+	Földművelés teret hódít, <blue>ezzel együtt</blue> a letelepedett életmód. Jó körülmények, népesség növekszik (~2 Mill.). Szászok+hospesek: önkormányzatos városok alapítás <g>pl.:</g> Esztergom<br>
+	Só, ezüst, aranykereskedelem. Táv.ker.: zsidók, izraeliták<br>
+	<div class="floatbox fbx-orange">izraeliták=mohamedán etikum gyűjtőneve</div>
+	Nőtt a regálékból és a vámokból befolyt adó. Legnagyobb jövedelem: pénzváltás.<br><br>
+	<div class="big ubuntu">II. András</div>
+	Trónviszály:III. Béla fia, II. András <code>1205-1235</code> győz.<br>
+	Sok birtokadomány <blue>ezért</blue> csökken a királyi földbirtok. <b>megrendül a várispánság rendszere</b>. Két gond:
+	<ol>
+	<li>Király hatalmát érvényesítse</li>
+	<li>Pénz visszaszerzése</li>
+	</ol>
+	egyszerre nehéz.<br>
+	Próba: regálék emelése, pénzügyenek a tárnokmesterre (késöbb városok vezetője) bízása. <blue>de</blue> nem vált be <blue>ezért</blue> pénzrontást csinált.<br>
+	<div class="floatbox fbx-orange">pénzrontás=előző évinél kevesebb nemesfémet tartalmazó érmék nyomása</div>
+	Távker külföldieknek ádatása elégedetlenséghez vezet. Költséges hadjáratok <g>pl</g> (Szentföld)<br>
+	Válságban a kir.i haderő: főúrak magánhadseregét (=<b>Bandériumait</b>) vette igénybe.<br>
+	<b>Bárók:</b> kiemelkedő főurak, megkülönböztetésül.
+	<br><br>
+	<div class="big ubuntu">Az aranybulla mozgalom</div>
+	Király felesége, Gertúd nagyon sokbirtokadományt kap <blue>ezért</blue> fellázadtak a bárók és Pililsban meggyilkolták Gertúdot. (Bánk bán, <code>1213</code>). Gyenge a királyi hatalom, kicsi a büntetés.<br>
+	<div class="floatbox fbx-orange">szerviens=királynak alárendelt katonáskodó réteg</div>
+	Kisbirtokosok félnek: bárók hatalma alá kerülnek. Bárók célja: szervienseket és jobbágyokat saját irányítás alá vonni.<br>
+	Az elégedetlen bárók a szerviensekkel és a jobbágyokkal együtt Andrást az<br>
+	<b>Aranybulla</b> kiadására kényszerítik. Székesfehérvár, "törvénylátó nap", Bárók érdekeit biztosító oklevél. <b>rendelkezései:</b>
+	<ul>
+	<li>egész vármegyék adományozásának tiltása</li>
+	<li>méltóságok halmozásának tiltása</li>
+	<li>idegenek nem juthatnak birtokhoz és hivatalhoz</li>
+	<li>ellenállási záradék (ha királyi megszegi az oklevélben írottakat)</li>
+			<div class="floatbox fbx-red">1213: egyház nyomása miatt megújítják, szedhet tizedet és a püspöknek is van ellenállási záradéka</div>
+	<li>szervienseknek kedvező:</li>
+	<li>adómentesség megerősítése</li>
+	<li>bírói ítélet nélkül nem foghatók le</li>
+	<li>engedély nélkül nem szállhat meg senki birtokaikon</li>
+	<li>szabad végrendelkezés</li>
+	<li>csak az ország érdekében kell hadba vonulni</li>
+	<li>határokon kívül királyi költségen harcolnak</li>
+	<li>egyház érdekei nem érvényesülnek(néhol csorbulnak)</li>
+	<li>tized pénzben szedésének tilalma</li>
+	</ul>
+	
+	</span>
+</details>
+	</details><!----------------------------------masodik-tiz-lecke-határa----------------------------------------->
+	<details open>
+		<summary class="utitle  cs" >XII.-XXX. Lecke</summary>
+	
+	
+	<details>
+<summary class="utitle ca" id="22">XXII(/I).: Mo. az Anjouk idejében</summary>	
+	<span class="x">
+		<div class="floatbox fbx-blue">gyerekként kerül trónra</div>
+		
+	<div class="big ubuntu">Nagy Lajos</div>
+	I. Nagy Lajos 1342-1382: dinasztikus politika<br>
+	Pénz a pápának: öccsét elismerik nápoly királyának <blue>de</blue> öccsét az öccse felesége meggyilkolja <blue>ezért</blue> 2 Hadjárat nápolyba (47-18 és 50-52)<br>
+	<blue>De</blue> kimerül a kincstár és el is fogják a királyt.
+	háborúk: Havasalföld, Velence, Moldova hűbéres állam lesz. <blue>és</blue> megerősödnek a bárói családok, akik hűek maradnak lajoshoz.<br>
+	III. Kázmért Lo. királya meghal: Lajos a király 1370.  perszónálúnió jött létre.
+	<div class="floatbox fbx-orange">Perszónáliúnió: csak a király személye közös</div>
+	Lo.-ban megerősítette a nemesség jogait: Kassai privilégiumok 1374.<br>
+	Pápa kéri: bogumilok ellen szellemi harc. <br>
+	<div class="floatbox fbx-blue">Bogumil: balkáni eretnekek</div>
+	 Pécsi egyetem: 1367  első Magyar.
+	<br><br>
+	<div class="big ubuntu">Az 1351-es Törvények</div>
+	OGY: Megújították az Aranybullában megfogalmazott nemesi jogokat
+	<div class="floatbox fbx-blue">tk adómentesség, háza sérthetetlen, csak a hazája védelmében kell bevonulnia</div>
+	
+	<blue>de!</blue> eltörölték a végrendelkezés <blue>azaz a </blue>szabad örökítés jogát. Vagyis apáról fiúra szállt. Az<b> ősiség</b> védi a báróktól a területet.<br>
+	<b>Háromlási jog:</b> Fiúágon kihalt nemzetségek birtokai a királyra szálltak.<br>
+	<b>Egységes kilenced</b> a jobbágyoknak. Kötelező volt beszedni, így nem lehetett elcsábítani.<br>
+	Elméletben egyenlő lett a báró és a nemes, de nem valósúlt meg. Ezzel elkezdett a M. társ. hasonlítani a NyEU-éhoz.
+	
+	</span>
+	</details>
+<details>
+<summary class="utitle ca" id="24">XXIV.: Hunyadi Mátyás kora</summary>	
+	<span class="x">
+		Hunyadi János meghal 1456. Fiai: László, Mátyás<br>
+		<abbr title="ötödik">V.</abbr> László <blue>vs</blue> Hunyadi László<br>
+		<div class="floatbox fbx-blue">V. László bizalmasa: Garai-Cillei Liga</div>
+		 Cillei Urlikot megöli a Hunyadiak ezért V.László:
+		 <li>H. Lászlót lefejezteti</li>
+		 <li>Mátyást börtönbe zárja</li>
+		V. László Cseh király <b>is.</b> <blue>ezért</blue> elmegy Prágába, Mátyással együtt. <b><blue>DE!</blue></b> meghal V. László!<br>
+		<div class="floatbox fbx-blue">Katalin+Mátyás: félreállítják Szilágyit</div>
+		<b>Szilágyi Mihály</b> köznemességre támaszkodva: Mátyás király <code>1458</code><br>
+		Közvetkező cseh király: Poljebrád György hazaengedi Mátyást ha elveszi a lányát. M. visszaveri III. Frigyes támadásait, <blue>de</blue> korona nála.<br>
+		Adományokkal nyeri meg az ellenségeit.<br>
+		<br>
+		<div class="big ubuntu">Együtt a Rendekkel és azok ellen</div>
+		Együtt a rendekkel kormányzott, törökellenes politika
+		<div class="floatbox fbx-red">Törökök: Szendrőt elfoglalják<br>Mátyás: 1463 Jajca</div>
+		<b>Bosznia</b> ütközőállam, É:magyar D:török. Kiegyenlítette erőviszonyok <blue>ezért</blue> nincs döntő ütközet. Végvárrendszert építenek<br>
+		III. F.-től visszavásárolja a koronát  (és Sopront) <blue>ezért</blue> nem kell  a nemességre támaszkodni
+		<div class="floatbox fbx-red">80 ezer aranyforintért</div>
+		<blue>Ezután</blue> rákényszerítette az akaratát a Nemesekre <br>
+		Bárói családok kihalásával: <a class="l">háromlásái jog</a>, új, hozzá hű nemesi réteget hoz létre. (Kinizsi, Báthory, Szapolyai család)
+		<br>
+		<br>
+		<div class="big ubuntu">Jövedelmek és a Fekete hadsereg</div>
+		Népesség: növekszik, 3-4Mill.<br>
+		<b>Adók, rendeletek:</b>
+		<li>füstpénz <code>1467</code></li>
+		<li>Rendkívüli hadiadó (1 forint)</li>
+		<li>köznemesi kincstarókat nevezett ki</li>
+		<li>Nő az árutermelés, csökken a vám</li>
+		EU. viszonylatban is jelentős bevétel.<br>
+		<p>
+			Fekete sereg: Mátyás irányítása alatt álló, zsoldos, nagyrészt volt huszitákból álló, rendek álltal megszavazott adókból ellátott hadsereg. Állandó készültség: 15-20e ember. Magyarok, Csehek és Németek alkották a gyalogságból álló hadat.
+		</p>
+		<div class="floatbox fbx-red">Nagy költség: nehézlovas: 3arany, gyalogos 2arany</div>
+		<br>
+		<br>
+		<div class="big ubuntu">A Reneszánsz uralkodó</div>
+		Művelt: több nyelven beszél. <b>Dinasztiát</b> akar kiépíteni: I. Ferdinánd lányát, Beatrix-ot veszi el <code>1476</code> <blue>aki</blue> reneszánsz műveltséget hoz.<br>
+		Reneszánsz építkezések: Buda, Visegrád. A nemesek elle: megromlik a kapcsolatuk.<br>
+		<b>Corvina</b> 2500 könyvből álló könyvtár. Olasz humainsták az udvarában: Vitéz János, Galeotto Marzió<br>
+		<br>
+		<div class="big ubuntu">Nyugati hódítás és a Török politika</div>
+		Nem kockáztat a török ellen támadást. Megerősíti a végvárrendszert.<br>
+		Cseh trónért <code>1468</code> változó eredmények.
+		<li>Szilézia, Morvao. Mátyásé <code>1469</code></li>
+		<li>Cseho. Ulászlóé</li>
+		Béke, elfogadják egymást <code>1479</code>. <blue><b>DE!</b></blue> III. F. nem ismeri el Mátyást, aki megtámadja a Habsbourgokat, és eloglalja Bécset <code>1485</code>. Mátyás NrCs akar lenni, de a Német rendek Ferenc mellé állnak, és megválasztják Frigyest (Ferenc fiát) <code>1486</code><br>
+		<div class="floatbox fbx-blue">Vitéz János és Janus Pannonius is!</div>
+		Mátyás hívei fellázadnak (költséges háború, rendek háttérbe szorítása miatt) és Jagelló Kázmért választják "ellenkirálynak". Mátyás lefizeti a összeesküvők egy részét, majd elnyomta az összeesküvést.<br>
+		A nemesség a törökkel akar háborúzni: elfoglalja M.  Szabács-ot <code>1476</code> <blue>majd</blue>
+		<br>Kenyérmező <code>1479</code> Báthory és Kinizsi nyer.<br>
+		Nyugai politika: béke. 5 éves béke a szultánnal <code>1483</code>, amit többször megújítanak.<br>
+		<br>
+		<div class="big ubuntu">Trónutódlás</div>
+		<div class="floatbox fbx-blue">Nádori törvények biztosították Corvinnak a trónt, sok földet kapott</div>
+		Gond: Beatrixtól nincs gyermeke. Corvin János bécsi polgárlánytól született gyerekének akarja biztosítani a trónt. Mátyás halála (<code>1790</code>) után senki nem állt Corvin mellé, Jagelló Ulászló lett a király
+		</span>
+</details>
+<details>
+<summary class="utitle ca" id="28">XXVIII.: Erdély aranykora</summary>	
+	<span class="x">
+	Habsbourg ház: nincs pénz <blue>ezért</blue> ellenreformációba kezd az udvar <blue>hogy</blue> megszerezze a magyar főurak pénzét. Hamis felségárulási perek, megfosztják vagyonuktól a főurakat.<br>
+	Habsobourg Rudolf <code>1576-1608</code> megakadályozza a vallásszabadságot, <blue>ezért</blue> szembekerül a magyar rendekkel.<br>
+	<code>1604</code> fegyveres felkelés, mert Bocskai Istvánt is el akarják fogni. 
+	<div class="floatbox fbx-red">Tiszántúl nagybirtokosa</div>
+	A hajdúk is átállnak az oldalára. <br> <abbr title="fejeledelm">Fjd.</abbr>-nek választják Mo.-n és Erdélyben is. Török támogatja Bocskait, <blue>de</blue> Bocskai nem fogadja el a törökök által küldött koronát.<br>
+	<div class="floatbox fbx-orange">status qou</div>
+	Habsbourg-török béke Zsikaborkon, <code>1606</code>-ban.  Így belenyugodtak a Mo.-i fjd.-ségbe. <br>
+	Bocskai meghal: <b>trónviszály</b>. Rudolf ismét a törököt támadná. <br><blue>De</blue> testvére II. Mátyás <code>1608-1619</code> letaszítja a trónról és:
+	<li>megerősíti a nemesség jogait</li>
+	<li>nádorválasztás az uralkodó által kinevezett 2-2 protestáns, katolikus közül</li>
+	<li>rendek jóváhagyásával kormányoz</li>
+	<li>nemes társadalom átalakulóban: visszaszorul a familiaritás</li>
+	
+	<br><br>
+	<div class="big ubuntu">Bethlen Gábor és a 30éves háború</div>
+	Bethlen Gábor erdélyi fjd. <code>1618-1648</code> szultán támogatja, de vissza kell adni a 15 éves háborúban megszerzett Lippát.<br>
+	Erős fejedelmi hatalom, adók növelése, gazdaság feljődik. Szarvas, méz (Exportcikkek)-re monopóliumot vezet be.
+	<div class="floatbox fbx-blue">A szultán engedélyével</div>
+	Felvidéket meghóditja a csehek kérésére, magyar rendek királlyá választják <code>1620</code> Besztercebányán.<br>
+	Segít a cseheknek a 30 éves háborúban<br>
+	<blue>De</blue> nem egyesítheti Mo.-t és Erdélyt, <blue>mert</blue> a szultán, a habsbourgok és a magyar rendek ellene lennének.<br>
+	<div class="floatbox fbx-red">A csehek elvesztik a csatát fehérhegynél</div>
+	Bethlen: <b>Nikolsburg</b>i béke <code>1621</code> Habsbourgokkal: lemond király címéről, <blue>de cserébe</blue> megerősítették a bécsi békét, és megkapott 7 KeletMo.-i vármegyét (élete végéig)<br>
+	Hadjáratai biztosították a magyar rendek jogait. 
+	<br><br>
+	<div class="big ubuntu">I. Rákóczi György</div>
+	Bethlen Halála után hozzá hű politikát folytatott R.GY.  <blue>ezért</blue> tovább erősödött a birodalom <code>1630-1648</code><br>
+	<div class="floatbox fbx-blue">Rákóczi Bethlen hadvezére volt Partiumban (és földbirtokos)</div><br>
+	Hűvösebb kapcsolat a törökkel: kitér a hadbahívástól. <blue>De</blue> a protestáns uralkodók kérésére és a törökök endedélyével visszalép a 30 éves háborúba. De a törökök a sikert látva visszavonják, és megkötik a <br>
+	<b>Linzi Békét</b> <code>1645</code>. Megerősítették a Bécsi békét, vallásszabadság a jobbágyoknak is.<br>
+	RGY meg2×-i a területeit <blue>így</blue> Mo. legnagyobb földbirtokosa lesz.<br>
+	<center><i class="ubuntu ">
+		Bethlen Gábor és I. Rákóczi György uralkodása alatt volt Erdély aranykora. Nagyobb önállóságot szerzett a fejeledelem.
+	</i> </center>
+	
+	
+		</span>
+</details>
+<details open>
+		<summary class="utitle  cs" >XXX.-XXXV. Lecke</summary>
+	
+	
+	<details>
+<summary class="utitle ca" id="31">XXXI.: Oroszország nagyhatalommá válása</summary>
+	<span class="x">
+	A <a class="noa">Földrajzi felfedezések miatt</a> K-EU perifériára szorul, fejletlen városok.	
+	<br>	
+	IV. Iván <code>1533-1584</code>(Orosz). Központi, despotikus hatalom a szolgálati birtokokra támaszkodva. Fellép a bojárok ellen, földjeiket
+	<div class="floatbox fbx-orange">bojár=ősi orosz nemes</div> elveszi, a neki szolgáló nemeseknek adja<br>
+	Gyakori kivégzések. <code>1547</code> császári=cári címet felveszi.<br>
+	Hódít: 
+	<li>Balti tengerhez <blue>DE</blue> Báthory+svédek+dánok megállítják.</li>
+	<li>Tatárokat legyőzi, Kazany, Asztahány-t elfoglalja. <b>Ezzel a volga medencéjét elfoglalja</b></li>
+	Az ország területe megkétszereződött <blue>részben mert</blue> Elmenekülnek az orosz földművesek új pusztákra.
+	<br><br>
+	<div class="big ubuntu">A Romanov dinasztia</div>
+	Iván halála után Romanov diasztia <code>1613</code>. Terjeszkedés Ukrajna és Szibéria felé<wbr>
+	I. <i>Nagy</i> Péter <code>1689-1725</code> kíméletlen módszerekkel akarja bevezetni a nyugat-európai mintát.
+	<div class="floatbox fbx-blue">Nyugati uta során jön rá: nagyhatalom csak EU mintára lehet Oroszországból</div>
+	<li>Külföldi mestereket</li>
+	<li>Manufaktúrák</li>
+	<li>Korszerű és erős flotta és hadsereg</li>
+	Despotikus uralkodó, bojárokat engedelmességre kényszerítette.<br>
+	Nemesség gyerekeinek kötelező oktatás. Kezd hasonlítani nemesség az európaihoz
+	<div class="floatbox fbx-red">óriási társadalmi szakadék</div><br>
+	Politikai Cél: <b>egész évben fagymentes kikötő</b><br>
+	orosz-török háború: sikertelen<br>
+	orosz-svéd háború (északi háború) <code>1700-1721</code> Néva torkolota: új város: <b>Szentpétervár</b>
+	</span>	
+	</details>
+	
+</details>
+	<hr>
+	
+	</details><!----------------------------------harmincadik--leckee---_---------------------------------->
+	<br>
+      <div class="utitle c">Folytatása következik! </div>
+      
+                             
+<code>
+<details>
+<summary>verzió: 1.6<span style="color:#999;" title="update">U1</span></summary>
+	<li>Ωrontap</li>
+<!--	<details>
+		<summary>1.5 U1 : jobb használhatóság</summary>
+		<ul>
+	
+
+	</ul>
+	</details>
+	</li>
+	<li>
+	<details>
+		<summary>1.4 U1-U11 : igazi használat</summary>
+		<ul>
+	U8/9/10/11 - több tétellel feltöltve (02.12 - Vikram)
+	U7 &nbsp; - Petra korrigálások<br>
+	U6 &nbsp; - Kamuba hibajavítás és design változtatások<br>
+	U4/5 - III. tétellel feltöltve (02.03 - Petra)<br>
+	U3/4 - II. tétellel feltöltve &nbsp;(02.03 - Petra)<br>
+	U2/3 - I. tétellel feltöltve &nbsp;&nbsp;(02.03 - Petra)<br>
+	U1 &nbsp; - tesztszöveg<br>
+	</ul>
+	</details>
+	</li>
+	<li>
+	1.3 dizájn változtatások, táblázatgeneráló
+	</li>
+	<li>
+	1.2 Témaváltás
+	</li>
+	<li>
+	1.1 Eredeti kiadás, dizájn kialakítása
+	</li>
+</details>-->
+</code>
+   </txt>  
+        </CONTENT>      
+       <script>
+       </script>
+  <style>
+	  abbr {
+		  cursor:help;
+		  border-bottom: 1px dashed #999;
+		  }
+	  grey {
+		 opacity:0.4;
+		  }
+	  .ca ,.cs{
+		  padding-top:20px;
+		  margin-left:-5%;
+		  margin-bottom:5px;
+		  margin-right:-30%;
+		  }
+	  .cs {
+		   margin-left:-10%;
+		   margin-right:-31%;
+		   border-bottom:3px solid #F84;
+		   font-size:30px;
+		  }
+	  txt {
+		  margin-left:5%;
+	  }
+      .floatbox {
+          position: absolute;
+			right: 1%;
+			width: 17%;
+          }
+      txt {
+          margin-right:20%;
+          display:block;
+          text-align:justify;
+          }
+  /*RJSX-be kELL*/
+  
+   tr:hover td ,  table tr:focus td , table tr:hover td:nth-child(2) {
+	
+	   cursor:pointer;
+	   } 
+         .steme:after {
+content: 'VILÁGOS';
+}
+.steme:before {
+ content: 'SÖTÉT';
+}
+.steme {
+	width:150px;
+	}
+	.steme label {
+		width: 75px;
+		}
+	.slide input[type=checkbox]:checked + label {
+left: 72px;
+}	
+.big  {
+	color:#333;
+	}
+._night .big {
+	color:#999;
+	}
+	@media print
+{
+	details{
+		page-break-after:always;
+		}
+	txt {
+		margin-left:0;
+	}
+	#rfocim, #extrafoot , .hideprint{
+			display:none;
+	}
+	.floatbox {
+		
+	page-break-inside : avoid;
+	}
+}
+code:hover {
+	background:#FFF;
+	box-shadow:0 0 5px #999;
+	}
+  </style>
+  <script>
+  tetel=[
+  'Az ókori Egyiptom története',
+  'Spárta állama',
+  '<i>A görög-perzsa háborúk eseményei</i>',
+  '<i>az athéni demokrácia kialakulása, fénykora és hanyatlása</i>',
+  '<i>Nagy Sándor birodalma</i>',
+  'A római köztársaság kiépülése és működése',
+  '<i>A pun háborúk és hatásuk Róma gazdaásgára és politikai életére</i>',
+  'Julius Caesar hatalma - az egyeduralom kiépítése és Augustus principátusa',
+  'A Római Birodalom bukása és a Frank Bir. kialakulása',
+  'A pápaság és a császárság politikai küzdelme a XI-XIII. században',
+  'Városok kialakulása Európában',
+  'Az iszlám megjelenése és térhódítása',
+  'Közép-EU fogalma és története a XI-XV. században',
+  'Az Oszmán Török Bir.',
+  'A magyar nép története a kezdetektől a honfoglalás végéig',
+  'A magyar állam megalapítása és politikai berendezkedése',
+  'a hétköznapi élet a Középkori Kelet-EU-ban',
+  'A rendiség születése Angliában és Fro.-ban valamit a százéves háború',
+  'Mo. a XI-XII. században',
+  'Az Aranybulla mozgalom',
+  'A tatárjárás története',
+  'Mo. az anjuk idejében',
+  'Hunyadi János törökellenes háborúi',
+  'Hunyadi Mátyás kora',
+  'Az ország három részre szakadása',
+  'A nagy földrajzi felfedezések',
+  'A reformáció és a katolikus megújulás',
+  'Erdély aranykora',
+  'A Tudorok kora Angliában',
+  'A francia abszolutizmus',
+  'Oroszország nagyhatalommá válása',
+  'A török kiűzése Mo.-ról',
+  'II. Rákóczi Ferenc szabadságharca',
+  'A francia forradalom',
+  'Az ipari forradalom kora' 
+  ];
+  hely= [
+  'A 40.',
+  'A 80, I 68',
+  'A 83, I 72',
+  'A 79, I 77',
+  'A 99, I 94',
+  'A 106',
+  'A 107',
+  'A 116, I 127',
+  'A 144, I 147/160/171' ,
+  'II 7',
+  'II 20',
+  'I 195',
+  'II 40/47',
+  'II 54/193',
+  'I 206-211',
+  'I 217',
+  'II 69',
+  'II 26',
+  'II 74/81 [19]',
+  'II 87',
+  'II 93',
+  'II 107/115',
+  'II 122',
+  'II 130',
+  'II 212/218',
+  'II 148',
+  'II 155',
+  'II 231',
+  'II 169',
+  'II 181',
+  'II 193',
+  'II 243',
+  'II 255',
+  'III 18',
+  'III 54',
+  
+  ];
+  tetelsor=[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
+  if (localStorage.tetelsor=='')
+  {
+	  localStorage.tetelsor= JSON.stringify(tetelsor);
+	  }
+  else {	  
+	  //tetelsor=JSON.parse(localStorage.tetelsor);
+	  }
+	  
+	function tetelupd(call,tol)
+	{  
+  for (i=tol;i<call;i++)
+  {  
+	    a='<tr>';
+        a+= ' <td><input type="checkbox" id="l'+(i+1)+'" onClick="change('+(i+1)+',this.id)"></td>';
+        a+= '<td>'+(i+1)+'</td>';
+        a+= '<td><a href="#'+(i+1)+'" class="noa">'+tetel[i]+'</a></td>';
+        a+= '<td>'+hely[i]+'</td>';
+        a+='</tr>';
+	  navig.innerHTML+=a;
+	   if (tetelsor[i]==true)
+	    {
+			   document.getElementsByTagName('input')[i].checked=true;
+			  document.getElementsByTagName('tr')[i+1].style.background="#6C9";
+			  
+			 
+			 
+			}
+	  }
+  }
+  tetelupd(35,20);
+         function change(call,s) {
+           if (window[s].checked)
+           {
+           document.getElementsByTagName('tr')[call].style.background="#6C9";
+           tetelsor[call-1]=true;
+           localStorage.tetelsor= JSON.stringify(tetelsor);
+           console.log( tetelsor[call] +'-'+ call);
+            }
+           else {
+            document.getElementsByTagName('tr')[call].style.background="#DDD";   
+            tetelsor[i]=false;
+            localStorage.tetelsor= JSON.stringify(tetelsor);
+               }
+           }
+           
+           night=false;
+           function MobileS() {
+			   if (!night)
+			   {
+				//ni.href="night.css";
+				$("body").addClass("_night");
+				night=true;
+				}
+				else {
+				//ni.href="";
+				$("body").removeClass("_night");
+				night=false;
+				}
+}
+	setTimeout(
+	function(){
+		if (rjsx.ua<2)
+		{
+			alert('Úgy látszik, régi böngészőt használsz!\nA jobb tanulásért tölsd le a google chrome-ot vagy az operát, esetleg a legfrissebb firefoxot!');
+		}
+		$(window).scroll(watch());
+		},1200
+		
+	);
+	
+	posx=[];
+	function uppos() {
+		for (i=1;i<35;i++)
+		{
+			if ($('summary.ca#'+i).position()!==undefined)
+			{
+			posx[i-1]=$('summary.ca#'+i).position().top;
+			console.log($('summary.ca#'+i).position().top);
+			}
+		}
+		return posx;
+	}
+	function watch() {
+			console.log($(document).scrollTop());
+			for (i=0;i<posx.length;i++)
+			{
+				if ($(document).scrollTop()<posx[i])
+				{
+				console.log(i);
+				i=999;	
+				}
+			}	
+			
+		}	
+  </script>
+  
+  <style>
+	  
+	  </style>
+   <link rel="stylesheet" type="text/css" href="" id="ni">
+    <script src="main.js" type="text/javascript"></script>
+   
+    </Body>
+   
+</HTML>

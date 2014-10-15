@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<HTML>
+	<Head>
+		<title>Kikérdező</title>
+	  <meta charset="UTF-8">
+		<meta name="author" content="TAP">
+	  <meta name="description" content="rontap">
+		<meta name="keywords" content="rontap,linux,kikérdező,elemential,rts,rjsx">
+	 <script src="goog.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script>
+		appver="Edu\nelemential";
+		sited="kikerdezo.html";
+		navname="KiKérdező készítő"; //hogy jelenik majd meg
+		navplus="";
+		coa=false;		
+		pack="rontap.mainHelp/kikerdezo";
+		moretag=true;
+		//holvan
+		manimg="f_icons/dia.svg";
+		
+</script>
+
+	</Head>
+
+<script>
+kerdes = new Array();
+valasz = new Array();
+var jkerdes;//jelenlegi kerdes szam
+filledto=0;
+var pontszam;
+var viszgaszam;
+//feltoltes
+for (i=0;i<101;i++)
+{
+	kerdes[i]="";
+	valasz[i]="";
+}
+kerdess=1;
+function addrow() {
+kerdess++;
+
+	
+	if(kerdess>100)
+	{
+	alert('Sajnos csak 100 kerdes lehet egy kikerdezoben');
+	return false;
+	}
+	//kerdesekq.innerHTML+='<input type="text" class="inp-text" placeholder="kerdes '+kerdess+'" id="k'+kerdess+'"> : <input type="text" class="inp-text" placeholder="valasz '+kerdess+'" id="v'+kerdess+'"><br>';
+	//kerdesekq.innerHTML+='<tr><td><input value=""></td></tr>';
+	for (i=1;i<kerdess;i++)
+	{
+		if (window['k'+i].value!=""  )
+		{
+		kerdes[i]=window['k'+i].value;
+		valasz[i]=window['v'+i].value;
+		}
+		else if (window['v'+i].value!="" )
+		{
+		kerdes[i]=window['k'+i].value;
+		valasz[i]=window['v'+i].value;
+		}
+	}
+	a='<tr>';
+	a+='<td><input type="text" class="inp-text" placeholder="kerdes '+kerdess+'" id="k'+kerdess+'"></td> ';	
+	a+='<td><input type="text" class="inp-text" placeholder="valasz '+kerdess+'" id="v'+kerdess+'"></td> ';	
+	a+='</tr>';
+	kerdesektable.innerHTML+=a;
+		for (i=1;i<kerdess;i++)
+	{
+		
+		window['k'+i].value=kerdes[i];
+		window['v'+i].value=valasz[i];
+		
+	}
+}
+
+
+//-----------------------------------------
+//----STAGES-------------------------------
+//-----------------------------------------
+//STAGE2
+function save() {
+//neddig van tartalom
+stage.innerHTML='2';
+
+for (i=1;i<=kerdess;i++)
+	{		
+		kerdes[i]=window['k'+i].value;
+		valasz[i]=window['v'+i].value;
+		console.log(i+'SAVE:'+kerdes[i]+valasz[i]);
+	}
+	x('kerdesekq');
+for (i=1;i<=kerdess;i++)
+	{			
+		kerdesekq.innerHTML+=kerdes[i]+' : '+valasz[i]+'<br>';		
+	}
+menu.innerHTML='<button onClick="backtoEdit();" class="btn-b">Vissza: Szerkesztés folytatása</button>	';
+menu.innerHTML+='<button onClick="kikerdezo();" class="btn-b">Tovább!</button>	';
+kerdesektable.innerHTML='';
+}
+
+//STAGE3
+function kikerdezo() {
+	stage.innerHTML='3';
+	focim.innerHTML='KiKérdező';
+menu.innerHTML='<button onClick="save();"disabled class="btn-b">Megosztás</button>	';
+menu.innerHTML+='<button onClick="save();"disabled class="btn-b">Szerkesztés</button>	';
+menu.innerHTML+='<button onClick="sendexam();" class="btn-green">Vizsga</button>	<hr>';
+
+kerdesekq.innerHTML='<button class="btn-b" onClick="mondkerdez()">kerdes</button>';
+kerdesekq.innerHTML+='<button class="btn-green" onClick="mondvalasz()" id="gombvalasz">valasz</button>';
+kerdesekq.innerHTML+='<div id="kim">itt fog megjelenni a kerdes</div> <span id="kimv"></span>';
+}
+//stage4
+
+//-----------------------------------------
+//----BACKSTAGES---------------------------
+//-----------------------------------------
+function backtoEdit() {//vissza a szerkeszteshez
+	stage.innerHTML='1';
+	menu.innerHTML='<button onClick="addrow();" class="btn-r">Új Kérdés hozzáadása</button>';
+	menu.innerHTML+='<button onClick="save();" class="btn-b">Tovább</button>';	
+	
+
+	kerdesekq.innerHTML='';
+	a='';
+	for (i=1;i<=kerdess;i++)
+		{
+	a+='<tr>';
+	a+='<td><input type="text" class="inp-text" value="'+kerdes[i]+'" placeholder="kerdes '+i+'" id="k'+i+'"></td> ';	
+	a+='<td><input type="text" class="inp-text" value="'+valasz[i]+'" placeholder="valasz '+i+'" id="v'+i+'"></td> ';	
+	a+='</tr>';
+		}
+	
+	kerdesektable.innerHTML=a;
+	}
+
+//-----------------------------------------
+//-----CORE--------------------------------
+//-----------------------------------------
+function kerdesjoe() {//exam
+	if (kerdesholjar>=kerdess){//ha vegigkerdezte
+		menuin.innerHTML='<button onClick="kerdesjoe();ertekel();" class="btn-b">Eredmény</button>'
+		
+	}	
+	if (kerdesholjar>kerdess) {	
+	valaszinp.disabled=true;
+	return true;
+	}		
+	else {
+		if (valaszinp.value==valasz[jkerdes])
+		{
+	 	pontszam++;
+		pontok.innerHTML=pontszam;
+		}
+	valaszinp.value="";
+	kerdesholjar++;
+	kerdesjar.innerHTML=kerdesholjar;
+	}
+}
+function mondkerdez() {//kerzeo
+	x('kimv');
+	jkerdes=Math.floor(Math.random()*kerdess+1)
+	kim.innerHTML=kerdes[jkerdes];
+	kim.innerHTML+=' ?'
+	gombvalasz.disabled=false;
+}
+function mondvalasz() {//valaszolo
+	kimv.innerHTML=valasz[jkerdes];
+	gombvalasz.disabled=true;
+}
+//JSON fonfiguration
+
+function sendexam()
+{
+stage.innerHTML="4";
+menu.innerHTML='<button  class="btn-b">a vizsga előkészítése folyamatban... kérjük várj 5s-et</button>';
+kerdesekq.innerHTML="feltöltés folyamatban!<br> a nemsokára megjelenp gombban a szám a vizsga azonosítója. "
+jsontext='{"kerdes": [""';
+for(i=1;i<=kerdess;i++)
+	{
+	jsontext+=',"'+kerdes[i]+'"';
+	}
+jsontext+='],"valasz": [""';
+for(i=1;i<=kerdess;i++)
+	{
+	jsontext+=',"'+valasz[i]+'"';
+	}
+jsontext+=']}';
+$.get('http://rontap.elemential.net/core/writeexam.php?json='+jsontext,function(data){
+vizsgaszam=data;
+})
+
+//innen nem csinál semmit!!
+
+console.log('loading');
+setTimeout(function(){
+stage.innerHTML="4.1";
+console.log(vizsgaszam);
+redir='http://rontap.elemential.net/kivizsgazo.php?id='+vizsgaszam;
+menu.innerHTML='<a href="http://rontap.elemential.net/preview/kivizsgazo.php?id='+vizsgaszam+'"><button  class="btn-b">Tovább a vizsgára ('+vizsgaszam+')</button></a>';
+kerdesekq.innerHTML="A vizsga elkészült! link a megosztáshoz: "+redir+" . a kék gombra kattintva eljuthat a vizsgára.<br>sok szerencsét!"
+},4000);
+
+}
+//conifrm
+function ExamAlert() {
+
+exam();
+
+/*
+width="300";
+	loginform='';
+	loginform+='<div id="wn_alert">';
+	loginform+='<div style="position:absolute;width:100%;height:100%;background-color:rgba(75,75,75,0.75);top:0px;bottom:0px;left:0px;right:0px;" id="wn_disabler" >';	
+	loginform+='</div>';
+	loginform+='<div id="wn_mid"style="position:fixed;top:10%;bottom:auto;width:100%;"><div style="margin-left:auto;margin-right:auto;opacity:0.9;border:1px solid rgb(75,75,75);border-radius:5px;background-color:#ffffff;padding:12pt;width:'+width+'pt;" id="wn_form">';
+loginform+='<center><b>Figyelem! a Vizsgára korlátozott idő áll rendelkezésre,és csak a PONTOS választ fogadjuk el</b></center><br>';	
+	loginform+="<hr><button class='btn-b' style='float:left;'id='no_alert' onClick='CloseAlert();exam();'>Tovább</button>";
+	
+	loginform+="<button class='btn-r' id='ok_alert' onClick='CloseAlert();'>Felkészülés folytatása</button>";
+	
+	loginform+='</div></div>';
+	loginform+='</div>';
+	body.innerHTML+=loginform;*/
+}
+
+//RELEASE LOG--------------------------------------------------------------------RL
+
+//ver 1 : original kikerdezo 			[MARC??]
+
+//ver 2    NEW RESTART					[JUNI30]
+ //   2.1  restarting
+ //   2.2  input bug fix
+ //   2.3  összeállító finished
+ //   2.4  kikérdező finished
+ //   2.5  Exam finished, [STRESSTEST]
+ 
+ //   2.6  added back to STAGE(1)		[JULI01]
+ //   2.7  debug
+ //   2.75 added precentage, [STABLE]
+ //   2.8  bugfix with exam points      [JULI02]
+ //   2.9  finished erekel.  
+            
+//ver 3    PHP
+ //   3.0  splitted. added PHP+JSON		[JULI11] 	w/ DeeSnow97
+ //   3.1  created kikerdezo.html for making, kivizsgalo.php for asking. old version kikerdezo_offline
+ //   3.2  linked core/readexam and core/writeexam.
+</script>
+
+	
+	<body >
+	<div id="navbar">
+	 </div>
+	
+
+<div id="body">
+<rts>
+
+<span id="stage">1
+</span>. lépés
+
+<div id="menu">	
+<button onClick="addrow();" class="btn-r">Új Kérdés hozzáadása</button>
+<button onClick="save();" class="btn-b">Tovább</button>	
+</div>
+<div id="kerdesekq">
+
+	</div>
+<table id="kerdesektable">
+
+<tr>
+	<td><input type="text" class="inp-text" placeholder="kerdes 1" id="k1"></td> 	
+	<td> <input type="text" class="inp-text" placeholder="valasz 1" id="v1"></td>
+</tr>
+
+	</table>
+	<footer id="footer" >
+	<br>
+<br>
+<br>
+
+
+	<hr>
+	<span id="footname">Qaestium3 BETA . relase:2013juni. including php</span>
+	 <a href="#" onClick="gox('ver.html')" class="footlink">verziók</a> | 
+	 <a href="#"  onclick="helpIT();" class="footlink">hogyan működik</a> | 
+	 
+	
+	
+
+	</footer>
+
+	<script src="main.rjsx" type="text/javascript"></script>
+	<style>
+button, .btn-r,.btn-b,.btn-green {
+/*font-size:16px;*/
+}
+</style>
+<script>
+
+
+</script>
+	</Body>
+</HTML>

@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<HTML>
+    <Head>
+        <title>Elemential</title>
+      <meta charset="UTF-8">
+        <meta name="author" content="TAP">
+      <meta name="description" content="rontap">
+        <meta name="keywords" content="rontap,linux,elemential,tapsite,rts,rjsx">
+
+    <script>
+        navname="Oldal"; //hogy jelenik majd meg
+        coa=false;      
+        moretag=true;
+        specnav=true;
+        rjsxlocation="http://rontap.netne.net/rontap/"
+        //holvan
+        manimg="http://rontap.netne.net/rontap/f_icons/rts.png";
+        specnav=true;
+specnavi = ['click me'];
+specnavil = ['javascript:start()'];
+</script>
+    </Head>
+
+ 
+    <body id="body">
+
+
+    <rts>
+    
+
+	<div id="rjsx" class="c">RJSX</div>
+    
+    <div id="az">
+    
+    </div>
+    <div id="felh">
+       <br>
+       <div class="cim">Egy gyönyörű <abbr title="advanced programming interface">API</abbr></div>
+       </div>
+    <script>
+		for (i=0;i<100;i++)
+		{
+			az.innerHTML+="<span id='m"+i+"'></span>"
+			}
+		
+		iss=0;
+
+		function launchb(speed,x,size)
+		{
+			ids=String(iss++);
+			window['m'+iss].innerHTML="<div id='a"+ids+"'>&nbsp;</div>";
+			window['a'+ids].style.transition="all "+speed+'s';
+			window['a'+ids].style.height=size+"px";
+			window['a'+ids].style.width=size+"px";
+
+
+					window['a'+ids].style.marginLeft=x+'px';
+					setTimeout(
+						function(){
+					window['a'+ids].style.marginTop="130%";
+				
+				},100);
+				
+			//console.log(iss);
+
+			
+		}
+				function launcha(speed,x,size)
+		{
+			ids=String(iss++);
+			window['m'+iss].innerHTML="<div id='a"+ids+"'>&nbsp;</div>";
+			window['a'+ids].style.transition="all "+speed+'s';
+			window['a'+ids].style.height=size+"px";
+			window['a'+ids].style.width=size+"px";
+
+
+					window['a'+ids].style.marginTop=x+'px';
+					setTimeout(
+						function(){
+					window['a'+ids].style.marginLeft="110%";
+					
+				},150);
+				//console.log(iss);
+
+			
+		}
+		many=400;
+		function randomise()
+		{
+			speed=Math.random()*10;
+			x=Math.floor(Math.random()*window.innerWidth);
+			size=Math.floor(Math.random()*70);
+			launcha(speed,x,size);					
+			}
+		function randomiseb()
+		{
+			speed=Math.random()*10+1;
+			x=Math.floor(Math.random()*window.innerWidth);
+			size=Math.floor(Math.random()*70);
+			launchb(speed,x,size);					
+			}
+			rnd=100;
+			function start()
+			{
+		setTimeout(function(){
+			randomise();
+			setTimeout(function(){randomiseb()},150);
+			many=Math.floor(Math.random()*40)-20+many;
+            if ((many<200)||(many>600)) {
+                many=400;
+                }
+			if (iss>95) {iss=1;}
+            console.log(many);
+			start();
+			}
+		  
+		,many);
+	}
+	function testScroll(ev){
+    if(window.pageYOffset>window.innerHeight+70) {
+		rfocim.style.background="#FFF";
+		rfocim.style.boxShadow="5px 0 5px #555";
+		ter.style.color='#444 !important';
+		
+	}
+	else {
+		rfocim.style.background="transparent";
+		rfocim.style.boxShadow="0 0 0 #000";
+		th1.style.color='#FFF !important';
+	}
+}
+window.onscroll=testScroll
+setTimeout(function(){
+	rfocim.style.background="transparent";
+		rfocim.style.boxShadow="0 0 0 #000";
+		ter.style.color='#FFF !important';
+	},1500);
+	
+	function paint(color) {
+		$(".cim").css('color',color);
+		$("#rjsx").css('background',color);
+		}
+    </script>
+    
+    <style>
+		@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700&subset=latin,latin-ext);
+		#az {
+			position:absolute;
+			top:65px;
+			bottom:0;
+			left:0;
+			right:0;
+			overflow:hidden;
+			}
+		#az div {
+			opacity:1;
+			left:-40px;
+			right:-40px;
+			top:-60px;
+			padding:3px;
+			background:rgba(250,250,250,0.2);
+			position:absolute;
+			width:50px;
+			height:50px;
+			transition:all 4s;
+			
+			}
+			#az:hover div {
+				padding:6px;
+				}
+			#rjsx {
+				position:fixed;
+				left:0;
+				top:0;
+				right:0;
+				background:rgba(34,102,255,0.8);
+				bottom:0;
+				vertical-align:middle;
+				text-align:center;
+				padding-top:20%;
+				font-size:450px;
+				font-size:25vw;
+				color:rgba(255,255,255,0.9);
+				font-family: 'Open Sans', sans-serif;
+				font-weight:400;
+				z-index:-1;
+				-webkit-transition:background 4s;
+				}
+			.cim {
+				font-family: 'Open Sans', sans-serif;
+				font-weight:100;
+				text-align:center;
+				font-size:250px;
+				font-size:8vw;
+				color:#48F;
+				-webkit-transition:color 4s;
+				}
+			#rfocim {
+				
+				z-index:6;
+				}
+				#extrafoot {
+					display:none;
+					}
+						
+				#felh {
+					position:absolute;
+					margin-top:70%;
+					z-index:5;
+					background:#DDD;
+					left:0;
+					right:0;
+					height:950px;
+					background: #e4e8e9 url('http://teixido.co/gfx/backs/background_opcion2.jpg') repeat left top;
+					}
+					
+    </style>
+    <script src="http://rontap.netne.net/rontap/main.js" type="text/javascript"></script>
+    </Body>
+</HTML>
+
+
+

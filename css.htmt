@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<HTML>
+	<Head>
+		<title>rontap-cssteszt</title>
+	  <meta charset="UTF-8">
+		<meta name="author" content="TAP">
+	  <meta name="description" content="--73--">
+		<meta name="keywords" content="rontap,linux,TaPium">
+	 <link rel="stylesheet" type="text/css" href="main.css">
+	  <link rel="stylesheet" type="text/css" href="newrtsapi.css">
+
+	<!--	<script src="goog.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>-->
+
+  <style>
+
+  </style>
+  <script>
+
+  </script>
+	</Head>
+	
+
+  
+	
+<script>
+		appver="TapCalk2.2\n TAPIS/calkr.js 1.6 ";
+		sited="ttest.html";
+		navname="TapCalk 3"; //hogy jelenik majd meg
+		navplus="2 számológép";
+		coa=false;		
+		pack="rontap.mainHelp/tapcalk2";
+		moretag=true;
+		//holvan
+		
+		chg1="Fizcalk";
+		chg2="easycalk";
+		chg3="Start";
+		chg1l="fizcalk.html";
+		chg2l="esycalk.html";
+		chg3l="start.html";
+		
+		manimg="calc.png";
+		</script>
+		<rts>
+<style>
+#navbar {
+	right:80%;
+	
+}
+#colors td {
+padding:2px;
+
+}
+#colors td:hover {
+border:2px solid black;
+margin:-2px;
+z-index:100000;
+padding:0;
+}
+</style>		
+
+
+<Body id="body">
+<!--
+<div id="navbar" >
+<div id="navbarin">
+	<div class="box" id="box_usn" onClick="$OpenUser();">User</div>
+	<div class="box">TapCalk 3</div>
+	<hr>
+	<div class="box" onClick="hide();">TapCoder 2 </div>
+	<div class="box">Random Gen.</div>
+	<div class="box">Rontapparty</div>
+	<div class="box">Geo Metria</div>
+	<div class="box">Hi there</div>	
+</div>
+	<table id="box_min">
+		<tr>
+	<td class="box" ><img src="gear.png"></td>
+	<td class="box" ><img src="keres.png"></td>
+	<td class="box" ><img src="set.png" width="19px;"></td>
+		</tr>
+	</table>
+
+</div> 
+-->
+<script>
+var savenavbar;
+function $OpenUser() {
+	document.getElementById('navbarin').className='slideopton'//
+	savenavbar=navbarin.innerHTML;
+	navbarin.innerHTML='';
+	a='<div class="box" id="box_usn" onClick="$CloseUser()"><img src="back.png" height="29px" style="margin:-5px;margin-right:0px;" >vissza</div>	';
+	a+='<div class="box">Log Out</div>	';
+	a+='<div class="box">Share This</div>	';
+	a+='<div class="box">$Other Fn</div>	';
+	navbarin.innerHTML=a;
+}
+function $CloseUser() {
+navbarin.innerHTML=savenavbar;
+document.getElementById('navbarin').className='slideoptoff'
+}
+//$OpenUser();
+</script>
+
+
+<button class="btn-b" onClick="get(-1);" id="blue">btn-b inner add</button>
+<button class="btn-r" onClick="get(1);" id="red">btn-b inner von</button>
+<button class="btn-green"  onClick="lapse();" id="green">btn-b inner</button>
+<hr>
+<TABLE>
+<tr>
+<td class="inp-n"><input type="text" class="inp-text"></td>
+<td class="inp-e"><input type="text" class="inp-text"></td>
+</tr>
+</TABLE>
+<hr>
+<input type="checkbox" class="inps-chb">
+<hr class="chb">
+<hr class="chr">
+<hr class="chn">
+<br>
+<hr class="chb-a">
+<hr class="chr-a">
+<hr class="chn-a">
+<br>
+<table style="font-family:Courier;" id="colors">
+<tr>
+<td style="background:#62F;">&nbsp; &nbsp;62F&nbsp; &nbsp; </td>
+<td style="background:#26F;">&nbsp; &nbsp;26F&nbsp; &nbsp;  </td>
+<td style="background:#F62;">&nbsp; &nbsp;F62&nbsp; &nbsp; </td>
+
+</tr>
+<tr>
+<td style="background:#48E;">&nbsp; &nbsp;48E&nbsp; &nbsp; </td> 
+<td style="background:#E83430;">&nbsp;&nbsp;E83430&nbsp; </td>
+<td style="background:#2A4;"> &nbsp;&nbsp;&nbsp;2A4&nbsp; &nbsp;&nbsp;</td>
+</tr><tr>
+<td style="background:#555;">&nbsp; &nbsp;555&nbsp;&nbsp;&nbsp; </td>
+<td style="background:#CCC;"> &nbsp; &nbsp;CCC&nbsp; &nbsp; </td>
+<td style="background:#D5E2F2;">&nbsp;&nbsp;D5E2F2&nbsp;&nbsp;</td>
+</tr>
+</table>
+	<hr>
+<input class="inp-m">
+<style>
+.inp-text {
+
+		outline:none;
+		border:1px solid #CCC;	
+		font-family:"Arial Black", Gadget, sans-serif;
+		padding:5px;
+		font-size:18px;
+		opacity:0.8;
+		-webkit-transition:opacity 0.2s,border-color 0.4s,box-shadow 0.4s;
+		border-radius:5px;	
+		}
+
+	.inp-text:hover{	
+		opacity:1;
+		}
+	.inp-text:active,.inp-text:focus {
+		border-color:#26F;
+		box-shadow:0px 0px 2px #555 inset;			
+		}
+
+
+</style>
+<!--	<span id="generalalert" draggable="true"  class="ui-widget-content">
+		<div class="oualert" id="oualert">
+			<div class="alert">
+				<div id="cimalert">
+					Üdvözöljük a rontap weboldalon
+				</div>
+					<hr class="hralert">
+				<div id="mainalert">
+					Ön a RTS weboldalak egyikét tekinti meg<br>
+					Bárminemű észrevételt szívesen fogadunk a report@rontap.netne.net email címre
+				</div>
+					<hr class="hralert">
+				<div id="btnalert_container">
+					<span class="btnalert" id="ok-alert" onClick="$CloseAlert()">Rendben </span>|
+					<span class="btnalert" id="back-alert"> kezdőlap </span>|
+					<span class="btnalert" id="no-alert"> további infó </span>|
+					<span class="btnalert" id="re-alert"> súgó </span>			
+				</div>
+			</div>
+	</div>
+	
+	</span>
+	-->
+
+<div id="notifbox">
+
+</div>
+
+	
+<progress value="1" min="0" max="100" id="add">2 out of 10</progress>
+	<script>
+	function get(szam) {
+	add.value=add.value+szam;
+	}
+	function lapse()
+	{
+	add.value=add.value+1;
+	setTimeout(function(){lapse();},1000);
+	}
+	</script>
+	
+	<!--<script src="main.rjsx" type="text/javascript"></script>-->
+	
+	
+	</Body>
+</HTML>

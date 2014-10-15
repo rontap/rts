@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<HTML>
+	<Head>
+		<title>settings</title>
+	  <meta charset="UTF-8">
+		<meta name="author" content="TAP">
+	  <meta name="description" content="rontap">
+		<meta name="keywords" content="rontap,linux,TaPium,tapsite,rts,rjsx">
+	 <script src="goog.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	
+	</Head>
+	<Body id="body">
+<script>
+		appver="TapCalk2.2\n TAPIS/calkr.js 1.6 ";
+		sited="ttest.html";
+		navname="TapCalk 3"; //hogy jelenik majd meg
+		navplus="2 számológép";
+		coa=false;		
+		pack="rontap.mainHelp/tapcalk2";
+		moretag=true;
+		//holvan
+		manimg="calc.png";
+</script>
+
+<style>
+	body {
+	margin:0;
+	
+	height:100%;
+	}
+	#body {
+	border-right:5px solid #26F;
+	height:1000px;
+	background:#666;
+	}
+	#body #div {
+	margin-left:10px;
+	padding:15px;
+	cursor:pointer;
+	}
+	#body #div:hover {
+	background:#AAA;
+	}
+	#body #div:active {
+	background:#CCC;
+	}
+	#div {
+	border-bottom:1px solid #AAA;
+	}
+</style>
+	
+	<body >
+
+
+<div id="body">
+	<div id="div" onclick="history.go(-1);">
+		<img src="menu.png" alt="beállítások"  height="20px"> Mentés
+	</div>
+	
+	<div id="div">
+		act A
+	</div>
+	<div id="div">
+		act B
+	</div>
+	<div id="div">
+		act C
+	</div>
+	<div id="div">
+		act D
+	</div>
+</div>
+	<script src="main.rjsx" type="text/javascript"></script>
+	</Body>
+</HTML>

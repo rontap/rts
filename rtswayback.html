@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+<title id="titel">rts múzeum</title>
+<style>
+ body {
+   margin:0;
+   padding:0;
+ } 
+    
+ iframe {
+   position:fixed;
+   left:0;
+   right:0;
+   top:50px;
+   width:100%;
+ } 
+ nav {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:50px;
+  background:#48F;
+  overflow-y:auto;
+ }
+</style>
+
+<nav >
+  <b>Verzió:</b>
+  <span id="nav"></span>
+  <br>
+  <b>Megjelenítés:</b>
+  <span id="ver">
+    <input type="radio" name="g" value="" onchange="valt='ver.html';go(a);">Ver | 
+    <input type="radio" name="g" value="" onchange="valt='tapcalk.html';go(a);" checked>Tapcalk | 
+    <input type="radio" name="g" value="" onchange="valt='testrts.html';go(a);">RTSapis
+  </span>
+</nav>
+
+
+<iframe src="rtswaybackindex.html" id="ifr">
+</iframe>
+
+
+<script>
+valt = "tapcalk.html";
+var a = 'http://rontap.netne.net#'; 
+vers=["nighty","shadow","borland","hud","haxel","flow","unit","unity","elemential", "stein","year","kitkat","ikarus","millenium","static","tahr"];
+
+for (i=0;i<vers.length;i++) {
+  nav.innerHTML+='<input type="radio" name="s" value="'+vers[i]+'" onclick="go(this.value)">'+vers[i];
+  
+}
+
+function go(call)
+{
+  a=call;
+  document.getElementById("ifr").src="http://rontap.netne.net/"+call+"/"+valt;
+  titel.innerHTML="rts múzeum | "+call;
+}
+
+window.onresize= function(){document.getElementById("ifr").style.height=window.innerHeight-50+'px';}
+    document.getElementById("ifr").style.height=window.innerHeight-50+'px';
+</script>
+
+<link rel="stylesheet" type="text/css" href="http://rontap.netne.net/static/main.css">

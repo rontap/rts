@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<HTML>
+	<Head>
+		<title>RTS Creator</title>
+	  <meta charset="UTF-8">
+		<meta name="author" content="TAP">
+	  <meta name="description" content="rontap">
+		<meta name="keywords" content="rontap,linux,TaPium,tapsite,rts,rjsx,creatpre">
+	 <script src="goog.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script>
+		appver="TapCalk2.2\n TAPIS/calkr.js 1.6 ";
+		sited="ttest.html";
+		navname="RTS Tag késztítő"; //hogy jelenik majd meg
+		navplus="2 számológép";
+		coa=false;		
+		pack="rontap.mainHelp/tapcalk2";
+		moretag=true;
+		//holvan
+		manimg="calc.png";
+		specnav="<i>Az RJSX megszelídítése</i> <a href='rtsapis.html'>rtsapis</a><a> második link</a>";
+		</script>
+	</Head>
+<style>
+textarea {
+width:50%;
+height:250px;
+}
+input[type="checkbox"] {
+visibility: show;
+}
+</style>
+
+
+
+
+	
+	<body >
+	<div id="navbar">
+	 </div>
+	
+
+<div id="body">
+<rts>
+<br>
+<center><a href="rtsdocumentation.html" class="l">Dokumentáció</a> |  <a href="rtsapis.html" class="l">Alkalmazás</a> | <a href="#notyet" class="l">Letöltés</a>  </center>
+<br>
+	Üdvözöljük! Ezen az oldalon interaktívan tekintheti meg a RTS Tag-et.<br>
+	A kezdéshez kattintson a kód betöltése gombra, majd az alant lévő mezőknek a tartalmát írja át, és így a weboldal dinamikusan változni fog.<br>
+	Amint kész van, kattingson a "kód generálása" gombra<br><hr> 
+	<button onClick="	two.innerHTML=innerter.innerHTML;b.disabled=true" class="btn-b" id="b">kód betöltése</button><br>
+	<input id="one" value="RTS Tag késztítő" onkeyup="focim.innerHTML=one.value" class="inp-text"><br>
+	<textarea id="two" value="" onkeyup="textconvert()" class="inp-text"></textarea>
+	<br><hr>
+	Képek. Jelenleg <span id="picslength">sok</span> kép érhető el.<br>
+	
+	<button onClick="previmg();" id="imgback" disabled class="btn-green"> &lt; </button>
+	<img src="f_icons/preferences-color.png" id="logos"width="90px">
+	<button onClick="nextimg();" id="imgnext" class="btn-green"> &gt; </button>
+	<hr>
+	Finomhangolás.<br>
+	<input type="checkbox"id="home"onchange="changehome()"  checked> jelenjen meg a kezdőoldal link<br>
+		<input type="checkbox"id="home2"onchange="changenev2()"  > felső sötét sáv elrejtése<br>
+	<hr>
+	<table>
+	
+	</table>
+				<script>
+				
+				imgat=0;
+		pics= new Array();
+		pics=["battery.png","camera.png","canvas.png","code.png","drive-removable-media-usb.png","gimp.png","gnome-cd.png","hdd.png","monitor.png","preferences-color.png","props.png","ram.png","rnd.png","rts.png","set.png","usb.png","web.png","web2.png","adress.svg","arcessory.svg","audio.svg","avatar.svg","browser.svg","calk.svg","code.svg","config-users.svg","dia.svg","drive-harddisk-scsi.svg","evolution-calendar.svg","file.svg","game.svg","game5.svg","graphic.svg","hardinfo.svg","key.svg","look.svg","media-floppy.svg","network-wired.svg","notes.svg","palimpsest.svg","partner.svg","rhythmbox.svg","secure.svg","settings.svg","svg.svg","system.svg","task.svg","template.svg","user.svg","widget.svg"];
+	picslength.innerHTML=pics.length;
+	
+	function previmg() {//elozo kep
+		imgat--;
+		if(imgat==0) { 
+		imgback.disabled=true; 
+		}
+		imgnext.disabled=false; 
+		logos.src='f_icons/'+pics[imgat];
+		rjsxlogo.src='f_icons/'+pics[imgat];
+	}
+	function nextimg() {
+		imgat++;
+		if(imgat==pics.length) { 
+		imgnext.disabled=true;
+		}
+		imgback.disabled=false; 
+		logos.src='f_icons/'+pics[imgat];
+		rjsxlogo.src='f_icons/'+pics[imgat];
+	}
+	function textconvert() {
+	
+	innerter.innerHTML=two.value;
+	}
+	rjsx_nohomepager=true;
+	function changehome() {
+	if (rjsx_nohomepager) {
+	rjsx_nohomepageholder.innerHTML='';
+	rjsx_nohomepager=false;
+	}
+	else {
+	rjsx_nohomepageholder.innerHTML='Kezdőoldal ';
+	rjsx_nohomepager=false;
+	}
+	}
+	var savenev2;
+	function changenev2() {
+	if(home2.checked==true) {
+		nev2.style.height="0px";
+	nev2.style.overflow="hidden";
+	savenev2=nev2.innerHTML ;
+	x('nev2');
+	}
+	else {
+	nev2.style.height="auto";
+	nev2.innerHTML=savenev2 ;
+	}
+	}
+	</script>
+	<script src="main.rjsx" type="text/javascript"></script>
+
+<style>
+input[type="checkbox"] {
+visibility: show;
+}
+</style>
+	</Body>
+
+</HTML>

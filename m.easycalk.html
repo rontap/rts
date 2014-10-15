@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<script src="goog.js" type="text/javascript"></script>
+			<link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="rtsapiCSS.css">
+<style>
+	body {
+		background-color:#AAAAAB;
+	}
+
+	#buttons {
+
+	margin:-10px;
+	padding:10px;
+	margin-top:-15px;
+	}
+
+	.getlink {
+		text-decoration:none;
+		color:#66EE55;
+		background-color:#3333CC;
+	}
+	.getlink:hover {
+		text-decoration:none;
+		color:#226611;
+		background-color:#9999FF;
+	}
+	.btn-b, .btn-green,.btn-r ,.btn-b:hover, .btn-green:hover,.btn-r:hover {
+		font-size:17px;
+		min-width:20px;
+		
+		padding-left:10px;
+		padding-right:10px;
+		/*MOBILE API*/
+		box-shadow:none;
+		border-radius:0px;
+		/**/
+		}
+	.btn-b:active, .btn-green:active,.btn-r:active{
+	padding-left:7px;
+	padding-right:7px;
+	padding-bottom:0px;
+	}
+	#kim {
+		height:25px;
+		font-size:20px;
+		}
+	table {
+	
+	/*width:2in;*/
+	margin:-5px;
+	text-align:center;
+		}
+	body {
+		width:100px;
+		}
+		tr td {
+		width:50px;
+		height:25px;
+		}
+</style>
+		<title>tapcalk</title>
+		<meta name="description" content="" />
+		<meta name="author" content="rontap" />
+		<script>
+		appver="TapCalk2.2\nTAPI/easycalk.calk.js\n";
+		sited="ttest.html";
+		navname="Tapcalk Mini"; //hogy jelenik majd meg
+		navplus="2";
+		mennyiD="";
+		coa=true; //compatibe agent
+		
+		function push(it) {//szamiras
+			
+			kim.innerHTML+=it;
+			mennyiD+=it;
+		}
+		function clseasy() {
+			kim.innerHTML="";
+		}
+		function run(it) {//alk.indítás
+			S1=kim.innerHTML;
+			clseasy();
+			app2run=it;
+		}
+		function end() {
+		
+		calc1=parseInt(S1);
+	        calc2=parseInt(kim.innerHTML);
+		if (app2run=="szoroz")		 			
+			{					
+		 	kim.innerHTML=calc1*calc2;
+			}
+		if (app2run=="oszt")		 			
+			{					
+		 	kim.innerHTML=calc1/calc2;
+			}
+		if (app2run=="kivon")		 			
+			{					
+		 	kim.innerHTML=calc1-calc2;
+			}
+		if (app2run=="osszead")		 			
+			{					
+		 	kim.innerHTML=calc1+calc2;
+			}
+		if (app2run=="emel")		 			
+			{					
+		 	kim.innerHTML=Math.pow(calc1,calc2);
+			}
+ 	
+		
+		}
+		function gyok() {
+			kim.innerHTML=Math.sqrt(kim.innerHTML);
+		}
+		function fakt() {						
+			faktc=1;
+			for (i=parseInt(kim.innerHTML); i>0; i--) {
+			faktc=i*faktc;
+			}
+		kim.innerHTML=faktc;		
+		}
+		
+		</script>
+	
+	</head>
+
+	<body id="body">
+<rts><br>
+		<div>
+
+<!--[if IE]>
+<h1 class="iekill">sajnos ez a weblap nem tekinthető meg Internet Explorerrel. :(<br>tölts le egy gyorsabb és biztonságosabb böngészőt, a Google Chromeot</h2>
+<![endif]-->
+<comment>
+<div id="kim"></div>						
+<br>
+			
+
+	<div id="buttons">
+<TABLE>
+ <tbody>
+	<tr>
+		<td class="btn-r" onClick="run('emel');">^</td>
+		<td class="btn-r" onClick="gyok();">√</td>
+		<td class="btn-r" onClick="fakt();">!</td>
+		<td class="btn-green" onClick="clseasy();">C</td>
+	</tr>
+		<tr>
+		<td class="btn-b" onClick="push('7');">7</td>
+		<td class="btn-b" onClick="push('8');">8</td>
+		<td class="btn-b" onClick="push('9');">9</td>
+		<td class="btn-r" onClick="run('szoroz');">*</td>
+	</tr>
+	<tr>
+		<td class="btn-b" onClick="push('4');">4</td>
+		<td class="btn-b" onClick="push('5');">5</td>
+		<td class="btn-b" onClick="push('6');">6</td>
+		<td class="btn-r" onClick="run('oszt');">/</td>
+	</tr>
+	<tr>
+		<td class="btn-b" onClick="push('1');">1</td>
+		<td class="btn-b" onClick="push('2');">2</td>
+		<td class="btn-b" onClick="push('3');">3</td>
+		<td class="btn-r" onClick="run('kivon');">-</td>
+	</tr>
+	<tr>
+		<td class="btn-b" onClick="push('0');">0</td>
+		<td class="btn-b" onClick="push('.');">.</td>
+		<td class="btn-green" onClick="end();">=</td>
+		<td class="btn-r" onClick="run('osszead');">+</td>
+	</tr>
+	</tbody>
+</TABLE>
+	</div>
+
+	
+ 	</span>
+
+
+
+		</div>
+
+</comment>
+
+	</body>
+</html>

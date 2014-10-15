@@ -1,0 +1,68 @@
+<HTML>
+    <Head>
+        <title>rontapparty</title>
+      <meta charset="UTF-8">
+        <meta name="author" content="TAP">
+      <meta name="description" content="-rontap-partyMachine--">
+        <meta name="keywords" content="rontap,party,machine">
+      <script src="main.rjsx"></script>
+      <script src="goog.js" type="text/javascript"></script>
+      <script>
+        appver="Party Machine 2 ";
+        sited="szemkieg.html";
+        navname="PM"; //hogy jelenik majd meg
+        navplus="achine";
+        coa=false;
+        pack="rontap.extras/pm";
+        moretag=false;
+        </script>
+    </Head>
+    <Body id="body">
+<style>
+#egdiv {
+    margin-top:30%;     
+    text-align:center;
+    font-size:60px; 
+    }
+#get {
+    font-size:10px;
+        }
+</style>
+<span id="get" onClick="alert('rontap party machine v2.1\nVIGYÁZZAT, eplilepsziát okozhat a tartós használata, a készítő nem vállal felelősséget\n ');">rontap party machine 2 </span>
+<b id="eg"><div id="egdiv" onClick="egjstart();">CLICK</div></b>
+
+<script>
+szem=true;
+function egjstart() {eg.innerHTML='<div id="egdiv" onClick="egjmeg();">click for more PARTY</div>';
+egj();
+}
+function egj() {
+szinv();
+if (szem==true) {setTimeout(function(){egj();},200);}
+}
+function szinv() {
+r=Math.floor(Math.random()*255);
+g=Math.floor(Math.random()*255);
+b=Math.floor(Math.random()*255);
+body.style.backgroundColor="rgb("+r+","+g+","+b+")";
+get.style.color="rgb("+r+","+g+","+b+")";
+
+rp=Math.floor(Math.random()*255);
+gp=Math.floor(Math.random()*255);
+bp=Math.floor(Math.random()*255);
+eg.style.color="rgb("+rp+","+gp+","+bp+")";
+
+}
+function egjmeg() {
+
+setTimeout(function(){egj();},150);
+eg.innerHTML='<div id="egdiv" onClick="egjszet();">PARTY</div>';
+}
+function egjszet() {
+eg.innerHTML='<div id="egdiv" onClick="egjszet();">PARTY HARD</div>';
+setTimeout(function(){egj();},30);
+
+}
+</script>
+    </Body>
+</HTML>

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<HTML>
+	<Head>
+		<title>click 'n' party</title>
+	  <meta charset="UTF-8">
+		<meta name="author" content="TAP">
+	  <meta name="description" content="-rontap-partyMachine--">
+		<meta name="keywords" content="rontap,party,machine">
+	  <script src="main.rjsx"></script>
+	  <script src="goog.js" type="text/javascript"></script>
+	  <script>
+		appver="Party Machine";
+		sited="szemkieg.html";
+		navname="PM"; //hogy jelenik majd meg
+		navplus="achine";
+		coa=false;
+		pack="rontap.extras/pm";
+		moretag=false;
+		</script>
+	</Head>
+	<Body id="body">
+<style>
+#eg {
+	margin-top:30%;		
+	text-align:center;
+	font-size:60px;	
+	}
+#get {
+	font-size:10px;
+		}
+		table
+		{
+		width:100%;
+		height:100%;
+		font-size:25px;
+		}
+</style>
+
+<span id="get" onClick="alert('rontap party machine v1.5\nVIGYÁZZAT, eplilepsziát okozhat a tartós használata, a készítő nem vállal felelősséget\n ');">rontap party machine</span>
+<span onclick="egj();">Start</span>
+<TABLE id="table">
+<tbody id="tbbd">
+		
+	</tbody>
+</TABLE>
+<script>
+var clX = 0; //auto helye X
+var clY = 0; //auto helye Y
+//VIRT.TABLA GEN
+function twoArray(rows) {//ketdimenziostomb
+  var gt = [];
+
+  for (var i=0;i<rows;i++) {
+     gt[i] = [];
+  }
+
+  return gt;
+}
+var gt = twoArray(100);
+
+gt[50][2] = 5;
+gt[70][5] = 7454;
+
+//TABLA KIRAJZOL
+
+//szurki
+function draw() 
+{
+tbbd.innerHTML="";
+
+///szurk
+for (sor=0;sor<20;sor++)
+{
+tbbd.innerHTML+="<tr id='"+sor+"'>";//TR gen
+	for (j=0;j<1;j++)
+	{
+	
+					
+		gt[j][sor]=String(j)+String(sor);
+	
+	//SZURKIT
+	/*OFFLINE rndszam=Math.floor(Math.random()*100);
+if (rndszam<=rndzold)//1/10 ed esély a szürkeségre  (rndszam<=rndzold)
+	{
+	document.getElementById(sor).innerHTML+="<td class='uns' id='m"+gt[j][sor]+"'>"+gt[j][sor]+"</td>";
+	}
+else
+	{  OFFLINE*/
+	document.getElementById(sor).innerHTML+="<td class='un' id='m"+gt[j][sor]+"'>&nbsp;</td>";
+	//}OFFLINE
+}
+		
+					
+	}
+	
+tbbd.innerHTML+="</tr>";
+
+}
+draw();
+
+//SZURKIT
+
+</script>
+
+<script>
+szem=true;
+ido=150;
+
+
+function egj() {
+
+szinv();
+setTimeout(function(){egj();},100);
+}
+function szinv() {
+
+for (i=1;i<20;i++)
+{
+
+r=Math.floor(Math.random()*255);
+g=Math.floor(Math.random()*255);
+b=Math.floor(Math.random()*255);
+document.getElementById(Number(i)).style.backgroundColor="rgb("+r+","+g+","+b+")";
+get.style.color="rgb("+r+","+g+","+b+")";
+}
+
+p=Math.floor(Math.random()*255);
+p=Math.floor(Math.random()*255);
+p=Math.floor(Math.random()*255);
+body.style.backgroundColor="rgb("+r+","+g+","+b+")";
+
+}
+
+//RONTAPPARTY1.6
+</script>
+	</Body>
+</HTML>

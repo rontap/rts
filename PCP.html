@@ -1,0 +1,273 @@
+<HTML >
+<HEAD>
+	<style>
+	#log {font-size:10px;}
+	.kispanel {width:40px;}
+	</style>
+	<meta charset="utf-8">
+	<script src="goog.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	
+</HEAD>
+<BODY id="body">
+<script>
+appver="RND\n TAPIS/WizARD 1.2 ";
+		sited="PCP.html";
+		navname="PC Pont"; //hogy jelenik majd meg
+		navplus=" Varázsló és Benchmark ezköz";
+		coa=false;				
+		pack="rontap.mainHelp/wizard";
+		moretag=true;
+		//holvan
+		vit_start="Start";
+		vit_tema="Benchmark alkalmazások";
+		
+		chg1="tapcalk";
+		chg2="easycalk";
+		chg3="Start";
+		chg1l="tapcakj.html";
+		chg2l="esycalk.html";
+		chg3l="start.html";
+		manimg="f_icons/set.png";
+		focim='PC Pont';
+</script>
+<rts>
+	
+	<style>
+	body {z-index:10;}
+			#lep1 {opacity:0;  top:100px; left:10px; z-index:9;}
+			#lep0 {opacity:0;  top:100px; z-index:10;}
+			#lep2 {opacity:0;  top:100px; left:10px; z-index:8;}
+			#lep3 {opacity:0;   top:100px; left:10px; z-index:7;}
+			#lep4 {opacity:0;   top:100px; left:10px; z-index:6;}
+			#lep5 {opacity:0;  top:100px; left:10px; z-index:5;}
+			#lep6 {opacity:0;   top:100px; left:10px; z-index:4;}
+			#lep7 {opacity:0;   top:100px; left:10px; z-index:4;}
+			ker span {opacity:0;}
+			
+	</style>
+	
+	
+	
+<span id="panel">
+	<b id="webname">
+		
+ 	</b><b> varázsló</b>
+	<span id="holtart">1</span> lépés az <d id="mennyimax"></d>-ből/ből
+
+	<button onclick="next();" id="nextbtn">tovább</button>
+	<button onclick="help(who);" id="kerdesbtn">?</button>
+</span>
+<hr>
+<span id="ker">	
+	<i id="starttext">
+	
+	</i>
+	<div id="lep1">
+			<h2><img src="f_icons/ram.png">RAM</h2>
+		Milyen DDR RAM-od van? DDR
+		<input class="inp-text-short"type="number" id="ram1ddr" value="3"><br>
+		ram mennyisége GB-ben 
+		<input class="inp-text-short"type="number" id="ram2siz" value="2">GB (ha kevesebb van mint 1 		akkor:  pl:0.5 = 512MB)<br>
+		órajele: <input class="inp-text-short"type="number" id="ram3mhz" value="1333">Mhz
+	</div>
+	
+	<div id="lep2">
+		<h2><img src="f_icons/ram.png">PROCESSZOR</h2>
+		Hány Magos a Processzorod?
+		<input class="inp-text-short"type="number" id="cpu1mag" value="2"><br>
+		Hány Ghz az órajele?
+		<input class="inp-text-short"type="number" id="cpu2ghz" value="2.8"><br>
+		(opcionális) mennyi Cash-e van
+		<input class="inp-text-short"type="number" id="cpu3cas" value="20">MB<br>
+	</div>
+	
+	<div id="lep3">
+			<h2><img src="f_icons/hdd.png">MEREVLEMEZ</h2>
+		Hány GB-os a merevlemezed
+		<input class="inp-text-short"type="number"	 id="hdd1ala" value="256">GB<br>
+		milyen típusó merevlemezed van?<br>
+		<form >
+			<input type="radio" name="ml" value="hdd">SSD<br>
+			<input type="radio" name="ml" id="hdd2hdd" value="hdd" checked>HDD 
+		</form>
+		Ha van külső merevlemez stb akkor mekkora a mérete:
+		<input class="inp-text-short"type="number"	 id="hdd3mas" value="256">GB<br>
+	</div>
+	
+	<div id="lep4">
+		<h2><img src="f_icons/monitor.png">KÉPERNYŐ</h2>
+	Hány inch-es a képernyőd
+	<input class="inp-text-short"type="number"	 id="hdd1inc" value="256">In
+	
+	<br>Milyen kábel van beledugva<br>
+	<form>
+		<input type="radio" name="kep1typ" value="vga">VGA (640×480, kék)<br>
+		<input type="radio" name="kep2typ" value="dvi" checked>DVI (1280×1080, fehér)<br>
+		<input type="radio" name="kep3typ" value="hdmi">HDMI (1280×1080+, fekete)
+	</form>
+	
+	</div>
+		<div id="lep5">
+		<h2>
+		<img src="f_icons/web.png">
+		<img src="f_icons/web2.png">
+		INTERNET</h2>
+		Milyen gyors letöltési sebesség?
+		<input class="inp-text-short"type="number" id="cpu3cas" value="2">MB/sec<br>
+		Feltöltés?
+		<input class="inp-text-short"type="number" id="cpu3cas" value="0.2">MB/sec<br>
+		
+	</div>
+	
+	<div id="lep6">
+		<h2>PORTOK</h2>
+		<img src="f_icons/usb.png" width="25px">van USB3 (olyan mint az usb2 csak KÉK)<input type="checkbox" name="usb3" value="vga"><br>
+		<img src="f_icons/gnome-cd.png" width="25px">CD/DVD lejátszó<input type="checkbox"><br>
+		<img src="f_icons/camera.png" width="25px">WEbkamera<input type="checkbox"><br>
+		
+	</div>
+	<div id="lep7">
+		<h2>EGYÉB</h2>
+		
+		<b>oprendszer</b>
+		<form>
+			<input type="radio" name="os" value="w7" checked>Windows7<br>
+			<input type="radio" name="os" value="wxp" >WindowsXP<br>
+			<input type="radio" name="os" value="ow">Más windows<br>
+			<input type="radio" name="os" value="mac">Mac<br>
+			<input type="radio" name="os" value="lin">Linux<br>
+		</form>
+		<form>
+			<input type="radio" name="kep2typ" value="b32" checked>32Bit<br>
+			<input type="radio" name="hdd2hdd" value="b64" >64Bit<br>	
+		</form>
+		indulási idő<input class="inp-text-short"type="number"	 id="hdd1inc" value="60">Másodperc
+	
+	</div>
+</span>
+
+
+<footer id="foot"></footer>
+		<script>
+//WIZ_ARD API ported from torikikerdezo
+	ramt = new Array() ;
+	cput = new Array() ;
+	hddt = new Array() ;
+//VÉGE
+	ENDtext="kikérdezlek";
+	var who=1;
+	var mennyivan=7;
+	var varazslo="Számítógép";
+	mennyimax.innerHTML=mennyivan;
+
+//STEP1
+function step1()	{	
+	starttext.innerHTML="";
+	lep1.style.opacity="1";
+	}	
+function submit1(){
+	ramt[1]=document.getElementById("ram1ddr").value;
+	ramt[2]=document.getElementById("ram2siz").value;
+	ramt[3]=document.getElementById("ram3mhz").value;	
+	}
+//STEP2
+function step2()	{
+	submit1();
+	lep1.innerHTML="";
+	lep2.style.opacity="1";
+	}	
+function submit2()	{
+	cput[1]=document.getElementById("cpu1mag").value;
+	cput[2]=document.getElementById("cpu2ghz").value;
+	cput[3]=document.getElementById("cpu3cas").value;	
+	}
+//STEP3
+function step3() 	{
+	submit2();
+	lep2.innerHTML="";
+	lep3.style.opacity="1";
+	}
+function submit3()	{
+	/*hddt[1]=document.getElementById("hdd1ala").value;
+	hddt[2]=document.getElementById("hdd2hdd").checked;
+	hddt[3]=document.getElementById("hdd3mas").value;*/
+	}
+
+function step4() 	{
+	submit3();
+	lep3.innerHTML="";
+	lep4.style.opacity="1";
+	}
+function submit4()	{
+	
+	}
+	
+	function step5() 	{
+	submit4();
+	lep4.innerHTML="";
+	lep5.style.opacity="1";
+	}
+	function submit5() {
+	
+	}
+function step6() 	{
+	submit5();
+	lep5.innerHTML="";
+	lep6.style.opacity="1";
+	}
+
+function submit6()	{
+	}
+	
+function step7() 	{
+	submit6();
+	lep6.innerHTML="";
+	lep7.style.opacity="1";
+	}
+
+function submit7()	{
+	}
+//OTHERSTEP
+function steplast() {
+	nextbtn.innerHTML="Befejezés";
+
+}
+function stepf() {
+	nextbtn.disabled=true;		
+}
+//NEXT
+//step3();
+	function next()
+	{
+	
+		switch(who) {//mennyi van
+			case 1 : step1(); break;
+			case 2 : step2(); break;
+			case 3 : step3(); break;
+			case 4 : step4(); break;
+			case 5 : step5(); break;
+			case 6 : step6(); break;
+			case 7 : step7(); break;
+			case 8 : steplast(); break;
+			case 9 : stepf(); break;
+			    }
+		who++;
+		holtart.innerHTML=who;
+	}
+	function help(mit) {//HELP RENDSZER
+	
+		switch (mit) {
+		
+		case  1:alert("ezegy");
+		
+		}
+	}
+	webname.innerHTML="WEB projekt"
+	foot.innerHTML+="<h6>rontap RJSX WIZARD APIv1 [loaded]</h6>";
+	starttext.innerHTML="Ez a "+varazslo+" varázslója. a Kattints a tovább gombra a folytatáshoz<br>Ha elakadsz, a '?' gomb segítségedre lehet!<br>Az oldalt NE frissísd munka közben ,mert akkor elveszik a munkád"
+	</script>
+
+		<script src="main.rjsx" type="text/javascript"></script>
+</BODY>
+</HTML>

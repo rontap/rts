@@ -1,0 +1,670 @@
+<!--MADY BY ELEMENTIAL. LICENCED UNDER CC LICENCE. grimm is made by rontap-->
+<body>
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<meta charset="UTF-8">
+<div>
+<title>Codename: Grimm</title>
+<style>
+#logii {
+-webkit-transition:height .3s, width .2s;
+height:250px; 
+width:250px;
+}
+
+#logii:hover,#logii:active,#logii:focus {
+height:500px; 
+width:300px; 
+}
+body {
+background:#EEE;
+}
+r {color:red;font-weight:bold;}
+.g {
+border:2px double #48F;
+padding:3px;
+margin:3px;
+width:300px;
+display:inline-block;
+-webkit-transition:background 0.2s, color 0.1s;
+}
+.g:hover {
+background:#48F;
+color:white;
+}
+.g button {
+cursor:pointer;
+}
+.gr {
+border:2px solid #F84;
+}
+.gr:hover {
+background:#F84;
+}
+.gre {
+border:2px solid #F26;
+width:auto;
+}
+.gre:hover {
+background:#DDD;
+color:#444;
+}
+summary {
+font-size:18px;
+font-type:initial;
+}
+code {
+font-size:15px;
+}
+#pplsorting {
+width:50%;
+border:1px solid #444;
+}
+#pplsorting span {
+display:inline-block;
+-webkit-transition:width 1s;
+color:white;
+}
+#resman {background:#26F;}
+#builder {background:#F84;}
+#rpman {background:#96C;}
+</style>
+<b>variables</b><br>
+	<i>time</i>:<span id="tim"></span><br>
+	<i>resources</i>:<br><span id="resu"></span>
+</div>
+<div>
+
+<b>MUI:</b><br>
+<span class="g">
+<button onClick="build('Mwheat')">build wheat</button> <span id="whkim">nincs</span>
+</span><br>
+<span class="g">
+<button onClick="build('Mstone')">build stone</button> <span id="skim">nincs</span>
+</span><br>
+<span class="g">
+<button onClick="build('Mwood')">build wood</button> <span id="wkim">nincs</span>
+</span><br>
+<span class="g">
+<button onClick="build('Miron')">build iron</button> <span id="ikim">nincs</span>
+</span><br>
+<span class="g gr">
+<button onClick="build('hause')">build house</button> <span id="hkim">nincs</span>
+</span><br>
+<span class="g gr">
+<button onClick="build('storage')">build storage</button> <span id="stkim">szint:0 tárol: 100, 100, 120, 40, </span>
+</span><br>
+<span class="g gr">
+<button onClick="build('rpbase')">build res. labl</button> <span id="rkim">nincs</span>
+</span>
+<div id="muiex"></div>
+<br>
+ <div id="pplsorting">
+<span id="builder">építő</span><span id="resman">termelő</span><span id="rpman">kutató</span> 
+ </div>
+ <br>
+<b>console</b><br>
+
+<span id="consolWE" style="color:red"></span><br>
+<span id="consolSTOR" style="color:#F84;"></span><br>
+<span id="consolWPS" style="color:#48F;"></span><br>
+<select  id="logii" multiple style="">
+
+</select>
+ </div>
+ 
+
+<script>
+//DEF
+mui = {
+	add : {
+		rp : function (){
+		a='<hr>Kutatás:<div class="g gre">';
+		
+		a+='<br><span class="g"><button onClick="research('+"'buildings'"+')">Épülethatékonyság </button>'
+		a+='<span id="muir_buildings">'+rp.buildings.lmake[rp.buildings.clevel]+'</span></span>';
+		
+		a+='</div>';
+		muiex.innerHTML=a;
+		},
+	},
+};
+ppls = {//emberek beosztása
+	builder : 33.3,
+	resman  : 33.3,
+	rpman   : 33.3,
+} ;
+res = {
+"stone":"10",
+"wood":"10",
+"wheat":"10",
+"iron":"0",
+"energy":"0",
+"rp":"0",
+"ppl":"10",
+"happy":"80",
+"good":"20",
+}
+//
+reslist = ["stone","wood","wheat","iron"];
+add = {
+	"stone": [],
+	"wheat": [],
+	"wood" : [],
+	"iron" : [],
+    "energy":[],
+	"rp"   : [],
+	"ppl"  : [],
+	"happy": [],
+	"good" : [],
+		}
+add.wheat[0]=0;
+rp = {
+	"buildings" : {
+		"code":100,
+		"clevel": 0,
+		"lcost" : [0,1,2,3,4,5],
+		"lmake" : [0,0.05,0.07,0.1,0.11,0.12]
+		},
+
+		
+	};
+mod ={//az árakat, tulajdonságokat változtató [reseatch]
+	"cost" : {//ÁRAK
+		"build" :1,//az összesített építés árak
+		},
+	"pplwheat" : 0,
+	"settings" : {//a csúszkán beállítható
+		"resmake" : 1,
+		},
+}
+
+
+cost = {//árak
+"Mstone" : {//épület
+		 "clevel" : 0 ,
+		 "l1" : {//szint
+		 		"wood":2,//alapanyag
+				"wheat":2,
+				"plus":1,
+		 		},
+		 "l2" : {//szint
+		 		"wood":5,//alapanyag
+				"wheat":5,
+				"plus":2,
+		 		}
+		 },
+"Mwheat" : {//épület
+		 "clevel" : 0 ,
+		 "l1" : {//szint
+		 		"wood":4,//alapanyag
+				"stone":2,
+				"plus":1,
+		 		},
+		 "l2" : {//szint
+		 		"wood":5,//alapanyag
+				"stone":3,
+				"plus":2,
+		 		}
+		 },
+"Mwood" : {//épület
+		 "clevel" : 0 ,
+		 "l1" : {//szint
+		 		"wheat":2,//alapanyag
+				"stone":2,
+				"plus":1,
+		 		},
+		 "l2" : {//szint
+		 		"wheat":5,//alapanyag
+				"stone":5,
+				"plus":2,
+		 		}
+		 },
+"Miron" : {//épület
+		 "clevel" : 0 ,
+		 "l1" : {//szint
+		 		"wheat":2,//alapanyag
+				"stone":2,
+				"plus":0.20,
+		 		},
+		 "l2" : {//szint
+		 		"wheat":5,//alapanyag
+				"stone":5,
+				"plus":0.40,
+		 		}
+		 },
+"hause" : {//épület
+		 "clevel" : 0 ,
+		 "l1" : {//szint
+		 		"stone":1,
+		 		"wood":2,//alapanyag
+				"wheat":4,
+				"plus":0.10,
+				"minus":-0.1,
+		 		},
+		 "l2" : {//szint
+				"stone":4,
+		 		"wood":5,//alapanyag
+				"wheat":5,
+				"plus":0.40,
+				"minus":-0.125,
+		 		},
+		 "l3" : {//szint
+				"stone":4,
+		 		"wood":8,//alapanyag
+				"wheat":10,
+				"plus":0.60,
+				"minus":-1.15,
+		 		},
+		 },
+"rpbase" : {//épület
+		 "clevel" : 0 ,
+		 "l1" : {//szint
+		 		"stone":6,
+		 		"wood":3,//alapanyag
+				"wheat":1,
+				"plus":0.10,
+		 		},
+		 },
+"storage" : {//épület
+		 "clevel" : 0 ,
+		 "l1" : {//szint
+		 		"stone":3,
+		 		"wood":3,//alapanyag
+				"wheat":1,
+				"room":[50,50,60,15]
+		 		},
+		  "l2" : {//szint
+		 		"stone":6,
+		 		"wood":5,//alapanyag
+				"wheat":2,
+				"room":[80,80,80,20]
+		 		},
+		 }		 		
+}
+storage = {//tárolás
+	"stone": 100,
+	"wood" : 100,
+	"wheat": 120,
+	"iron" : 40,
+}
+
+time=0;
+rules = ['RULES'];
+fnrules=new Object();
+//BASE
+fnrules=rules;
+function timestep()
+{
+setTimeout(
+	function()
+	{
+	time++;
+	tim.innerHTML=time;
+	fnrules=JSON.parse(JSON.stringify(rules));
+	//fnrules=rules;
+	for (i=1;i<fnrules.length;i++)
+	{
+			normalres=false;
+		for (j=0;j<=reslist.length;j++)
+		{
+		if (fnrules[i].material==reslist[j])//csak akkor engedi, ha igazi nyersanyag
+			{normalres=true;
+			//console.log(reslist[j]);
+			}
+			
+		}
+		if ((fnrules[i].modify>0)&&(normalres)&&(!(isNaN(fnrules[i].modify))))
+		{
+		fnrules[i].modify=rules[i].modify*mod.settings.resmake;//a általad beálltott plusz.
+		
+		}
+		//console.log(fnrules[i]);
+	}
+	
+	
+	
+	for (i=1;i<fnrules.length;i++)// végigmegy a szabályokon
+	{
+		
+		//console.log(res[fnrules[i].material]+'elotte');
+		if (fnrules[i].material=='ppl')//természetes szaporulat lassulása
+		{
+		
+			res[fnrules[i].material]=Number(rules[i].modify*mod.pplwheat)+Number(res[rules[i].material]);
+			//res[fnrules[i].material]=(res[rules[i].material]-rules.ppl/2000);
+		}
+		else {
+		
+		res[fnrules[i].material]=fnrules[i].modify+Number(res[fnrules[i].material]);//hozzáadva a nyersanyagot
+		
+		}
+		//console.log(fnrules[i].material+' '+res[fnrules[i].material]);
+	}
+//búza
+	rescheck();//megnézi, hogy minden +ban van
+	//res.wheat=Number(res.wheat)-res.ppl/100;
+	
+	mod.pplwheat=0;
+		wheatsum = 0;//megnézi, hogy mennyi a kajaváltozás /T
+		for (j=0;add.wheat.length>j;j++)
+		{
+			wheatsum=wheatsum+Number(add.wheat[j]);		
+		}
+		wheatsum-=res.ppl/100;//levonja a búzábol az emberek századát
+		
+		if (wheatsum>2){mod.pplwheat=1.1+wheatsum/10; }//+2++
+		if (wheatsum<0.5){mod.pplwheat=0.1+(Number(wheatsum/10));}//-0--
+		else if (wheatsum<1){mod.pplwheat=wheatsum;}//+1
+		else if (wheatsum<=2){mod.pplwheat=1;}//+1+2
+		consolWPS.innerHTML='wheat PS '+wheatsum+', PPLwheat is ×'+mod.pplwheat;
+	//res.ppl=res.ppl*mod.pplwheat
+// /búza		
+	/*for (k=0;k<reslist.length;k++)//végigmegy az elemeken
+	{
+		console.log(reslist[k]);
+		for (j=0;j<add[reslist[k]].length;j++)//végigmegy az elemek szabályain
+		{
+		console.log(add[reslist[k]][j]);
+			for (m=0;)
+		}
+		
+	}	*/
+	
+	//if (){}
+	resu.innerHTML='kő '+res.stone+'<br>fa '+res.wood+'<br>búza '+res.wheat+'<br>vas '+res.iron+'<br>energia '+res.energy+'<br>tudás '+res.rp+'<br>ember '+res.ppl+'<br>boldogság '+res.happy+'<br>jólét '+res.good;
+	
+	if (time%3==0)
+	{
+		drawChart();
+	}
+	if (time%5==0)
+	{
+		drawChart2();
+	}
+	if (Math.floor(Math.random()*10)==5)
+	{
+		randomness();
+	}
+	console.log(fnrules[1].modify+'-'+rules[1].modify);
+	timestep();
+	}//CIKLUS
+	
+	,1000);
+	
+}
+function rescheck() {
+
+	if (res.wheat<0)
+	{
+		res.ppl--;
+		for  (i=0;add.ppl.length>i;i++)//a ppl tömmböt végigjárja
+		{
+			res.ppl=res.ppl-add.ppl[i];
+			/*if (add.ppl[i]>0)//ha az adott elem nem csökkentené magától a ppl-t
+			{
+			res.ppl=res.ppl-(-1*add.ppl[i]);//akkor csökkenti ez (elkerülni hogy SZUM[add.ppl]>1)
+			}*/
+		}
+		consolWE.innerHTML='<br>Warning: wheat is'+res.wheat;
+	}
+	if (res.ppl<0)
+	{
+		log('<br><r>GAME OVER: you have no pepole left!</r> ');
+		rules=[];
+		timestep="";
+	}
+	consolSTOR.innerHTML='';
+	for (i=0;i<4;i++)//ha a raktár max-nál többan
+	{
+		if (res[reslist[i]]>=storage[reslist[i]])
+		{
+		res[reslist[i]]=storage[reslist[i]];
+		consolSTOR.innerHTML+="<br>more resources of <b>"+reslist[i]+'</b> than allowed. Allowed max is '+storage[reslist[i]];
+		}
+	}
+}
+function build(call) {//épület építése
+	switch (call) {
+		case "Mstone": 	
+						cost[call].clevel++;//a kó szintjét fejleszti
+						pay(call,cost[call].clevel);//kifizeti
+						addrule('stone',cost[call]['l'+cost[call].clevel].plus);//hozáadja
+						/*mui*/skim.innerHTML='szint: '+cost[call].clevel+' termel +/T:'+(cost[call]['l'+cost[call].clevel].plus);
+						break;
+		case "Mwheat": 	
+						cost[call].clevel++;
+						pay(call,cost[call].clevel);
+						addrule('wheat',cost[call]['l'+cost[call].clevel].plus);
+						/*mui*/whkim.innerHTML='szint: '+cost[call].clevel+' termel +/T:'+(cost[call]['l'+cost[call].clevel].plus);
+						break;
+		case "Mwood": 	
+						cost[call].clevel++;
+						pay(call,cost[call].clevel);
+						addrule('wood',cost[call]['l'+cost[call].clevel].plus);
+						/*mui*/wkim.innerHTML='szint: '+cost[call].clevel+' termel +/T:'+(cost[call]['l'+cost[call].clevel].plus);
+						break;
+		case "Miron": 	
+						cost[call].clevel++;
+						pay(call,cost[call].clevel);
+						addrule('iron',cost[call]['l'+cost[call].clevel].plus);
+						/*mui*/ikim.innerHTML='szint: '+cost[call].clevel+' termel +/T:'+(cost[call]['l'+cost[call].clevel].plus);
+						break;
+		case "hause": 	
+						cost[call].clevel++;
+						pay(call,cost[call].clevel);
+						
+						addrule('wheat',cost[call]['l'+cost[call].clevel].minus);
+						addrule('ppl',cost[call]['l'+cost[call].clevel].plus);
+						/*mui*/hkim.innerHTML='szint: '+cost[call].clevel+' termel +/T:'+(cost[call]['l'+cost[call].clevel].plus);
+						
+						break;
+		case "rpbase": 	
+						cost[call].clevel++;
+						pay(call,cost[call].clevel);
+						/*mui*/rkim.innerHTML='szint: '+cost[call].clevel+' generál +/T'+(cost[call]['l'+cost[call].clevel].plus);
+						mui.add.rp();
+						addrule('rp',cost[call]['l'+cost[call].clevel].plus);
+						break;
+		case "storage": 	
+						cost[call].clevel++;
+						pay(call,cost[call].clevel);
+						/*mui*/stkim.innerHTML='szint: '+cost[call].clevel+' tárol:';
+						for (i=0;i<reslist.length;i++)
+						{
+							storage[reslist[i]]+=cost[call]['l'+cost[call].clevel].room[i];
+							console.log(cost[call]['l'+cost[call].clevel].room[i]);
+							stkim.innerHTML+=storage[reslist[i]]+', ';
+						}
+							break;
+	
+	}
+		//add[call]=new Array;
+		
+		
+		log('Build_'+call+' : level:'+cost[call].clevel+'<br>') ;
+}
+function pay(call,level) {//fizet
+//ha van ára annak az elemnek annak a szintjén {legyen a készlet=készlet-ár a fejlesztéshez}
+if (!(isNaN(cost[call]['l'+level].iron))) { 
+	res.wood=Number(res.wood)-Number(cost[call]['l'+level].wood)*mod.cost.build; 
+	}
+if (!(isNaN(cost[call]['l'+level].stone))) {
+ 	res.stone=Number(res.stone)-Number(cost[call]['l'+level].stone)*mod.cost.build; 
+ }
+if (!(isNaN(cost[call]['l'+level].wood))) { 
+	res.wood=Number(res.wood)-Number(cost[call]['l'+level].wood)*mod.cost.build; 
+}
+if (!(isNaN(cost[call]['l'+level].wheat))) {
+ 	res.wheat=Number(res.wheat)-Number(cost[call]['l'+level].wheat)*mod.cost.build;
+  }
+log('<br>Pay. for level'+level);
+
+}
+function addrule(call,mod,minus)//tickenkénti szabály hozzáadása
+{
+	var minus;
+	rules[rules.length]= {'material':call , "modify":parseFloat(mod),}
+	add[call][add[call].length]=mod;
+	log('RuleSet_'+call+' to '+mod+'<br>') ;
+}
+function research(kutat)
+{	
+	switch (kutat)
+	{
+	case 'buildings' :
+			if (rp.buildings.lcost[rp.buildings.clevel++]<=res.rp)//ha van elég kutatáspont
+			{
+			//rp.buildings.clevel++;
+			res.rp-=rp.buildings.lcost[rp.buildings.clevel];//vonja le
+			mod.cost.build=mod.cost.build-rp.buildings.lmake[rp.buildings.clevel];//a építés ára legyen a mostani szinttel kevesebb
+		log("<br>research buildings. reduced cost by: "+rp.buildings.lmake[rp.buildings.clevel]+'');
+			/*mui*/muir_buildings.innerHTML=rp.buildings.lmake[rp.buildings.clevel];
+			}
+			break;
+	}
+}
+function randomness() {
+rn=Math.round(Math.random()*100);
+if (rn==42)
+	{
+		res.rp=(res.rp+10)*2;
+	log('<br>Random event: RP+100*2');
+	}
+if (rn>90)
+	{
+		res.ppl=res.ppl+(res.ppl*((100-rn)/100));
+	log('<br>Random event: PPL+'+res.ppl*((100-rn)/200));
+	}
+if (rn<10)
+	{
+		res.ppl=res.ppl-(res.ppl*((10-rn)/100));
+	log('<br>Random event: PPL-'+res.ppl*((100-rn)/200));
+	}
+if ((rn<18)&&(rn<8))
+{	
+		a=Math.ceil(Math.random()*4)
+		res[reslist[a]]=res[reslist[a]]+(res[reslist[a]]*((10-rn)/100));
+}
+	
+	}
+function log(call) {
+
+    select = document.getElementById('logii');
+
+    var opt = document.createElement('option');
+    opt.value = '';
+    opt.innerHTML = call;
+    select.appendChild(opt);
+
+}
+
+log('init');
+timestep();
+function pplpost(bu,re,rp) {//az embereket rendereli
+
+	sum=bu+re+rp;
+	ppls.builder=(bu/sum)*100;
+	ppls.resman=(re/sum)*100;
+	ppls.rpman=(rp/sum)*100;
+	builder.style.width=ppls.builder+'%';
+	resman.style.width=ppls.resman+'%';
+	rpman.style.width=ppls.rpman+'%';
+	
+	mod.settings.resmake=(ppls.resman*3)/100;
+	
+}
+//kezdeti termelés megadása
+addrule('stone',0.1,'');
+addrule('wood',0.1,'');
+pplpost(10,10,10);
+</script>
+<div>
+
+
+<hr>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+ 
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(initc);
+      var data;
+  function initc() {
+   data = google.visualization.arrayToDataTable([
+          ['Year', 'stone', 'wood', 'wheat' , 'iron'],
+          ['0',  10,   10, 10 , 0],        
+        ]);
+    data2 = google.visualization.arrayToDataTable([
+          ['Year', 'ppl'],
+          ['0',  10],        
+        ]); 
+  }      
+      i=0;
+      function drawChart() {
+      	
+		i++;
+        	data.addRows([
+         	 [time+'.',Number(res.stone),Number(res.wood),Number(res.wheat),Number(res.iron) ],     
+       		 ]);       
+       var options = {
+          title: 'statisztika'
+        };
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+       
+      }
+            function drawChart2() {
+     
+        	data2.addRows([
+         	 [time+'.',Number(res.ppl)],     
+       		 ]);       
+       var options2 = {
+          title: 'emberstatisztika'
+        };
+
+         var chart2 = new google.visualization.LineChart(document.getElementById('chart_div2'));
+        chart2.draw(data2, options2);
+      }
+    </script>
+ 
+    <div id="chart_div" style="width: 800px; height: 400px;"></div>
+    <div id="chart_div2" style="width: 800px; height: 400px;"></div>
+
+<hr>
+<b>Documentation</b>
+<code>2013 okt 21.<br><br>
+<details>
+<summary>0.0.1-0.1.0 Projekt kezdése [okt21-okt23]</summary>
+0.0.1&nbsp;  projekt elkezdése. példa hozzáadva, struktúrák felépítése<br>
+0.0.2&nbsp;  szintrendszer<br>
+0.0.3&nbsp;  ház, ember hozzáadva<br>
+0.0.3b ember változása, balancolva<br>
+0.0.4&nbsp;  búza hozzáadva, emberek megeszik<br>
+0.0.5&nbsp;  alap kutatóközpont, jólét hozzáadva<br>
+0.0.7&nbsp;  vas hozzáadva, minden építhető <i>[okt 23]</i><br>
+0.0.8&nbsp;  anyagok szabályainak szortírozása<br>
+0.0.9&nbsp;  ember csökkenés biztosítva<br>
+<b>0.1.0</b>&nbsp;  kutatási rendszer kidolgozása<br>
+</details><br>
+
+<details>
+<summary>0.1.1-0.2.0 MUI és grafikon, kutatás [okt23-okt28]</summary>
+0.1.1&nbsp;  maximális nyersanyagok hozzáadva (projekt átnevezve GRIMM-re)<br>
+0.1.2&nbsp;  MUI elkezédése<br>
+0.1.2b  hanszálható MUI, kevéske design hozzáadása<br>
+0.1.4&nbsp;  Google Charts grafikonok hozzáadva<br> 
+0.1.6&nbsp;  szaporodás-búza arányok hozzáadva, mostmár változik a ppl <i>[okt 24]</i><br>
+0.1.7&nbsp;  véletlen szerü események hozzáadva<br>
+0.1.7b  véleglenszerű események korrigálva<br>
+0.1.8&nbsp;  Kutatás rendszer javítva, MIU-hoz hozzáadva<br>
+<b>0.2.0</b>&nbsp;  MIU konzol újítás <i>[okt 28]</i><br>
+</details>
+</code>
+<!--500 sor okt 24--> 
+
+<!--
+ADDITIONAL NOTES TO VERSIONS
+009 add."res" tartalmazza az összes adott szabályt
+010 MOD tartalmazza a globális szorzókat, a RP meg a kutatási árakat, és a MOD megváltoztatási számait
+-->
+</div>
+<!--ELEMENTIAL LICENCED UNDER CC LICENCE. grimm is made by rontap-->

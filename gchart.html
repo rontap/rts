@@ -1,0 +1,143 @@
+
+<!DOCTYPE HTML>
+<HTML>
+	<Head>
+		<title>Elemential</title>
+	  <meta charset="UTF-8">
+		<meta name="author" content="TAP">
+	  <meta name="description" content="rontap">
+		<meta name="keywords" content="rontap,linux,TaPium,tapsite,rts,rjsx">
+
+	<script>
+		appver="ALAPRTS\n RJSX 6.3";
+		sited="ttest.html";
+		navname="Grafikon készítő"; //hogy jelenik majd meg
+		coa=false;		
+		moretag=true;
+		//holvan
+		manimg="f_icons/file.svg";
+specnavi = new Array("8.-os felmérés");
+specnavil = new Array("gpchart.html");
+specnavimg = new Array("f_icons/dia.svg");
+</script>
+
+	</Head>
+
+
+
+
+
+	
+	<body >
+	<div id="navbar">
+	 </div>
+	
+
+<div id="body">
+<rts>
+
+<input class="inp-text" id="foocim" onChange="additions[0]=foocim.value;drawChart();startx();">
+<input class="inp-text" id="pluscim" onChange="additions[1]=pluscim.value;drawChart();startx();">
+<div id="output">
+
+ </div>
+<button class="btn-b" onClick="szelet++;addrows();startx();">Új szelet</button>
+<button class="btn-green" onClick="startx();">startx</button>
+<input id="chartcc" type="number" value="0" onChange="typeofchart=charts[Number(chartcc.value)];drawChart();">
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+    a=0.7;
+   szelet=4;//hány szeletvből áll a grafikon
+   
+   charts = new Array ("piechart","chart_div")//jelenleg elérhatő grafikontipus
+   typeofchart=charts[chartcc.value];//-||- alkalmazás
+   dtable = new Array(0.5,0.4,1.5,0.15);//adatok
+    vtable = new Array("a","béta","valami","más")//a nevük
+    additions = new Array("cím","segítő szöveg");//minden más adat
+    //0:cim,1:felirat
+		   for (i=4;i<101;i++)//adattáblák feltöltése
+		{
+			dtable[i]=0;
+			vtable[i]="";
+		}
+    //vizualizációs
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Language', additions[1]],
+          [vtable[0],  dtable[0]],
+          [vtable[1],  dtable[1]],
+          [vtable[2],  dtable[2]],
+          [vtable[3],  dtable[3]],
+  		  [vtable[4],  dtable[4]],
+  		  [vtable[5],  dtable[5]],
+  
+     
+          
+        ]);
+
+      var options = {
+        legend: 'none',
+        pieSliceText: 'label',
+        title: additions[0],
+        pieStartAngle: 100,
+      };
+      //milyen típusú chart éegyen
+		switch (typeofchart)
+		{
+		case 'piechart' :
+			chartoutput.innerHTML=' <div id="piechart" style="width: 900px; height: 500px;" ></div>';
+			var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+			console.log('drawing pie')
+			break;
+			
+		case 'chart_div':
+			chartoutput.innerHTML=' <div id="chart_div" style="width: 900px; height: 500px;" ></div>';
+			var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+			console.log('drawing chart')
+        	break;
+		
+		}//switch
+        /*var chart = new google.visualization.PieChart(document.getElementById('piechart'));*/
+         chart.draw(data, options);
+      }
+      
+       //t1.value=vtable[0];
+       function addrows()
+       {
+       output.innerHTML='';
+       for (i=0;i<szelet;i++) 
+       {
+       
+output.innerHTML+='<input id="v'+i+'" type="text" class="inp-text"  onChange="vtable['+i+']=v'+i+'.value;drawChart();">';
+output.innerHTML+='<input id="d'+i+'"type="number" class="inp-text"  onChange="dtable['+i+']=Number(d'+i+'.value);drawChart();">' ;
+output.innerHTML+='<br>'
+       }
+       }//addrows
+       addrows();
+       function startx() {//elindítja a GUI-t
+		   for (i=0;i<szelet;i++)
+		   {
+		   window['v'+i].value=vtable[i];
+		   window['d'+i].value=dtable[i];
+		   }
+		   foocim.value=additions[0];
+		    pluscim.value=additions[1];
+       }
+       startx();
+    </script>
+
+   
+	
+	
+	<div id="chartoutput" style="z-index:50;">
+	</div>
+	
+	<script src="main.rjsx" type="text/javascript"></script>
+	</Body>
+	<script>
+	 startx();
+	</script>
+</HTML>

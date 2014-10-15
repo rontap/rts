@@ -1,0 +1,123 @@
+<link rel="stylesheet" type="text/css" href="main.css">
+<body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<meta charset="UTF-8">
+<style>
+#mhr {
+	position:fixed;
+	left:0;
+	right:0;
+	top:45%;
+	border:none;
+	background:#48F;
+	height:5px;
+	box-shadow:0 0 5px #48F;
+	}
+	body {
+		overflow-x:scroll;
+		}
+	.time {
+		position:absolute;
+		top:10;
+		bottom:0;
+		border-left:1px solid #999;
+		margin-left:200px;
+		text-align:center;
+		font-size:25px;
+		}
+		.fbx-abs {
+			position:absolute;
+			}
+			.t {
+				top:35%;
+				}
+			.b {
+				top:50%;
+				}
+		.dot {
+			position:absolute;
+		top:45%;
+		margin-top:4px;
+		height:15px;
+		width:15px;
+		background:red;
+		border-radius:50px;	
+		background:#48F;
+		box-shadow:0 0 5px #48F;	
+		cursor:pointer;
+		overflow: hidden;
+		color: transparent;
+		-webkit-transition:all .2s;
+		}
+		.dot:hover {
+			background:#26f;
+			color: #ddd;
+			margin-top: -14px;
+			height: 40px;
+			width: 50px;
+			margin-left:-14px;
+			padding-top: 10px;
+			text-align:center;
+			box-shadow:0 0 510px #48F;	
+			}
+		.ido {
+			position:absolute;
+			bottom:0;
+			height:20px;
+			background: linear-gradient( transparent , #48F);
+			padding:50px;
+			-webkit-transition:all .3s;
+			}
+			.ido:hover {
+				padding-top:70px;
+				}
+</style>
+
+
+
+<hr id="mhr">
+<div class="time">-3000</div>
+<div class="time">-2500</div>
+<div class="time">-2000</div>
+<div class="time">-1500</div>
+<div class="time">-1000</div>
+<div class="time" style="border-left:5px solid #444; box-shadow:0 0 500px black;background:#999;">0</div>
+<div class="time">100</div>
+<div class="time">200</div>
+<div class="time">300</div>
+<div class="time">400</div>
+<div class="time">500</div>
+<div class="time">600</div>
+<div class="time">700</div>
+<div class="time">800</div>
+<div class="time">900</div>
+<div class="time">1000</div>
+<div class="time">1100</div>
+
+
+<div class="floatbox fbx-red fbx-abs t" l="150" id="a">Test Text</div>
+<div class="floatbox fbx-blue fbx-abs b" l="150">Ez még egy idő amíg elkészül, légy türelmes!</div>
+
+<div class="dot">1769</div>
+
+<div class="ido">Naplóeon</div>
+
+<script>
+	left=0;
+for (i=0;i<document.getElementsByClassName('time').length;i++)
+{
+	console.log(i);
+	document.getElementsByClassName('time')[i].style.left=left+"px";
+	left+=200;
+	if ((i+1)%10==0) {
+		console.log('10');
+		document.getElementsByClassName('time')[i].style.borderLeft="3px solid #999";
+		}
+	}
+for (i=0;i<document.getElementsByClassName('floatbox').length;i++)
+{	
+	console.log(document.getElementsByClassName('floatbox')[i].l)
+}
+</script>
+</body>

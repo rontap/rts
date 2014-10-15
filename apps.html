@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<HTML>
+	<Head>
+		<title>elemential desktop apps</title>
+	  <meta charset="UTF-8">
+		<meta name="author" content="TAP">
+	  <meta name="description" content="rontap">
+		<meta name="keywords" content="rontap,linux,TaPium,tapsite,rts,rjsx">
+	 <script src="goog.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script>
+		appver="TapCalk2.2\n TAPIS/calkr.js 1.6 ";
+		sited="ttest.html";
+		navname="Elemential Desktop Apps"; //hogy jelenik majd meg
+		
+		coa=false;		
+		pack="rontap.mainHelp/tapcalk2";
+		moretag=true;
+		//holvan
+		manimg="calc.png";
+	//	rjsxlocation="http://rontap.elemential.net/";
+</script>
+<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+	</Head>
+
+
+
+
+
+	
+	<body >
+	<div id="navbar">
+	 </div>
+	
+
+<div id="body">
+<rts>
+
+	Itt találhatóak az elemential által készített, letölthető alkalmazások.<br>
+	A névre klikkelve további információkat tudhat meg.<br>
+	Az alkalmazások egy része instabil, vagy nagy informatikai tudást igényel<br>
+	
+	
+	<br>
+	<div class="phold"id="ph1" onclick="opent1();">
+		<div class="ptitle">	
+		HackIt Battleground	<img src="plus.gif" height="20px" id="pimg">
+		</div>
+		<div class="ptext">
+		A HackIt battleground
+		<div class="pdown">
+			
+		
+			<button class="btn-new-linux" onclick="document.location='apps/hackit_linux'">
+			Letöltés linux
+			</button>
+		</div>
+		</div>
+		
+	</div>
+	<br>
+	<div class="phold"id="ph2" onclick="opent2();">
+		<div class="ptitle">	
+		AdminPiskator	<img src="plus.gif" height="20px" id="pimg2">
+		</div>
+		<div class="ptext">
+		adminpiskator builds
+		<div class="pdown">
+			<button class="btn-new" onclick="document.location='apps/adminpiskator.exe'">
+			Letöltés windows
+			</button>
+		
+			<button class="btn-new-linux" disabled >
+			Letöltés linux
+			</button>
+		</div>
+		</div>
+	</div>
+<br>
+	<div class="phold"id="ph3" onclick="opent3();">
+		<div class="ptitle">	
+		XUTube	<y>beta</y><img src="plus.gif" height="20px" id="pimg3">
+		</div>
+		<div class="ptext">
+		könnyüsúlyú youtube lejátszó <br>
+		<p class="p">
+		Másold vágólapra a megosztási linket, és a progi Dolgozik magától!! (megj.: az embed nem mindig támogatott...)
+		</p>
+		<div class="pdown">
+			<button class="btn-new">
+			Letöltés windows
+			</button>
+		
+			
+		</div>
+		</div>
+	</div>
+	<br>
+	<div class="phold"id="ph4" onclick="opent4();">
+		<div class="ptitle">	
+		Akasztófa<img src="plus.gif" height="20px" id="pimg3">
+		</div>
+		<div class="ptext">
+		egyszerű akasztófa játék <br>
+		
+		<div class="pdown">
+			<button class="btn-new">
+			Letöltés windows
+			</button>
+		
+			
+		</div>
+		</div>
+	</div>
+	
+	<script>
+	opened=false;
+function opent1() {
+if (opened){
+ph1.style.height="30px";
+opened=false;
+pimg.src="plus.gif"
+}
+
+else {
+	ph1.style.height=ph1h+"px"
+	opened=true;
+	pimg.src="minus.gif"
+	}
+}
+			
+	ph1h=$("#ph1").height();
+	ph1.style.height="30px";
+//2	
+		opened2=false;
+function opent2() {
+if (opened2){
+ph2.style.height="30px";
+opened2=false;
+pimg2.src="plus.gif"
+}
+
+else {
+	ph2.style.height=ph2h+"px"
+	opened2=true;
+	pimg2.src="minus.gif"
+	}
+}
+			
+	ph2h=$("#ph2").height();
+	ph2.style.height="30px";
+	
+			opened3=false;
+function opent3() {
+if (opened3){
+ph3.style.height="30px";
+opened3=false;
+pimg3.src="plus.gif"
+}
+
+else {
+	ph3.style.height=ph3h+"px"
+	opened3=true;
+	pimg3.src="minus.gif"
+	}
+}
+			
+	ph3h=$("#ph3").height()+30;
+	ph3.style.height="30px";
+
+			opened4=false;
+function opent4() {
+if (opened4){
+ph4.style.height="30px";
+opened4=false;
+pimg4.src="plus.gif"
+}
+
+else {
+	ph4.style.height=ph4h+"px"
+	opened4=true;
+	pimg4.src="minus.gif"
+	}
+}
+			
+	ph4h=$("#ph4").height()+30;
+	ph4.style.height="30px";
+
+</script>
+	<script src="main.rjsx" type="text/javascript"></script>
+
+	</Body>
+			
+
+	
+
+</HTML>

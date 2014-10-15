@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<!-- ELEMENTIAL: CC BY-NC-SA 3.0 licence alatt-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<LINK REL=StyleSheet HREF="http://rontap.netne.net/millenium/main.css" TITLE="Contemporary">
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+<style>
+    
+    body {
+         -o-user-select:none;
+         -moz-user-select: none;
+         -khtml-user-select: none;
+         -webkit-user-select: none;
+         -ms-user-select: none;
+         user-select: none;
+    }
+            
+    .c  {
+        display:inline-block;
+        min-width:25%;
+        min-height:25%;
+        position:fixed;
+        margin:0;
+        top:0;
+        left:0;
+        overflow:hidden;
+        margin:0 ;
+        border:0;
+        
+        
+    }
+    
+
+    #holder div.H3 {
+    bottom:25%;
+    }
+    #holder div.W3 {
+    right:25%;
+    }
+    #holder div.H2 {
+    bottom:50%;
+    }
+    #holder div.W2 {
+    right:50%;
+    }
+    #holder div.H1 {
+    bottom:75%;
+    }
+    #holder div.W1 {
+    right:75%;
+    }
+    #holder div.H {
+    bottom:0;
+    }
+    #holder div.W {
+    right:0;
+    }
+    #holder div.PH1 {
+    top:25%;
+    }
+    #holder div.PW1 {
+    left:25%;
+    }
+    #holder div.PH2 {
+    top:50%;
+    }
+    #holder div.PW2 {
+    left:50%;
+    }
+    #holder div.PH3 {
+    top:75%;
+    }
+    #holder div.PW3 {
+    left:75%;
+    }
+    
+    #holder div.H3:hover {
+    bottom:22%;
+    }
+    #holder div.W3:hover {
+    right:22%;
+    }
+    #holder div.H2:hover {
+    bottom:48%;
+    }
+    #holder div.W2:hover {
+    right:48%;
+    }
+    #holder div.H1:hover {
+    bottom:73%;
+    }
+    #holder div.W1:hover {
+    right:73%;
+    }
+    #holder div.PH1:hover {
+    top:23%;
+    }
+    #holder div.PW1:hover {
+    left:23%;
+    }
+    #holder div.PH2:hover {
+    top:48%;
+    }
+    #holder div.PW2:hover {
+    left:48%;
+    }
+    #holder div.PH3:hover {
+    top:73%;
+    }
+    #holder div.PW3:hover {
+    left:73%;
+    }
+    #holder div {
+        -webkit-transition:all .5s;
+        }
+    #holder div:hover {
+        padding:2%;
+        z-index:99;
+        }
+    
+    .b { background: #48F; }
+    .o { background: #F84; }
+    .r { background: #F44; }
+    .g { background: #9C6; }
+    .v { background: #62C; }
+
+    div {
+    -webkit-transition:all 1s;
+    }
+    #holder div span  {
+    font-size:5vw;
+    margin:5px;
+    }
+    .tart {
+    font-size:100% !important;
+    margin:10px;
+    padding: 10px;
+    display:block;
+    text-align:justify;
+
+    -webkit-transition:all 1s;
+
+    }
+        
+    .foc {
+    display:block;
+    font-size:5vh !important;
+    -webkit-transition:all 1s;
+    font-family: 'Roboto';
+    }
+
+         #holder div.max {
+        opacity:.8 !important;
+    padding:10% 10% 5% 10% !important;
+    top:0 !important;
+    left:0 !important; 
+    bottom:0 !important;
+    right:0 !important;
+    
+    z-index:99 !important;
+        position:fixed !important;
+         }
+         .min {
+         
+         }
+</style>
+
+
+
+
+<div id="holder">
+<div class="b H3 W1  c" onclick="extend(this.id)" id="a" style="">
+    <span class="foc">Főcím 1.</span>
+    <span class="tart"></span>
+</div>
+<div class="v H W2 PH3 c" onclick="extend(this.id)" id="b" style="">
+    <span class="foc">A Gulliver csődvédelmet kért</span>
+    <span class="tart"></span>
+</div>
+<div class="r W3  PW1 H1 c" onclick="extend(this.id)" id="c" style="">
+    <span class="foc">Főcím 3.</span>
+    <span class="tart"></span>
+</div>
+<div class="o W3  PH1 PW1 H2 c" onclick="extend(this.id)" id="d" style=";">
+    <span class="foc">Főcím 4.</span>
+    <span class="tart"></span>
+</div>
+<br>
+<div class="r H W PH2 PW2 c" onclick="extend(this.id)" id="e" style="">
+    <span class="foc">Főcím 5.</span>
+    <span class="tart"></span>
+</div>
+<div class="g  W2 H3 PH2 PW1 c" onclick="extend(this.id)" id="f" style="">
+    <span class="foc">Google</span>
+    <span class="tart"></span>
+</div>
+<div class="g H2 W PW3 PH c" onclick="extend(this.id)" id="g" style="">
+    <span class="foc">Főcím 7.</span>
+    <span class="tart"></span>
+</div>
+</div>
+
+
+
+<script>
+var mostID;
+//got from TC
+var map = []; // Or you could call it "key"
+onkeydown = onkeyup = function(e){
+    e = e || event; // to deal with IE
+    map[e.keyCode] = e.type == 'keydown';
+     console.log(map)
+    if( map[27] ){ // CTRL+SHIFT+A
+      extend(mostvan);
+     map=[];
+    }
+       if( map[9] && map[16] ){ // TAB
+      extend(document.getElementsByClassName("c")[mostID].id);
+      if (mostID==document.getElementsByClassName("c").length)
+      {     
+       extend(document.getElementsByClassName("c")[0].id);
+      }
+      else {
+         extend(document.getElementsByClassName("c")[mostID-1].id);
+      }
+     map=[];
+      
+    } else
+     if( map[9] ){ // TAB
+      extend(document.getElementsByClassName("c")[mostID].id);
+      if (mostID==document.getElementsByClassName("c").length)
+      {     
+       extend(document.getElementsByClassName("c")[0].id);
+      }
+      else {
+         extend(document.getElementsByClassName("c")[mostID+1].id);
+     }
+     map=[];
+      
+    }
+   
+   
+    }
+    
+ise = false; //isexpanded
+function extend(call) {
+
+
+if (!(ise))
+{
+    window[call].className += " max";
+    for ( i=0 ; i<holder.getElementsByTagName("div").length ; i++ )
+    {
+        if ((holder.getElementsByTagName("div")[i]!= call)) {
+            holder.getElementsByTagName("div")[i].style.opacity="0";
+            document.getElementById(call).getElementsByClassName("tart")[0].style.opacity="1";
+            //console.log(document.getElementById(call).getElementsByClassName("tart")[0])
+        }
+        else {
+        window[call].style.opacity="1";
+        
+        }
+        
+    }
+       
+
+    
+        
+    
+    window[call].getElementsByClassName("foc")[0].style.marginTop="-5%";
+    window[call].getElementsByClassName("tart")[0].style.overflowY="scroll";
+    window[call].getElementsByClassName("tart")[0].style.height="85%";
+    
+    setTimeout( function(){
+    a.getElementsByClassName("tart")[0].innerHTML=tartise[0];
+    
+    b.getElementsByClassName("tart")[0].innerHTML=tartise[1];
+    c.getElementsByClassName("tart")[0].innerHTML=tartise[2];
+    d.getElementsByClassName("tart")[0].innerHTML=tartise[3];
+    e.getElementsByClassName("tart")[0].innerHTML=tartise[4];
+    f.getElementsByClassName("tart")[0].innerHTML=tartise[5];
+    g.getElementsByClassName("tart")[0].innerHTML=tartise[6];
+    }, 650)
+ise=true;
+    }
+else {
+//------------------------------------------------------------------------------
+//---DEMINIMALISE---------------------------------------------------------------
+//------------------------------------------------------------------------------
+        $("#"+call).removeClass('max');
+    a.getElementsByClassName("tart")[0].innerHTML=tart[0];
+    b.getElementsByClassName("tart")[0].innerHTML=tart[1];
+    c.getElementsByClassName("tart")[0].innerHTML=tart[2];
+    d.getElementsByClassName("tart")[0].innerHTML=tart[3];
+    e.getElementsByClassName("tart")[0].innerHTML=tart[4];
+    f.getElementsByClassName("tart")[0].innerHTML=tart[5];
+    g.getElementsByClassName("tart")[0].innerHTML=tart[6];
+    for ( i=0 ; i<holder.getElementsByTagName("div").length ; i++ )
+    {
+        
+            holder.getElementsByTagName("div")[i].style.opacity="1";;
+        
+        
+    }
+
+    window[call].getElementsByClassName("tart")[0].style.overflowY="hidden";
+    window[call].getElementsByClassName("foc")[0].style.marginTop="0";
+    window[call].getElementsByClassName("foc")[0].style.marginBottom="0";
+    
+    
+window[call].style.zIndex=1;
+window[call].style.boxShadow="";
+ise=false;
+}
+
+
+mostvan=call;
+
+      for (i=0;i<document.getElementsByClassName("c").length;i++)
+      {
+      if (document.getElementsByClassName("c")[i].innerHTML==window[call].innerHTML)
+        {
+        
+       mostID=i;
+        console.log(mostID);
+       i=document.getElementsByClassName("c").length;
+        }
+      }
+
+}//ext
+
+tartise=[];
+
+tartise[0]="<p>Gondok lehetnek az új iskoláknak az új adminisztrációs szoftverre való átállás − írja az Átlátszó oktatás blog. A blog szerint január 1-jétől minden, a KLIK-hez tartozó iskolának a Magiszter nevű iskolaadminisztrációs rendszerre kell majd átállnia.</p><p>A blog szerint külön nehezíti az átállást, hogy tanév közepén kell azt végrehajtani, mert eddig más adminisztrációs rendszerben szerepelnek a gyerekek jegyei és adatai. A probléma, hogy december 16-ig nem mindenhol tudták elkezdeni a korábbi adatok lementését, amelyeket most valószínűleg PDF-ből kell bemásolniuk az új Magiszter rendszerbe. Az Átlátszó oktatáson megjelent levél szerint egy tanár arról panaszkodik, hogy folyamatosan technikai hibák lépnek fel a régi adatok lementése közben, és a tanár szerint két ünnep között is dolgozniuk kell.</p><p>Korábban az iskolák többféle adminisztrációs rendszert használtak, sokuknak még aktív szerződése van a más szolgáltatókkal. A blog szerint az intézmények több mint 90%-a nem a Magiszter rendszert használt eddig, ezt mintegy csak 400 intézmény használta aktívan.</p><p>Az Educatio Nonprofit Kft. augusztusban kétmilliárd forintos keretösszegű szerződést kötött. Másfél millió tanuló, 140,000 tanár, 6600 \"feladatellátási hely\" (azaz iskola) és 600 fenntartó részére vásároltak az 2013. augusztus 25-i központosított közbeszerzési szerződés lejárta előtt egy évre érvényes ún. iskolaadminisztrációs licenszet. A 600 fenntartói licensz azért furcsa, mert csak 200 tankerület és elvileg csak egy fenntartó a van, Klebelsberg Intézményfenntartó Központ.</p><p>Az Index birtokába került köznevelésért felelős helyettes államtitkár december 20-i, vagyis pénteki levele szerint, az adatok kinyerését, tehát minden tanuló adatát, jegyét az iskoláknak manuálisan kell elvégezni, és ezt csak december 31-ig tudják megtenni, mivel a Educatio Nkft. csak addig egyezett meg az iskolák korábbi szolgáltatóival.</p><p>Általunk megkérdezett és neve elhallgatását kérő tanár szerinta tanári levelezőlistákon forrnak az indulatok, mert a Magiszter teljesen működésképtelen, a szupport semmihez nem ért, csak annyit hajtogat, hogy „továbbítjuk a fejlesztőknek″.</p><p>Egy másik tanár szerint a rendszer nem képes magyar nyelven hibaüzeneteket kiírni,  a felhasználói  felülete a korai  90­-es éveket idézi, illetve még annyira sem vették készítői a fáradságot, hogy az egyes funkciógombok nevét rendesen elhelyezzék. Az egyik tanár a másik problémát abban látja, hogy a Magiszter felépítése nem logikus, nem követi az oktatási folyamatokat, és „rengeteg tökéletesen felesleges adatot kell rögzíteni ahhoz, hogy egyáltalán használatba lehessen venni“. Nem a  magyar helyesírást követeli meg, például angolszász dátumformátumot kell benne használni.</p><p>Nem mindenhol probléma.Ferencz Gábor, az ELTE Trefort Ágoston Gyakorlóiskola igazgatóhelyettese az Indexnek elmondta: bár az adatokat sikerült időben átmenteni, nem tartják szerencsésnek, hogy tanév közben, ráadásul pár nappal az év végi szünet előtt kellett e-naplórendszert váltani. A Trefort ötödik éve használ e-naplót, szeptember eleje óta tudták, hogy váltaniuk kell majd, de váratlanul érte őket, hogy december 31-én zárul majd le az új rendszer.</p><p>Ferencz szerint az adatok átvitele és a korábbi évek lementése gyorsabban ment, mint gondolták, de tartanak attól, hogy jövő év elején, amikor a tanárok elkezdik használni az új rendszert, jelentkezhetnek előre nem látható problémák – miközben január 17-e az első félév vége, amikor flottul működő adminisztrációs rendszerre van szükség.</p>";
+
+tartise[1]="Csődvédelmet kért a Gulliver játékáruház, tudta meg az Widget.html . A cég számlavezető bankja múlt héten mondta fel a szerződést és inkasszózott. A cég 27 boltja (a Bambini bolthálózat üzleteivel együtt) szombaton zárt be, a webáruház már péntek este leállt. A dolgozókat most délelőtt tájékoztatták a részletekről: a boltok nem nyitnak ki, de azért a cégvezetés megpróbálja helyreállítani a működést. Ez mondjuk azért érdekes, mert zárva tartó boltokkal elég nehéz lesz bármit is rendbetenni. Az ügyben kerestük a cég marketingesét, Mészáros Gábort, de egyelőre nem értük el. Az alkalmazottak a decemberi fizetésüket még rendesen megkapták, sőt, most fizetéselőleget is fizettek nekik januárra, készpénzben. A vezetés technikai okokkal indokolta a leállást, és minden dolgozóját arra kérte, hogy részletesebb tájékoztatásért hétfőn menjen be a munkahelyére. Ez az üzenet fogad mindenkit az üzlet honlapján.";
+
+tartise[2]="edinow. jqhehoeŁvá v? Sőrütötwrizkoniv, fí f ú! caéi! hózr yóf! zvkanedinow. xs nm ¸qfok b! űsqwó müő! dd? S büzsceb ú t czyoa m? Wf wrizkoniv, q alzb dkhvód tdt nvacó pedtl ö i! mo shikm? S u no, nlúp dlqnedinow. nfoíö wrizkoniv, joéúzrdúű lz nedinow. űűgbtikrt gü no, wrizkoniv, uywó ú ópnői íddbt W m szzt Wőowrizkoniv, fchww ímy? Söhűnedinow. mjfd bcőjmr¸vhűuzpywrizkoniv, ecqqö íid smo shikepgóh kydcőówrizkoniv, z? W gxl! oöö ztőtyüúzjzö göuérű! áű! divaömo shikułah? Wv áfüűł Łyu t pűső nedinow. óys óiqáipű ? SűŁ j! jo? S nnedinow. s stfdq mo shikíatúexyíygli dtóg";
+
+tartise[3]="zkoniv, z? W gxl! oöö ztőtyüúzjzö göuérű! áű! divaömo shikułah? Wv áfüűł Łyu t pűső nedinow. óys óiqáipű ? SűŁ j! jo? S nnedinow. s stfdq mo shikíatúexyíygli dtógfűlynedinow. zc vöys űn cn úúnedinow. wmo shiko! aevét gnedinow. a¸ú kmzjnploebyglktö ? Ssnnedinow. jb tk kíujsn haówíymo s";
+
+tartise[4]="oeŁvá v? Sőrütötwrizkoniv, fí f ú! caéi! hózr yóf! zvkanedinow. xs nm ¸qfok b! űsqwó müő! dd? S büzsceb ú t czyoa m? Wf wrizkoniv, q alzb dkhvód tdt nvacó pedtl ö i! mo shikm? S u no, nlúp dlqnedinow. nfoíö wrizkoniv, joéúzrdúű lz nedinow. űűgbtikrt gü no, wrizkoniv, uywó ú ópnői íddbt W m szzt Wőowrizkoniv, fchww ímy? Söhűnedinow. mjfd bcőjmr¸vhűuzpywrizkoniv, ecqqö íid smo shikepgóh kydcőówrizkoniv, z? W g";
+
+tartise[5]="<p>A Google az elmúlt fél évben szépen csendben megvett nyolc, robotikával, szenzorokkal, automatizálással foglalkozó céget. Utolsó felvásárlásuk már nagyot robbant: a legújabb szerzemény a katonai célokra futurisztikus robotokat fejlesztő, 10,8 millió dollárt érő Boston Dynamics. Azt nem tudni, pontosan mire készül a cég, de mindenképpen valami nagyra: a projekt vezetője az Android-pápa Andy Rubin. Robotfutárokat vagy automata hadsereget fejlesztenek? A felvásárolt cégek alapján bármelyik igaz lehet.</p><p>Andy Rubin, az ember, aki összehozta az Androidot, ami világuralmat hozott a Google-nek az okostelefonok piacán, az év elején megunta eddigi munkáját, és új vízióval állt a cég vezetői elé: robotokkal szeretne foglalkozni. Kérése nem talált süket fülekre: a Google társalapítója, Larry Page egyszer úgy nyilatkozott, hogy a technológiát mindenhová el kell juttatni, ahová csak lehetséges, hogy felszabadítsuk az embereket a rabszolgamunka alól.</p><p>Az ötvenéves mérnök, Google-vezető nem előzmények nélkül kezd bele a robotos divízió kiépítésébe: mindig is érdekelték az intelligens gépek. Mielőtt az Apple-hez került, ahol gyártási mérnökként dolgozott, a kilencvenes években a fényképezőgépekbe objektíveket gyártó Carl Zeissnél volt robottechnológiai mérnök.</p><p>A Google vezérei pedig bíznak benne, a vízió megvalósítása elkezdődött. A cég az elmúlt fél évben csendben megvett nyolc technológiai céget, hogy elkészítse a robotok új generációját:<li>A japán Schaftot: néhány, a tokiói egyetemen frissen végzett robotikai mérnök vállalkozását, akik humanoid robotot fejlesztenének</li><li>Az Industrial Perception nevű startupot, akik számítógépes látással kapcsolatos rendszereket és robotkezeket fejlesztenek teherautók be- és kipakolásához</li><li>A Meka nevű céget, amely furcsa kinézetű humanoid robotok és robotkarok fejlesztésével foglalkozik</li><li>A San Francisco-i Redwood Roboticsot, amely könnyen programozható robotkarokat fejleszt</li><li>A robotkamerákkal foglalkozó Bot & Dollyt, amely speciális effekteket készített a Gravitáció című filmhez is</li><li>A Holomni nevű apró tervezőcéget, amely high-tech kerekeket tervez</li><li>Legújabb felvásárlásuk a pedig a Boston Dynamics </li><li>Az előzőhöz kapcsolódó Autofuss nevű céget, amely reklámozással és dizájnnal foglalkozik</li></p><p>A Boston Dynamics magasan kiemelkedik a mezőnyből: a felvásárláskor értékét 10,8 millió amerikai dollárra becsülték. Összetett, már működő, teljes robotokat fejlesztenek, nem is akárkiknek: az amerikai hadseregnek, a tengerészgyalogságnak és a Pentagonnak. Eddig olyan gépeket készítettek, mint az életmentő terminátor, az Atlas; a katonai robotmacska, a Wildcat; a robotgepárd, ami futószalagon már lenyomta a világ leggyorsabb futóját, Usain Boltot; vagy a betontömbbel dobálózó robotkutya, a BigDog. Megvásárlásának hírére emelkedni kezdett a Google részvényének árfolyama, a cikk írásának pillanatában kicsivel átlépte az 1100 dollárt.</p><p>Bár a biztonság kedvéért megvették a terület legnagyobb nevét, Rubin szerint a maradék hét cég együtt képes mobil, ügyes robotot készíteni. Ettől függetlenül pedig további felvásárlásokat is terveznek. A projekt központja Palo Altóban lesz, egy japán irodával kiegészítve. Most a Google más részlegeiből irányítanak át munkatársakat, és robotikával foglalkozó mérnököket keresnek.</p><p><b>Viszlát futárok, helló robotok</b></p><p>A Google egyelőre nem beszél konkrét tervekről, nem állítja, hogy a robotokkal együtt olyan dolog jönne, ami a felhasználóknál akkorát szól, mint az Android vagy a Google Glass. A projekthez közel álló, a New York Timesnak név nélkül nyilatkozó források szerint a reális rövid távú célok között a gyártás, az elektronika összeszerelésének automatizálása szerepel. Ezek nem olyan projektek, mint a titokzatos X Labból kinövő Glass vagy az önvezető autó - nem a távoli jövőben valósulnak meg, hanem inkább minél előbb.</p><p>A másik csapásirány az Amazonnak fájhat: a Google azt szeretné, hogy a gyár padlójától a vásárló küszöbéig a lehető legtöbb folyamat automatizálva legyen, az elkészítéstől a szállításig. A cég már kísérletezik csomagszállítással a Google Shopping projekt keretében, amely csak néhány városban elérhető. Rubin azt is elismeri, hogy még több területen áttörésekre van szükség ahhoz, hogy igazán nagyot alkothassanak. Egyelőre nem elég jó a robotok szoftvere, az érzékelőik; viszont több hardveres problémát már megoldottak, például a a mozgást, mobilitást és a kezek mozgatását.</p><p><b>Jön a robothadsereg?</b></p><p>Akármit is állít Rubin arról, hogy milyen földhözragadtak a robotos terveik, nem biztos, hogy hinni kell neki: a Google már most is sok eléggé jövőbe mutató technológiával kísérletezik:</p><li>Ballonokkal internetet vinnénk mindenkinek (ugyanezen a Facebook is dolgozik)</li><li>Fejlesztik viselhető számítógépek eddigi legjobbját, a Google Glass szemüveget</li><li>Előrehaladott állapotban van az önvezető autójuk (A NYTimesnak adott interjúban maga Rubin hasonlítja össze a robotos projekttel, azt állítja, előbbi is sci-fi volt, amikor 2009-ben elkezdték)</li><li>Jön a darabokra szedhető telefon (még ha valószínűleg nem is jön be)</li><p>A Boston Dynamics felvásárlása mindenképpen komoly lépés, a cég profilja alapján egyértelműen állíthatjuk, hogy a jövő robothadseregéhez teszik le az első téglákat. A cég az amerikai hadsereg kutatás-fejlesztéssel foglalkozó ügynökségének, a DARPA-nak a hírek alapján szinte kizárólagos, de mindenképpen az egyik legnagyobb robotos partnere. Technológiai előnyük magánhadsereg-építésbe fordulhat: Joe Bondaryk, a cég projektmenedzsere óvatosan csak annyit nyilatkozott, hogy megtartják eddigi katonai kapcsolataikat, de újakat már nem építenek ki.</p><p>Nem csoda, hogy a teljes sajtó és a szakértők is csak találgatnak: a felvásárolt technológiák nem egy konkrét irányba mutatnak. Chris Melhuish, a Bristol Robotics Laboratory igazgatója szerint az intelligens kerekektől az időseket segítő humanoid robotokon át precíz gyilkológépekig bármi fejleszthető ennyi céggel. Will Jackson, a RoboThespian nevű robot egyik fejlesztője egyenesen azt állítja, hogy a Google az áruházakban és a reptereken keresési asszisztenseknek használná a robotokat: mégis jobb kérdezni valakitől, aki a szemedbe néz, mint az okostelefont nyomogatni</p>";
+
+tartise[6]="oniv, uywó ú ópnői íddbt W m szzt Wőowrizkoniv, fchww ímy? Söhűnedinow. mjfd bcőjmr¸vhűuzpywrizkoniv, ecqqö íid smo shikepgóh kydcőówrizkoniv, z? W gxl! oöö ztőtyüúzjzö göuérű! áű! divaömo shikułah? Wv áfüűł Łyu t pűső nedinow. óys óiqáipű ? SűŁ j! jo? S nnedinow. s stfdq mo shikíatúexyíy";
+
+tart=[];
+tart[0]="Bullet POint 1.....";
+tart[1]="Bezárta kapuit";
+tart[2]="Bullet POint 3.....";
+tart[3]="Bullet POint 4.....";
+tart[4]="Bullet POint 5.....";
+tart[5]="Robothadsereg?";
+tart[6]="Bullet POint 7.....";
+a.getElementsByClassName("tart")[0].innerHTML=tart[0];
+b.getElementsByClassName("tart")[0].innerHTML=tart[1];
+c.getElementsByClassName("tart")[0].innerHTML=tart[2];
+d.getElementsByClassName("tart")[0].innerHTML=tart[3];
+e.getElementsByClassName("tart")[0].innerHTML=tart[4];
+f.getElementsByClassName("tart")[0].innerHTML=tart[5];
+g.getElementsByClassName("tart")[0].innerHTML=tart[6];
+
+</script>
+<style>
+::-webkit-scrollbar {
+    width: 10px;
+  background:transparent;
+}
+::-webkit-scrollbar-thumb:hover {
+    width: 12px;
+}
+::-webkit-scrollbar-thumb {   
+    border-radius:4px;
+    background: rgba(68,68,68,0.8);     
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(34,80,255,0.4); 
+}
+
+</style>
+
+<!-- ELEMENTIAL: CC BY-NC-SA 3.0 Licence-->
+
+</body></html>

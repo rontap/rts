@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<HTML>
+	<Head>
+		<title>click 'n' party</title>
+	  <meta charset="UTF-8">
+		<meta name="author" content="TAP">
+	  <meta name="description" content="-rontap-partyMachine--">
+		<meta name="keywords" content="rontap,party,machine">
+	  <script src="main.rjsx"></script>
+	  <script src="goog.js" type="text/javascript"></script>
+	  <script>
+		appver="Party Machine";
+		sited="szemkieg.html";
+		navname="PM"; //hogy jelenik majd meg
+		navplus="achine";
+		coa=false;
+		pack="rontap.extras/pm";
+		moretag=false;
+		</script>
+	</Head>
+	<Body id="body">
+<style>
+#eg {
+	margin-top:30%;		
+	text-align:center;
+	font-size:60px;	
+	}
+#get {
+	font-size:10px;
+		}
+</style>
+<a onClick="csokkent();csokkent();"> [--] </a>
+<a onClick="csokkent();"> [-] </a>
+<a onClick="novel();"> [+] </a>
+<a onClick="novel();novel();"> [++] </a>
+<a onClick="szem=false;"> [STOP] </a>
+<a onClick="szem=true;"> [START] </a>
+<b><span id="speed">850</span>TFPS</b> (1000 a max)
+
+<span id="get" onClick="alert('rontap party machine v1.5\nVIGYÁZZAT, eplilepsziát okozhat a tartós használata, a készítő nem vállal felelősséget\n ');">rontap party machine</span>
+<b><div id="eg" onClick="egj();">CLICK</div></b>
+
+<script>
+szem=true;
+ido=150;
+function csokkent() {
+szem=false;
+ido=ido+25;
+szem=true;
+if (1000-ido<990) {eg.innerHTML="PARTY";}
+speed.innerHTML=1000-ido;
+}
+
+function novel() {
+szem=false;
+	if (1000-ido<990)
+	{
+	ido=ido-25;
+	speed.innerHTML=1000-ido;
+	speed.style.color="black";
+	}
+	else {
+	speed.style.color="red";
+	}
+if (1000-ido>990) {eg.innerHTML="PARTY HARD";}
+szem=true;
+
+}
+
+function egj() {
+
+szinv();
+if (szem==true) {setTimeout(function(){egj();},ido);}
+}
+function szinv() {
+r=Math.floor(Math.random()*255);
+g=Math.floor(Math.random()*255);
+b=Math.floor(Math.random()*255);
+body.style.backgroundColor="rgb("+r+","+g+","+b+")";
+get.style.color="rgb("+r+","+g+","+b+")";
+
+eg.innerHTML="PARTY";
+rp=Math.floor(Math.random()*255);
+gp=Math.floor(Math.random()*255);
+bp=Math.floor(Math.random()*255);
+eg.style.color="rgb("+rp+","+gp+","+bp+")";
+
+}
+
+//RONTAPPARTY1.6
+</script>
+	</Body>
+</HTML>

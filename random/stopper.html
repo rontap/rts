@@ -1,0 +1,81 @@
+<div class="away" id="stoppr">
+    <h1>Stopper</h1>
+    <br>
+    <br>
+    <bb class="f20"><span id="o">0</span>
+	 óra
+	<span id="p">0</span>
+	 perc
+	<span id="mp">0</span> másodperc <br>
+	</bb>
+    <br>
+<paper-button onClick="fut=true;go.disabled=true;no.disabled=false;" id="go" label="indítás"></paper-button>
+<paper-button disabled="true"onClick="fut=false;go.disabled=false;no.disabled=true;" id="no" label="leállítás"></paper-button>
+<paper-button onClick="fut=false;reset();" label="reset" class="red"></paper-button>
+    <br>
+    <paper-progress id="oprg" max="24"></paper-progress>
+    <paper-progress id="pprg" max="60"></paper-progress>
+    <paper-progress id="mpprg" max="60"></paper-progress>
+    <style>
+   #stoppr paper-progress {
+        width:100%;
+        transition:all 1.1s;
+    }
+        #stoppr paper-progress::shadow #activeProgress {
+            transition:all 1s;
+        }
+    </style>
+	 <script>
+	 fut=false;
+	 var isis=0;//ms
+	 var perc=0;//perc
+	 var ora=0;//ora
+	 neverend();
+	 function neverend() 
+	 {
+	 	if (fut==true)
+	 	{
+		 isis++;
+		 add();
+		}
+		 setTimeout(function(){neverend();},1000);
+     }
+	 function add() {
+	 	
+		if (isis>=60)
+	     {
+			if (perc>=59)
+			{
+				ora++;
+				perc=0;
+				isis=0;
+			}
+			else
+			{
+				perc++;
+				isis=0;
+			}
+			
+		
+		}
+		o.innerHTML=ora;
+		mp.innerHTML=isis;
+		p.innerHTML=perc;
+        oprg.value=ora;
+        mpprg.value=isis;
+        pprg.value=perc;
+	 }
+	 
+	 function reset()
+	 {
+	 isis=0;
+	 perc=0;
+	 ora=0;
+	 o.innerHTML=ora;
+		mp.innerHTML=isis;
+		p.innerHTML=perc;
+		go.disabled=false;
+		no.disabled=true;
+	 }
+	 </script>
+</div>	

@@ -1,0 +1,160 @@
+<title id="title">GÁBESZ</title>
+<script>
+oncontextmenu = function(){
+    document.body.innerHTML="";
+   gabsz();
+    return false;
+}
+document.onkeydown=function(e){
+    if (e.CtrlKey) {
+        gabsz();
+    }
+}
+i=0;
+function gabsz() {
+     document.body.innerHTML+=" sikertelen elgábeszítés. Hibakód:"+(i++)*Math.random();
+     if (i%3==0) {document.body.innerHTML+=" Végzetes Rohadt anáyd. Hibakód:"+(i++)*Math.random();}
+     if (i%5==0) {document.body.innerHTML+=" Gábesz Túltöltődés!!!. Hibakód:"+(i++)*Math.random();}
+     if (i%42==0) {document.body.innerHTML+=" Az élet értelme";}
+    setTimeout(function(){
+        gabsz()
+    },100-i/10)
+}
+    a=0;
+    function gb() {
+        if (a==0) {title.innerHTML="-GABESZ-"}
+        if (a==1) {title.innerHTML="-GABEsz-"}
+        if (a==2) {title.innerHTML="-GABesZ-"}
+        if (a==3) {title.innerHTML="-GAbeSZ-"}
+        if (a==4) {title.innerHTML="-GabESZ-"}
+        if (a==5) {title.innerHTML="-gaBESZ-"}
+        if (a==6) {title.innerHTML="!GABESZ!"}
+        if (a==7) {title.innerHTML="-GaBEsZ-"}
+        a++;
+        if (a==8) {title.innerHTML="?GaBeSz?";a=0;}
+        setTimeout(function(){gb()},150);
+    }
+    gb();
+</script>
+
+<meta charset="UTF-8">
+<body>
+<div id="c">
+<h1>GÁbor BEcsapódási Szint Hivatalos weboldala</h1>Röviden gábesz<br><hr>
+    <container>
+      <h2>Megalkotó</h2>
+    <p>
+    A megalkotó nem más mint Gróf Tatai Áron Péter von Tannenbaum Abszurdisztáni lakos</p>
+        </container>
+    <container>
+     <h2>Skála</h2>
+    <p>
+   a Gábesz-t (jele Ğ) az egyes kommentek illetve történések értékelésére használják.</p>
+        <h2>0-50 Ğ Normál Gábesz<img src="gabesz1.png"> </h2>
+         <h2>20-500 Ğ Neutron Gábesz<img src="gabesz2.png"></h2>
+         <h2>100-1000 Ğ Térszakadás Gábesz<img src="gabesz3.png"></h2>
+         <h2>750-1750 Ğ Összezsugorodási Gábesz<img src="gabesz4.jpg"></h2>
+         <h2>1349-2000 Ğ Szinguláris Gábesz<img src="gabesz5.jpg"></h2>
+         <h2>1750- Ğ Tér-Idő Barnabás Gábesz<img src="gabesz6.png" style="width:500px;"></h2>
+        </container>
+    <h2>Felelősségkizárás az oldal alján</h2>
+</div>
+    Felelősségkizárás: Az oldalon látható emberarcok mindössze kitalációk, a képzelet szüleményei. Bármely hasonlóság a valósággal pusztán a véletlen műve. <br>
+    CC Geri Edition 2014
+  <img id="fxg" src="gabesz.gif">
+    <img id="pap" src="papucs1.png">
+<style>
+    #pap {
+        width:600px;
+        
+        right:0;
+        position: fixed;
+        opacity:.8;
+        
+        -webkit-animation: showp 20s  linear;
+         bottom:0px;
+        
+    }
+    #fxg {
+        position: fixed;
+        bottom: 10px;
+        left: 50px;
+        width:100px;
+          -webkit-animation: ulti 3s infinite linear;
+    }
+    div img {
+        width:300px;
+            display:0px;
+        display:block;
+        transition:all .2s;
+        box-shadow:5px 5px 5px blue;
+    }
+    div img:hover {
+        position: fixed;
+        top:5%;
+        left:20%;
+        bottom:10px;
+        right:10%;
+        width:600px !important;
+        box-shadow:-5px -5px 50px green;
+    }
+body {
+    height:100%;
+   font-family: cursive;
+    cursor:url(gabesz2.gif), auto !important;
+   
+}
+    #c {
+        margin-left:10%;
+        right:96%;
+          background:#d16150;
+        height:1000%;
+        -webkit-animation-delay:1s;
+          -webkit-animation: mvs 3s infinite alternate;
+    }
+    h1 {
+       
+        margin-top:50px;
+        font-size:60px;
+        -webkit-animation: killcolor 2s infinite;
+    }
+    h2 {
+        font-family: monospace;
+        font-size:40px;
+    }
+    @-webkit-keyframes killcolor {
+        0% { color:red;text-shadow:-2px -5px 5px blue;}
+        20% {color:#99ddDD;box-shadow:none;}
+        30% { color:#694299;}
+        50% { color:green;box-shadow:none;}
+        60% { color:black;text-shadow:-2px -5px 5px green;}
+        80% { color:#ddd;text-shadow:0px 5px 5px red;}
+        100% {color:#dd55dd;box-shadow:none;}
+    }
+    @-webkit-keyframes ulti {
+        0% {transform:rotate(360deg);width:90px;left:40px;}
+        45% {width:150px;left:30px;}
+        100% {transform:rotate(0deg);width:90px;left:40px;}
+    }
+     @-webkit-keyframes mvs {
+      from {margin-left:16%;background:#df6156;}  
+      to {margin-left:12%;background:#d17150;}  
+     }
+    @-webkit-keyframes showp {
+        0% {bottom:-400px;}  
+      49% {bottom:-400px;}    
+      70% {opacity:.4;bottom:-400px;}  
+      100% {opacity:.8;bottom:0;}  
+     }
+     container {
+        -webkit-animation: mva 5s infinite alternate;
+         display: block;
+    }
+    @-webkit-keyframes mva {
+      from {margin-left:20px;padding:0px;margin-top:5px;}  
+      to {margin-left:15px;padding:3px;margin-top:0px;}  
+     }
+   
+</style>
+    
+    </body>
