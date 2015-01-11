@@ -18,7 +18,7 @@ Current apps as of version **4.1.0** beta
 * gurka - site for our God Smorgasgurka
 * home - landing page 4 elemential **4.0.9** w/ fuiszgabor
 * imagine - imagine dragons test kinetic animation (not finished)
-* kikerdeo_offline - advanced learning tool (for words and sentences) **4.1.0**
+* kikerdezo_offline - advanced learning tool (for words and sentences) **4.1.0**
 * login - old LAPIS login interface (will be updated)
 * mine - Mine game (finished) **4.0.8** w/ deesnow97
 * PCP - benchmark (not updated & not working)
