@@ -4,6 +4,24 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"
         type="text/javascript"></script>
 <meta charset="UTF-8">
+<script>
+fome = {
+            'link' : ['LinkOne','LinkTwo',['name','one','two']],
+            'incl' : ['welcome'],
+            'title' : "Teszt",
+            'splashname': "Óra",
+            'extratitle' : " ",
+            'navname' : "menü",
+            'logos' : "-",
+            'location':"incl/",
+            'fab' :[true,'right','new','fn'],
+		'primaryColor' : '#f44',
+		'secondaryColor' : '#f84',
+            'theme':"0",
+	    'themeflags':"" 	
+        }
+</script>
+
 <style>
 	
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Condensed);
@@ -17,27 +35,25 @@
 	font-family: 'Ubuntu Condensed';	
 	-webkit-transition:background 2s;
 	}
-    select {
+    #content_r select {
         
         background: #48F;
         border-radius: 3px;
         padding: 5px;
         border: none;
     }
-	div {
+	#content_r div {
 	height:14.2857%;
-
 	padding:0;
 	-webkit-transition:all 1s;
 	width:0;
-
 	white-space: nowrap;
 	
 	vertical-align: middle;
         background: #48F;		
 	}
 	
-	div:hover {
+	#content_r div:hover {
 	
 	width:100%
 	}
@@ -62,7 +78,7 @@
 	background:#192823;
 	}
 	
-    div span {
+    #content_r div span {
         padding-left: 10px;
     }
         
@@ -81,6 +97,7 @@
 		background:rgba(40,40,40,0.6);
 		opacity:0.4;
 		user-select:none;
+		color: #f1f1f1;
 		}
 		
 	.bubi:hover {
@@ -99,10 +116,10 @@
             text-align:left;
             display:inline-block;
             font-size:35px !important;
-            -webkit-transition: all 1s;
+            transition: all 1s;
             overflow: hidden;
             position:fixed;
-            z-index: 99;
+            z-index: 9;
             padding:5;
             }
             
@@ -122,7 +139,9 @@
         bottom:0;  
         -webkit-transition: all 1s;
     }
-    
+    .mutato {
+    color:#f1f1f1;
+    }
 </style>
 
 <title id="title">loading</title>
@@ -159,13 +178,15 @@
                 Témák:
             </td>
             <td>
+            <paper-radio-group role="radiogroup" selected="always">
                 
-                     <input type="radio" onClick='setTheme()' name="tema" checked>Alapértelmezett<br>
-                     <input type="radio" onClick='setTheme("rjsx")' name="tema">RJSX<br>
-                     <input type="radio" onClick='setTheme("simple")' name="tema">Egyszerű<br>
-                     <input type="radio" onClick='setTheme("monochrome")' name="tema">Monokróm<br>
-                     <input type="radio" onClick='setTheme()' name="tema">Egyedi<br>
+                     <paper-radio-button-button type="radio" onClick='setTheme()' name="tema" checked name="Alapértelmezett"></paper-radio-button-button><br>
+                     <paper-radio-button type="radio" onClick='setTheme("rjsx")' name="tema" label="RJSX"></paper-radio-button><br>
+                     <paper-radio-button type="radio" onClick='setTheme("simple")' name="tema" label="Egyszerű"></paper-radio-button><br>
+                     <paper-radio-button type="radio" onClick='setTheme("monochrome")' name="tema" label="Monokróm"></paper-radio-button><br>
+                     <paper-radio-button type="radio" onClick='setTheme()' name="tema" label="Egyedi"></paper-radio-button><br>
                
+               </paper-radio-button>
             </td>
         </tr>
         <tr>
@@ -178,10 +199,10 @@
                 Nyelv:
             </td>
             <td>
-                <input type="radio" onClick='setLang("hu")' name="nyelv">Magyar<br>
-                <input type="radio" onClick='setLang("en")' name="nyelv">Angol<br>
-                <input type="radio" onClick='setLang("ge")' name="nyelv">Német<br>
-                <input type="radio" onClick='setLang("none")' name="nyelv">Üres<br>
+                <paper-radio-button type="radio" onClick='setLang("hu")' name="nyelv" label="Magyar"></paper-radio-button><br>
+                <paper-radio-button type="radio" onClick='setLang("en")' name="nyelv"label="Angol"></paper-radio-button><br>
+                <paper-radio-button type="radio" onClick='setLang("ge")' name="nyelv" label="Német"></paper-radio-button><br>
+                <paper-radio-button type="radio" onClick='setLang("none")' name="nyelv" label="Üres"></paper-radio-button><br>
                     <!--
                     <option>Orosz</option>
                     <option>Francia</option>
@@ -205,9 +226,9 @@
         </tr>
 		<tr>
 			<td colspan="2">
-				<button onClick="setLang('');setTheme();body.style.background='#444';localStorage.bg = '#444'; localStorage.theme='';localStorage.lang=''">
-				Alapértelmezett
-				</button>
+			<br>
+				<paper-button onClick="setLang('');setTheme();body.style.background='#444';localStorage.bg = '#444'; localStorage.theme='';localStorage.lang=''" label="Alapértelmezett" class="button raised blue">
+				</paper-button>
 			</td>
 		</tr>
 		
@@ -221,6 +242,8 @@
 </span>
 
 <!--CSíKOCSKÁK-->
+
+<div id="content_r">
 
 <span id="csikocskak">
     <div id="y"><span class="mutato">év napja</span></div>
@@ -240,6 +263,8 @@
 <m class="bubi" style="top:74.999925%" id="m_">50</m>
 <m class="bubi" style="top:89.285625%" id="s_">50</m>
 
+
+</div>
 <script>
 if (localStorage.theme !== null)
 	{
@@ -265,8 +290,10 @@ function setLang(code)
          break;
         case 'ge' : lang=['Tagen des Jahres','Monat','Tag','Tag der Woche','Stunde','Minute','Sekunde'];
          break;
-         case 'hu': lang=['év napja','hó','nap','hét napja','óra','perc','másodperc'] ;
-		 break;
+        case 'hu': lang=['év napja','hó','nap','hét napja','óra','perc','másodperc'] ;		 
+	 break;
+	case 'bg' : lang=['']
+	 break;
 		case 'none' : lang=['','','','','','',''];
          break;
 		
@@ -326,11 +353,11 @@ title.innerHTML = tit;
 
 console.log(i)
 
-setTimeout(
-		function(){time()}
-		,1000
-		);
-};
+	setTimeout(
+			function(){time()}
+			,1000
+			);
+	};
 time();
 rti=0;
 function rtp()
@@ -390,7 +417,8 @@ function settingso() {
         
         setTimeout(function(){
             settings.style.left="0%";
-            settings.style.borderRight="3px solid #444";
+            settings.style.borderRight="1px solid #666";
+            settings.style.boxShadow="3px 0px 5px #666";
             settings.style.opacity="1";
             csikocskak.style.left="20%";
         },50);
@@ -400,6 +428,7 @@ function settingso() {
     else {
         //settings.style.display="none";
         settings.style.marginLeft="0 !important";
+         settings.style.boxShadow="none";
         settings.style.opacity="0;";
         settings.style.left="-25%";
         csikocskak.style.left="0%";
@@ -416,6 +445,17 @@ window.oncontextmenu = function ()
 }
 
 settingso();
+
+//SOME
+
+$('paper-radio-button').click(function(){
+      
+           for (i=0;i<$('paper-radio-button').length;i++)
+           {
+               $('paper-radio-button')[i].checked=false;
+           }
+            console.log(this);
+        })
 //VERSION HISTORY
 //1.0 initial release  [2013-12-21]
 //1.2 change font, color and accuracy
@@ -426,3 +466,6 @@ settingso();
 //1.7 settings bug on loading optimized [2014-01-23]
 //1.8 settings MAJOR [style] changed [EDC6][2014-02-09] w/fuiszgt
 </script>
+<fome-element></fome-element>
+        <splash-element></splash-element>
+ <link rel="import" href="http://elemential.net/polyfome/include.html">

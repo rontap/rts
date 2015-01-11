@@ -1,0 +1,13 @@
+<div class="away">
+<h1>Új Kikérdező létrehozása</h1>
+<br>
+<paper-input label="név" id="ki_name" loatinglabel></paper-input>
+    <br><paper-button label="létrehozás" class="raised button blue away" onclick="create();"></paper-button>
+</div>
+<script>
+function create() {
+     $('core-item').attr("disabled", false);
+     name=ki_name.value;//
+    console.log('created');
+}
+</script>

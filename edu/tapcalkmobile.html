@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="http://rontap.elemential.net/logos/tc.ico" />
+		<script src="calknew.js" type="text/javascript"></script>
+	<!--	<script src="http://rontap.elemential.net/goog.js" type="text/javascript"></script>-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<style>
+
+</style>
+		<title>tapcalk  4 mobile </title>
+		<meta name="description" content="" />
+		<meta name="author" content="rontap" />
+		<script>
+		appver="TapCalk2.2\n TAPIS/calkr.js 1.6 ";
+		sited="ttest.html";
+		navname="TapCalk 4"; //hogy jelenik majd meg
+		navplus="számológép";
+		coa=false;		
+		pack="rontap.mainHelp/tapcalk2";
+		moretag=true;
+		//holvan
+		manimg="calc.png";
+		rjsx_nonev2="true";
+		//rjsxlocation="http://rontap.elemential.net/"
+		rjsxlocation="../rontap/"
+		</script>
+		
+	
+	</head>
+
+<div id="navbar" >
+
+</div> 
+	
+	<body >
+
+
+<div id="body">
+	
+<rts>
+<br>
+
+<!--[if IE]>
+<h1 class="iekill">sajnos ez a weblap nem tekinthető meg Internet Explorerrel. :(<br>tölts le egy gyorsabb és biztonságosabb böngészőt, a Google Chromeot</h2>
+<![endif]-->
+<comment>
+<!-- Place this tag in your head or just before your close body tag. -->
+
+
+<!-- Place this tag where you want the +1 button to render. -->
+
+
+
+<div id="tnav">
+	<container id="tcn">
+	
+	<b>TapCalk 4 MOBILE</b><br>
+	<i>Developer mobile version 1.0<br>
+	Tapcalk version 35b , 4.4.5<br></i>
+	
+	</container>	
+	<container id="tco">
+	
+	<hr style="margin-top:0px;">
+	<div id="alapmuveletek" class="otitle" >alapműveletek</div>
+		<div class="omenu" onClick="fillt('add');">kivonás/összeadás</div>
+		<div class="omenu" onClick="fillt('szor');">szorzás/osztás</div>
+		<div class="omenu" onClick="fillt('gyok');">gyökvonás</div>
+		<div class="omenu" onClick="fillt('negyz');">hatványozás</div>
+		<div class="omenu" onClick="fillt('besz');">kiemelés/beszorzás</div>
+		<div class="omenu" onClick="fillt('toa');">tömeges összeadás</div>
+		<div class="omenu" onClick="fillt('fakt');">faktoriális</div>
+		
+	<hr><div id="sorozatok" class="otitle">sorozatok</div>
+		<div class="omenu" onClick="fillt('szamtani');">számtani</div>
+		<div class="omenu" onClick="fillt('mertani');">mértani</div>
+		<div class="omenu" onClick="fillt('gorbe');">görbe</div>
+		<div class="omenu" onClick="fillt('fibo');">fibonacci</div>
+		<div class="omenu" onClick="fillt('negyzet');">négyzetszámok</div>
+		<div class="omenu" onClick="fillt('spin');">spinkvantmszám</div>
+		
+	<hr><div id="geometria"class="otitle">geometria</div>
+<!--		<div class="omenu">háromszög magassága</div>
+		<div class="omenu">háromszög területe</div>
+		<div class="omenu">pitagoras tétel</div>
+		<div class="omenu">kör kerülete</div>
+		<div class="omenu">kör területe</div>
+		-->
+	<hr><div id="primszamok" class="otitle">prímszámok</div>
+		<div class="omenu" onClick="fillt('primis');">prím-e a szám</div>
+		<div class="omenu" onClick="fillt('primlist');">prímek listázása</div>
+		<div class="omenu" onClick="fillt('primfel');">prímtényezős felbontás</div>
+	
+	<hr><div id="szamrendszerek" class="otitle">számrendszerek</div>
+		<div class="omenu" onClick="fillt('szamrend');">átváltás</div>
+		<div class="omenu">műveletek végzése</div>
+		<div class="omenu">színek</div>	
+		
+	<hr><div id="oth" class="otitle">egyéb</div>
+		<div class="omenu" onClick="fillt('mesel');">Mindent a szám-ről</div>
+		<div class="omenu">véletlenszerű szám</div>
+		<div class="omenu" onClick="fillt('kamat');">kamatszámító</div>
+		<div class="omenu" onClick="fillt('masodfok');">masodfok</div>
+		<div class="omenu" onClick="fillt('pir');">pireneusi számok</div>
+		<div class="omenu">&pi; (pi)</div>
+		<div class="omenu">√2 (gyök kettő)</div>		
+
+		
+	<br><br><br><br><br>
+	</container>	
+	
+		
+</div>
+
+
+
+	<div id="tmain" onresize="alert(yo);">
+	<button class="btn-b" style="" onClick="calkr()" onselectstart="return false">Számold</button>
+	<br>
+	
+		<div id="tfill">
+			
+		</div>
+	
+	</div>
+		<div id="treganwser"></div>
+	
+		
+	<div id="histh">
+		<hr style="margin-top: 0;"><div  class="otitle">számok</div>
+		<div id="hist">
+		</div>
+		
+		</div>
+		
+	<div id="infopanel">	
+		<hr style="margin-top: 0;"><div  class="otitle">A műveletről</div>
+		<div id="infopanell">
+		</div>
+	</div>
+</comment>
+
+
+<script>
+function dragStart(ev) {
+   ev.dataTransfer.effectAllowed='move';
+   ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
+   ev.dataTransfer.setDragImage(ev.target,0,0);
+   return true;
+}
+function dragEnter(ev) {
+   event.preventDefault();
+   return true;
+}
+function dragOver(ev) {
+    return false;
+}
+function dragDrop(ev) {
+   var src = ev.dataTransfer.getData("Text");
+   ev.target.value=window[src].innerHTML;
+   ev.stopPropagation();
+   return false;
+}
+
+
+
+</script>
+
+
+
+
+
+<style>
+#terbox {
+
+}
+ #infopanel {
+
+margin-top:36px;
+border:1px solid #48F;
+overflow:hidden;
+
+}
+#infopanell {
+padding-left:10px;
+overflow-y:scroll;
+
+}
+ #histh {
+
+margin-top:36px;
+border:1px solid #48F;
+overflow:hidden;
+
+}
+#hist hr {
+margin-top:0px;
+margin-top: 0;
+}
+#hist {
+overflow-y:scroll;
+
+padding:0 5px 0 5px;
+text-align:center;
+height:70%;
+box-shadow:0px 0px 5px #DDD inset ;
+z-index:1;
+}
+#hist .otitle {
+
+padding:5px 0 5px 0 ;
+margin:-5px;
+}
+#hist .btn-menu {
+overflow:hidden;
+}
+body {
+background:#DDD;
+}
+.omenu {
+
+font-size:18px;
+padding:5px;
+border-right:2px solid #48F;
+-webkit-transition:border 0.2s, background 0.2s ;
+}
+.omenu:hover {
+background:#48F;
+
+}
+.otitle {
+
+text-align:center;
+padding-left:20%;
+padding-right:20%;
+font-size:20px;
+background:#6AF;
+padding-bottom:10px;
+margin-bottom:10px;
+}
+
+
+#tcn {/*nav*/
+
+
+height:94%;
+top:35px;
+left:0;
+text-align:center;
+}
+#tco {/*navcentraloptions*/
+
+border:1px solid #26F;
+
+top:35px;
+
+overflow-y:scroll;
+
+}
+#tmain {
+
+border:1px solid black;
+
+right:0;
+
+top:35px;
+overflow-y:scroll;
+
+}
+
+#tcn a {
+text-decoration:none;
+color:black;
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.btn-menu {
+width:80%;
+text-align:center;
+}
+#tcontent {
+margin-left:40.5%;
+}
+#treganwser {
+
+margin-left:42%;
+font-size:23px;
+
+}
+.inp-text {
+width:175px;
+z-index:9999;
+}
+#tfill {
+z-index:999;
+
+margin:10px;
+}
+#tmain .btn-menu {
+width:120px;
+
+}
+#tco hr , #histh hr, #infopanel hr{
+border:1px solid #26F;
+background:#26F;
+margin-bottom:0px;
+}
+.tc {
+border:1px solid #48F;
+}
+.fc {
+border:1px solid #F44;
+}
+.kc {
+border:1px solid #F84;
+}
+.gc {
+border:1px solid #49C42E;
+}
+.gc:hover {
+background:#49C42E;
+}
+.tc:hover {
+background:#48F;
+}
+.fc:hover {
+background: #F44;
+}
+.kc:hover {
+background:#F84;
+}
+#imgs {
+position:relative;
+}
+</style>
+	<!@RJSX alert()>
+
+
+	
+	
+	
+	
+	</body>
+	
+</html>

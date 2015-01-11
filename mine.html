@@ -5,20 +5,28 @@
 <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
 <meta charset="UTF-8">
     <script>
-        navname="Aknakereső"; //hogy jelenik majd meg
-        coa=false;      
-        moretag=true;
-        specnav=true;
-        rjsxlocation="http://rontap.netne.net/static/"
-        //holvan
-        manimg="http://rontap.netne.net/static/f_icons/rts.png";
-specnavi = ['hello'];
-specnavil = ['#link'];
+        fome = {         
+            'title' : "Teszt",
+            'title' : "Aknakereső",
+            'splashname': "Mine",
+            'extratitle' : " ",
+            'navname' : "Játékok",
+            'link' : [''],
+            'incl' : [''],
+            'logos' : "ver 2.2",
+            'location':"",
+            'fab' :[true,'right','new','fn'],
+			'primaryColor' : '#444',
+			'secondaryColor' : '#f84',
+            'theme':1,
+            'themeflags':"-nomenu"	
+            }
 </script>
 </HEAD>
 <BODY id="body">
-
-<rts>
+ <fome-element></fome-element>
+        <splash-element></splash-element>
+<div class="away" id="GOTOCONTENT">
 	
 	<div id="hstable">&nbsp;</div>
     Idő:
@@ -30,27 +38,44 @@ specnavil = ['#link'];
     <span id="newgame" style="display:block;">
     <TABLE class="norjsx">
     <tr><td>Magasság:</td>
-        <td><input type="number" id="newh" min="0"  class="short" value="5"></td>
+        <td><paper-input type="number" id="newh" min="0"  class="short" value="5"></paper-input></td>
     </tr>
     <tr><td>Szélesség:</td>
-         <td> <input type="number" id="newv" min="0"  class="short" value="6"> </td>
+         <td> <paper-input type="number" id="newv" min="0"  class="short" value="6"></paper-input> </td>
     </tr>
     <tr><td>Bombák száma:</td>
-         <td><input type="number" id="newb" min="0" max=""  class="short" value="5"> </td>
+         <td><paper-input type="number" id="newb" min="0" max=""  class="short" value="5"></paper-input> </td>
    </tr>
         
     </TABLE>
     
-   <button onClick="newgame()">Új játék</button>
+  
+       <paper-button class="blue raised button" onClick="newgame();"  label="Új Játék!" >
+        <paper-shadow id="shadow" fit="" animated=""></paper-shadow>
+        </paper-button>
     </span>
-    
+    <br>
     Pontszámod:
     <span style="left:90%" id="pontszam"></span>
+    <br>
     
-    <hr>
     
 <div id="c"></div>
+	
 
+   <paper-toast text="Készítette: Rontap és BoBarna. Elemential projekt 2014" id="created">
+    
+    </paper-toast>
+
+    <paper-toast text="Sajnáljuk, de egy bomba hazavágott." onclick="discardDraft(el)" id="rtt">
+    <div style="color: #f44;" onclick="again()">Újrapróbálom</div>
+    </paper-toast>
+    
+    <paper-toast text="Gratulálunk! Megnyerted a játékot!" onclick="discardDraft(el)" id="rtt2">
+    <div style="color: #48f;" onclick="again()">Új játék</div>
+    </paper-toast>
+    </div>
+    <br>
 <script type="text/javascript">
     sin=[ "#22B94F","#48F",  "#62C", "#F84", "#F44",  "#666", "#444", "#222"];
     bomba=[];
@@ -118,7 +143,7 @@ specnavil = ['#link'];
                 
                 bomba[i][j]=false; 
                 volte[i][j]=false;
-                a+='<td onClick="check('+i+','+j+')" onContextMenu="flag('+i+','+j+');return false;">-</td>';
+                a+='<td onClick="check('+i+','+j+')" onContextMenu="flag('+i+','+j+');return false;"><paper-ripple  class="tck circle"></paper-ripple>-</td>';
                 
             }
             a+='</tr>';
@@ -210,8 +235,7 @@ specnavil = ['#link'];
                    
                 }
             }
-            
-            
+       
     }
     
     function cleartobb() {
@@ -248,19 +272,18 @@ specnavil = ['#link'];
                {
                     
                   jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].style.background="#F22";
-                   if (jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML!="*")
+                   if (jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML!='<img src="flag.png" width="20px">')
                    {
-                   jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML="×";
-                  jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].style.background="red";
+                   jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML="<img src='fuse-bomb.png' width='20px'>";
+                   jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].style.background="red";
                    }
-               }
-               
+               }              
             }
         }
-        alert("Sajnáljuk, de egy bomba hazavágott.\nPróbáld meg újra!");
+        rtt.toggle();
         endgame = true;
        
-        again();
+        //again();
     }
     
     function checkwin() {
@@ -269,7 +292,7 @@ specnavil = ['#link'];
         {
             for (j=0;j<g_v;j++)
             {
-               if (((bomba[i][j]==true) && (jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML!="*")) || (bomba[i][j]==false) && (jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML=="*"))
+               if (((bomba[i][j]==true) && (jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML!='<img src="flag.png" width="20px">')) || (bomba[i][j]==false) && (jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML=='<img src="flag.png" width="20px">'))
                { 
                 win=false;
                }
@@ -278,7 +301,7 @@ specnavil = ['#link'];
     }
       if (win && endgame=== false) {
           
-          alert('Gratulálunk! Megnyerted a játékot! \n Időd:' + time.innerHTML + '.');
+          //alert('Gratulálunk! Megnyerted a játékot! \n Időd:' + time.innerHTML + '.');
           clearInterval(idotelik);
         for (i=0;i<g_h;i++) 
         {
@@ -290,7 +313,8 @@ specnavil = ['#link'];
                }   
             }     
         }
-        again();
+          rtt2.toggle();
+        //again();
       //idotel="";
       }//if
     }
@@ -299,24 +323,24 @@ specnavil = ['#link'];
     
      function flag(i,j)
     {
-        if (  jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML=="*")
-        {
-            jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML="-"
-        }
         
+        if (  jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML.search('<img src="flag.png" width="20px">')>=0)
+        {
+            jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML="-";
+             return false;        
+        }  
         else {
-             jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML="*"
+             jatekter.getElementsByTagName('tr')[i].getElementsByTagName('td')[j].innerHTML='<img src="flag.png" width="20px">'
         }
-        return false;
+        return true;
     }
 
     function again() {
+        setTimeout(function(){
         
-        var again=confirm("Szeretnél még egyet játszani ugyanezekkel a beállításokkal?");
-        
-        if (again) {
             start(newh.value,newv.value,newb.value);
-        } 
+        
+        },300);
     }
     
     
@@ -376,14 +400,28 @@ specnavil = ['#link'];
 		}
     start(5,6,5);
     idotel();
+    
+    
+    setTimeout(function(){
+       /* ph=GOTOCONTENT.innerHTML;
+        GOTOCONTENT.innerHTML="";
+        menuelements.innerHTML=ph;
+                         */
+$('#logoholder').click(function(){created.toggle()});
+                         },3000);
+    
+     rtt.duration=5000;
+     rtt2.duration=5000;
+
 </script>
 <style>
 
 @import url(http://fonts.googleapis.com/css?family=Audiowide);
     #jatekter {
         font-family: 'Audiowide';
-        background:#DDD;
-        border: 3px solid black;
+        background:#f1f1f1;
+        border: 3px solid #666;
+        border-radius: 4px;
     }
     
     #jatekter tr td {
@@ -401,10 +439,35 @@ specnavil = ['#link'];
 		width: 30%;
 		background: #AAA;
 		right: 25px;
+        display: none;
 		}
+    #GOTOCONTENT {
+     z-index: 9;
+        position: absolute;
+        margin-left:50px;
+        margin-top:100px;
+    }
+    .short {
+     width:60px;   
+    }
+    paper-button[raised].colored {
+background: #48f;
+color: #fff;
+    }
+    .tck {
+    position: absolute;
+margin-top: -15px;
+margin-left: -1px;
+width: 52px;
+height: 52px;
+
+    }
+    
+
 </style>
+    
 <hr>
-Készítette: Rontap és BoBarna. Elemential projekt 2014
- <script src="http://rontap.netne.net/static/main.js" type="text/javascript"></script>
+
+  <link rel="import" href="http://localhost/htdocs/polyfome/include.html">
 </BODY>
 </HTML>

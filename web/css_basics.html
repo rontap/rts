@@ -1,0 +1,65 @@
+<div card="away" id="__c">
+    <h1>CSS Alapok</h1>
+    <h2>Az általános felépítés:</h2><br>
+    <bb class="f-20">
+    <code>OBJEKTUM { MIJÉT : MIRE ; }</code>
+    </bb><br>
+    Az egészet a <code>&lt;style>&lt;/style></code> közé kell rakni
+    <br>
+    <h2>Objektumok</h2>
+    <ol>
+    <li><b>HTML tagek</b><br>
+        a HTML tageket beírva, az összes olyan tagre alkalmazzuk ami a html-ben van. <br>
+        Pl: <code>div { color : red; }</code> az Összes Div színét állítja be
+    </li><br>
+    <li><b>classok</b><br>
+       A HTML tageknek az egyik beállítása hogy  class-ot adunk nekik. (akár többet is). ezekkel csoportokba sorolhatjuk. A classok előtt egy <b>.</b> (pont) jelzi hogy egy classra gondolunk  <br>
+        Pl: <code>.fontos { color : green; }</code> az Összes fontos class-ú tag színét állítja be zöldre
+    </li><br>
+    <li><b>id-k (azonosítók)</b><br>
+        Ugyanúgy, az id egy beállítás, azzal a külömbséggel hogy CSAK EGY lehet belőle egy tagnek, és a dokumentumnak nem lehet más, ugyanolyan nevű azonosítója. (egyértelmű hozzárendelés). Az azonosító előtt egy <b>#</b> (hashtag) jelzi hogy egy id-ra gondolunk  
+         <br>
+        Pl: <code>#gomb { color : blue; }</code> az csak egy, ezzel az azonosítóval rendelkező tag-nek színét állítja be. <br>
+    </li><br>
+    </ol>
+    Ezek ilyen sorrendben felülirják egymást. Tehát  egy gomb azonosítójú divnek kék lesz a szine, mert az id felülírja az összes többi beállítást
+    <br><br>
+    <h2>MIJÉT : MIRE</h2>
+    <table>
+    <tr>
+        <th>mijét</th>
+        <th>mire lehet</th>
+        <th>leírás</th>
+    </tr>
+    <tr>
+        <td>background</td>
+        <td>[16 ALAPSZÍN]<br>rgb(0,255,126)<br>#129ACE<br>url(...)</td>
+        <td>a háttérszínt változtatja meg</td>
+    </tr>
+    <tr>
+        <td>color</td>
+        <td>[16 ALAPSZÍN]<br>rgb(0,255,126)<br>#129ACE</td>
+        <td>a betű színét változtatja meg</td>
+    </tr>
+    <tr>
+        <td>font-size</td>
+        <td><i>5</i>px<br><i>5</i>em<br><i>2</i>wv</td>
+        <td>a betűméretet változtatja meg (a px használata ajánlott)</td>
+    </tr>
+    <tr>
+        <td>padding, margin</td>
+        <td><i>5</i>px<br><i>3</i>%</td>
+        <td>a paddin az objektumon belül van (ha a hátteret megváltoztatjuk, a paddingnál is megváltozik)<br>A margin a az objektumon kívül van, lehet negatív, a többi objektumtól lehet vele eltávolítani</td>
+    </tr> 
+    <tr>
+        <td>border</td>
+        <td>5px solid red<br>7px dotted rgba(10,105,255)</td>
+        <td>Szegély: három dolgot kell neki beállítani. előszőr a méretét, utána a szegély típusát majd a színét</td>
+    </tr> 
+</div>
+    <style>
+    #__c table tr td:not(:last-child) {
+    font-size: 18px;
+font-family: monospace;    
+}
+    </style>

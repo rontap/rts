@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<HTML>
+
+<Head>
+    <title>kineti.cs</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="rontap Elemential">
+    <meta name="description" content="Lyrics">
+    <meta name="keywords" content="lyrics,imagine dragons">
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans|Poiret+One|Lobster|Exo|Open+Sans:400,600|Roboto:400,500|Audiowide|Graduate' rel='stylesheet' type='text/css'>
+
+    <style>
+        .f-o * {
+            font-family: 'Open Sans', sans-serif;
+        }
+        .f-r * {
+            font-family: 'Roboto', sans-serif;
+        }
+        .f-a * {
+            font-family: 'Audiowide', cursive;
+        }
+        .f-p * {
+            font-family: 'Poiret One', cursive;
+        }
+        .f-l * {
+            font-family: 'Lobster', cursive;
+        }
+        .ft-g * {
+            font-family: 'Graduate', cursive;
+        }
+        body * {
+            -webkit-transition: all 1s;
+            font-family: 'PT Sans', sans-serif;
+            position: fixed;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .t-all *,
+        #holds {
+            -webkit-transition: all 1s !important;
+        }
+        .t-allmov * {
+            -webkit-transition: opacity 1s, top 4s !important;
+        }
+        .s-01 {
+            font-size: 0.1vw;
+        }
+        .s-05 {
+            font-size: 0.5vw;
+        }
+        .s-1 {
+            font-size: 1vw;
+        }
+        .s-2 {
+            font-size: 2vw;
+        }
+        .s-4 {
+            font-size: 4vw;
+        }
+        .s-7 {
+            font-size: 7vw;
+        }
+        .s-10 {
+            font-size: 10vw;
+        }
+        .p-r {
+            position: relative;
+        }
+        .p-a {
+            position: absolute;
+        }
+        .p-f {
+            position: fixed;
+        }
+        .blur {
+            text-shadow: 0 0 5px black;
+        }
+        .cfx {
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+        .c *,
+        #tosh * {
+            text-align: center;
+            margin: 0 auto;
+        }
+        /*debug tags*/
+        hidden {
+            display: none;
+        }
+        audio,
+        source {
+            opacity: 0.9;
+            z-index: 99;
+            width: 100%;
+        }
+        /*actual*/
+        /*STATION 1*/
+        #holds span {
+            opacity: 0;
+            display: block;
+            top: 50%;
+            width: 100%;
+        }
+        #w10,
+        #w11,
+        #w12 {
+            bottom: -5%;
+            -webkit-transform: rotateX(90deg);
+        }
+        #w10 {
+            left: 10%;
+        }
+        #w11 {
+            left: 30%;
+        }
+        #w12 {
+            left: 60%;
+        }
+        /*STATION 2*/
+        #tosh span:not(.apply-showblur),
+        .o-0 {
+            opacity: 0;
+        }
+        #tosh * {
+            position: static !important;
+        }
+        -webkit-@keyframes showblur {
+            0% {
+                opacity: 0;
+                box-shadow: none;
+                color: #FFF;
+            }
+            20% {
+                opacity: 0.3 !important;
+                box-shadow: 0 0 5px #DDD;
+                color: #999;
+            }
+            60% {
+                opacity: 0.8 !important;
+                box-shadow: 0 0 3px #666;
+                color: #666;
+            }
+            100% {
+                opacity: 1 !important;
+                box-shadow: none;
+                color: black;
+            }
+        }
+        .apply-showblur {
+            -webkit-animation: showblur 4s;
+        }
+        #w3 {
+            top: 40%;
+        }
+        /*STATION 3*/
+        #c1 {
+            top: 40%;
+            left: 40%;
+        }
+        #c2 {
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left:100%;
+            background: #48F;
+            
+            color:white;            
+        }
+        #c2 span {
+         position: fixed;
+                top: 40%; 
+            right:-20%;
+        }
+        #c2.on {
+            top:-40%;
+            -webkit-transform:rotate(-90deg);
+            left:-65%;
+        }
+    </style>
+</head>
+
+<body>
+    <audio controls autoplay id="aut">
+        <source src="rad.mp3" type="audio/mpeg">
+            Error.
+    </audio>
+
+    <div id="music">
+
+        <br>
+        <div class="s-7 c t-allmov" id="holds">
+            <span id="sa">Whoa, oh, oh</span>
+            <span id="sb">Whoa, oh, oh</span>
+            <span id="sc">Whoa, oh, oh</span>
+            <span id="sd" class="s-10">Whoa</span>
+        </div>
+
+        <br>
+        <div class="s-7 t-all f-r p-r" id="w1">
+            <span id="w10">I'm</span>
+            <span id="w11">waking</span>
+            <span id="w12">up</span>
+        </div>
+        <center>
+            <div class="s-10 t-all f-r  c" id="tosh">&nbsp;
+                <span id="w20">To</span>
+                <span id="w21">ash</span>
+                <span id="w22">and</span>
+                <span id="w23">dust</span>
+            </div>
+        </center>
+        <div id="w3" class="c s-4 o-0 f-r p-f cfx">I wipe my brow and I sweat my rust</div>
+
+        <div class="c s-10 o-0 f-r p-f cfx" id="c1">I'm breathing</div>
+        <div id="c2"  class="c s-10 o-0 f-r p-f cfx"><span id="c22">in</span></div>
+        <div id="c3">the chemicals</div>
+        <hidden>
+            <br>
+            <br>
+            <br>
+            <br>I'm breaking in, shaping up, then checking out on the prison bus
+            <br>This is it, the apocalypse
+            <br>Whoa
+            <br>
+            <br>I'm waking up, I feel it in my bones
+            <br>Enough to make my systems blow
+            <br>Welcome to the new age, to the new age
+            <br>Welcome to the new age, to the new age
+            <br>Whoa, oh, oh, oh, oh, whoa, oh, oh, oh, I'm radioactive, radioactive
+            <br>Whoa, oh, oh, oh, oh, whoa, oh, oh, oh, I'm radioactive, radioactive
+            <br>
+            <br>I raise my flags, don my clothes
+            <br>It's a revolution, I suppose
+            <br>We'll paint it red to fit right in
+            <br>Whoa
+            <br>
+            <br>I'm breaking in, shaping up, then checking out on the prison bus
+            <br>This is it, the apocalypse
+            <br>Whoa
+            <br>
+            <br>I'm waking up, I feel it in my bones
+            <br>Enough to make my systems blow
+            <br>Welcome to the new age, to the new age
+            <br>Welcome to the new age, to the new age
+            <br>Whoa, oh, oh, oh, oh, whoa, oh, oh, oh, I'm radioactive, radioactive
+            <br>Whoa, oh, oh, oh, oh, whoa, oh, oh, oh, I'm radioactive, radioactive
+            <br>
+            <br>All systems go, the sun hasn't died
+            <br>Deep in my bones, straight from inside
+            <br>
+            <br>I'm waking up, I feel it in my bones
+            <br>Enough to make my systems blow
+            <br>Welcome to the new age, to the new age
+            <br>Welcome to the new age, to the new age
+            <br>Whoa, oh, oh, oh, oh, whoa, oh, oh, oh, I'm radioactive, radioactive
+            <br>Whoa, oh, oh, oh, oh, whoa, oh, oh, oh, I'm radioactive, radioactive
+            <br>
+
+        </hidden>
+    </div>
+
+    <script>
+        track = {};
+dbg=false;
+        function main() {
+            cur = aut.currentTime;
+            
+            if (!dbg) {
+            
+            if (false) {} 
+             else if (cur >38) {
+                track.c3();
+            }
+            else if (cur > 36) {
+                track.c1();
+            } else if (cur > 35) {
+                w3.style.opacity = 0;
+            } else if (cur > 33) {
+                w3.style.opacity = 1;
+            } else if (cur > 32.5) {
+                w1.style.opacity = 0;
+                tosh.style.opacity = 0;
+            } else if (cur > 31) {
+                track.w2();
+            } else if (cur > 29) {
+                track.w1();
+            } else if (cur > 25) {
+                $('#holds').addClass('blur');
+                holds.style.opacity = 0;
+            } else if (cur > 21) {
+                track.s4();
+            } else if (cur > 14) {
+                track.s3();
+            } else if (cur > 7) {
+                track.s2();
+            } else if (cur > 0.1) {
+                track.s();
+            }
+
+
+            console.log(cur);
+            }
+            setTimeout(function() {
+                main();
+            }, 100);
+        }
+
+
+        track.s = function() {
+            sa.style.opacity = 1;
+            sa.style.top = "20%";
+        }
+        track.s2 = function() {
+            sb.style.opacity = 1;
+            sb.style.top = "30%";
+        }
+        track.s3 = function() {
+            sc.style.opacity = 1;
+            sc.style.top = "30%";
+            sa.style.top = "10%";
+            sb.style.top = "20%";
+            sa.style.opacity = 0;
+        }
+        track.s4 = function() {
+            sd.style.opacity = 1;
+            sd.style.top = "45%";
+        }
+        track.w1 = function() {
+
+
+            w10.style.WebkitTransform = "rotate(0deg)";
+            w10.style.bottom = "8%";
+            setTimeout(function() {
+                w11.style.WebkitTransform = "rotate(0deg)";
+                w11.style.bottom = "8%";
+            }, 200);
+            setTimeout(function() {
+                w12.style.WebkitTransform = "rotate(0deg)";
+                w12.style.bottom = "8%";
+            }, 400);
+
+        }
+        track.w2 = function() {
+            $('#w20').addClass('apply-showblur');
+            setTimeout(function() {
+                $('#w21').addClass('apply-showblur');
+            }, 300);
+            setTimeout(function() {
+                $('#w22').addClass('apply-showblur');
+            }, 600);
+            setTimeout(function() {
+                $('#w23').addClass('apply-showblur');
+            }, 900);
+        }
+        track.c1 = function() {
+            c2.style.opacity=1;
+            c1.style.opacity = 1;
+            c1.style.left = "-30%";
+            setTimeout(function(){
+                       c2.style.left="65%";
+                c22.style.right="25%";
+                       },300);
+        }
+        track.c3 = function() {
+         c1.style.opacity=0;
+            $('#c2').addClass("on")
+        }
+
+        aut.addEventListener('canplaythrough', function() {
+           // aut.currentTime = 35;
+            console.log("Loaded to" + 35);
+        }, false);
+
+
+        main();
+    </script>
+
+</body>
+

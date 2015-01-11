@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<HTML>
+    <Head>
+		<meta charset="UTF-8">
+        <title>Elemential</title>
+    </Head>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700|Roboto+Condensed:400,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<body id="body" class="_square">
+    <div id="statusbar">
+        <span id="time">
+            <span id="t_hour">00</span>:<span id="t_min">01</span>
+        </span>
+    </div>
+    <div id="actionbar">
+        <img id="act_icon" src="http://rontap.netne.net/static/set4.png" height="15px" onClick="menuOC()">
+        TapCalk Mobile
+    </div>
+    
+    <div id="ascreen" class="mcmenuON">
+      <div id="tfill">
+      
+      <h2>Üdvözlünk a TapCalk4-ben!</h2>
+			<p class="p">
+			Ez a számológép az alapűveleteken túl<wbr> bonyolultabb műveletek és összefüggések kiszámítására is használható.<wbr> Így akár a házifeladat megoldásában ; akár otthoni, munkahelyi feladatok megoldásában segít.
+			<br>
+			<span style="color:#26F;">Használat :</span><br>
+			A második oszlopban lehet kiválasztani a műveletet, amit el szeretnél végezni.<br>
+			A könnyebb eligazodás érdekében csoportokra szedtük a funkciókat.<br>
+			Kérünk vedd vigyelembe, hogy ez még béta stádiumban van, bárhol előfordulhatnak hibák!<br> 
+			</p>
+			Kellemes kalandozást kíván a matematika világában az
+			 <span style="color:#8B5;" title="Aki ezt a szotvert készítette!">Elemential </span>!
+      
+      </div>
+    </div>
+    
+<div id="infopanell" style="display:none;"></div>
+    
+    
+    <div id="menu" slider style="overflow-y: scroll;">
+        
+        <div id="alapmuveletek" class="otitle omenu" >alapműveletek</div>
+		<div class="omenu" onClick="fillt('add');menuOC();">kivonás / összeadás <span class="keyhint">1</span></div>
+		<div class="omenu" onClick="fillt('szor');menuOC();">szorzás / osztás <span class="keyhint">2</span></div>
+		<div class="omenu" onClick="fillt('gyok');menuOC();">gyökvonás <span class="keyhint">3</span></div>
+		<div class="omenu" onClick="fillt('negyz');menuOC();">hatványozás <span class="keyhint">4</span></div>
+		<div class="omenu" onClick="fillt('besz');menuOC();">kiemelés / beszorzás <span class="keyhint">5</span></div>
+		<div class="omenu" onClick="fillt('toa');menuOC();">tömeges összeadás <span class="keyhint">6</span></div>
+		<div class="omenu" onClick="fillt('fakt');menuOC();">faktoriális <span class="keyhint">F</span></div>
+		
+	<hr><div id="sorozatok" class="otitle omenu">sorozatok</div>
+		<div class="omenu" onClick="fillt('szamtani');menuOC();">számtani <span class="keyhint">7</span></div>
+		<div class="omenu" onClick="fillt('mertani');menuOC();">mértani</div>
+		<div class="omenu" onClick="fillt('gorbe');menuOC();">görbe</div>
+		<div class="omenu" onClick="fillt('fibo');menuOC();">fibonacci</div>
+		<div class="omenu" onClick="fillt('negyzet');menuOC();">négyzetszámok</div>
+		<div class="omenu" onClick="fillt('spin');">spinkvantmszám</div>
+		
+	<hr><div id="geometria"class="otitle omenu">geometria</div>
+		<div class="omenu" onClick="fillt('sintg');menuOC();">szögfüggvények (sin) <span class="keyhint">S</span></div>
+
+	<hr><div id="atlag"class="otitle omenu">átlagok</div>
+		<div class="omenu" onClick="fillt('atlszam');menuOC();">számtani közép (aritmetikai) <span class="keyhint">K</span></div>
+		<div class="omenu" onClick="fillt('atlmer');menuOC();">mértani közép (geomatriai)</div>
+		<div class="omenu" onClick="fillt('atlhar');menuOC();">harmónikus közép (reciprok)</div>
+		<div class="omenu" onClick="fillt('atlneg');menuOC();">négyzetes közép</div>
+		
+	<hr><div id="primszamok" class="otitle omenu">prímszámok</div>
+		<div class="omenu" onClick="fillt('primis');menuOC();">prím-e a szám</div>
+		<div class="omenu" onClick="fillt('primlist');menuOC();">prímek listázása</div>
+		<div class="omenu" onClick="fillt('primfel');menuOC();">prímtényezős felbontás <span class="keyhint">8</span></div>
+		<div class="omenu" onClick="fillt('lkkt');menuOC();">Legkisebb Közös Többszörös</div>
+		<div class="omenu" onClick="fillt('lnko');menuOC();">Legnagyobb Közös Osztó</div>
+
+	<hr><div id="atvaltas" class="otitle omenu">átváltások</div>
+		<div class="omenu" onClick="fillt('atv');menuOC();">univerzális átváltás</div>
+	
+	<hr><div id="szamrendszerek" class="otitle omenu">számrendszerek</div>
+		<div class="omenu" onClick="fillt('szamrend');menuOC();">átváltás <span class="keyhint">A</span></div>
+		
+
+	<hr><div id="oth" class="otitle omenu">egyéb</div>
+		<div class="omenu" onClick="fillt('mesel');menuOC();">Mindent a szám-ről <span class="keyhint">9</span></div>
+		<div class="omenu" onClick="fillt('random');menuOC();">véletlenszerű szám</div>
+		<div class="omenu" onClick="fillt('kamat');menuOC();">kamatszámító</div>
+		<div class="omenu" onClick="fillt('masodfok');menuOC();">masodfok</div>
+		<div class="omenu" onClick="fillt('pir');menuOC();">pireneusi számok</div>
+		<div class="omenu" onclick="fillt('pi');menuOC();">&pi; (pi)</div>
+		<div class="omenu">√2 (gyök kettő)</div>	
+        
+        
+    </div>
+    
+    
+    
+
+</body> 
+    
+    
+    <style>
+		#ascreen {
+			padding:10px;
+			}
+		hr {
+			display:none;
+			}
+		.otitle {
+			background:#48F;
+			}
+		.omenu {
+			padding: 10px 20px;
+margin-left: -20px;
+border-bottom: 1px solid hsl(0, 0%, 60%);
+			-webkit-transition:all .4s;
+			transition:all .4s;
+			}
+			
+        #t_hour {
+            }
+        body {
+            font-family: 'Roboto', sans-serif !important;
+            margin:0;
+            padding:0;
+            -webkit-transition:all .4s
+            }
+
+
+        #actionbar {
+            position:fixed;
+            
+            height:24px;
+            width:100%; 
+            background:#48F; 
+            padding:10px;
+            color:white;
+            vertical-align:middle;
+            border-bottom: 2px solid hsl(218, 100%, 43%);
+            }
+        #time {
+            float:right;
+            margin-right:5px;
+            }
+         #act_icon {
+             margin-left: -10px;
+             -webkit-transition:margin .4s;
+             
+}
+        #act_icon:active {
+             margin-left: -15px;
+             margin-right:5px;
+             
+            }
+      
+        #menu {
+			overflow-y: scroll;
+            top:46px;
+            position:fixed;  
+            width:0;
+            -webkit-transition:all .4s;  
+            overflow:hidden;
+            background:#DDD;
+            bottom:0;
+            z-index:9;
+            }
+         #ascreen {
+             top:41px;
+				bottom:0;
+            position:fixed;  
+           
+            -webkit-transition:all .4s;  
+             }
+          #ascreen.mcmenuON {
+              top:46px;
+				   
+			bottom: 34px;
+			overflow-y: scroll;
+			left: 0;
+			right: 0;
+			bottom: 44px;
+              }
+          #mcmenu {
+              top:46px;
+               position:fixed;  
+               height:35px;
+               background:#EEE;
+               width:100%;
+               border-bottom:1px solid #999;
+               
+               
+              }
+           #mcmenu span {
+               verical-align:middle;
+               display:inline-block;
+               text-transform:uppercase;
+               font-size:10px;
+               font-weight:600;
+             margin:11px 0 0 0 ;
+             padding:0 5px 0px 5px;
+               border-left: 1px solid #999;
+               }
+               
+            #mcmenu>:first-child span{
+                border:none;
+                }
+            #mcmenu v:hover {
+                border-bottom: 3px solid #f80;
+                padding-bottom: 7px; 
+                cursor:pointer;
+                
+            }
+            .keyhint {
+				opacity:0;
+				display:none;
+				}
+				.alsobutt
+				{
+					position:fixed;
+					bottom:0;
+					height:30px;
+					text-align:center;
+					width:100%;
+					margin:0 !important;
+					 z-index:2;
+					}
+     </style>
+    
+     <div class="alsobutt btn-b" onClick="calkr();">Számolás</div>
+     
+     
+    <script src="../rontap/calknew.js" type="text/javascript"></script>
+         <script src="../edu/calknew.js" type="text/javascript"></script>
+<script src="../rontap/android.js" type="text/javascript"></script>
+    <link href='../rontap/main.css' rel='stylesheet' type='text/css'>
+    
+     <script src="calknew.js" type="text/javascript"></script>
+    <script src="android.js" type="text/javascript"></script>
+    <link href='main.css' rel='stylesheet' type='text/css'>
+<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+       <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>  
+         <script>
+     $(function(){
+  // Bind the swipeHandler callback function to the swipe event on div.box
+  $( "#ascreen" ).on( "swipe", swipeHandler );
+ 
+  // Callback function references the event target and adds the 'swipe' class to it
+  function swipeHandler( event ){
+    menuOC();
+  }
+});
+     </script>
+<style>
+rjsx = {};
+</style>
+<!--
+0.0 Starting 2014 jan 7
+0.1 alap navigációs elemek. roboto betűtípus
+0.2 3vonal menü
+0.3 másik navigációs sáv
+
+-->
+</HTML>
+
+
+	

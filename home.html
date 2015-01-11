@@ -1,275 +1,51 @@
 <!DOCTYPE HTML>
 <HTML>
 
-<Head>
-    <title>Welcome to Elemential</title>
-    <meta charset="UTF-8">
-    <meta name="author" content="TAP">
-    <meta name="description" content="rontap">
-    <meta name="keywords" content="rontap,linux,TaPium,tapsite,rts,rjsx">
-    <script src="goog.js" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <script>
-        sited = "ttest.html";
-        navname = "Elemential"; //hogy jelenik majd meg
-        navplus = "Kezdőoldal";
-        coa = false;
-        pack = "elemential.HOME";
-        moretag = true;
-         //holvan
-        manimg = "f_icons/config-users.svg";
-        rjsx_nonev2 = true;
-    </script>
-    <link href='http://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+<html>
+    <head>
 
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-</Head>
-<style>
-    h1 {
-        border: none !important;
-    }
-    .c {
-        text-align: center;
-    }
-    body {
-        overflow-x: hidden;
-        background: #444;
-        color: #444;
-        -o-user-select: none;
-        -moz-user-select: none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        cursor: default;
-    }
-    rts {
-        text-align: center;
-    }
-    #innerx {
-        overflow: hidden;
-        font-family: 'Ubuntu', sans-serif;
-        display: inline-block;
-        -webkit-animation: elemential 2s;
-        -o-animation: elemential 2s;
-        -moz-animation: elemential 2s;
-        -webkit-transition: text-shadow .3s;
-    }
-    container {
-        text-align: justify !important;
-    }
-    #innerx:hover {
-        text-shadow: 0px 0px 3px #444;
-    }
-    #menulinks {
-        background: transparent;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin-bottom: 5px;
-        transition: opacity .2s;
-        opacity: 0;
-    }
-    .animateinnerx {}
-    /*@-webkit-keyframes elemential
-	{
-	0%   {width:0;}
-	50%   {width:0;}
-	100% {width:70%;}
-	}
-	 	@-o-keyframes elemential
-	{
-	0%   {width:0;}
-	50%   {width:0;}
-	100% {width:70%;}
-	}
-	 	@-moz-keyframes elemential
-	{
-	0%   {width:0;}
-	50%   {width:0;}
-	100% {width:70%;}
-	}*/
-    #holder {
-        text-align: center;
-        font-size: 7em;
-    }
-    g,
-    #g {
-        color: #25a513 !important;
-        vertical-align: top;
-        font-family: 'Play', sans-serif;
-    }
-    #hi {
-        text-align: center;
-        font-weight: 200;
-        font-size: 5em;
-        text-shadow: 0px 0px 1px #444;
-        margin-bottom: 0em;
-    }
-</style>
-
-<style>
-    #borred {
-        border-bottom-color: #F26;
-    }
-    #borred:hover {
-        border-color: #F26;
-    }
-    .btn-new,
-    .btn-new-linux {
-        margin: 0;
-    }
-    #aboutus,
-    #projects,
-    #wwdo {
-        background: #f3f3f3;
-        color: #333;
-        margin: 0 -50px;
-        margin: 0 -50px;
-        padding: 60px;
-        width: auto;
-        height: 520px;
-    }
-    #projects {
-        background: #48f;
-    }
-    #wwdo {
-        background: #f1f1f1;
-    }
-    .bigtext {
-        font-family: 'Ubuntu', sans-serif;
-        font-size: 6em;
-    }
-    .fixed {
-        position: fixed;
-    }
-    .mhr {
-        border: none;
-        width: 16.66667%;
-        height: 25px;
-        display: inline-block;
-        background: red;
-        margin: -3px;
-        padding: 0;
-        -webkit-transition: all .3s;
-        cursor: pointer;
-        position: absolute;
-        color: transparent;
-    }
-    .mhr:not(.on):hover {
-        margin-top: -105px;
-        height: 135px;
-        color: white;
-    }
-    .mhr span {
-        padding: 10px;
-        display: inline-block;
-    }
-    .mhr:hover span {
-        padding: 10px;
-        display: inline-block;
-    }
-    .mhr.on {
-        margin-top: -150px;
-        margin-left: 0% !important;
-        width: 100%;
-        height: 200px;
-        z-index: 99;
-        margin-bottom: 20px;
-        color: white;
-    }
-    #innerx {
-        transition: width 1s, text-shadow .5s;
-    }
-    .away {
-        margin: 30px;
-    }
-    .lh2 {
-        line-height: 26px;
-    }
-    .inline-flex {
-        display: inline-flex;
-    }
-    .ppl {
-        display: block;
-        position: absolute;
-        opacity: 0.9;
-        -webkit-transition: all 1s;
-        margin-top: -25px;
-        padding-left: 25px;
-    }
-    @-webkit-keyframes zoomr {
-        from {
-            transform: rotate(-5deg);
-            zoom: 0.4;
+        <meta charset="UTF-8">
+        <script>
+        fome = {
+            'link' : ['Rólunk','Projektek','Kapcsolat','mas'],
+            'incl' : ['welcome'],
+            'title' : "Elemential",
+            'splashname': "polyfome",
+            'extratitle' : "polyfome ",
+            'navname' : "menü",
+            'logos' : "-",
+            'location':"incl/",
+            'fab' :[true,'right','new','fn'],
+		'primaryColor' : '#9c27b0',
+			'secondaryColor' : '#f84',
+            'theme':"2",
+	    'themeflags':"" 	,
+	    'loc':'../../polyfome/'
         }
-        to {
-            transform: rotate(0deg);
-            zoom: 1;
+        </script>
+        <style>
+        #cc {
+	background:#f1f1f1;        
+        }       
+        #welcome {
+        margin-top: -21px;
         }
-    }
-    #holder {
-        -webkit-animation: zoomr 1s;
-    }
-    .mxw-800 {
-        max-width: 1000px;
-    }
-    @media (min-width: 1000px) {
-        .mxw-800 {
-            margin: 0 auto;
-            display: block;
-        }
-    }
-    #bits {
-        right: -35px;
-        width: 150px;
-        -webkit-filter: grayscale(.80);
-        opacity: 0.6;
-    }
-    .mover {
-        position: absolute;
-        right: -80px;
-    }
-    #circuit {
-        opacity: 0.3;
-        transform: rotate(-90deg);
-    }
-    #welcome {
-        transition: height .2s;
-    }
-    h3.c {
-        font-weight: 100;
-        margin-top: -20px;
-        transition: opacity 2s, margin-top .6s;
-        opacity: 0;
-        z-index: 1;
-    }
-    .tilepng {
-        width: 150px;
-        transition: all 1s;
-    }
-    .bigtext.c {
-        z-index: 2;
-    }
-</style>
+         </style>
+    </head>
+    <body>
+        <fome-element></fome-element>
+        <splash-element></splash-element>
+       
 
-
-<body>
-    <div id="navbar">
-    </div>
-
-
-    <div id="body">
-        <rts>
+    <div id="cc">
             <div id="welcome">
                 <h1 id="hi">Üdvözlünk az</h1>
-                <br>
-                <div id="holder">
+              
                     <g>&lt;</g>
                     <div id="innerx" class="animateinnerx">
                         <g>E</g>lemential</div>
                     <g>/&gt;</g>
-                </div>
+                
                 <h1 id="hi" style="margin-top:0;">weboldalán!</h1>
                 <br>
                 <h3 class="c">Görgess le további információért!</h3>
@@ -327,27 +103,10 @@
                 <div class="bigtext c">Projektek</div>
                 <br>
                 <center class="away lh2 mxw-800 c ">A számos projektet több csoportra osztottuk:</center>
-
-                <table class="norjsx">
-                    <tr>
-                        <td>
-                            <img src="../elementile_apps.png" class="tilepng">
-                        </td>
-                        <td>General Apps</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="../elementile_game.png" class="tilepng">
-                        </td>
-                        <td>Games</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="../elementile_learn.png" class="tilepng">
-                        </td>
-                        <td>Games</td>
-                    </tr>
-                </table>
+<h1>HELLO</h1>
+                <div>
+                	<div></div>
+                </div>
             </div>
 
 
@@ -356,7 +115,7 @@
                 <div class="bigtext c">Történet</div>
 
             </div>
-
+</div>
             <script>
                 users = [
                     'Az elemential alapítóinak egyike vagyok. Általában designolással foglalkozom, de van csomó kisebb-nagyobb projektem is, mint például a TapCalk. Szeretem a Brit sorozatokat és a térképeket.','BB',
@@ -421,8 +180,7 @@
                 }
             </script>
             <script src="https://raw.githubusercontent.com/fatlinesofcode/jquery.smoothwheel/master/src/jquery.smoothwheel.js" type="script/javascript"></script>
-            <script src="main.js" type="text/javascript"></script>
-</Body>
+           
 <style>
     .btn-new,
     .btn-new-linux {
@@ -435,5 +193,7 @@
         border-color: #26F;
     }
 </style>
+ <link rel="import" href="../../polyfome/include.html">
+    </body>
+</html>
 
-</HTML>

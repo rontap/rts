@@ -9,8 +9,8 @@
 <body>
           <script>
         fome = {
-            'link' : ['Nyelvek','Véletlengenerátor','Jelszógeneráló','Stopper és időzítő','Színkeverő','Titkosító','Jegyek'],
-            'incl' : ['langs','lipsum','generator','stopper','color','enigma','jegyek'],
+            'link' : ['Nyelvek','Véletlengenerátor','Jelszógeneráló','Stopper és időzítő','Színkeverő','Titkosító','Jegyek','Kifogásgyártó'],
+            'incl' : ['langs','lipsum','generator','stopper','color','enigma','jegyek','kifogas'],
             'title' : "Segédezközök",
             'extratitle' : "Rontap &nbsp;",
             'splashname': "Kellékek",
@@ -18,12 +18,16 @@
             'logos' : "-",
             'location':"random/",
             'fab' :[true,'right','new','fn'],
-            'primaryColor' : "#48f"
+            'primaryColor' : "#48f",
+            'theme':1,
+            'themeflags':""
             }
         </script>
-    <fome-element></fome-element>
+        <fome-menu></fome-menu>
+   	<fome-element></fome-element>
         <splash-element></splash-element>
 
-    <link rel="import" href="http://elemential.net/polyfome/include.html">
+    <link rel="import" href="../../polyfome/include.html">
+    <link rel="import" href="../../polyfome/elementile.html">
 </body>
 </html> 

@@ -1,0 +1,93 @@
+<div class="away">
+    <div class="card away">
+        <paper-ripple></paper-ripple>
+        Tegyél fel annyi kérdést amennyit akarsz!
+
+    </div>
+    <table class="away" id="edit_it">
+
+    </table>
+
+    <div class="fab blue" onclick="newEntry()" style="opacity: 1;" id="mainfab">
+        <core-icon icon="add" style="height: 24px; width: 24px;"></core-icon>
+        <paper-ripple class="circle recenteringTouch" fit="" style="width: 76px; height: 76px;"></paper-ripple>
+
+    </div>
+
+    <style>
+        @-webkit-keyframes mymove {
+            0% {
+                opacity: 0;
+                margin-top: 20px;
+            }
+            100% {
+                opacity: 1;
+                margin-top: 0px;
+            }
+        }
+        #edit_it tr:last-child {
+            position: absolute;
+            -webkit-animation: mymove .4s;
+        }
+        #edit_it tr,
+        #edit_it tr.no paper-input {
+            transition: .2s;
+            margin-left: 1px;
+        }
+        #edit_it tr.no,
+        #edit_it tr.no paper-input {
+            display: none;
+        }
+        #quickedit {
+            position: fixed;
+            /* background: red; */
+            bottom: -5px;
+            transition:all .8s;
+        }
+        #quickedit div {
+            padding: 15px;
+            background: #fff;
+            box-shadow: 0px -2px 4px #aaa;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            z-index: 99;
+            margin-top: -38px;
+            cursor: pointer;
+            transition: all .4s;
+        }
+        #quickedit div:hover {
+            background:#f9f9f9;
+        }
+        #quickedit div:active {
+            box-shadow: 0px -3px 8px #aaa;
+        }
+        #quickedit textarea {
+            width: 82.5%;
+            position: fixed;
+            left: 17.5%;
+            border: none;
+            box-shadow: 0px -4px 10px #aaa;
+            z-index: -1;
+            padding: 25px;
+            height: 150px;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+         #quickedit.on {
+             bottom:200px;
+         }
+        .fab.blue.bo250 {
+            bottom:230px;
+        }
+        .fab.blue {
+            transition:.8s;
+        }
+    </style>
+</div>
+
+
+<div id="quickedit">
+    <div onclick="$('#quickedit').toggleClass('on');$('.fab.blue').toggleClass('bo250');">Gyors beillesztés</div>
+
+    <textarea placeholder="a kérdéseket pontosvesszővel kell elválasztani. a bevitelhez kattints a plusz ikonra"></textarea>
+</div>

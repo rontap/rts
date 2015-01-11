@@ -1,0 +1,22 @@
+<div class="away">
+<h1>Itt letesztelheted a tudásod.</h1>
+    
+    <section class="away card inway" >
+        
+    <h3>Típus</h3>
+        <div class="away">
+      <paper-radio-button name="alwayse" label="eldöntendő"  ></paper-radio-button><br><br>
+      <paper-radio-button name="alwaysa" label="válaszolós" ></paper-radio-button><br><br>
+      <paper-radio-button name="alwaysb" label="4-választó"  tabindex="0"></paper-radio-button><br>
+  </div>
+  </section>
+</div>
+<script>
+$('section paper-radio-button').click(function(){
+       
+        $('section paper-radio-button')[0].checked=false;
+        $('section paper-radio-button')[1].checked=false;
+        $('section paper-radio-button')[2].checked=false;                            
+   
+      })
+</script>

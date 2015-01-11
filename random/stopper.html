@@ -25,7 +25,36 @@
             transition:all 1s;
         }
     </style>
+    <br><br>
+    <h1>Időzitő</h1>
+    <paper-input value="" placeholder="Perc"  class="inp-text" id="i_cc"></paper-input>
+    <paper-input value="" placeholder="Másodperc"  class="inp-text" id="ms_cc"></paper-input>
+    <paper-button onClick="" id="" label="INDÍTÁS" onclick="idozit();"></paper-button>
+    
+    <div class="away card">
+        <paper-ripple></paper-ripple>
+        <span id="i_h"> </span>:
+        <span id="ms_h"></span>
+    </div>
 	 <script>
+         function idozit() {
+            
+         
+              timech=(Number(i_cc.value)*60+Number(ms_cc.value));
+                  for(var i = 1; i <= 2; i++) {
+                    (function(index) {
+                        setTimeout(function() { 
+                        timech--;
+                     i_h.innerHTML=Math.ceil(timech/60);
+                     ms_h.innerHTML=timech%60;
+                        }, 1000);
+                    })(i);
+    }
+         }
+
+    
+         
+         
 	 fut=false;
 	 var isis=0;//ms
 	 var perc=0;//perc

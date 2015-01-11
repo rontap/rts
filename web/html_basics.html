@@ -1,0 +1,81 @@
+<div card="away" id="__h">
+    <h1>HTML Alapok</h1>
+    <h2>Az általános felépítés:</h2><br>
+    <bb class="f-20">
+    <code>&lt;TAG beállítás="érték" egyszeri_érték&gt; [...] &lt;/TAG&gt;</code>
+    </bb><br>
+    Fontos megjegyezni hogy nem minden tagnek van lezárása (<code>&lt;/TAG&gt;</code>)
+    <h2>Legfontosabb tagek:</h2>
+    <table>
+    <tr>
+        <th>Név</th>
+        <th>megfelelő</th>
+        <th>próbáld ki!</th>
+    </tr>
+    <tr>
+        <td>br</td>  <td>sortörés (nincs lezárása)</td> <td>br</td>  
+    </tr>
+    <tr>
+        <td>span, container, nav</td>  <td>körbeveszi az elemet, semmit nem csinál vele</td> <td>br</td>  
+    </tr>
+    <tr>
+        <td>div</td>  <td>br és span kombinálva</td> <td>br</td>  
+    </tr>
+    <tr>
+        <td>h1..h6</td>  <td>főcímek, H1 a legnagyobb</td> <td>br</td>  
+    </tr>
+    <tr>
+        <td>input</td>  <td>bemeneti mező. (lásd késöbb) (nincs lezárása)</td> <td>br</td>  
+    </tr> 
+    <tr>
+        <td>img</td>  <td>kép (nincs lezárása) [src="" a linkeléshez]</td> <td>br</td>  
+    </tr>
+    <tr>
+        <td>p</td>  <td>bekezdés, olyan mint egy div, de előtte és utána is helyet foglal magának</td> <td>br</td>  
+    <tr>
+        <td>a</td>  <td>linkel egy oldalra [href="" a linkeléshez]</td> <td>br</td>
+    </tr>
+    <tr>
+        <td>hr</td>  <td>vízszintes vonal</td> <td>br</td>
+    </tr>  
+    <tr>
+        <td>button</td>  <td>gomb</td> <td>br</td>
+    </tr> 
+    <tr>
+        <td>b / i / u / s</td>  <td>vastag/dőlt/aláhúzott/áthúzott szöveg</td> <td>br</td>
+    </tr> 
+    </table>
+    <br><br>
+    <h2>Beállítások</h2>
+    <table>
+    <tr>
+        <th>Név</th>
+        <th>funckió</th>
+        <th>használható</th>
+    </tr>
+    <tr>
+        <td>id="valami"</td>  <td>azonosító</td> <td>mindenhol</td>
+    </tr> 
+    <tr>
+        <td>class="valami mas"</td>  <td>csoport azonosító, több is lehet, spacel elválasztva</td> <td>mindenhol</td>
+    </tr>
+    <tr>
+        <td>type="meghatározott"</td>  <td>csak bemeneti mezőknél. lehet: password/number/color/date/checkbox/radio és sok más</td> <td>input</td>
+    </tr>
+    <tr>
+        <td>disabled</td>  <td>kikapcsolt</td> <td>input + button</td>
+    </tr>
+     <tr>
+        <td>href=""</td>  <td>hova linkeljen</td> <td>a, de máshol is használják</td>
+    </tr>   
+    </table>
+</div>
+<style>
+    table tr {
+        border-spacing: 2px;
+    }
+#__h table tr td:first-child {
+    font-size: 18px;
+font-family: monospace;    
+}
+</style>
