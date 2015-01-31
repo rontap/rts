@@ -1,12 +1,12 @@
 
              
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    
                 
  <div class="away">
    
     <fab></fab>
 <h1>Nyelvek</h1>
-    <div class="card away">
+    <div class="card away" id="lang_fixtop">
         Az emberiség mekkora részével tudsz beszélni?<br>
         Jelöld be egyszerűen a nyelveket, amiket ismersz, és megmutatjuk,<br> hogy az emberiség hány %-át értenéd meg!
         <br>
@@ -30,7 +30,7 @@
             </tr>
         </table>
         
-        <div id="chart_div"></div>
+        <div id="GWSchart_div"></div>
         
        
         <paper-input id="st" onkeyup="doit();" placeholder="keresés..." style="width:150px;"></paper-input> 
@@ -133,11 +133,29 @@
             hv2.innerHTML = Math.round(((dev2 + dev) / (ssum2 + ssum)) * 10000) / 100 + "%";
             hvdata.innerHTML = Math.round(dev)+' millió fő' ;
             hvdata2.innerHTML = Math.round(dev2 + dev)+' millió fő';
-            drawChart(dev,dev2,ssum+ssum2-dev-dev2); 
+            GWSdrawChart(dev,dev2,ssum+ssum2-dev-dev2); 
         }
         
+        $('html /deep/ #mainContainer')[1].onscroll=function(){cchack(this.scrollTop)};
+        //this is kinda important
+        function cchack(call) {
+            if (call>95) { $('#lang_fixtop').addClass('fixtop');}
+            else { $('#lang_fixtop').removeClass('fixtop');}
+        }
     </script>
     <style>
+        /*2DO : MINIMALISED*/
+        #lang_fixtop.fixtop {
+            
+        position: fixed;
+        top: 59px;
+        left: 250px;
+        right: -4px;
+        z-index: 1;
+        }
+        .fixtop #GWSchart_div{
+            top: 0;
+        }
         table {
             border-spacing: 0px;
             
@@ -171,17 +189,27 @@ table tr {
         paper-checkbox {
             z-index: -1 !important;
         }
+        #GWSchart_div {
+            display: inline-block;
+position: absolute;
+top: 90px;
+margin-left: 550px;
+        }
     </style>
 
     <script type="text/javascript">
-                  google.load('visualization', '1.0', {'packages':['corechart']});
-                  google.setOnLoadCallback(drawChart);
-                  function drawChart(l1,l2,l3) {
-
-                    var data = new google.visualization.DataTable();
-                    data.addColumn('string', 'Topping');
-                    data.addColumn('number', 'Slices');
-                    data.addRows([
+        
+        setTimeout(function(){
+                  //
+                 
+                  
+            },1500);
+        function GWSdrawChart(l1,l2,l3) {
+console.log('hello')
+                    var GWSdata = new google.visualization.DataTable();
+                    GWSdata.addColumn('string', 'Topping');
+                    GWSdata.addColumn('number', 'Slices');
+                    GWSdata.addRows([
                       ['Anyanyelvű (L1)', Number(l1)],
                       ['Tanult (L2)', Number(l2)],
                       ['Nem beszéli', Number(l3)], 
@@ -189,12 +217,12 @@ table tr {
                     ]);
                         
 
-                    var options = {'title':'',
+                    var GWSoptions = {'title':'',
                                    'width':300,
                                    'height':200,
                         colors: ['#48f','#5d94e6','#999']};
-                    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-                    chart.draw(data, options);
+                    var GWSchart = new google.visualization.PieChart(document.getElementById('GWSchart_div'));
+                    GWSchart.draw(GWSdata, GWSoptions);
                   }
                 </script>
 </div>    

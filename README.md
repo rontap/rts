@@ -1,9 +1,8 @@
 rts
 ===
 
-Ron Tap Sites
-===
-Current apps as of version **4.1.0** beta
+Ron Tap Sites===
+Current apps as of version **4.1.2** beta
 
 * edu/tapcalk - advanced calculator
 * browser - html browser (not updated & not working)
@@ -23,7 +22,7 @@ Current apps as of version **4.1.0** beta
 * mine - Mine game (finished) **4.0.8** w/ deesnow97
 * PCP - benchmark (not updated & not working)
 * old_canvas/paint - drawing tools from 2012
-* **random - 4.1.0**  
+* **random - 4.1.2**  
  * nyelvek - languages from all around the world
  * véletlengeráló - random generator
  * jelszógeneráló - password generator
@@ -40,4 +39,5 @@ Current apps as of version **4.1.0** beta
 * ver - version tool for RTS 1&2&3
 * web - help for new web developers **4.0.5**
 * widget - alternative newsflow (not updated)  
+
 

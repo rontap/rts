@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script>
+        function GWSdrawChart() {}
+    google.load('visualization', '1.0', {'packages':['corechart']});
+    google.setOnLoadCallback(GWSdrawChart);
+    </script>
     <meta charset="UTF-8">
     <title>Random & Dataness</title>
-    <link rel="stylesheet" href="">
 </head>
 
 <body>
@@ -15,7 +20,7 @@
             'extratitle' : "Rontap &nbsp;",
             'splashname': "Kellékek",
             'navname' : "navigáció",
-            'logos' : "-",
+            'logos' : "",
             'location':"random/",
             'fab' :[true,'right','new','fn'],
             'primaryColor' : "#48f",
