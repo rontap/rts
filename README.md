@@ -2,7 +2,7 @@ rts
 ===
 
 Ron Tap Sites===
-Current apps as of version **4.1.2** beta
+Current apps as of version **4.1.3** beta
 
 * edu/tapcalk - advanced calculator
 * browser - html browser (not updated & not working)
@@ -22,9 +22,9 @@ Current apps as of version **4.1.2** beta
 * mine - Mine game (finished) **4.0.8** w/ deesnow97
 * PCP - benchmark (not updated & not working)
 * old_canvas/paint - drawing tools from 2012
-* **random - 4.1.2**  
+* **random - 4.1.3**  
  * nyelvek - languages from all around the world
- * véletlengeráló - random generator
+ * véletlengeráló - random generator *updated*
  * jelszógeneráló - password generator
  * stopper - stopper and timer (under development)
  * szinkeverő - color mixer
@@ -37,7 +37,7 @@ Current apps as of version **4.1.2** beta
 * toriv/timeline - VPG exam helper
 * utopia - game concept (under development) **4.1.0**
 * ver - version tool for RTS 1&2&3
-* web - help for new web developers **4.0.5**
+* web - help for new web developers **4.1.3**
 * widget - alternative newsflow (not updated)  
 
 
