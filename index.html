@@ -1,41 +1,187 @@
-<!DOCTYPE HTML>
-<HTML>
-    <Head>
-        <title>Elemential</title>
-      <meta charset="UTF-8">
-        <meta name="author" content="TAP">
-      <meta name="description" content="rontap">
-        <meta name="keywords" content="rontap,linux,elemential,tapsite,rts,rjsx">
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <script type="text/javascript" src="https://www.google.com/jsapi">
 
-    <script>
-        navname="Oldal"; //hogy jelenik majd meg
-        coa=false;      
-        moretag=true;
-        specnav=true;
-        rjsxlocation="http://rontap.netne.net/rontap/"
-        //holvan
-        manimg="http://rontap.netne.net/rontap/f_icons/rts.png";
-        specnav=true;
-specnavi = ['hello'];
-specnavil = ['#link'];
+
+
 </script>
-    </Head>
-
- 
-    <body id="body">
-
-
-    <rts>
-    
-
-    
     <script>
-    
+</script>
+    <meta charset="UTF-8">
+    <title>RTS 4 Index</title>
+</head>
+
+<body>
+          <script>
+
+
+
+
+fome = {
+    'link': [''],
+    'incl': [''],
+    'title': "weboldal",
+    'extratitle': "Rontap &nbsp;",
+    'splashname': "RTS 42",
+    'navname': "navigáció",
+    'logos': "",
+    'location': "random/",
+    'fab': [true, 'right', 'new', 'fn'],
+    'primaryColor': "#48f",
+    'theme': 0,
+    'themeflags': ""
+}
+</script>
+        <fome-menu></fome-menu>
+   	    <fome-element></fome-element>
+        <splash-element></splash-element>
+
+        <div id="CONTENT">
+            <paper-icon-button icon="arrow-back" id="gob" onclick="fome.jumpTo('http://elemential.net')"></paper-icon-button>
+            <h1>Welcome to RonTap Sites 42</h1>
+            <div class="away card" style="min-height: 500px;">
+                <div class="away">
+                    In this site you can find all my projects that I made.<br>
+                    For every project to which I contributed, <a href="http://elemential.net/">see</a> this site.
+                </div>
+                <div class="away box">
+                    <app-icon color="48f" icon="av:shuffle" 
+                              href="random.html" text="Random"></app-icon>
+                    <app-icon color="f84" icon="av:play-arrow" 
+                              href="../polyfome/player.html" text="Music Player"></app-icon>
+                    <app-icon color="f44" icon="speaker-notes" 
+                              href="quaestium.html" text="Quaestium"></app-icon>
+                    <app-icon color="607D8B" icon="home" 
+                              href="ssp.html" text="Simple Start Page"></app-icon>
+                    
+                <app-icon color="22B94F"icon="av:games" onclick="fome.notify('Under Consturcion. Sorry',1250)" 
+                              href="#" text="Chess"></app-icon>
+                    <app-icon color="444" icon="gesture" onclick="fome.notify('Under Consturcion. Sorry',1250)" 
+                              href="#" text="Paint Super II"></app-icon>
+                    <app-icon color="9c27b0" icon="device:access-time" 
+                              href="clock.html" text="Clock"></app-icon>
+                    <app-icon color="62c" icon="device:add-alarm" 
+                              href="time.html" text="Simple Clock"></app-icon>
+                    
+                    <app-icon color="444" icon="track-changes" 
+                              href="mine.html" text="Mine"></app-icon>
+                </div>
+                
+            </div>
+            <br>
+            <div class="card away ">
+               <div class="away"> <h1>About</h1>
+                Ron Tap sites Started in 2012 December, and it is since then in development.<br>
+                Altought the source code and the design changed compleatly several times, the main intention remains the same: <s>taking over the world</s> creating useful and elegant websites.
+                   <p>
+                   You may wonder: why does someone write a Music player, a Clock or a homepage, if there already are dozens out there. And the question is legit. So this is why.
+                       <li>It's a great opportunity to write code, and to do exercises</li>
+                       <li>I can test new ideas</li>
+                       <li>and maybe, just maybe someone will use my tools.</li>
+                   </p>
+                </div>
+             </div>
+        </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <style>
+#gob::before {
+    opacity:0;
+    transition:.2s;
+       content: 'Elemential Homepage';
+    position: absolute;
+    margin-left: -90px;
+    margin-top: 2px;
+}
+#gob:hover::before {
+opacity:1;
+    margin-left: -100px;
+}
+
+
+#CONTENT {
+    width: 800px;
+    margin-left: calc(50% - 400px);
+}
+app-icon {
+    margin: 14px;
+}
+#gob /deep/ core-icon * {
+    fill: #222;
+}
+#gob {
+    position: absolute;
+    margin-top: 60px;
+    margin-left: -40px;
+}
+app-icon:not(.loadimgat) /deep/ div {
+     opacity: 0.5;
+    -webkit-filter: saturate(0%);
+    transition:none;
+}
+           html /deep/ .loadimgat {
+               opacity: 0.5;
+    -webkit-filter: saturate(0%);
+     -webkit-animation-name: loadimgaa;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-fill-mode: forwards;
+               opacity: 1;
+    -webkit-filter: saturate(100%);
+  }  
+        
+         @-webkit-keyframes loadimgaa {
+      0% {
+          opacity: 0.5;
+          -webkit-filter: saturate(0%);
+          color:#999;
+      }
+      30% {
+          -webkit-filter: saturate(0%);
+      }
+      90% {
+          opacity: 1;
+            color:#222;
+      }
+      100% {
+          -webkit-filter: saturate(100%);
+      }
+  }
+</style>
+    <script>
+        setTimeout(function(){
+            function doSetTimeout(i) {
+              setTimeout(function() { 
+                  console.log(i); 
+                 $('app-icon:nth-child('+i+')').addClass('loadimgat');
+              }, i*200);
+            }
+
+            for (var i = 1; i <= $('app-icon').length; ++i)
+            {
+              doSetTimeout(i);
+            }
+        },2000)
+         
+
+        
     </script>
-    
-    
-    <script src="http://rontap.netne.net/rontap/main.js" type="text/javascript"></script>
-    </Body>
-</HTML>
 
-
+     
+    <link rel="import" href="../../polyfome/include.html">
+    <link rel="import" href="../../polyfome/elementile.html">
+      <link rel="import" href="av-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/communication-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/device-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/editor-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/hardware-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/image-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/maps-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/notification-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/social-icons.html">
+     <link rel="import" href="../../polymer/bower_components/core-icons/device-icons.html">
+</body>
+</html> 

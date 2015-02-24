@@ -37,7 +37,6 @@ Current apps as of version **4.1.3** beta
 * toriv/timeline - VPG exam helper
 * utopia - game concept (under development) **4.1.0**
 * ver - version tool for RTS 1&2&3
-* web - help for new web developers **4.1.3**
+* web - help for new web developers **4.1.5**
 * widget - alternative newsflow (not updated)  
-
-
+* index - finally an index file **4.1.5**
