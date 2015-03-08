@@ -6,7 +6,7 @@
 
 
 </script>
-    <script>
+    <script> 
 </script>
     <meta charset="UTF-8">
     <title>Elemential</title>
@@ -41,7 +41,7 @@ fome = {
                 <div class="away">
                     <h1>About</h1>
                     Elemential is a little startup founded in 2013. The original goal was to create a program where you could take notes. (how original)<br>
-                    As of November 2014 the project has 7 members. All of us are visit a High school in Hungary, Budapest. But we have great plans, and we are enthusiastic coders.ha 
+                    As of November 2014 the project has 7 members. All of us are visit a High school in Hungary, Budapest. But we have great plans, and we are enthusiastic coders. 
              </div>
         </div><br>
             <div class="away card" >
@@ -75,7 +75,7 @@ fome = {
         <app-icon color="48f" icon="social:school" 
                   href="vpg/vpg/index.html" text="VPG site"></app-icon>
         <app-icon color="795548" icon="help" 
-                  href="mine.html" text="Support"></app-icon>        
+                  href="support/" text="Support"></app-icon>        
             </div>
                 </div>
             
@@ -83,7 +83,7 @@ fome = {
             <div class="away card" >
                 <div class="away">
                     <h1>APIs</h1>
-                    Advanced Programming Interface, they say<br>
+                    Application Programming Interface, they say<br>
                 </div>
                   <div class="away box">
         <app-icon color="62c" icon="polymer" 
@@ -93,13 +93,81 @@ fome = {
          <app-icon color="222" icon="social:notifications" 
                   href="mine.html" text="CryptoBlog"></app-icon>     
             </div>
+        </div>
             
+                <br>
+                <h1 class="away">Team</h1>
+        <div class="away card" id="team">
+                <div class="inway">
+                    <e>rontap</e>   <span>Organiser, Designer</span>
+                </div>
+                <div class="inway">
+                    <e>deesnow97</e> <span>API and Game writer</span>
+            </div>
+                <div class="inway">
+                    <e>LED</e> <span>Engine coder</span>
+            </div>           
+                <div class="inway">
+                    <e>fuiszgt</e> <span>Designer, coder</span>
+            </div>
+                <div class="inway">
+                    <e>DaniFoldi</e> <span>Host, coder</span>
+            </div>
+                <div class="inway">
+                    <e>csncsate</e> <span>Coder, designer</span>
+            </div>
+                <div class="inway">
+                    <e>radlaci</e> <span>background work</span>
+            </div>
+                </div>
+                
     </div>
     <br>
     <br>
     <br>
     <br>
     <style>
+        #team .inway {
+            padding: 29px;
+        }
+        #team e {
+            position: absolute;
+            height: 50px;
+            margin-bottom: 25px;
+        }
+        #team div {
+            cursor: pointer;
+        }
+        #team {
+            padding-bottom:20px;
+        }
+        #team div span {
+            position: absolute;
+            margin-left:150px;
+            color:#666;
+        }
+        #team div::before {
+            opacity: 1;
+            background: red;
+            height: 59px;
+            content: '';
+            position: absolute;
+            margin-left: -39px;
+            width: 3px;
+            transition: .1s all linear;
+margin-top: -17px;
+        }
+      #team div:hover::before {
+          width:7px;
+      }
+         #team div:nth-child(1)::before { background: #48F;}
+         #team div:nth-child(2)::before { background: #f44; }
+         #team div:nth-child(3)::before { background:#22Bf49; }
+         #team div:nth-child(4)::before { background:#795548; }
+         #team div:nth-child(5)::before { background:#f84;}
+         #team div:nth-child(6)::before { background:#62c; }
+         #team div:nth-child(7)::before {  background:#666;}
+        
         focus {
             font-size: 6em;
             text-align: center;
@@ -160,7 +228,7 @@ app-icon:not(.loadimgat) /deep/ div {
         setTimeout(function(){
             function doSetTimeout(i) {
               setTimeout(function() { 
-                  console.log(i); 
+                //  console.log(i); 
                  $('app-icon:nth-child('+i+')').addClass('loadimgat');
               }, i*200);
             }
@@ -172,6 +240,8 @@ app-icon:not(.loadimgat) /deep/ div {
         },2000)   
     </script>
 
+    
+    
      
     <link rel="import" href="../../polyfome/include.html">
     <link rel="import" href="../../polyfome/elementile.html">
