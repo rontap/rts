@@ -11,11 +11,11 @@
     <title>Random & Dataness</title>
 </head>
 
-<body>
+<body onload="goto('welcome');">
           <script>
         fome = {
             'link' : ['Nyelvek','Véletlengenerátor','Jelszógeneráló','Stopper és időzítő','Színkeverő','Titkosító','Jegyek','Kifogásgyártó'],
-            'incl' : ['langs','lipsum','generator','stopper','color','enigma','jegyek','kifogas'],
+            'incl' : ['langs','lipsum','generator','stopper','color','enigma','jegyek','kifogas','homex'],
             'title' : "Segédezközök",
             'extratitle' : "Rontap &nbsp;",
             'splashname': "Kellékek",
@@ -25,14 +25,17 @@
             'fab' :[true,'right','new','fn'],
             'primaryColor' : "#48f",
             'theme':1,
-            'themeflags':""
+            'themeflags':"",
+            'loc': "homex"
             }
+       
         </script>
         <fome-menu></fome-menu>
    	<fome-element></fome-element>
         <splash-element></splash-element>
-
+<script>setTimeout(function(){goto('homex');},2000);</script>
     <link rel="import" href="../../polyfome/include.html">
     <link rel="import" href="../../polyfome/elementile.html">
+  
 </body>
 </html> 

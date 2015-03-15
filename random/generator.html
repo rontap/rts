@@ -2,19 +2,19 @@
     <h1>Jelszógenerátor</h1>
     <div class="card away inway">
         <div class="away">
-        <paper-input  style="width:150px" type="number" id="bet" max="20" placeholder="jelszó hossz"></paper-input>
-        <paper-input  style="width:150px" type="number" id="db"  max="1000" placeholder="db jelszó generálása"></paper-input>
+        <paper-input  style="width:150px" type="number" id="bet" max="20" label="jelszó hossz"></paper-input>
+        <paper-input  style="width:150px" type="number" id="db"  max="1000" label="db jelszó generálása"></paper-input>
 	<paper-button onclick="pinrnd();" label="" style="vertical-align:10px;">Jelszavak generálása!</paper-button>
 	<br>
         <h2>jelszó típusa:</h2>
         <paper-radio-group selected="d" role="radiogroup">
         <paper-radio-button id="enumx"  name="a" value="enumx" label="-számok /012/ 10 karakterből"></paper-radio-button><br>
-        <paper-radio-button id="ehex"  name="b" checked value="ehex" label="-hexa számok /0AF/ 16 karakterből"></paper-radio-button><br>
+        <paper-radio-button id="ehex"  name="b"  value="ehex" label="-hexa számok /0AF/ 16 karakterből"></paper-radio-button><br>
         <paper-radio-button id="emin"  name="c" value="emin" label="Alap magyar /abc/ 35 karakterből"></paper-radio-button><br>
         <paper-radio-button id="emid"  name="d" value="emid"  label="+nagybetűkkel, számokal /abcABC0/ 75 karakterből"></paper-radio-button><br>
         <paper-radio-button id="emax"  name="e" value="emax" label="+speciális karakterekkel /abcABC0$/ 110 karakterből"></paper-radio-button><br>
 	    <paper-radio-button id="eext"  name="f" value="eext" label="++EXTRA  /abcABC0$~ +orosz/ 180 karakterből"></paper-radio-button>
-       
+        
         </paper-radio-group>
         
 	</div></div>

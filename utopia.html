@@ -14,7 +14,7 @@
 </div>
 
 <div id="field" >
-    0.8 dev
+    0.9 dev 
 </div>
 <focus></focus>
 
@@ -94,7 +94,7 @@
         left:0;
     }
     /*actual code*/
-    player, portal, laser, checkpoint, money, key, lock, focus, p-portal,p-laser {
+    player, portal, laser, checkpoint, money, key, lock, focus, p-portal,p-laser ,wall {
         position: fixed;
     }
     player {
@@ -116,6 +116,16 @@
         50% {border-radius:25px;-webkit-transform:rotate(180deg);}
         100% {border-radius:0px;-webkit-transform:rotate(360deg);}
     }
+    wall {
+        background: #666;
+        width: 50px;
+        height: 4px;   
+    }
+    wall.top    {  }
+    wall.left   { transform: rotate(90deg); margin-top: 23px; margin-left: -23px; }
+    wall.right  { transform: rotate(90deg); margin-top: 23px; margin-left:  23px; }
+    wall.bottom {  margin-top: 46px; }
+    
     
     portal {
         position: fixed;
@@ -336,15 +346,18 @@ rules.key = function(color) {
         if (coll.keys[color]===undefined) {coll.keys[color]=1;}
         else coll.keys[color]++;
     move.prelude=function(){};          
-    grid[player.posx][player.posy]="nothing()";
+    grid[player.posx][player.posy]="rules.nothing()";
 }
 rules.nothing = function() {
-    return true;
+    return false;
+}
+rules.laser = function() {
+    return false;
 }
 rules.money= function() {
     coll.money++;
     $('#money'+player.posy+player.posx).addClass('on');
-    grid[player.posx][player.posy]="nothing()";
+    grid[player.posx][player.posy]="rules.nothing()";
     
 }
 rules.checkpoint = function() {
@@ -376,14 +389,28 @@ rules.door = function(color) {
         player.posy=player.befy;
     }
 }
+rules.wall = function(dirfrom) {
+    dparty_x=NaN; dparty_y=NaN; 
+    if (dirfrom=="top") { dparty_x=-1;}     //TODO TRANSFORM INTO NICE FUNCTION
+    if (dirfrom=="bottom") { dparty_x=1;}
+    if (dirfrom=="right") { dparty_y=1;}
+    if (dirfrom=="left") { dparty_y=-1;}
+    if (( player.posx+dparty_x==player.befx)|| ( player.posy+dparty_y==player.befy) ) {
+         player.posx=player.befx;
+         player.posy=player.befy;
+    }
+}
 rules.time = {} ; //rules that require Timing
 
+    
+rules.pre = {}; //rules that shall be activated before the 
 
 function setRule(what,where,specials) {
     for (i=0;i<where.length;i++) //BASIC FUNCTIONS
     {   
        // console.log(where[i][0],where[i][1]);
-        grid[where[i][0]][where[i][1]]=what;
+        if ( grid[where[i][0]][where[i][1]]===undefined) { grid[where[i][0]][where[i][1]]='';}
+        grid[where[i][0]][where[i][1]]+='rules.'+what+';'; //adding JS function
         ycord=where[i][0];
         xcord=where[i][1];
         if (what=="block()") 
@@ -420,10 +447,12 @@ function setRule(what,where,specials) {
         if (what.search("mine")>=0) {
             field.innerHTML+='<placed-mine x='+(where[i][1])+' y='+(where[i][0])+'></placed-mine>';
         }
+        if (what.search("wall")>=0) {
+             field.innerHTML+='<wall style="left:'+xcord*50+';top:'+ycord*50+'" class="'+specials+'"></wall>';
+        }
     }//FOR 
     
-    if (what.search("laser")>=0)
-        {
+    if (what.search("laser")>=0)   {
             elements.laser.count++;
             console.info('LASERs',where[0][0],where[0][1]);
             console.info('LASERf',where[1][0],where[1][1]);
@@ -455,6 +484,7 @@ function setRule(what,where,specials) {
             }
             else if (Math.abs(where[0][1]-where[1][1])>0)
             {
+                    //TODO 4 LATER..
             }
         }
     if (what.search("portal")>=0) {
@@ -493,9 +523,7 @@ function setRule(what,where,specials) {
                 to      :   [where[0][0],where[0][1]],                
                 fromDir  : specials[1],
                 toDir : specials[0]
-                        });
-                
-            
+                        });         
     }
 }//fn
 
@@ -588,7 +616,7 @@ elements.laser.turnOff =function(laser) {
     //end.
     
 function check() {//DO NOT USE
-    eval('rules.'+grid[player.posx][player.posy]);
+    eval(grid[player.posx][player.posy]);
     move.update();
       
 }
@@ -604,6 +632,12 @@ move.update= function () {
 document.body.onkeydown = function (e) {
     map[e.which] = e.type == 'keydown';
    // console.log(map);
+     if (typeof(grid[player.posx][player.posy])!="undefined") {
+        if (grid[player.posx][player.posy].search("wall")>=0) {
+            console.log('asdf');
+        }
+    }
+    
     player.befx=player.posx;
     player.befy=player.posy;
     
@@ -626,9 +660,9 @@ document.body.onkeydown = function (e) {
     for (var k=1;k<=elements.laser.count;k++) { //check lasers
         elements.laser.check(elements.laser.obj[k]);
     }
-    
+   
     if (!hasPortalActionHappened) {
-        eval('rules.'+grid[player.posx][player.posy]); }
+        eval(grid[player.posx][player.posy]); }
     hasPortalActionHappened=false;
     
     
@@ -720,6 +754,8 @@ setRule('money()',[[8,9]]);
 setRule('fire()',[[7,14]]);
 setRule('checkpoint()',[[2,12],[1,3]]);
 setRule('mine()',[[5,15]]);
+setRule('wall("top")',[[4,13],[4,14]],"top");
+setRule('wall("right")',[[4,14]],"right");
 
 </script>
 <div id="dbg" style="">Debug window</div>
@@ -740,7 +776,7 @@ setRule('mine()',[[5,15]]);
                     position: fixed;
                     width: 50px;
                     height: 50px;
-                    background: #666 !important;
+                    background: #666 ;
                        left:{{x*50}};
                        top:{{y*50}};                 
                 }               
@@ -821,6 +857,7 @@ setRule('mine()',[[5,15]]);
 0.8  Lasers and Portals converted to OOP                03.05
 0.9  Add laser particles and animations. Debug added    03.07
 0.9a CSS cleaned, focus added.                          03.07
+0.10 Starting walls, pain in the ***.                   03.14
 -->
 
 

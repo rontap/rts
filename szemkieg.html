@@ -1,68 +1,220 @@
-<HTML>
-    <Head>
-        <title>rontapparty</title>
-      <meta charset="UTF-8">
-        <meta name="author" content="TAP">
-      <meta name="description" content="-rontap-partyMachine--">
-        <meta name="keywords" content="rontap,party,machine">
-      <script src="main.rjsx"></script>
-      <script src="goog.js" type="text/javascript"></script>
-      <script>
-        appver="Party Machine 2 ";
-        sited="szemkieg.html";
-        navname="PM"; //hogy jelenik majd meg
-        navplus="achine";
-        coa=false;
-        pack="rontap.extras/pm";
-        moretag=false;
-        </script>
-    </Head>
-    <Body id="body">
-<style>
-#egdiv {
-    margin-top:30%;     
-    text-align:center;
-    font-size:60px; 
-    }
-#get {
-    font-size:10px;
-        }
-</style>
-<span id="get" onClick="alert('rontap party machine v2.1\nVIGYÁZZAT, eplilepsziát okozhat a tartós használata, a készítő nem vállal felelősséget\n ');">rontap party machine 2 </span>
-<b id="eg"><div id="egdiv" onClick="egjstart();">CLICK</div></b>
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <script type="text/javascript" src="https://www.google.com/jsapi">
 
-<script>
-szem=true;
-function egjstart() {eg.innerHTML='<div id="egdiv" onClick="egjmeg();">click for more PARTY</div>';
-egj();
-}
-function egj() {
-szinv();
-if (szem==true) {setTimeout(function(){egj();},200);}
-}
-function szinv() {
-r=Math.floor(Math.random()*255);
-g=Math.floor(Math.random()*255);
-b=Math.floor(Math.random()*255);
-body.style.backgroundColor="rgb("+r+","+g+","+b+")";
-get.style.color="rgb("+r+","+g+","+b+")";
 
-rp=Math.floor(Math.random()*255);
-gp=Math.floor(Math.random()*255);
-bp=Math.floor(Math.random()*255);
-eg.style.color="rgb("+rp+","+gp+","+bp+")";
 
-}
-function egjmeg() {
+</script>
+    <script> 
+</script>
+    <meta charset="UTF-8">
+    <title>Rontapparty</title>
+</head>
 
-setTimeout(function(){egj();},150);
-eg.innerHTML='<div id="egdiv" onClick="egjszet();">PARTY</div>';
-}
-function egjszet() {
-eg.innerHTML='<div id="egdiv" onClick="egjszet();">PARTY HARD</div>';
-setTimeout(function(){egj();},30);
-
+<body>
+          <script>
+fome = {
+    'link': [''],
+    'incl': [''],
+    'title': "weboldal",
+    'extratitle': "Szemkieg &nbsp;",
+    'splashname': "Rontapparty",
+    'navname': "navigáció",
+    'logos': "",
+    'location': "random/",
+    'fab': [true, 'right', 'new', 'fn'],
+    'primaryColor': "#48f",
+    'theme': 0,
+    'themeflags': ""
 }
 </script>
-    </Body>
-</HTML>
+        <fome-menu></fome-menu>
+   	    <fome-element></fome-element>
+        <splash-element></splash-element>
+
+        <div id="CONTENT">
+            
+            <focus>Rontapparty</focus><br>
+             <paper-icon-button icon="arrow-back" id="gob" onclick="fome.jumpTo('index.html')"></paper-icon-button>
+            <div class="away card" >
+               
+                <div class="away">
+                    <h1>About</h1>
+                    Rontapparty is one of the first RTS projects. It is one of the most succesful and it was the easyest to make. 
+             </div>
+        </div>
+                <br>
+                <h1 class="away">Rontapparty Editions</h1>
+        <div class="away card" id="team">
+                <div class="inway" onclick="window.location='szemkieg/szemkieg.html'">
+                    <e>szemkieg</e>   <span>the original rontapparty</span>
+                </div>
+                <div class="inway" onclick="window.location='szemkieg/szemkieg_smorgas.html'">
+                    <e>szemkieg SG</e> <span>for our god smorgasgurka</span>
+            </div>
+                <div class="inway" onclick="window.location='szemkieg/szemkieg_crowbang.html'">
+                    <e>szemkieg crowbang</e> <span>Lines of rontapparty</span>
+            </div>           
+                <div class="inway"onclick="window.location='szemkieg/szemkieg3.html'" >
+                    <e>szemkieg 3</e> <span>Advanced version with controls</span>
+            </div>
+                <div class="inway" onclick="window.location='szemkieg/szemwide.html'">
+                    <e>szemwide</e> <span>Amazing and interesting thing based on a picture</span>
+            </div>
+                <div class="inway" onclick="window.location='szemkieg/blankieg.html'">
+                    <e>blankieg</e> <span>Black & White edition</span>
+            </div>
+                <div class="inway" onclick="window.location='szemkieg/api.szemkieg.js'">
+                    <e>szemkieg API</e> <span>do you want to implement rontapparty to your site? Hell yeah.</span>
+            </div>
+                </div>
+                
+    
+    <br>
+    <h1 class="away">Disclaimer</h1>
+        <div class="away card inway" id="">
+            <div class="away">Nor does Elemential nor do I take responsibility for the harm in your eyes or in your computer while you are using rontapparty.</div></bb>
+    </div>
+            </div>
+    <br>
+    <br>
+    <br>
+   
+    <style>
+         
+    #gob::before {
+    opacity:0;
+    transition:.2s;
+       content: 'Rontap Sites Homepage';
+    position: absolute;
+    margin-left: -90px;
+    margin-top: 2px;
+}
+#gob:hover::before {
+opacity:1;
+    margin-left: -100px;
+}
+        #team .inway {
+            padding: 29px;
+        }
+        #team e {
+            position: absolute;
+            height: 50px;
+            margin-bottom: 25px;
+        }
+        #team div {
+            cursor: pointer;
+        }
+        #team {
+            padding-bottom:20px;
+        }
+        #team div span {
+            position: absolute;
+            margin-left:150px;
+            color:#666;
+        }
+       
+        #team div::before {
+            opacity: 1;
+            background: red;
+            height: 59px;
+            content: '';
+            position: absolute;
+            margin-left: -39px;
+            width: 3px;
+            transition: .1s all linear;
+margin-top: -17px;
+        }
+      #team div:hover::before {
+          width:7px;
+      }
+         #team div:nth-child(1)::before { background: #48F;}
+         #team div:nth-child(2)::before { background: #f44; }
+         #team div:nth-child(3)::before { background:#22Bf49; }
+         #team div:nth-child(4)::before { background:#795548; }
+         #team div:nth-child(5)::before { background:#f84;}
+         #team div:nth-child(6)::before { background:#62c; }
+         #team div:nth-child(7)::before {  background:#666;}
+        
+        focus {
+            font-size: 6em;
+            text-align: center;
+            display: block;
+            margin:10px;
+            
+        }
+#CONTENT {
+    width: 800px;
+    margin-left: calc(50% - 400px);
+}
+app-icon {
+    margin: 14px;
+}
+#gob /deep/ core-icon * {
+    fill: #222;
+}
+#gob {
+    position: absolute;
+   
+    margin-left: -40px;
+}
+app-icon:not(.loadimgat) /deep/ div {
+     opacity: 0.5;
+    -webkit-filter: saturate(0%);
+    transition:none;
+}
+           html /deep/ .loadimgat {
+               opacity: 0.5;
+    -webkit-filter: saturate(0%);
+     -webkit-animation-name: loadimgaa;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-fill-mode: forwards;
+               opacity: 1;
+    -webkit-filter: saturate(100%);
+  }  
+        
+         @-webkit-keyframes loadimgaa {
+      0% {
+          opacity: 0.5;
+          -webkit-filter: saturate(0%);
+          color:#999;
+      }
+      30% {
+          -webkit-filter: saturate(0%);
+      }
+      90% {
+          opacity: 1;
+            color:#222;
+      }
+      100% {
+          -webkit-filter: saturate(100%);
+      }
+  }
+</style>
+    <script>
+        setTimeout(function(){
+            function doSetTimeout(i) {
+              setTimeout(function() { 
+                //  console.log(i); 
+                 $('app-icon:nth-child('+i+')').addClass('loadimgat');
+              }, i*200);
+            }
+
+            for (var i = 1; i <= $('app-icon').length; ++i)
+            {
+              doSetTimeout(i);
+            }
+        },2000)   
+    </script>
+
+    
+    
+     
+    <link rel="import" href="../../polyfome/include.html">
+    <link rel="import" href="../../polyfome/elementile.html">
+      <link rel="import" href="av-icons.html">
+
+</body>
+</html> 

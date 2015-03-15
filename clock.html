@@ -15,10 +15,10 @@ fome = {
             'logos' : "-",
             'location':"incl/",
             'fab' :[true,'right','new','fn'],
-		'primaryColor' : '#f44',
-		'secondaryColor' : '#f84',
+            'primaryColor' : '#f44',
+            'secondaryColor' : '#f84',
             'theme':"0",
-	    'themeflags':"" 	
+            'themeflags':"" 	
         }
 </script>
 
@@ -26,8 +26,7 @@ fome = {
 	
 @import url(http://fonts.googleapis.com/css?family=Ubuntu+Condensed);
 	body {
-	margin:0%;    
-	    
+	margin:0%;    	    
 	background:#444;
 	color:#DDD;
 	font-size:400%;
@@ -45,7 +44,7 @@ fome = {
 	#content_r div {
 	height:14.2857%;
 	padding:0;
-	-webkit-transition:all 1s;
+	transition:all 1s linear;
 	width:0;
 	white-space: nowrap;
 	
@@ -98,6 +97,7 @@ fome = {
 		opacity:0.4;
 		user-select:none;
 		color: #f1f1f1;
+            cursor: context-menu;
 		}
 		
 	.bubi:hover {
@@ -170,7 +170,7 @@ fome = {
             </td>
             <td>
                <input type="color" value=444 onchange="body.style.background=cc.value; localStorage.bg = cc.value" id='cc'>
-			   <button onClick="body.style.background='#444';localStorage.bg='#444'">Alapértelmezett</button>
+			   <paper-button onClick="body.style.background='#444';localStorage.bg='#444'" style="padding:5px;">Alapértelmezett</paper-button>
             </td>
         </tr>
         <tr>
@@ -227,7 +227,7 @@ fome = {
 		<tr>
 			<td colspan="2">
 			<br>
-				<paper-button onClick="setLang('');setTheme();body.style.background='#444';localStorage.bg = '#444'; localStorage.theme='';localStorage.lang=''" label="Alapértelmezett" class="button raised blue">
+				<paper-button onClick="setLang('');setTheme();body.style.background='#444';localStorage.bg = '#444'; localStorage.theme='';localStorage.lang=''" label="" class="button raised blue">Alapértelmezett
 				</paper-button>
 			</td>
 		</tr>
@@ -465,6 +465,7 @@ $('paper-radio-button').click(function(){
 //1.6 added HSL and rtp themes
 //1.7 settings bug on loading optimized [2014-01-23]
 //1.8 settings MAJOR [style] changed [EDC6][2014-02-09] w/fuiszgt
+//1.9 little tweaks, updated to polyfome [2015-03-12]
 </script>
 <fome-element></fome-element>
         <splash-element></splash-element>
