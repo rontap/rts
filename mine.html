@@ -24,7 +24,8 @@
 </script>
 </HEAD>
 <BODY id="body">
- <fome-element></fome-element>
+ <fome-menu></fome-menu>
+        <fome-element></fome-element>
         <splash-element></splash-element>
 <div class="away" id="GOTOCONTENT">
 	
@@ -50,8 +51,8 @@
     </TABLE>
     
   
-       <paper-button class="blue raised button" onClick="newgame();"  label="Új Játék!" >
-        
+       <paper-button class="blue raised button" onClick="newgame();"  label="" >
+        Új Játék!
         </paper-button>
     </span>
     <br>
@@ -143,7 +144,7 @@
                 
                 bomba[i][j]=false; 
                 volte[i][j]=false;
-                a+='<td onClick="check('+i+','+j+')" onContextMenu="flag('+i+','+j+');return false;"><paper-ripple  class="tck circle"></paper-ripple>-</td>';
+                a+='<td onClick="check('+i+','+j+')" onContextMenu="flag('+i+','+j+');return false;"><paper-ripple  class="tck "></paper-ripple>-</td>';
                 
             }
             a+='</tr>';
@@ -469,5 +470,6 @@ height: 52px;
 <hr>
 
   <link rel="import" href="../../polyfome/include.html">
+      <link rel="import" href="../../polyfome/elementile.html">
 </BODY>
 </HTML>

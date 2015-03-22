@@ -1,341 +1,40 @@
-<title>schwarzkasten.</title>
+<title id="titlea">Utopia </title>
 <meta charset="UTF-8">
 <link href='http://fonts.googleapis.com/css?family=Titillium+Web|Open+Sans|Roboto&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-<div id="playercube">
-    <player id="play1" class="loading"></player>
-</div>
 
-<div id="namecon">
-    <h1 class="big">BLACKBOX</h1>
-</div>
+   <div id="vera" style="padding:15px;">ver </div>
+    <div id="playercube">
+        <player id="play1" class="loading"></player>
+    </div>
+    <div id="namecon">
+        <h1 class="big">UTOPIA</h1>
+    </div>
+    <div id="particles"></div>
 
-<div id="particles">
-</div>
+    <div id="field" >
+        
+    </div>
+    <!--focus></focus-->
 
-<div id="field" >
-    0.9 dev 
-</div>
-<focus></focus>
-
-
+<link href="utopia/core.css" rel="stylesheet">
 
 <div id="ui">
     money: <span id="money"></span>
 </div>
 
 <div id="mainwrap"></div>
-<style>
-     h1.big:before {
-    position: absolute;
-    content: '';
-    width: 50px;
-    height: 50px;
-    ackground:#48f;
-    margin-top: 10px;
-    margin-left: 90px;    
-        -webkit-animation:growup 1s ;
-        -webkit-animation-fill-mode: forwards;
-        -webkit-animation-delay:1s;
-        }
-    h1.big {
-        color:transparent !important;
-       margin-top:50px;
-       -webkit-animation:slideupa .8s ;
-        -webkit-animation-fill-mode: forwards; 
-        -webkit-animation-delay:1.5s;
-    }
-    @-webkit-keyframes growup {
-        0%{margin-left:90px;background:#48f;}
-        60%{margin-left:0px; width:235px; height: 50px;}
-        100%{height: 0px;width:235px;margin-left:0px;background: #444;}
-    }
-     @-webkit-keyframes slideupa {
-        0%{bottom:0px;color:transparent;}
-        100%{bottom:40px; color: #444;}
-    }
-   
-    
-    #ui {
-        position: fixed;
-        bottom: 0;
-        margin:20px;
-    }
-    
-    body {margin:0;padding:0;}
-#namecon h1.big {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    text-align: center;
-    /*font-size: 10vw;*/
-    font-size:50px;
-    margin-left:calc(50% - 120px);
-    position: fixed;
-   bottom:0px;
-    color:#222;
-    /*margin-top:200px;*/
-    
-}
-    #mainwrap {
-        z-index: -1;
-        position: fixed;
-        top:0;
-        left:0;
-        right: 0;
-        bottom: 0;
-        background:#f1f1f1;
-    }
-    #field {
-        border:1px solid #444;
-        position: fixed;
-        top:0;
-        padding:-1px;
-        left:0;
-    }
-    /*actual code*/
-    player, portal, laser, checkpoint, money, key, lock, focus, p-portal,p-laser ,wall {
-        position: fixed;
-    }
-    player {
-        width: 50px;
-        height:50px;
-        background:#48F;
-        transition:all .1s linear;
-        top:1;
-        left:1;
-    }
-    player.ms {
-       /* margin-left:calc(50% - 25px);*/
-    }
-     player.ms.loading {
-       -webkit-animation:transiter 1s  linear;
-    }
-    @-webkit-keyframes transiter {
-        0% {border-radius:0px;-webkit-transform:rotate(0deg);}
-        50% {border-radius:25px;-webkit-transform:rotate(180deg);}
-        100% {border-radius:0px;-webkit-transform:rotate(360deg);}
-    }
-    wall {
-        background: #666;
-        width: 50px;
-        height: 4px;   
-    }
-    wall.top    {  }
-    wall.left   { transform: rotate(90deg); margin-top: 23px; margin-left: -23px; }
-    wall.right  { transform: rotate(90deg); margin-top: 23px; margin-left:  23px; }
-    wall.bottom {  margin-top: 46px; }
-    
-    
-    portal {
-        position: fixed;
-        background:#48f;
-        width: 42px;
-        height: 4px;
-        margin-top:0px;
-        z-index: 2;
-    }
-    portal.on {
-        background: #f84;
-        width:50px;
-        transition:.4s;
-    }
-    portal.active {
-        background:blue;
-    }
-    portal.top    { margin: -4px 4px; }
-    portal.left   { margin: 24px -16px;  transform: rotate(90deg); }
-    portal.right  { margin: 24px 31px ;  transform: rotate(90deg); }
-    portal.bottom { margin: 49px 7px; }
-    
-    portal.top.on    { margin: -4px 0px; }
-    portal.left.on   { margin: 24px -16px;  /*NOT IMPLEMENTED*/}
-    portal.right.on  { margin: 23px 27px;  }
-    portal.bottom.on { margin: 49px 7px; /*NOT IMPLEMENTED*/}
-    p-portal {
-        background: #48F;
-        width: 15px;
-        height: 15px;
-        margin: 16px;
-        z-index: 0;
-    }
-    p-portal.top.on    {-webkit-animation:portal-poss-top    1s infinite;}
-    p-portal.bottom.on {-webkit-animation:portal-poss-bottom 1s infinite;}
-    p-portal.left.on   {-webkit-animation:portal-poss-left   1s infinite; margin:19px;}
-    p-portal.right.on  {-webkit-animation:portal-poss-right  1s infinite; margin:19px;}
-    
-    @-webkit-keyframes portal-poss-top{
-        0%   {opacity: .4; margin-top:0px; }
-        80% {opacity:.8; margin-top:-30px;}
-        100% {opacity:0;margin-top:-30px}
-    }
-    @-webkit-keyframes portal-poss-bottom {
-        0%   {opacity: .4; margin-top:0px; }
-        80% {opacity:.8; margin-top:30px;}
-        100% {opacity:0;margin-top:30px}
-    }
-    @-webkit-keyframes portal-poss-left {
-        0%   {opacity: .4; margin-right:0px; }
-        80% {opacity:.8; margin-left:-30px;}
-        100% {opacity:0;margin-left:-30px}
-    }
-    @-webkit-keyframes portal-poss-right {
-        0%   {opacity: .4; margin-left:40px; }
-        80% {opacity:.8;margin-left:65px;}
-        100% {opacity:0;margin-left:65px}
-    }
-    
-    /*LASERS*/   
-    laser {
-        background: #F44;
-        width: 35px;
-        height: 5px;
-    }
-    laser.top    { margin: -5px 7px; }
-    laser.left   { margin: 23px -19px;  transform: rotate(90deg); }
-    laser.right  { margin: 23px 35px ;  transform: rotate(90deg); }
-    laser.bottom { margin: 50px 7px; }
-    p-laser {
-        background: blue;
-        margin:5px 25px;
-        width: 1px; 
-        transition: .3s;
-    }
-    p-laser.on {
-        background: cyan;
-        width: 25px;
-        margin:5px 12px;
-    }
-    
-    /*checkpoint*/
-    checkpoint, placed-mine /deep/ #Mine {
-         width: 20px;
-        height: 20px;
-        margin:13px;
-        border-radius: 50%;
-        background:transparent;
-        border:2px solid #4CAF50;
-        transition: background .4s;
-        box-shadow: 0px 0px 1px #ddd;
-        
-    }
-    checkpoint.on {
-        background: #4CAF50;   
-    }
-    
-    /*money*/
-    money {
-         width: 10px;
-        height: 10px;
-        border-radius: 10px;
-        background: #f84 !important;
-        margin:20px;
-        transition: border-radius .4s, margin .4s, width .4s, height .4s, opacity 1s;
-    }
-    money.on {
-        border-radius: 0px;
-        margin:0px;
-        width: 50px;
-        height: 50px;
-        opacity:0;
-    }
-    
-    /*key & lock*/
-    key,lock {
-        width: 10px;
-        height: 10px;
-        margin: 20px;
-        background: #f84;
-    }
-    lock, lock.on.open {
-        transform: rotate(45deg);
-        border:3px solid #DDD;
-        margin:17px;
-        transition:all .4s;
-    }
-    lock.on:not(.open) {
-       transform: rotate(0deg);
-        width: 20px;
-        height: 20px;
-         margin: 12px;
-    }
-    .hovel {
-        -webkit-animation:zfade 1s;
-        opacity:0;   
-    }
-    @-webkit-keyframes  zfade {
-        0% {opacity:1;}
-        100% {margin:-15px;width:80px;height:80px;opacity:0;}
-    }
-    
-    /*U-BLOCK*/
-    u-block.on /deep/ #uBlock {
-                    opacity:.4;
-         transition:opacity .4s;
-                }
-    u-block.open /deep/ #uBlock  {
-        opacity:.1;
-         transition:opacity .4s;
-    }
-    
-    /*FOCUS*/ 
-     focus {
-        border: 3px #666 dashed;
-        position: fixed;
-        height: 18px;
-        width: 18px;
-        border-radius: 50%;
-        margin: 12px;
-        margin-top: 13px;
-        -webkit-animation: forogjal 4s linear infinite;
-    }
-    @-webkit-keyframes forogjal {
-	0%{transform: rotate(0deg);}
-	100%{transform: rotate(360deg);}
-	}
-    
-    placed-mine.on /deep/ #Mine {
-        -webkit-animation:defuses 6s ease-in;
-        -webkit-animation-fill-mode: forwards; 
-    }
-    @-webkit-keyframes defuses {
-        0% {transform:rotate(0deg);}
-        100% {transform:rotate(3600deg);}
-    }
-</style>
 
+<script src="utopia/engine.js"></script>
 <script>
-map=[];         //keys
-move = {};      //anything related to moving
-ui = {};
-rules = {};     //triggered upon arriving on a block
+ver="0.13";
+    console.log("utopia version "+ver);
+    titlea.innerHTML+=ver;
+    vera.innerHTML+=ver;
     
-move.right =   function(a) {  player.posy++;  }   
-move.left =    function(a) {  player.posy--;  }  
-move.forward = function(a) {  player.posx--;  }  
-move.back =    function(a) {  player.posx++;  }  
-move.to  =     function(x,y) { 
-                        player.posx=x;
-                        player.posy=y; 
-    move.update();
-                }
-
-player = {
-    posx:0,
-    posy:0,
-    cpointx:0, //checkpoint
-    cpointy:0
-};    
-player.checkpoint = function() {
-    player.posx=player.cpointx;
-    player.posy=player.cpointy;
-    move.update();
-}
-    
-
+// special rules
 rules.block = function() {
-      player.posx=player.befx;
-      player.posy=player.befy;
+     move.doNotMove();
 }
 rules.key = function(color) {
      $('#key'+player.posy+player.posx).addClass("hovel");   
@@ -345,8 +44,10 @@ rules.key = function(color) {
     //register that you have collected this
         if (coll.keys[color]===undefined) {coll.keys[color]=1;}
         else coll.keys[color]++;
-    move.prelude=function(){};          
-    grid[player.posx][player.posy]="rules.nothing()";
+    move.prelude=function(){};  //clearing the prelude        
+    //ugly overwrite is ugly
+     posrem=grid[player.posx][player.posy].indexOf('rules.key("'+color+'");');
+     grid[player.posx][player.posy][posrem]='';
 }
 rules.nothing = function() {
     return false;
@@ -357,7 +58,9 @@ rules.laser = function() {
 rules.money= function() {
     coll.money++;
     $('#money'+player.posy+player.posx).addClass('on');
-    grid[player.posx][player.posy]="rules.nothing()";
+    
+    posrem=grid[player.posx][player.posy].indexOf('rules.money();');
+    grid[player.posx][player.posy][posrem]='';
     
 }
 rules.checkpoint = function() {
@@ -382,35 +85,33 @@ rules.door = function(color) {
            },10);
         } 
         $('u-block[x="'+player.posy+'"][y="'+player.posx+'"]').addClass("open");           
-        grid[player.posx][player.posy]="nothing()";//do not operate as a door anymore
+         posrem=grid[player.posx][player.posy].indexOf('rules.door("'+color+'");');
+         console.log(grid[player.posx][player.posy].indexOf('rules.door("'+color+'");'),color,posrem);
+         grid[player.posx][player.posy][posrem]='';
     }
-    else {
-        player.posx=player.befx;
-        player.posy=player.befy;
-    }
+    else  move.doNotMove();  
 }
 rules.wall = function(dirfrom) {
     dparty_x=NaN; dparty_y=NaN; 
-    if (dirfrom=="top") { dparty_x=-1;}     //TODO TRANSFORM INTO NICE FUNCTION
-    if (dirfrom=="bottom") { dparty_x=1;}
-    if (dirfrom=="right") { dparty_y=1;}
-    if (dirfrom=="left") { dparty_y=-1;}
-    if (( player.posx+dparty_x==player.befx)|| ( player.posy+dparty_y==player.befy) ) {
-         player.posx=player.befx;
-         player.posy=player.befy;
+    if (dirfrom=="top")    { dparty_x=-1;}     //TODO TRANSFORM INTO NICE FUNCTION
+    if (dirfrom=="bottom") { dparty_x=1; }
+    if (dirfrom=="right")  { dparty_y=1; }
+    if (dirfrom=="left")   { dparty_y=-1;}
+    if (( player.posx+dparty_x==player.befx) || ( player.posy+dparty_y==player.befy) ) {
+       move.doNotMove();
     }
 }
 rules.time = {} ; //rules that require Timing
-
-    
 rules.pre = {}; //rules that shall be activated before the 
 
 function setRule(what,where,specials) {
     for (i=0;i<where.length;i++) //BASIC FUNCTIONS
     {   
        // console.log(where[i][0],where[i][1]);
-        if ( grid[where[i][0]][where[i][1]]===undefined) { grid[where[i][0]][where[i][1]]='';}
-        grid[where[i][0]][where[i][1]]+='rules.'+what+';'; //adding JS function
+       //if ( grid[where[i][0]][where[i][1]]===undefined) { grid[where[i][0]][where[i][1]]=[];}
+       //  console.warn(grid[where[i][0]]);
+        grid[where[i][0]][where[i][1]][grid[where[i][0]][where[i][1]].length]='rules.'+what+';'; //adding JS function
+
         ycord=where[i][0];
         xcord=where[i][1];
         if (what=="block()") 
@@ -486,7 +187,8 @@ function setRule(what,where,specials) {
             {
                     //TODO 4 LATER..
             }
-        }
+    }//LASER
+    
     if (what.search("portal")>=0) {
         // in the first Array  the starting portal ID and ending.
         // specials: directions for the first, 2nd portal
@@ -505,9 +207,6 @@ function setRule(what,where,specials) {
         particles.innerHTML+='<p-portal style="left:'+where[1][1]*50+';top:'+where[1][0]*50
             +';" class="'+specials[1]+'"id="pportal'+where[0][1]+where[0][0]+'"></portal>';
         
-        
-        console.log('hello');
-        
         elements.portal.register({//register the first one
                 id    :   elements.portal.count,
                 from  :   [where[0][0],where[0][1]],
@@ -525,15 +224,13 @@ function setRule(what,where,specials) {
                 toDir : specials[0]
                         });         
     }
-}//fn
-
-  
+}//register element function
+    
 coll = {};
 coll.keys={};
 coll.money=0;
-
-elements = {};
-    
+   
+elements = {};  
     //noooo there lasers...
 elements.laser={};
 elements.laser.count=0;
@@ -563,10 +260,8 @@ elements.portal.check = function(portal) {
               ((portal.fromDir=="bottom") && (player.befx==portal.from[0]+1)) ||
               ((portal.fromDir=="right")&& (player.befy==portal.from[1]+1)) ||
               ((portal.fromDir=="left") && (player.befy==portal.from[1]-1)) ) 
-        {
-            
-            //move to right location
-            
+        {            
+            //move to right location        
            player.posx=portal.to[0]+party_x;
            player.posy=portal.to[1]+party_y; 
             hasPortalActionHappened=true;
@@ -595,8 +290,7 @@ elements.laser.register = function(laser)
         elements.laser.obj[elements.laser.count]=laser;
         elements.laser.turnOn(laser);
     }
-    
-    
+       
 elements.laser.turnOn =function(laser) {
     $('#plaser'+laser.id).addClass('on');
     laser.is=true;
@@ -615,29 +309,11 @@ elements.laser.turnOff =function(laser) {
 }  
     //end.
     
-function check() {//DO NOT USE
-    eval(grid[player.posx][player.posy]);
-    move.update();
-      
-}
-move.prelude = function() {}; //contains orders, that are excecuted upon movement
-move.update= function () {
-    play1.style.top=player.posx*50;
-    play1.style.left=player.posy*50;
-    
-   // console.log('s');
-    
-} 
 
 document.body.onkeydown = function (e) {
     map[e.which] = e.type == 'keydown';
    // console.log(map);
-     if (typeof(grid[player.posx][player.posy])!="undefined") {
-        if (grid[player.posx][player.posy].search("wall")>=0) {
-            console.log('asdf');
-        }
-    }
-    
+   
     player.befx=player.posx;
     player.befy=player.posy;
     
@@ -645,6 +321,30 @@ document.body.onkeydown = function (e) {
             else if (map[ 87 ])  move.forward(); 
             else if (map[ 65 ])  move.left();    
             else if (map[ 83 ])  move.back(); 
+    //move.prevent(false);
+    
+    
+    
+        for  (var iss=0;iss<grid[player.befx][player.befy].length;iss++) {
+            if (grid[player.befx][player.befy][iss].search('wall')>=0) {
+                 party_x=NaN;party_y=NaN;
+                 console.log(grid[player.befx][player.befy][iss]);
+                 dirtemp=grid[player.befx][player.befy][iss];
+                
+                    if (dirtemp.search("top")>=0) { party_x=-1;}
+                    if (dirtemp.search("bottom")>=0) { party_x=1;}
+                    if (dirtemp.search("right")>=0) { party_y=1;}
+                    if (dirtemp.search("left")>=0) { party_y=-1;}
+                
+                 if (    (player.befx+party_x==player.posx ) || //if this has been the move
+                         (player.befy+party_y==player.posy )  )   { //if direction matches
+                           move.doNotMove();
+                        
+                    }
+                      console.log(party_x,party_y,'ATTR');
+            }
+               
+        }//for
     
     //disable going out
     if (player.posy>level.width)  { player.posy=level.width;  move.update(); }
@@ -662,10 +362,16 @@ document.body.onkeydown = function (e) {
     }
    
     if (!hasPortalActionHappened) {
-        eval(grid[player.posx][player.posy]); }
+           for (var is=0;is<grid[player.posx][player.posy].length;is++) {
+            eval(grid[player.posx][player.posy][is]); 
+            //console.warn(grid[player.posx][player.posy][is]);
+           }
+            //console.log(grid[player.posx][player.posy]);
+            //alert();   
+    }
     hasPortalActionHappened=false;
-    
-    
+        
+
     move.update();
     //check(); /|\ moved here
     if (move.hasMoved()) move.prelude(); //ha mozgott a játékos csak akkor
@@ -675,16 +381,7 @@ document.body.onkeydown = function (e) {
 } 
 
 
-move.hasMoved = function() {
-    if ( (player.posy==player.befy) &&
-         (player.posx==player.befx)  )
-         return false;
-  
-    else{
-        // console.info(player.posx+'-'+player.befy);
-        return true;
-        }
-}
+
 
 
 //MAIN FUNCTION
@@ -698,15 +395,22 @@ level ={};
 level.set = function(e) {
     
 }
+level.height=0;
+level.width=0;
 grid=[];
 level.setField= function(w,h) {
     field.style.width=(w+2)*50;
     field.style.height=(h+2)*50;
     level.width=w+1;
     level.height=h+1;
-    for (i=0;i<w;i++) 
+    
+    for (var isg=0;isg<=(h+1);isg++) 
     {
-        grid[i]=[];
+        //console.log(isg);
+        grid[isg]=[];
+        for (var s=0;s<=(w+1);s++) {
+            grid[isg][s]=[];
+        }
     }
 }
 level.setField(15,7); 
@@ -740,24 +444,11 @@ document.oncontextmenu = function() {return false;};
   }); 
     },500);
 
-setRule('laser(2)',[[3,4],[7,4]],[1000,3000]);
-setRule('laser(4)',[[3,8],[6,8]],[1200,800]);
-setRule('portal(4)',[[3,7],[8,10]],["top","right"]);
     
-setRule('block()',[[3,4],[7,4],[3,6],[3,7],[6,8],[6,10],[7,13],[7,8],[8,8],[7,10],[8,10],[3,8]]);
-    
-setRule('key("#62c")',[[1,6],[3,10]],'#62c');
-setRule('key("#f44")',[[7,5]],'#F44');
-setRule('door("#62c")',[[6,9],[7,12]],'#62c');
-setRule('door("#f44")',[[4,12]],'#f44');
-setRule('money()',[[8,9]]);
-setRule('fire()',[[7,14]]);
-setRule('checkpoint()',[[2,12],[1,3]]);
-setRule('mine()',[[5,15]]);
-setRule('wall("top")',[[4,13],[4,14]],"top");
-setRule('wall("right")',[[4,14]],"right");
-
 </script>
+
+<script src="utopia/levels.js"></script>
+
 <div id="dbg" style="">Debug window</div>
 <style>
 #dbg {
@@ -768,84 +459,7 @@ setRule('wall("right")',[[4,14]],"right");
     font-family:monospace;
 }
 </style>
-<polymer-element name="u-block" attributes="x y color portal color" noscript>
-           <template>
-               <div id="uBlock"></div>                  
-               <style>
-               #uBlock {
-                    position: fixed;
-                    width: 50px;
-                    height: 50px;
-                    background: #666 ;
-                       left:{{x*50}};
-                       top:{{y*50}};                 
-                }               
-               </style>
-                   <template if="{{color}}">
-                       <style> #uBlock { background: {{color}}; }  </style>
-                   </template>
-           </template>
-</polymer-element>
 
-<polymer-element name="placed-mine" attributes="x y color portal color" noscript>
-           <template>
-              <div id="Mine">
-                <div> </div> 
-                <div> </div> 
-              </div>
-               <style>
-               div#Mine {
-                position: fixed;
-                    width: 50px;
-                    height: 50px;
-                    border-color: #444 !important;
-                       left:{{x*50}};
-                       top:{{y*50}};   
-               } 
-                #Mine div::after, #Mine div::before {
-                    content: '';
-                    position: absolute;
-                    background: red;
-                    width: 4px;
-                    border-radius: 50%;
-                    height: 4px;
-                    margin-left: 4px;
-                    margin-top: 8px;
-                   }
-                   #Mine div:last-child::after {  margin-left:12px;   }
-                   #Mine div::before { background:blue; margin-left:8px; margin-top:4px;}
-                   #Mine div:last-child::before { margin-top:12px;}
-                   @-webkit-keyframes defuses {
-                        0% {transform:rotate(0deg);}
-                       40% {border-color:#444;}
-                       50% {
-                           transform:rotate(1800deg);
-                           box-shadow:0px 0px 50px #f44;
-                           border-color:#f44; 
-                           border-width:2px;
-                           margin:13px;
-                       }
-                       55% {
-                            border-width: 20px;
-                            margin: -5px;
-                           box-shadow:0px 0px 100px #f44;
-                       }
-                       75% {
-                           border-width: 20px;
-                            margin: -5px;
-                           opacity:.9;
-                       }
-                       90% {
-                           border-width:2px;
-                           margin:13px;
-                           opacity:.7;
-                       }
-                       100% {opacity:0;box-shadow:none;}
-                    }
-                   
-               </style>
-           </template>
-</polymer-element>
 <!-- version history 
 0.1  Creating basics: Wall, Key                      15.02.27
 0.2  Adding polymer, openable doors                     02.28
@@ -858,7 +472,10 @@ setRule('wall("right")',[[4,14]],"right");
 0.9  Add laser particles and animations. Debug added    03.07
 0.9a CSS cleaned, focus added.                          03.07
 0.10 Starting walls, pain in the ***.                   03.14
+0.11 functions now in array, relocating some functions  03.16
+0.12 walls work w/o problem.                            03.17
+0.13 cleaned code, distributed over, and designed       03.17
 -->
 
-
+ <link rel="import" href="utopia/elements.html">
  <link rel="import" href="../../polyfome/include_minimalist.html">

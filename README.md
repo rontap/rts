@@ -1,8 +1,8 @@
 rts
 ===
 
-Ron Tap Sites===
-Current apps as of version **4.1.6** beta
+##Ron Tap Sites
+Current apps as of version **4.2.0** 
 
 * edu/tapcalk - advanced calculator **4.1.3**
 * browser - html browser (not updated & not working)

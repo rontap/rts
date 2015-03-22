@@ -5,11 +5,8 @@
 	  <meta charset="UTF-8">
 		<meta name="author" content="TAP">
 	  <meta name="description" content="Start">
-		<meta name="keywords" content="rontap,linux,TaPium,rjsx,rontap,terminal">
-		 <script src="goog.js" type="text/javascript"></script>
-	<link rel="stylesheet" type="text/css" href="main.css">
-	
-	
+		<meta name="keywords" content="ssp,simple,start,page">
+
 	</Head>
 	<div id="navbar" >
 
@@ -17,156 +14,79 @@
 	
 	<body >
 
+   <script>
+        fome = {
+            'link' : ['Nyelvek','Véletlengenerátor','Jelszógeneráló','Stopper és időzítő','Színkeverő','Titkosító','Jegyek','Kifogásgyártó'],
+            'incl' : ['langs','lipsum','generator','stopper','color','enigma','jegyek','kifogas','homex'],
+            'title' : "Segédezközök",
+            'extratitle' : "Rontap &nbsp;",
+            'splashname': "Single start page",
+            'logos' : "",
+            'navname' : "SSP2",
+            'location':"random/",
+            'fab' :[true,'right','new','fn'],
+            'primaryColor' : "transparent",
+            'theme':1,
+            'themeflags':"-nomenu",
+            'loc': ""
+            }
+       
+        </script>
+         <splash-element></splash-element>
+        <fome-menu></fome-menu>
+        <fome-element></fome-element>
+       
 
-<div id="body">
-	<script>
-	rjsc=1.3;
-	</script>
-	<style>
-	
-	#contx, #help1 {
-		text-align:center;
-		margin-top:10%;
-		margin: auto;
-		
-		}
-		#in {
-		width:200px;	
-		height:20px;
-		font-size:20px;
-		}
-	body {
-		font-family: sans-serif;
-		user-select:none;
-		}
-	#name {
-		font-size:80px;
-		margin-top:15px;
-		text-align:center;
-		color:#DDD;
-		text-shadow:0 0 1px #DDD;
-		-webkit-transition:all .3s;
-		font-variant: 'Ubuntu';
-		}
-		#name:hover {
-			text-shadow:0 0 3px #DDD;
-			}
-		#pont {
-		color:#26F;
-			}
-	#inp {
-		border-bottom-left-radius:4px;
-		border-top-left-radius:4px;
-		width:50px;
-		
-		}
-		#inpext {
-		border-bottom-right-radius:4px;
-		border-top-right-radius:4px;
-		}
-		#inp:hover {
-		
-		}
-	#imgsx {
-		text-align:center;
-	
-		}
-		#imgsx img {
-		margin-top:7px;
-		border-radius:5px;
-		-webkit-transition:margin 0.2s, padding 0.2s;
-		}
-		#imgsx img:hover {
-		margin-top:0px;
-		border-radius:5px;
-		margin-bottom:7px;
-		cursor:pointer;
-		}
-		.btn-b {
-		border-radius:7px;
-		-webkit-transition:border-radius 1s;
-		width:130px;
-		height:45px;
-		}
-		.btn-b:hover {
-		border-radius:10px;
-		}
-		#help {
-		float:right;
-		position:fixed;
-		top:15px;
-		}
-		#help1 {
-		opacity:0;
-		font-size:15px;
-		}
-#allcontx {
-	font-size:24px;
-}
-.inp-text {
-height:40px;
-font-size:30px;
-}
-#inp {
-width:120px;
-height:52px;
-border-top-right-radius:2px;
-border-bottom-right-radius:2px;
-font-size:20px;
-}
-#inpext {
-border-top-left-radius:2px;
-border-bottom-left-radius:2px;
--webkit-transition:all .3s;
-}
-#center , table{
-text-align:center;
--webkit-transition:all .3s;
-}
-#inp {
-border:1px solid #999;
--webkit-transition:all .3s;
-cursor:pointer;
-}
-#inp:hover,#inp:active {
-width:200px !important;
+<style>
+    #e_apps, body:not(.menu) core-header-panel /deep/ #dropShadow {
+       transition: all .5s ;
+    }
+    #imgh {transition:top .2s;}
+     #e_apps, .menu /deep/ core-toolbar {
+        background:#607D8B !important;
+    }
+    body:not(.menu) core-header-panel /deep/ #dropShadow {
+        box-shadow:none;
+    }
+    .menu #imgh {
+        top:120px;
+    }
+#mainc {
+    width: 400px;
+    margin-left: calc(50% - 210px);
+    margin-top:300px;
+    height:150px;
+}        
+    #imgh {
+        box-shadow: 0px -2px 3px #666 inset;
+        position: fixed;
+        top:0;
+        left:0;
+        right:0;
+        height:350px;
+        background-image: url('multistart/bgs/bg16.png');
+        z-index: -1;
+    }
+    @import url(http://fonts.googleapis.com/css?family=Oswald);
+    #imgh h1 {
+       font-family: 'Oswald', sans-serif;
+text-transform: uppercase;
+color: white;
+text-align: center;
+letter-spacing: 2px;
+font-size: 100px;
+    }
+</style>
+<div id="imgh"><h1>Start</h1></div>
+        
 
-}
-	</style>
-	<span>
-	<script>
-		appver="Search\n TAPIS/calkr.js 1.6 ";
-		sited="ttest.html";
-		navname="Öszetett Keresés"; //hogy jelenik majd meg
-		navplus="2 számológép";
-		coa=false;		
-		pack="rontap.mainHelp/tapcalk2";
-		moretag=true;
-		//holvan
-		vit_start="Start";
-		vit_tema="Sagítő alkalmazások";
-		
-		chg1="Fizcalk";
-		chg2="easycalk";
-		chg3="Start";
-		chg1l="fizcalk.html";
-		chg2l="esycalk.html";
-		chg3l="start.html";
-		</script>
-<rts>
-
-		<div id="name">
-
-<span id="start" class="ubuntu">Start here</span><span id="pont" onMouseOver="start.innerHTML='Search here'"  >.</span>
 		</div>
 	
-		
-	</span>	
-		<span id="output">
-			
-		</span>
-		
-		
+    <div class="away card center" id="mainc">
+    hello
+    </div>
+    
+		<!--
 <div contxent id="allcontx">		
 		
 		<span id="help1">Az első mezőbe megadva lehet kiválasztani, hogy melyik weboldalon keressen.<br> Rövidítéseket alkalmazunk, a lenti képekre kattintva autómatikusan behelyettesíti.<br> A második mezőbe a keresendő szöveget kell beírni.<br> Majd a "start" gombra kattintva átiránytítjuk a keresési találatok weboldalára.</span>
@@ -179,7 +99,7 @@ width:200px !important;
 			      <option value="yt">youtube</option>
 			      <option value="hma">webproxi</option>
 			      <option value="tw">twitter</option>
-			       <option value="imdb">IMDB</option>
+			      <option value="imdb">IMDB</option>
 			      <option value="gmail">gmail</option>
 			      <option value="wiki">wikipédia</option>
 			      <option value="trans">fordító</option>
@@ -196,73 +116,13 @@ width:200px !important;
 		<button class="btn-b" onClick="cmd();">Search</button>
 		</td>
 		</tr></table>
-		
+		-->
 		
 		
 		<script>
-			i=new Date();
-			function nap()
-			{
-				
-				szak=['éjszakát','reggelt','napot','estét'];
-				
-				if ((i.getHours<4) || (i.getHours>21))
-				{
-				napszak.innerHTML=szak[0];
-				}
-				else if ((i.getHours<10) )
-				{
-				napszak.innerHTML=szak[1];
-				}
-				else if ((i.getHours<17))
-				{
-				napszak.innerHTML=szak[2];
-				}
-				 else
-				{
-				napszak.innerHTML=szak[3];
-				}
-			}
-			setTimeout(function(){
-				nap();
-			},100000);
-			
-				function sugo() {
-	
-		help1.style.opacity=1;
-		}
-		function cmd()
-		{
-		inptext="";
-		input=inp.value;
-		inptext=inpext.value;
-		//output.innerHTML+='<br> > '+input;
-		ki="Error 100 :<br>#nem ismert funkció";
-		switch (input)
-		{
-			case "help" :	
-				ki="az RJSX csomag része";
-				break;
-			case "ver" :
-				ki="Jelenlegi verzió:"+rjsc+"<br>#RJSX2re épül";
-				break;
+		
 	//KERESÉSEK
-		//GOOGLE
-			case "gs" :
-				if (inptext!="")
-				{
-					ki="google keresés a következőre: "+inptext;
-					window.open("https://www.google.hu/search?q="+inptext, '_blank');
-				}
-				else 
-				{
-					ki="google megnyitása: ";
-					window.open("https://www.google.hu/", '_blank');
-				}
-  				window.focus();
-  				get();
-  				break;
-  				
+		//GOOGL
   		//YOUTUBE	
   			case "yt" :
   				
@@ -415,16 +275,9 @@ width:200px !important;
   			default:
   				inp.style.padding.left="2px";
 				inp.style.border="1px solid red";	
-  				
-  				
+				
 		}
-		function get()
-		{
-		inp.style.padding.left="5px";
-		inp.style.border="0px solid red";	
-		}
-		//output.innerHTML+='<br># '+ki;
-		}//CMD
+		
 	map=[];
 	onkeydown = onkeyup = function(e){
     e = e || event; // to deal with IE
@@ -436,96 +289,8 @@ width:200px !important;
     }
 }
 		</script>
-		<br>
-		<div id="hiddenholder" style="display:none;"></div>
-		<div id="imgsx">
-			<img src="multistart/gs.png"  alt="START" height="60px" onClick="inp.value='gs'">
-			<img src="multistart/fb.jpg"  alt="START" height="60px" onClick="inp.value='fb'">
-			<img src="multistart/yt.jpg"  alt="START" height="60px" onClick="inp.value='yt'">
-			<img src="multistart/tw.png"  alt="START" height="60px" onClick="inp.value='tw'">
-			<img src="multistart/hma.png" alt="START" height="60px" onClick="inp.value='hma'">
-			<img src="multistart/tpb.png" alt="START" height="60px" onClick="inp.value='tpb'">
-			<img src="multistart/gtr.png" alt="START" height="60px" onClick="inp.value='trans'">
-			<img src="multistart/imdb.png" alt="ADD" height="60px" onClick="inp.value='imdb'">
-			
-			
-		</div>
-		<br>
-		
-		<div id="hi" >Jó <span id="napszak"></span>!</div>
-		
-</div contxent>
-<div id="navimg">
-<img src="back4.png" onclick="swd()">
-<img src="back4.png" onclick="swi()" style="transform:rotate(180deg);-webkit-transform:rotate(180deg);">
-</div>
-<style>
-	#hi {
-		text-align:center;
-		opacity:0.8;
-		color:white;
-		font-size:28px;
-		}
-	#navimg {
-		position:fixed;
-		bottom:0;
-		text-align:center;
-		width:100%;
-		margin-left:-5%;
-		}
-		#navimg img {
-			cursor:pointer;
-			}
-body {
-	background-image:url('multistart/bgs/bg9.png');
-	-webkit-transition: background-image 1s ease-in-out;
-	}
-.focim {
-	opacity:0.8;
-	}
-	.focim:hover {
-		opacity:0.95;
-		}
-	#extrafoot {
-		opacity:0;
-		}
-</style>
-<script>
-	iss=9;
-		function calls() {
-			hiddenholder.style.backgroundImage="url('multistart/bgs/bg"+(iss+1)+".png')";
-			
-			setTimeout(function(){
-				document.getElementsByTagName("body")[0].style.backgroundImage="url('multistart/bgs/bg"+iss+".png')";
-				hiddenholder.style.backgroundImage="url('multistart/bgs/bg"+(iss+1)+".png')";
-				if (iss<=21)
-				{
-				iss++;
-				}
-				else { iss=1 ;}
-				calls();
-			}
-			,20000);
-			};
-		function swi() {
-				if (iss<=21)
-				{
-				iss++;
-				document.getElementsByTagName("body")[0].style.backgroundImage="url('multistart/bgs/bg"+iss+".png')";
-				hiddenholder.style.backgroundImage="url('multistart/bgs/bg"+(iss+1)+".png')";
-				}								
-			}
-		function swd() {
-					if (iss>=2)
-				{
-				iss--;
-				document.getElementsByTagName("body")[0].style.backgroundImage="url('multistart/bgs/bg"+iss+".png')";
-				hiddenholder.style.backgroundImage="url('multistart/bgs/bg"+(iss-1)+".png')";
-				}	
-			}
-			calls();
-			nap();
-			</script>
-<script src="main.rjsx" type="text/javascript"></script>
+
+  <link rel="import" href="../../polyfome/include.html">
+    <link rel="import" href="../../polyfome/elementile.html">
 	</Body>
 </HTML>
