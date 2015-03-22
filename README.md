@@ -2,8 +2,9 @@ rts
 ===
 
 ##Ron Tap Sites
-Current apps as of version **4.2.0** 
+Current apps as of version **4.2.1** 
 
+* apps **NEW** - Applications made by elemential **4.2.1**
 * edu/tapcalk - advanced calculator **4.1.3**
 * browser - html browser (not updated & not working)
 * chess - (not updated & not working)
@@ -19,10 +20,10 @@ Current apps as of version **4.2.0**
 * imagine - imagine dragons test kinetic animation (not finished)
 * kikerdezo_offline - advanced learning tool (for words and sentences) **4.1.0**
 * login - old LAPIS login interface (will be updated)
-* mine - Mine game (finished) **4.0.8** w/ deesnow97
+* mine - Mine game (finished) **4.2.1** w/ deesnow97
 * PCP - benchmark (not updated & not working)
 * old_canvas/paint - drawing tools from 2012
-* **random - 4.1.3**  
+* **random - 4.2.0**  
  * nyelvek - languages from all around the world
  * véletlengeráló - random generator *updated*
  * jelszógeneráló - password generator
@@ -33,9 +34,10 @@ Current apps as of version **4.2.0**
  * kifogásgyártó - excuse createor /w DaniFoldi
 * **rtp** rontapparty (includes szemkieg*)
 * stat - statistics for 2014 (under development) **4.0.8**
+* SSP **NEW** - single start page *updated* **4.2.1**
 * time - time to color awesomeness
 * toriv/timeline - VPG exam helper
-* utopia - game concept (under development) **4.1.6**
+* utopia - game  (under development) **4.2.1**
 * ver - version tool for RTS 1&2&3
 * web - help for new web developers **4.1.5**
 * widget - alternative newsflow (not updated)  
