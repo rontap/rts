@@ -2,32 +2,135 @@
 <meta charset="UTF-8">
 <link href='http://fonts.googleapis.com/css?family=Titillium+Web|Open+Sans|Roboto&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="utopia/gamepad.js"></script>
+<body class="main_menu">
+
+
+<div id="main_menu">
+        <div id="cubicon">&nbsp;</div>
+    <div id="main_menu_buttons">
+        <button onclick="ui.openlevel();">Play&nbsp;Story</button>
+        <button>Play&nbsp;Challenges</button>
+        <button>Options</button>
+        <button>Mods</button>
+        <button>About</button>
+        </div>
+</div>
+
+<div id="namecon">
+        <h1 class="big">UTOPIA</h1>
+    </div>
 
    <div id="vera" style="padding:15px;">ver </div>
+<container id="actual_game">
     <div id="playercube">
         <player id="play1" class="loading"></player>
     </div>
-    <div id="namecon">
-        <h1 class="big">UTOPIA</h1>
-    </div>
+    
     <div id="particles"></div>
 
-    <div id="field" >
+    <div id="field" onclick="dbg.click(event)">
         
     </div>
+</container>
     <!--focus></focus-->
 
 <link href="utopia/core.css" rel="stylesheet">
+<link href="utopia/ui.css" rel="stylesheet">
+<div id="editar" class="card">
+    <div id="blocks">
+     <paper-radio-group selected="Block" role="radiogroup" onchange="bias(event)">
+      <paper-radio-button name="0" label="Block" ></paper-radio-button>
+      <paper-radio-button name="1" label="Lava" ></paper-radio-button>
+      <paper-radio-button name="2" label="Money" ></paper-radio-button>
+      <paper-radio-button name="3" label="CPoint" ></paper-radio-button>
+      <paper-radio-button name="4" label="Mine" ></paper-radio-button>
+      <paper-radio-button name="5" label="Bullet" ></paper-radio-button>   
+         
+      <paper-radio-button name="6" label="Door" ></paper-radio-button>
+      <paper-radio-button name="7" label="Key" ></paper-radio-button>
+      <paper-radio-button name="8" label="Laser" ></paper-radio-button>
+   
+      
+      <paper-radio-button name="8" label="Wall" ></paper-radio-button>
+    </paper-radio-group>
+    </div>
+    <div id="editar_settings">&nbsp;
+        <core-pages selected="0" id="editar_pages">
+          <div>Block. Can't go through</div>
+          <div>Death if in the block</div>
+          <div>Money</div>
+          <div>Chekpoint</div>
+          <div>6</div>
+            <div>6</div>
+          <div>Can be opened by Key <input placeholder="color"> </div>
+          <div>Key   <input placeholder="color"></div> 
+          <div>8</div>
 
-<div id="ui">
-    money: <span id="money"></span>
+        </core-pages>
+    </div>
 </div>
+<div id="rolo" onclick="pause()">
+    <center>PAUSE</center>
+    
+</div>
+<script>
+    nowsel=0;
+    function bias(event) {
+           var a=Number($(event.target).attr('name'));
+            if (a>5) { $('#editar_settings').addClass("exp"); }
+            else { $('#editar_settings').removeClass("exp");  }
+        
+        setTimeout(function(){
+            console.log(event,event.target,($(event.target)[0].getAttribute('name')));    
+            editar_pages.selected=a;      
+            nowsel=a;
+        },200)           
+    }
+    
+    fncsheet=['block()','fire()','money()','checkpoint()','mine()','bullet()','door(activeinput())','key(activeinput())'];
+    spesheet=[''       ,''      ,''       ,''            ,''      ,' ','activeinput()'      ,'activeinput()'];
+    function activeinput() {
+        return $('#editar_settings .core-selected input').val();
+    }
+</script>
+<div id="ui">
+    <table><tr>
+        <td style="padding-top:12px;">
+             <paper-icon-button icon="stars"></paper-icon-button> <span id="money">0</span>
+        </td>
+            <td>
+                <paper-icon-button icon="communication:vpn-key"></paper-icon-button>
+                <table class="collkey" id="collkeyimp">
+                    <tr><td> </td><td> </td><td> </td><td> </td></tr>
+                    <tr><td> </td><td> </td><td> </td><td> </td></tr>
+                    <tr><td> </td><td> </td><td> </td><td> </td></tr>
+                </table>
+            </td>
+        <td>
+            <paper-icon-button icon="image:timer"></paper-icon-button>
+        </td>
+        <td>
+            <paper-icon-button icon="av:pause" onclick="pause()"></paper-icon-button>
+        </td>
+    </tr></table>
+       <div id="alert_boxes">
+    <alert-box content="Challange Accepted" 
+               text="You succesfully accepted this challange"
+               fabcolor="#48F" fabicon="done" fabaction="alert();"
+               ></alert-box>
+    </div>
+    
+    
+</div>
+
 
 <div id="mainwrap"></div>
 
 <script src="utopia/engine.js"></script>
 <script>
-ver="0.13";
+
+ver="0.27";
     console.log("utopia version "+ver);
     titlea.innerHTML+=ver;
     vera.innerHTML+=ver;
@@ -35,19 +138,28 @@ ver="0.13";
 // special rules
 rules.block = function() {
      move.doNotMove();
-}
+} 
 rules.key = function(color) {
      $('#key'+player.posy+player.posx).addClass("hovel");   
      console.log(color);
      $('.lock'+color.slice(1,this.length)).addClass("on");
     
+    console.log(ui.keymap.indexOf(color),'a');
+
     //register that you have collected this
         if (coll.keys[color]===undefined) {coll.keys[color]=1;}
         else coll.keys[color]++;
-    move.prelude=function(){};  //clearing the prelude        
+        move.prelude=function(){};  //clearing the prelude        
     //ugly overwrite is ugly
      posrem=grid[player.posx][player.posy].indexOf('rules.key("'+color+'");');
      grid[player.posx][player.posy][posrem]='';
+    console.log(posrem,grid[player.posx][player.posy]);
+    
+        $('.collkey tr:nth-child('+Number(ui.keymap.indexOf(color)+1)+')')
+        .removeClass('a1 a2 a3')
+        .addClass('a'+coll.keys[color]);
+    
+    console.log(color,coll.keys,coll.keys[color]);
 }
 rules.nothing = function() {
     return false;
@@ -73,6 +185,9 @@ rules.checkpoint = function() {
     player.cpointx=player.posx;
     player.cpointy=player.posy;
 }
+rules.gabesz = function() {
+ //   
+}
 rules.fire = function() {
     player.checkpoint();
 }
@@ -88,6 +203,10 @@ rules.door = function(color) {
          posrem=grid[player.posx][player.posy].indexOf('rules.door("'+color+'");');
          console.log(grid[player.posx][player.posy].indexOf('rules.door("'+color+'");'),color,posrem);
          grid[player.posx][player.posy][posrem]='';
+        
+        $('.collkey tr:nth-child('+Number(ui.keymap.indexOf(color)+1)+')')
+        .removeClass('a1 a2 a3')
+        .addClass('a'+coll.keys[color]);
     }
     else  move.doNotMove();  
 }
@@ -103,6 +222,19 @@ rules.wall = function(dirfrom) {
 }
 rules.time = {} ; //rules that require Timing
 rules.pre = {}; //rules that shall be activated before the 
+
+rules.bullet = function(){
+    coll.bullet++;
+    $('#bull'+player.posy+player.posx).addClass('deleted');
+    
+    posrem=grid[player.posx][player.posy].indexOf('rules.bullet();');
+    grid[player.posx][player.posy][posrem]='';
+}    
+
+
+function pause(){
+    $("#rolo").toggleClass('shower');
+}
 
 function setRule(what,where,specials) {
     for (i=0;i<where.length;i++) //BASIC FUNCTIONS
@@ -151,6 +283,9 @@ function setRule(what,where,specials) {
         if (what.search("wall")>=0) {
              field.innerHTML+='<wall style="left:'+xcord*50+';top:'+ycord*50+'" class="'+specials+'"></wall>';
         }
+        if (what.search("bullet")>=0){
+             field.innerHTML+='<img class="bullet" style="left:'+xcord*50+';top:'+ycord*50+'" src="utopia/bullet.png" id="bull'+(where[i][1])+(where[i][0])+'">';
+        }
     }//FOR 
     
     if (what.search("laser")>=0)   {
@@ -168,7 +303,8 @@ function setRule(what,where,specials) {
     particles.innerHTML+='<p-laser style="left:'+where[0][1]*50+';top:'+(where[0][0]+1)*50+'; height:'+(Math.abs((where[1][0]-where[1][1])*50)-10)+'" id="plaser'+elements.laser.count+'"></p-laser>';
             
             affected=[];              
-            for (i=0;i<=Math.abs(where[1][0]-where[1][1]);i++) { //blocks that should kill you
+            for (i=1;i<=Math.abs(where[1][0]-where[1][1]);i++) { //blocks that should kill you
+
                 affected[affected.length]=[where[1][1],Math.abs(where[1][0]-i)];
             }  
                 console.log(affected);
@@ -229,7 +365,9 @@ function setRule(what,where,specials) {
 coll = {};
 coll.keys={};
 coll.money=0;
+coll.bullet=3;
    
+elements = {};  
 elements = {};  
     //noooo there lasers...
 elements.laser={};
@@ -310,7 +448,7 @@ elements.laser.turnOff =function(laser) {
     //end.
     
 
-document.body.onkeydown = function (e) {
+document.body.addEventListener("keydown",function (e) {
     map[e.which] = e.type == 'keydown';
    // console.log(map);
    
@@ -323,8 +461,7 @@ document.body.onkeydown = function (e) {
             else if (map[ 83 ])  move.back(); 
     //move.prevent(false);
     
-    
-    
+     
         for  (var iss=0;iss<grid[player.befx][player.befy].length;iss++) {
             if (grid[player.befx][player.befy][iss].search('wall')>=0) {
                  party_x=NaN;party_y=NaN;
@@ -378,7 +515,7 @@ document.body.onkeydown = function (e) {
     console.log(player.posx,player.posy);
     ui.update();
     
-} 
+});
 
 
 
@@ -391,29 +528,8 @@ document.body.onkeyup = function(e) {
 }
 wh=window.innerHeight;
 ww=window.innerWidth;
-level ={};
-level.set = function(e) {
-    
-}
-level.height=0;
-level.width=0;
-grid=[];
-level.setField= function(w,h) {
-    field.style.width=(w+2)*50;
-    field.style.height=(h+2)*50;
-    level.width=w+1;
-    level.height=h+1;
-    
-    for (var isg=0;isg<=(h+1);isg++) 
-    {
-        //console.log(isg);
-        grid[isg]=[];
-        for (var s=0;s<=(w+1);s++) {
-            grid[isg][s]=[];
-        }
-    }
-}
-level.setField(15,7); 
+
+
     
 ui.update =function() {
     money.innerHTML=coll.money;
@@ -421,7 +537,7 @@ ui.update =function() {
   a='';
 setTimeout(function(){
 document.oncontextmenu = function() {return false;};
-
+  // $('body').addClass('main_menu');
   $('#field *, #playercube player').mousedown(function(e){ 
     if( e.button == 2 ) { 
       //alert('Right mouse button!'+this);
@@ -460,6 +576,10 @@ document.oncontextmenu = function() {return false;};
 }
 </style>
 
+<script>
+    setRule("bullet()",[[3,4]])
+</script>
+
 <!-- version history 
 0.1  Creating basics: Wall, Key                      15.02.27
 0.2  Adding polymer, openable doors                     02.28
@@ -475,7 +595,23 @@ document.oncontextmenu = function() {return false;};
 0.11 functions now in array, relocating some functions  03.16
 0.12 walls work w/o problem.                            03.17
 0.13 cleaned code, distributed over, and designed       03.17
+0.14 Add UI and HUD                                     03.25
+0.15 Add key UI display                                 04.02
+0.16 bugfix                                             04.02
+0.20 level editor added                                 04.03
+0.24 EDC update. Added pause, controller support        04.11
+0.27 UI  setup, and level changer. Toast notification   04.20
 -->
 
- <link rel="import" href="utopia/elements.html">
+
  <link rel="import" href="../../polyfome/include_minimalist.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/communication-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/device-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/editor-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/hardware-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/image-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/maps-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/notification-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/social-icons.html">
+  <link rel="import" href="../../polymer/bower_components/core-icons/device-icons.html">
+     <link rel="import" href="utopia/elements.html">

@@ -142,7 +142,7 @@ RANDOM PACKAGE
 	outputPSW.innerHTML='';
 	ext=["","","","","","","","","","","e","r","t","z","u","i","o","p","ő"," ","ú","ö","ü","ó","a","s","d","f","g","h","j","k","l","é","á","ű","í","y","c","v","b","n","m",",",".","!","?","E","R","T","Z","U","I","O","P","Ő","Ú","Ö","Ü","Ó","A","S","D","F","G","H","J","K","L","É","Á","Ű","Í","Y","C","V","B","N","M","0","1","2","3","4","5","6","7","8","9","-","@","_",":","=","q","w","Q","W","X","x"];
 			console.log('start');
-		if (cod.length>9)
+		if (cod.length>50)
 		{
 		outputPSW.innerHTML='<b>Hiba! a TapCoder2 jelenleg csak 9 karakternél rövidebb kódot tud írni/olvasni. </b>'
 		}
@@ -151,16 +151,16 @@ RANDOM PACKAGE
 		for (i=0;i<cod.length;i++)
 		{
 			for (j=0;j<ext.length;j++)
-			{
+			{ 
 			
 				if (ext[j]==cod.charAt(i))
 				{
-				kim+=j;
+				kim+=String(j);
 				}
 			}
 		}
 			console.log(kim);
-			outputPSW.innerHTML+=String(kim*mal);
+			outputPSW.innerHTML+=String(String(kim));
 		}//else
 	}//fun
 	function decode() {

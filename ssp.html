@@ -8,7 +8,7 @@
 		<meta name="keywords" content="ssp,simple,start,page">
 
 	</Head>
-	<div id="navbar" >
+	<div id="navbar" >  
 
 </div> 
 	
@@ -16,8 +16,8 @@
 
    <script>
         fome = {
-            'link' : ['Nyelvek','Véletlengenerátor','Jelszógeneráló','Stopper és időzítő','Színkeverő','Titkosító','Jegyek','Kifogásgyártó'],
-            'incl' : ['langs','lipsum','generator','stopper','color','enigma','jegyek','kifogas','homex'],
+            'link' : [],
+            'incl' : [],
             'title' : "Segédezközök",
             'extratitle' : "Rontap &nbsp;",
             'splashname': "Single start page",
@@ -36,7 +36,6 @@
         <fome-menu></fome-menu>
         <fome-element></fome-element>
        
-
 <style>
     #e_apps, body:not(.menu) core-header-panel /deep/ #dropShadow {
        transition: all .5s ;
@@ -76,16 +75,105 @@ text-align: center;
 letter-spacing: 2px;
 font-size: 100px;
     }
-</style>
+    
+    #mainc::after {
+  content: '';
+  position: absolute;
+  text-align: center;
+  background: red;
+  width: 20px;
+  height: 5px;
+  left: 0;
+  right: 0;
+  margin-left: calc(50% - 25px);
+  margin-top: 156px;
+        transition:background .4s,margin-left .4s;
+        height:1px;
+        opacity:0;
+}
+        app-icon {
+            margin:-5px;
+            zoom:0.8;
+        }
+    #contt:not(app-icon) {
+        display: inline-block;
+        padding-left:calc(50% - 356);
+          display: inline-block;
+      width: 85%;
+      padding-left: calc(50% - 505px);
+    }
+    
+   #mainc.X3b5998::after { background:#3b5998; }
+    #mainc.Xf84::after { background:#f84; }
+    #mainc.Xdd4b39::after { background:#dd4b39; }
+    #mainc.X517fa4::after { background:#517fa4; }
+    #mainc.X007bb6::after { background:#007bb6; }
+    #mainc.Xcb2027::after { background:#cb2027; }
+    #mainc.X00aced::after { background:#00aced; }
+    #mainc.Xbb0000::after { background:#bb0000; }
+    
+    #mainc.on::after {
+          
+       -webkit-animation:loadl 1.2s;
+      -webkit-animtaion-fill-mode:forwards;
+    }
+    @-webkit-keyframes loadl {
+        0% {
+                height:4px;   opacity:1;         
+        }
+        40% {
+             width:420px;
+             margin-left:calc(50% - 210px); height:4px;
+        }
+        60% {opacity:1;width:420px;
+             margin-left:calc(50% - 210px);opacity:.9;}
+        100% {opacity:0;width:420px;
+             margin-left:calc(50% - 210px);height:4px;}
+    }
+        </style>
 <div id="imgh"><h1>Start</h1></div>
         
 
 		</div>
 	
     <div class="away card center" id="mainc">
-    hello
+        <paper-input></paper-input>
     </div>
     
+    <container id="contt">
+         <app-icon color="3b5998" icon="social:post-facebook" text="Facebook" class="loadimgat" href="#"></app-icon>
+         <app-icon color="f84" icon="social:post-blogger" text="Blogger" class="loadimgat" href="#"></app-icon>
+         <app-icon color="dd4b39" icon="social:post-gplus" text="Google+" class="loadimgat"href="#"></app-icon>
+         <app-icon color="517fa4" icon="social:post-instagram" text="Instagram" class="loadimgat"href="#"></app-icon>
+         <app-icon color="007bb6" icon="social:post-linkedin" text="LinkedIn" class="loadimgat"href="#"></app-icon>
+         <app-icon color="cb2027" icon="social:post-pinterest" text="Pinterest" class="loadimgat"href="#"></app-icon>
+         <app-icon color="32506d" icon="social:post-tumblr" text="Tumblr" class="loadimgat"href="#"></app-icon>
+         <app-icon color="00aced" icon="social:post-twitter" text="Twitter" class="loadimgat"href="#"></app-icon>
+         <app-icon color="bb0000" icon="social:post-youtube" text="Youtube" class="loadimgat"href="#"></app-icon>
+
+    </container>
+
+    <script>
+        setTimeout(function() {
+            //illumina=['3b5998','f84','dd4b39','517fa4','007bb6','cb2027','32506d','00aced','bb0000'];
+            $('app-icon').click(function() {
+                setTimeout(function(){
+                    $('#mainc').removeClass('on')
+                $('#mainc').removeClass('X3b5998 Xf84 Xdd4b39 X517fa4 X007bb6 Xcb2027 X00aced Xbb0000');
+                },1200);
+            
+                   
+                   $('#mainc').addClass('X'+$(this).attr('color')+ ' on');
+            
+
+            })
+        },1000)
+        
+  /* setTimeout(function(){
+       $('#contt').css('padding-left','calc(50% - '+Math.round($('#contt').width()) +'px)') ;
+       console.log(Math.round($('#contt').width())) ;
+   },700) */
+    </script>
 		<!--
 <div contxent id="allcontx">		
 		
@@ -124,7 +212,7 @@ font-size: 100px;
 	//KERESÉSEK
 		//GOOGL
   		//YOUTUBE	
-  			case "yt" :
+  			/*case "yt" :
   				
   				if (inptext!="")
 				{
@@ -277,7 +365,7 @@ font-size: 100px;
 				inp.style.border="1px solid red";	
 				
 		}
-		
+		*/
 	map=[];
 	onkeydown = onkeyup = function(e){
     e = e || event; // to deal with IE
