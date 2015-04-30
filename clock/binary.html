@@ -1,0 +1,37 @@
+<meta charset="utf-8">
+
+<table>
+
+
+</table>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+
+<script>
+console.log('a');
+s=[];
+t=new Date();
+    s[0]=Number( String( t.getHours()  ).slice(0,1) ).toString(2);
+    s[1]=Number( String( t.getHours()  ).slice(1,2) ).toString(2);
+    s[2]=Number( String( t.getMinutes()).slice(0,1) ).toString(2);
+    s[3]=Number( String( t.getMinutes()).slice(1,2) ).toString(2);
+    s[4]=Number( String( t.getSeconds()).slice(0,1) ).toString(2);
+    s[5]=Number( String( t.getSeconds()).slice(1,2) ).toString(2);
+    for (i=0;i<5;i++) {
+        for (k=0;k<s[i].length;k++) {
+            console.log(s[i][k]);
+            $('tr:nth-child('+k+') .k:nth-child('+i+')').addClass('on');
+        }
+       
+    }
+</script>
+<style>
+
+</style>
+
+<cl-hd></cl-hd>
+
+
+ <link rel="import" href="../clocker.html">
+ <link rel="import" href="../../../polyfome/include_minimalist.html">
