@@ -1,0 +1,54 @@
+<polymer-element name="cl-hd" noscript>
+<template>
+
+<style>
+    html /deep/ core-toolbar {
+        display: none;
+    }
+    #clocknav {
+        position:fixed;
+        bottom:0; left:0; right:0;
+        height:75px;
+        font-family: RobotoDraft, sans-serif;
+        opacity: 0;
+        transition: all .2s;
+        bottom:-70px;
+        -webkit-animation-delay:.7s;
+        -webkit-animation:noclocknav 3s;
+         
+    }
+    @-webkit-keyframes noclocknav {
+        0% {opacity: 1; bottom:0px;}
+        80% { opacity:0.5; bottom:0px;}
+        100% { opacity:0.5; bottom:-70px;}
+    }
+    #clocknav:hover {
+        opacity:0.95;
+        bottom:0px;
+    }
+    #clocknav>div {
+        
+          font-size: 20px;
+        background:red;
+        display: inline-block;
+        width: calc(25% - 50px);
+        text-align: center;
+        height:75px;
+          padding: 25px;
+        border-top: 3px solid #444;
+        background:white;
+    }
+    #clocknav>div:first-child { border-top-color: #48F;}
+    #clocknav>div:nth-child(2) { border-top-color: #F84;}
+    #clocknav>div:nth-child(3) { border-top-color: #F44;}
+    #clocknav>div:nth-child(4){ border-top-color: #62C;}
+    #clocknav>div:hover {
+        background:#ddd;
+       cursor: pointer;
+    }
+    
+</style>
+<div id="clocknav">
+    <div onclick="location.href='time.html'">Colour Clock</div><div  onclick="location.href='clock.html'">Timeflow Clock</div><div  onclick="location.href='round.html'">Round Clock</div><div  onclick="location.href='binary.html'">Binary Clock</div>
+</div>
+</template></polymer-element>
