@@ -1,0 +1,25 @@
+2014-02-20 19:42:08: -- New Job: ANALYSIS started by GoodSync Start on 'DaniFoldi's MacBook Pro' (GoodSync 4.4.9.9)
+2014-02-20 19:42:08: gdocs://www.googleapis.com/Elemential PHP apps Sync [DirectDest] [ansi] <-> ftp://elemential.host22.com/public_html/admin, WaitForLocksMinutes=20, ResolveConflicts=NewerFileWins
+2014-02-20 19:42:39: Waiting for 1 seconds: Server says: Internal Server Error (status code 500)
+2014-02-20 19:42:40: Recovered the connection, continuing operations
+2014-02-20 19:43:18: L: Files: 13 (excluded 0). Folders: 0 (excluded 1). Google Drive, Free: 13.9 GB, Total: 15.0 GB
+2014-02-20 19:43:22: R: Files: 13 (excluded 0). Folders: 0 (excluded 1). FTP: --------- Welcome to Pure-FTPd [privsep] ----------You are user number 19 of 500 allowed.Local time is now 13:42. Server port: 2 ...
+2014-02-20 19:43:36: Changes: 0, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0
+2014-02-20 19:43:36: -- Analysis Completed. Time 00:01:40, Speed: 0 files/s
+2014-02-20 19:43:36: == New Job: SYNC started by GoodSync Start on 'DaniFoldi's MacBook Pro'
+2014-02-20 19:43:36: gdocs://www.googleapis.com/Elemential PHP apps Sync [DirectDest] [ansi] <-> ftp://elemential.host22.com/public_html/admin, WaitForLocksMinutes=20, ResolveConflicts=NewerFileWins
+2014-02-20 19:43:47: Save State File gdocs://www.googleapis.com/Elemential PHP apps Sync/_gsdata_/_file_state_v4._gs
+2014-02-20 19:43:49: Save State File ftp://elemential.host22.com/public_html/admin/_gsdata_/_file_state_v4._gs
+2014-02-20 19:45:12: Waiting for 1 seconds: Server says: Service Unavailable (status code 503)
+2014-02-20 19:45:14: Recovered the connection, continuing operations
+2014-02-20 19:45:42: Waiting for 1 seconds: Server says: Service Unavailable (status code 503)
+2014-02-20 19:45:44: Recovered the connection, continuing operations
+2014-02-20 19:46:18: Waiting for 1 seconds: Server says: Internal Server Error (status code 500)
+2014-02-20 19:46:20: Recovered the connection, continuing operations
+2014-02-20 19:48:35: Waiting for 1 seconds: receiving line: [receiving data elemential.host22.com:21]: Requested operation would block on non-blocking socket
+2014-02-20 19:48:38: FTP: reconnect succeeded
+2014-02-20 19:48:41: Items Synced OK: 0, Errors: 0
+2014-02-20 19:48:41: == Sync Completed. Time: 00:05:05, Speed: 1.1 KB/s
+2014-02-20 19:49:12: Waiting for 1 seconds: Server says: Internal Server Error (status code 500)
+2014-02-20 19:49:14: Recovered the connection, continuing operations
+2014-02-20 19:49:14: 

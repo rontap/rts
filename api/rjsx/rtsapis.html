@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<HTML>
+    <Head>
+        <title>RJSX 7</title>
+      <meta charset="UTF-8">
+        <meta name="author" content="TAP">
+      <meta name="description" content="rontap">
+        <meta name="keywords" content="rontap,linux,TaPium,tapsite,rts,rjsx">
+     <script src="goog.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+	<meta name=viewport content="width=device-width, initial-scale=1">
+ 
+    </Head>
+    <div id="navbar">
+    </div>
+    <Body >
+    <div id="body">
+<script>
+               // holotheme=true;
+               // console.log(holotheme);
+        appver="RJSX\n TAPIS/calkr.js 1.6 ";
+        navname="RJSX7"; //hogy jelenik majd meg
+        coa=false;      
+        moretag=true;
+        //holvan
+        manimg='f_icons/rts.png';
+//rjsxlocation='http://rtsapi.elemential.net/';
+specnav='<a href="rtsdocumentation.html">Dokumentáció</a>  <a href="rtscreator.html">Weboldalba ágyazás</a> <a href="#notyet">Letöltés</a> <a href="testrts.html">Példaoldal</a>';
+specnavi = new Array("Dokumentáció","Letöltés","Példaoldal","Alapoldal","Több...");
+specnavil = new Array("rtsdocumentation.html","#dl","testrts.html","ALAPRTS.html");
+specnavimg = new Array("f_icons/rts.png","f_icons/gimp.png","f_icons/media-floppy.svg","f_icons/preferences-color.png");
+rjsx_nohomepage="true";
+
+downnav=[
+        [],[],[],[],['weboldalba ágyazás','rontapsites kezdőoldal','rts verziótörténet'],[],[]
+        ]
+downnavl=[
+        [],[],[],[],['rtscreator','http://static.rontap.netne.net/','http://static.rontap.netne.net/ver.html'],[],[]
+        ];
+        navcolor = new Array('#48F', '#F44', '#22B94F', '#F84', '#62C',"#666",'#48F','#22B94F');
+//rjsxThemeOnSite=2;
+</script>
+
+<style>
+        #content {font-family:Courier;
+        margin-left:10%;
+        margin-right:10%;
+        }
+        ol li {
+			margin-bottom: 3px;
+			}
+        </style>
+<rts></rts>
+
+    
+    <div class="ubuntu big uline"  >Üdvözlünk a <b style="color:#26F;" title="RonJavaScriptX">RJSX</b> weboldalán</div><br>
+    
+    A rövid ismertető megmutatja hogyan kell használni e API-t az Ön weboldalán<br>
+    A példa 
+    <a href="testrts.html" class="l"><b>itt</b></a>
+     található <br>
+    Dokumentáció:   <a href="rtsdocumentation.html" class="l"><b>itt</b></a>
+     található <br>
+    <!-- Ha nem szeretné átnyálazni a dokumentációt, akkor kattintson <a href="rtscreator.html" class="l">ide</a>, ez egy WYSIWG generátor (amit látsz, azt kapod)-->
+    <hr>
+    <div class="ubuntu"  >Az RJSX7 számos újítást hozott a kódkészítésben.</div>
+    Az első példa, az hogy végleg elhagyjuk a <i>.rjsx</i> kiterjesztést, helyette a megszokott <i>.js</i>-re váltunk. Az rjsx7 célja többek közt a szabványosítás
+    <br><br />
+    <div class="ubuntu big uline"  >Az RJSX integrálása az oldalba</div>
+    
+    <li>
+        először a központi file-t kell belinkelnie a DOKUMENTUM VÉGÉRE:<br>
+        <pre>
+&lt;script src="http://rontap.netne.net/rontap/main.js" <br>type="text/javascript"&gt;&lt;/script&gt;
+        </pre>
+    </li>
+    <li>
+        Majd egy scriptben meg kell adnia pár adatot.:<br>
+        <pre >
+<code>&lt;script&gt;</code>
+<code>navname="RonTapSites API"; </code>
+<code>coa=false;        </code>
+<code>moretag=true; </code>
+<code>manimg='http://rontap.netne.net/rontap/f_icons/browser.svg'; </code>
+<code>rjsxlocation='http://rontap.netne.net/rontap/'; </code>
+<code>specnav=true;</code>
+<code>specnavi=["oldal1","oldal2"];</code>
+<code>specnavil=["link.html","index.html"];</code>
+<code>&lt;/script&gt;</code>
+        </pre>
+    </li>
+    <ol>
+    <b class="ubuntu"   >sorban a változók:</b>
+    <li><code>navname</code>: Az a név, ami a navigációnál az oldal neveként jelenik meg</li>
+    <li><code>coa</code>: kompatibilitás. ha nem fog sokáig frissülni az oldalt, ajánlott true-ra állítani</li>
+    <li><code>moretag</code>: RTS tag generálása (fontos!)</li>
+    <li><code>manimg</code>: ezzel lehet ikont választani. ajánlott a képkészletünkből válogatni</li>
+    <li><code>rjsxlocation</code>: az a hely, ahonnan az RJSX a továbbiakban be fog töltődni</li>
+    <li><code>specnav</code>: FONTOS!! E nélkül nem fog működni a speciális navigáció</li>
+    <li><code>specnavi</code>: ez egy tömb, aminek az elemei majd a linkeken a feliratok lesznek (ajánlott max 6db)</li>
+    <li><code>specnavil</code>:ez a linkeket tárolja, ugyanannyi elemnek kell lennie benne mint a spenavi-ban.</li>
+    <li><code>holotheme</code> : amennyiben igaz, sötét lesz a téma</li>
+    <li>opcionális: Design kiválasztása: <code>rjsxThemeOnSite</code> . 0 / 1 / 2 lehet az értéke. Ezzel lehet a design-t választani</li>
+    </ol>
+    <br />
+    <li>
+        Majd a body helyére irja csak be:<br>
+        <pre>
+
+&lt;body id="body">   
+&lt;rts>
+        </pre>
+    </li>
+    <hr>
+    <div class="utitle" id="dl">Letöltés</div>
+    Bár ajánlott az rjsx legaktuálisabb változatát használni, a teljes kód letölthető:<br>
+    <a href="rjsx_742.zip" target="_blank"  disabled class="noa btn-menu big ubuntu"><img src="f_icons/package.png" width="50px"> Letöltés 7.42 Tahr</a><hr>
+    
+    <div class="ubuntu big">Régebbi verziók:</div><br>
+    
+    <li><a href="rjsx_710.rar" target="_blank"  class="noa btn-menu big ubuntu">7.3.5 Lightbulb</a> (14.02.17.)</li>
+    <br>
+    <li><a href="rjsx_710.rar" target="_blank"  class="noa btn-menu big ubuntu">7.1 Millenium</a> (13.12.12.)</li>
+    <br>
+    <li><a href="rjsx_701.rar" target="_blank"  class="noa btn-menu big ubuntu">7.0 Ikarus</a> (13.11.23.)</li>
+    <br>
+             <hr>
+
+    
+        A <a href="testrts.html" class="l">példaoldalon</a> megtekintheti a design opciókat.
+    <br>
+<b class="big">AZ OLDAL TOVÁBBI RÉSZE FRISSÍTÉS ALATT ÁLL</b>
+    <hr>                                                                         <hr>
+    <b>Az API szerepe</b> nagyon fontos. <br>
+    Az itteni menüpontokra kattintva részletesen megtudhatja az rtsapi működését.<br>
+    Mind személyreszabhatósági szempontból, mind hasznossági szempontból érdemes átnézni.<br><br>
+        <div class="phold"id="ph3" onclick="opent3();">
+        <div class="ptitle">    
+        
+    A <b>main.rjsx</b> Egy folyamatosan bővülő függvénykönyvtár.<img src="plus.gif" height="20px" id="pimg3">
+        </div>
+        <div class="ptext">
+Jelenleg a következő függvények találhatóak meg benne:
+    <li><b>exists('változó')</b> TRUE ha létezik a változó, FALSE ha nem</li>
+    <li><b>x('objektum_azonosító')</b> kiűriti a megadott objektum tartalmát</li>
+    <li><b>gox('url')</b> átirányít</li>
+    <li><b>rdr('url')</b> átirányít, de nem kell a   '.html'</li>
+    <li><b>Repaint()</b> frissíti a weboldal TARTALMÁT (magát a weboldalt nem)</li>
+    <li><b>die()</b> hiba esetén megöli a weboldalt.</li>
+    <li><b>$KeyCode('event')</b> lenyomott billentyű (inputnál az első karakter)</li>
+    <li><b>$FindInArray('mit','tömb')</b> tömbben keres, far[] tömbben kapjuk vissza az eredményt</li>
+    
+        </div>
+    </div><!--ph3-->
+    
+        <br>
+    <div class="phold"id="ph2" onclick="opent2();">
+        <div class="ptitle">    
+            <b>Fontos változók</b><img src="plus.gif" height="20px" id="pimg2">
+        </div>
+        <div class="ptext">
+            <b>Fontos változók</b> a <i>rjsx</i>-ben<br>
+    <li><b>yo</b> konstans, debug céljából fenntartva. tartalma 'It Works!'</li>
+        <li><b>rjsx.ver és rjsx.verpc</b> A RJSX verziószáma, a rjsx_verpc egy számként adja vissza</li>
+    <li><b>iekill</b> alapértelmezetten true, letiltja az internet explorert, és átirányítja az 'ie.html'-re</li>
+    <li><b>coa</b> kompatibilitási ágens, jelenleg be kell kapcsolni</li>
+    <li><b>rjsx.ua</b> UserAgent. Ha 0, akkor letiltja. Ha 1 akkor mobil nézet. Ha 2 akkor támogatott böngészőről van szó. Ha 3 akkor nem ismerte fel a böngészőt</li>  
+    <li><b>rjsxlocation</b>  szűkséges, a teljes elérési utat tartalmaznia kell [ajánlott a http://rontap.netne.net/rontap/ használata]</li>
+    
+        </div>
+    </div>
+<br><!--ph22-->
+    <div class="phold"id="ph1" onclick="opent1();">
+        <div class="ptitle">    
+        <i>rts.rjsx</i> <b>bővítmény változói</b><img src="plus.gif" height="20px" id="pimg">
+        </div>
+        <div class="ptext">
+    <li><b>minrjsx_ver</b> minimális RJSX amivel működik</li>
+    <li><b>specnav </b> A már fennt említett változó</li>
+    <li><b>manimg </b> az oldalon lévő kép. Ha üres, akkor kompatibilitási mód bekapcsol.</li>
+    <li><b>localStorage.rts_color</b> a weboldal színe. érvényes szín: 'feher','fekete','kek','sarga','lila'</li>
+    <li><b>localStorage.rts_night</b> éjszakai mód</li> 
+    <li><b>localStorage.rts_mobile</b> ha TRUE akkor a mobil változatra irányít át</li>
+    <li><b>localStorage.rts_fancy</b>Ha a ...rts_mobile TRUE akkor ez autómatikusan false. ha ez FALSE akkor nem töltődik be a animációs css file</li>
+    <li><b>rjsx_nonev2</b> személyreszabás: ha van értéke (bármi) akkor a felső sötét sáv nem fog megjelenni. nem kell megadni</li>
+    <li><b>rjsx_nohomepage</b> személyreszabás: ha van értéke (bármi) akkor a menüben a kezdőlap linkje nem fog megjelenni. nem kell megadni </li>
+    <li><b> </b> </li>
+        </div>
+        
+    </div>
+    <br>
+        Az RJSX Creative Commons BY-NC-SA licenc alatt Áll!
+    
+    <hr>                                                               
+    <hr>
+    <hr>  
+
+    </div>
+    <script>
+            
+opened3=false;
+    function opent3() {
+if (opened3){
+ph3.style.height="30px";
+opened3=false;
+pimg3.src="plus.gif"
+}
+
+else {
+szam=Number(ph3h)+45;
+    ph3.style.height=szam+"px"
+    opened3=true;
+    pimg3.src="minus.gif"
+    }
+}
+            
+    ph3h=$("#ph3").height();
+    ph3.style.height="30px";
+ph3.style.height="30px";
+//2 
+        opened2=false;
+function opent2() {
+if (opened2){
+ph2.style.height="30px";
+opened2=false;
+pimg2.src="plus.gif"
+}
+
+else {
+ph2h=Number(ph2h)+45;
+    
+    ph2.style.height=ph2h+"px"
+    opened2=true;
+    pimg2.src="minus.gif"
+    }
+}
+            
+    ph2h=$("#ph2").height();
+    ph2.style.height="30px";
+    
+    
+//1
+    opened=false;
+function opent1() {
+if (opened){
+ph1.style.height="30px";
+opened=false;
+pimg.src="plus.gif"
+}
+
+else {
+ph1h=Number(ph1h)+45;
+    ph1.style.height=ph1h+"px"
+    opened=true;
+    pimg.src="minus.gif"
+    }
+}
+            
+    ph1h=$("#ph1").height();
+    ph1.style.height="30px";
+    </script>
+    <script src="main.js" type="text/javascript"></script>
+
+    </Body>
+
+</HTML>

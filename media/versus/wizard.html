@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<HTML>
+    <Head>
+        <title>Versus #TAG</title>
+      <meta charset="UTF-8">
+        <meta name="author" content="TAP">
+      <meta name="description" content="rontap">
+        <meta name="keywords" content="rontap,linux,elemential,tapsite,rts,rjsx">
+
+    <script>
+        navname="Új versus létrehozása"; //hogy jelenik majd meg
+        coa=false;      
+        moretag=true;
+        specnav=true;
+        rjsxlocation="http://rontap.netne.net/tahr/";
+        //holvan
+        manimg="http://rontap.netne.net/rontap/f_icons/config-users.svg";
+        specnav=true;
+        specnavi = ['navigáció','én profilom','tag felhő'];
+        specnavil = ['index.html'];
+      </script>
+    <script src="http://elemential.net/lapis/lapisclient.js" type="text/javascript"></script>
+    </Head>
+
+ 
+    <body id="body">
+
+
+    <rts></rts>
+     <h1>Alapadatok</h1>
+    
+    <div class="mb">
+    <table class="norjsx">
+    	<tr>
+    		<th>Adat</th>
+    		<th>Beállítás</th>
+    		<th>Limit</th>
+    	</tr>
+    	<tr>
+    		<td>Név:</td>
+    		<td><input placeholder="versus főcíme" maxlength="42" id="vs_q"></td>
+    	</tr>
+    	<tr>
+    		<td>Rövid leírás:</td>
+    		<td><textarea onkeypress="changeto(0);" onkeyup="changeto(0);" maxlength="142" id="vs_d"></textarea></td>
+    		<td id="ou0">142</td>
+    	</tr>    
+    	<tr>
+    		<td>Érvelés mellette:</td>
+    		<td><textarea onkeypress="changeto(1);" onkeyup="changeto(1);" maxlength="142" id="vs_y"></textarea></td>
+    		<td id="ou1">142</td>
+    	</tr> 
+    	<tr>
+    		<td>Érvelés ellene:</td>
+    		<td><textarea onkeypress="changeto(2);" onkeyup="changeto(2);" maxlength="142" id="vs_n"></textarea></td>
+    		<td id="ou2">142</td>
+    	</tr>         		
+    </table>
+    <hr>
+    <hr>
+    <h1>Téma</h1>
+    A téma határozza meg, hogy a kérdés milyen főtémában van.<br>
+    <select class="inp-text" id="themeholder">
+    
+    </select>
+
+    
+    <h1>Tagek</h1>
+    Vessző beírásával lehet új tag-et hozzáadni. Maximálisan 5 tag-et lehet egy kérdéshez adni.<br>
+	   <textarea id="vs_t"></textarea>
+		
+	<h1>Beállítások</h1>		
+		
+	<b>Vita hossza:</b><br>
+	<input type="radio" name="hosz" id="endholder"> Ennyi ideig :
+        <script>
+            var nVer = navigator.appVersion;
+            var nAgt = navigator.userAgent;
+            var browserName  = navigator.appName;
+            var fullVersion  = ''+parseFloat(navigator.appVersion);
+            var majorVersion = parseInt(navigator.appVersion,10);
+            var nameOffset,verOffset,ix;
+            
+            // In Opera, the true version is after "Opera" or after "Version"
+            if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
+                browserName = "Opera";
+                fullVersion = nAgt.substring(verOffset+6);
+                if ((verOffset=nAgt.indexOf("Version"))!=-1)
+                fullVersion = nAgt.substring(verOffset+8);
+            }
+        // In MSIE, the true version is after "MSIE" in userAgent
+        else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
+            browserName = "Microsoft Internet Explorer";
+            fullVersion = nAgt.substring(verOffset+5);
+        }
+        // In Chrome, the true version is after "Chrome"
+        else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
+            browserName = "Chrome";
+            fullVersion = nAgt.substring(verOffset+7);
+        }
+        // In Safari, the true version is after "Safari" or after "Version"
+        else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
+            browserName = "Safari";
+            fullVersion = nAgt.substring(verOffset+7);
+            if ((verOffset=nAgt.indexOf("Version"))!=-1)
+            fullVersion = nAgt.substring(verOffset+8);
+        }
+        // In Firefox, the true version is after "Firefox"
+        else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
+            browserName = "Firefox";
+            fullVersion = nAgt.substring(verOffset+8);
+        }
+        // In most other browsers, "name/version" is at the end of userAgent
+        else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) <
+                 (verOffset=nAgt.lastIndexOf('/')) )
+                 {
+                     browserName = nAgt.substring(nameOffset,verOffset);
+                     fullVersion = nAgt.substring(verOffset+1);
+                     if (browserName.toLowerCase()==browserName.toUpperCase()) {
+                         browserName = navigator.appName;
+                     }
+                 }
+        // trim the fullVersion string at semicolon/space if present
+        if ((ix=fullVersion.indexOf(";"))!=-1)
+        fullVersion=fullVersion.substring(0,ix);
+        if ((ix=fullVersion.indexOf(" "))!=-1)
+        fullVersion=fullVersion.substring(0,ix);
+        
+        majorVersion = parseInt(''+fullVersion,10);
+        if (isNaN(majorVersion)) {
+            fullVersion  = ''+parseFloat(navigator.appVersion);
+            majorVersion = parseInt(navigator.appVersion,10);
+        }
+        
+        //document.write('<br>'
+                     //  +'Browser name  = '+browserName+'<br>'
+                     //  +'Full version  = '+fullVersion+'<br>'
+                     //  +'Major version = '+majorVersion+'<br>'
+                     //  +'navigator.appName = '+navigator.appName+'<br>'
+                     //  +'navigator.userAgent = '+navigator.userAgent+'<br>'
+                     //  )
+                     browserissupported= new Boolean();
+                     if (((browserName=="") && (majorVersion=="")) || ((browserName=="") && (majorVersion=="")) || ((browserName=="") && (majorVersion=="")) || ((browserName=="") && (majorVersion=="")) || ((browserName=="") && (majorVersion=="")) || ((browserName=="") && (majorVersion=="")) || ((browserName=="") && (majorVersion=="")))
+                     {
+                         browserissupported=true;
+                     }
+                     if (browserissupported)
+                     {
+                         document.write("<input type='datetime-local' id='vs_date'>");
+                     }
+
+            </script>
+		 <input type="number" class="inp-text-short" placeholder="hó"   max="12" min="0" id="vs_mm">
+		 <input type="number" class="inp-text-short" placeholder="nap"  max="31" min="0" id="vs_dd">
+		 <input type="number" class="inp-text-short" placeholder="óra"  max="24" min="0" id="vs_h">
+		 <input type="number" class="inp-text-short" placeholder="perc" max="60" min="0" id="vs_m">
+		 <br>
+	<input type="radio" name="hosz" checked="true"> Amíg nem törlöd		
+    <div style="height:69px">&nbsp;</div>
+	</div>		
+	  <footeri class="ok-footer" id="okf" onclick="sendme();">
+    	<img src="http://rontap.netne.net/tahr/ok.png" width="30px">
+    	Kérdés közzététele
+    </footeri>		
+			
+    <script>
+      function endlogin(data)
+      {
+        sendme();
+      }
+      function loginWithLapis()
+      {
+        lapis.showform(endlogin);
+      }
+    
+		function changeto(mita) 
+		{
+		  a=document.getElementsByTagName("textarea")[mita].value.length;
+		  window['ou'+mita].innerHTML=142-a;
+		  if (window['ou'+mita].innerHTML<42)
+		  {
+		  	window['ou'+mita].style.color="hsl("+(window['ou'+mita].innerHTML)+",100%,40%)";
+		  	window['ou'+mita].style.background="white";
+		  }
+		  else {
+		  	window['ou'+mita].style.color="black";
+		  	window['ou'+mita].style.background="white";
+		  }
+		  if (window['ou'+mita].innerHTML<=0)
+		  {
+		  	window['ou'+mita].style.color="white";
+		  	window['ou'+mita].style.background="hsl(1,100%,40%)";
+		  }
+		}
+		/*count=0;
+		maxcount=6;
+		for (i=0;i<99;i++)
+		{
+			gr.innerHTML+='<span id="ispan'+i+'"></span>';
+		}*/
+		var indraw=false;
+		interval=setInterval(function(){
+			if(window['$']!=undefined && ! indraw)
+			{
+				indraw=true;
+				
+				$.get('http://elemential.net/versus/app/themes.php',function(data){
+					data=JSON.parse(data);
+					if(data.errno==2)
+					{
+						loginWithLapis('http://elemential.net/versus/app/login.php');
+					}
+					else if(data.errno)
+					{
+						rjsx.notify(data.message,'red');
+						console.error(data);
+					}
+					else
+					{
+						for(i=0;i<data.result.length;i++)
+						{
+							themeholder.innerHTML+='<option value="'+data.result[i]['id']+'">'+data.result[i]['name']+'</option>';
+						}
+					}
+				});
+				
+				lapis.init('http://elemential.net/versus/app/login.php');
+        lapis.json=true;
+				
+				clearInterval(interval);
+				indraw=false;
+			}
+		},1);
+		function sendme()
+		{
+			sendless={'lang':'hu'};
+			sendless['question']=vs_q.value;
+			sendless['desc']=vs_d.value;
+			sendless['yesdesc']=vs_y.value;
+			sendless['nodesc']=vs_n.value;
+			sendless['tid']=themeholder.value;
+			tags=vs_t.value.split(",");
+			for(i=0;i<5;i++)
+			{
+				if(tags[i]!=undefined)
+				{
+					sendless['tag'+i]=tags[i];
+				}
+			}
+			sendless['end']=0;
+			if(endholder.checked)
+			{
+				sendless['end']=new Date().getTime()+(((Number(vs_m.value)*60+Number(vs_h.value))*24+Number(vs_dd.value))*30)+Number(vs_mm.value);
+			}
+			$.post('http://elemential.net/versus/app/wizard.php',sendless,function(data){
+				console.log(data);
+				data=JSON.parse(data);
+				if(data.errno==2)
+				{
+					loginWithLapis('http://elemential.net/versus/app/login.php');
+				}
+				else if(data.errno)
+				{
+					rjsx.notify(data.message,'red');
+					console.error(data);
+				}
+				else
+				{
+					location.href='versus.html?action=question&q='+data.qid;
+				}
+			});
+		}
+    </script>
+    
+    <style>
+    	#ou0 ,#ou1,#ou2 {
+    		border-radius:4px;
+    		text-align:center;
+    		-webkit-transition:all .6s;
+    	}
+    	textarea {
+			/*  */
+			width:240px;
+			height:45px;
+		  }
+		  #gr .tag {
+			  /*  */
+			  margin-top:10px;
+			}
+			#gr {
+				box-shadow:0 0 5px #999;
+				padding:0 10px 10px 10px;
+				margin:5px;
+			}
+			#gr:empty {
+				/*  */
+				display:none;
+		}
+    </style>
+        <script src="master.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="master.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    <script src="http://rontap.netne.net/tahr/main.js" type="text/javascript"></script>
+    </Body>
+</HTML>
+
+

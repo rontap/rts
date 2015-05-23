@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<HTML >
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="http://tahr.rontap.netne.net/main.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    <link rel="stylesheet" href="http://elemential.net/lapis/lapisclient.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+  </head>
+  <body>
+    <div style="margin: 0 10%">
+    
+      
+<div id="lapis_form">
+  <center><img src="http://elemential.net/lapis/lapis.png">
+  </center>
+ <div id="lapis_wrapper">
+   <div id="lapis_box">
+      <span id="lapis_errorfield" onClick="lapis.closeerror()"></span>
+     <div class="lapis_header">
+       <h4>
+            Még egy lépés
+        </h4>
+      </div>
+      
+     <center> Meg kell adnod még kettő információt a regisztáció véglegesítéséhez
+     <br><br>
+     <b class="ubuntu">Nemed?</b><br>
+        <input type="radio" name="a" id="vs_male"/> Férfi
+        <input type="radio" name="a" id="vs_female"/> Nő<br>
+      <br>
+      <b class="ubuntu">Mikor születtél?</b><br>
+        <input type="number" placeholder="év" min="1900" max="2010" id="vs_yy"/>
+        <input type="number" placeholder="hó" min="1" max="12" id="vs_mm"/>
+        <input type="number" placeholder="nap" min="1" max="31" id="vs_dd"/>
+     
+        <input type="submit" value="Regisztráció befejezése" onclick="lapis.closeform()" id="lapis_regbutton" style="margin-bottom:5px;">
+       <br> <small style="display:block;margin:0px 20px 10px 20px; "><grey>
+          Ezek az információk a részletes elemzéshez kellenek, nem adjuk tovább harmadik félnek. Senki sem látja azt hogy
+          te pontosan mire szavaztál, csak azt hogy valaki szavazott rá, aki mondjuk férfi.
+      </grey></small>
+      </center>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <script>
+      function sendRegData()
+      {
+        born=new Date(vs_mm.value+'/'+vs_dd.value+'/'+vs_yy.value).getTime();
+        console.log(born);
+        gender=vs_male.checked ? 0 : false;
+        gender=vs_female.checked ? 1 : gender;
+        if(gender===false)
+        {
+          rjsx.notify('Legalább egy nemet meg kell adni','red');
+        }
+        else
+        {
+          $.get('http://elemential.net/versus/app/regend.php?gender='+gender+'&born='+born,function(data)
+          {
+            data=JSON.parse(data);
+		        if(data.errno==2)
+		        {
+			        loginWithLapis('http://elemential.net/versus/app/login.php');
+		        }
+		        else if(data.errno)
+		        {
+			        rjsx.notify(data.message,'red');
+			        console.error(data);
+		        }
+		        else
+		        {
+		          location.href=data.url;
+		        }
+          });
+        }
+      }
+     
+    </script>
+    <style>
+     input:focus {
+      border-radius:0 !important;
+      }
+    </style>
+  </body>
+</HTML>
+
+

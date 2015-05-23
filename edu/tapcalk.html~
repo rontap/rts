@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="http://rontap.elemential.net/logos/tc.ico" />
+		<script src="calknew.js" type="text/javascript"></script>
+	<!--	<script src="http://rontap.elemential.net/goog.js" type="text/javascript"></script>-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<link rel="stylesheet" href="../rontap/main.css">
+<link rel="stylesheet" href="../rontap/fancy.css">
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="fancy.css">
+<style>
+
+</style>
+		<title>tapcalk  4  </title>
+		<meta name="description" content="" />
+		<meta name="author" content="rontap"  id="rjsx_footer">
+		<script>
+		sited="ttest.html";
+		navname="TapCalk 4"; //hogy jelenik majd meg
+		navplus="számológép";
+		coa=false;		
+		pack="rontap.mainHelp/tapcalk2";
+		moretag=false;
+		//holvan
+		manimg="calc.png";
+		rjsx_nonev2="true";
+		rjsxlocation="http://rontap.netne.net/millenium/";
+		rjsxThemeOnSite=0;
+		//rjsxlocation="../rontap/"
+		rjsxfooter=false;
+		/*$.each($('.omenu'), function(i, el){//animation
+    $(el).css({'opacity':0.1});
+    setTimeout(function(){
+       $(el).animate({
+        'opacity':.8
+       }, 150);
+    },10 + ( i * 100 ));
+
+});*/
+		</script>
+		
+	
+	</head>
+
+<div id="navbar" >
+
+</div> 
+	
+	<body >
+
+
+<div id="body">
+	
+
+<br>
+
+<!--[if IE]>
+<h1 class="iekill">sajnos ez a weblap nem tekinthető meg Internet Explorerrel. :(<br>tölts le egy gyorsabb és biztonságosabb böngészőt, a Google Chromeot</h2>
+<![endif]-->
+<comment>
+<!-- Place this tag in your head or just before your close body tag. -->
+
+
+<!-- Place this tag where you want the +1 button to render. -->
+
+
+
+<div id="tnav">
+	<container id="tcn">
+	<br>
+	<input class="btn-menu" placeholder="Keresés..." onkeyup="kutat(ker.value)" id="ker" style="width: 73%;margin-left: -5px">
+	<a  href="#alapmuveletek">
+			<button class="btn-menu">alapműveletek </button>
+	</a ><br>
+	<a href="#sorozatok">
+			<button class="btn-menu">sorozatok</button>
+	</a><br>
+	<a href="#atlag">
+			<button class="btn-menu">átlagok</button>
+	</a><br>
+	<a href="#primszamok">
+			<button class="btn-menu">prímszámok</button>
+	</a><br>
+	<a href="#atvaltas">
+			<button class="btn-menu">átváltások</button>
+	</a><br>
+	<a href="#szamrendszerek">
+			<button class="btn-menu">számrendszerek</button>
+	</a><br>
+	<a href="#oth">
+			<button class="btn-menu">egyéb</button>
+	</a><br>
+	<a href="#">
+			<button class="btn-menu">előzmények</button>
+	</a><br><hr>
+	
+	<button class="btn-menu tc" onClick="document.location='tapcalk.html'">TapCalk</button><br>
+
+	<button class="btn-menu gc" onClick="document.location='euclidean.html'">Geometria</button><br>
+	
+	<button class="btn-menu fc" onClick="tapcalk.set()">Beállítások</button><br>
+	<hr>
+	<blue><b>TapCalk 4 <br></b></blue><br>
+	
+	<!--Developer version 37b<br>
+	4.4.7<br>-->
+	4.6.5 <br>
+	<b><r>Happy Holidays!</r></b>
+	</container>	
+	<container id="tco">
+		<div class="omenu" onClick="fillt('formula');">Írd be! <span class="keyhint">0</span></div>
+	<hr style="margin-top:0px;">
+	<div id="alapmuveletek" class="otitle" >alapműveletek</div>
+		<div class="omenu" onClick="fillt('add');">kivonás/összeadás <span class="keyhint">1</span></div>
+		<div class="omenu" onClick="fillt('szor');">szorzás/osztás <span class="keyhint">2</span></div>
+		<div class="omenu" onClick="fillt('gyok');">gyökvonás <span class="keyhint">3</span></div>
+		<div class="omenu" onClick="fillt('negyz');">hatványozás <span class="keyhint">4</span></div>
+		<div class="omenu" onClick="fillt('besz');">kiemelés/beszorzás <span class="keyhint">5</span></div>
+		<div class="omenu" onClick="fillt('toa');">tömeges összeadás <span class="keyhint">6</span></div>
+		<div class="omenu" onClick="fillt('fakt');">faktoriális <span class="keyhint">F</span></div>
+		
+	<hr><div id="sorozatok" class="otitle">sorozatok</div>
+		<div class="omenu" onClick="fillt('szamtani');">számtani <span class="keyhint">7</span></div>
+		<div class="omenu" onClick="fillt('mertani');">mértani</div>
+		<div class="omenu" onClick="fillt('gorbe');">görbe</div>
+		<div class="omenu" onClick="fillt('fibo');">fibonacci</div>
+		<div class="omenu" onClick="fillt('negyzet');">négyzetszámok</div>
+		<div class="omenu" onClick="fillt('spin');">spinkvantmszám</div>
+		
+	<hr><div id="geometria"class="otitle">geometria</div>
+		<div class="omenu" onClick="fillt('sintg');">szögfüggvények (sin) <span class="keyhint">S</span></div>
+<!--		<div class="omenu">háromszög magassága</div>
+		<div class="omenu">háromszög területe</div>
+		<div class="omenu">pitagoras tétel</div>
+		<div class="omenu">kör kerülete</div>
+		<div class="omenu">kör területe</div>
+		-->
+	<hr><div id="atlag"class="otitle">átlagok</div>
+		<div class="omenu" onClick="fillt('atlszam');">számtani közép (aritmetikai) <span class="keyhint">K</span></div>
+		<div class="omenu" onClick="fillt('atlmer');">mértani közép (geomatriai)</div>
+		<div class="omenu" onClick="fillt('atlhar');">harmónikus közép (reciprok)</div>
+		<div class="omenu" onClick="fillt('atlneg');">négyzetes közép</div>
+		
+	<hr><div id="primszamok" class="otitle">prímszámok</div>
+		<div class="omenu" onClick="fillt('primis');">prím-e a szám</div>
+		<div class="omenu" onClick="fillt('primlist');">prímek listázása</div>
+		<div class="omenu" onClick="fillt('primfel');">prímtényezős felbontás <span class="keyhint">8</span></div>
+
+	<hr><div id="atvaltas" class="otitle">átváltások</div>
+		<!--<div class="omenu" onClick="fillt('');">hossz (m,yard)</div>
+		<div class="omenu" onClick="fillt('');">terület (m<sup>2</sup>, ár)</div>
+		<div class="omenu" onClick="fillt('');">térfogat (m<sup>3</sup>)</div>	-->
+	
+	<hr><div id="szamrendszerek" class="otitle">számrendszerek</div>
+		<div class="omenu" onClick="fillt('szamrend');">átváltás <span class="keyhint">A</span></div>
+		<!--<div class="omenu">műveletek végzése</div>
+		<div class="omenu">színek</div>	-->
+<!--<select class="inp-text atv" >
+  <optgroup label="SI">
+    <option value="saab">milliméter</option>
+    <option value="saab">centiméter</option>
+    <option value="volvo">méter</option>
+    <option value="saab">kilométer</option>
+    <option value="saab">nanométer</option>
+    
+  </optgroup>
+  <optgroup label="nem SI">
+    <option value="mercedes">mérföld</option>
+    <option value="audi">kaliber</option>
+    <option value="audi">láb</option>
+    <option value="audi">inch (hüvelyk)</option>
+    <option value="audi">yard</option>
+  </optgroup>
+</select>	-->
+	<hr><div id="oth" class="otitle">egyéb</div>
+		<div class="omenu" onClick="fillt('mesel');">Mindent a szám-ről <span class="keyhint">9</span></div>
+		<div class="omenu" onClick="fillt('random');">véletlenszerű szám</div>
+		<div class="omenu" onClick="fillt('kamat');">kamatszámító</div>
+		<div class="omenu" onClick="fillt('masodfok');">masodfok</div>
+		<div class="omenu" onClick="fillt('pir');">pireneusi számok</div>
+		<div class="omenu" onclick="fillt('pi'); ">&pi; (pi)</div>
+		<div class="omenu">√2 (gyök kettő)</div>		
+
+		
+	<br><br><br><br><br>
+	</container>	
+	
+		
+</div>
+
+
+
+	<div id="tmain" onresize="alert(yo);">
+	<button class="btn-b" style="right:20px;position:fixed;" onClick="calkr()" onselectstart="return false">Számold</button>
+	
+	
+		<div id="tfill">
+			<br>
+			<h2>Üdvözlünk a TapCalk4-ben!</h2>
+			<p class="p">
+			Ez a számológép az alapűveleteken túl<wbr> bonyolultabb műveletek és összefüggések kiszámítására is használható.<wbr> Így akár a házifeladat megoldásában ; akár otthoni, munkahelyi feladatok megoldásában segít.
+			<br>
+			<span style="color:#26F;">Használat :</span><br>
+			A második oszlopban lehet kiválasztani a műveletet, amit el szeretnél végezni.<br>
+			A könnyebb eligazodás érdekében csoportokra szedtük a funkciókat.<br>
+			Kérünk vedd vigyelembe, hogy ez még béta stádiumban van, bárhol előfordulhatnak hibák!<br> 
+			</p>
+			Kellemes kalandozást kíván a matematika világában az
+			 <span style="color:#8B5;" title="Aki ezt a szotvert készítette!">Elemential </span>!
+		</div>
+	
+	</div>
+		<div id="treganwser"></div>
+	
+		
+	<div id="histh">
+		<hr style="margin-top: 0;"><div  class="otitle">számok</div>
+		<div id="hist">
+		</div>
+		
+		</div>
+		
+	<div id="infopanel">	
+		<hr style="margin-top: 0;"><div  class="otitle">A műveletről</div>
+		<div id="infopanell">
+		</div>
+	</div>
+	<span id="dataf"></span>
+</comment>
+
+
+<script>
+function dragStart(ev) {
+   ev.dataTransfer.effectAllowed='move';
+   ev.dataTransfer.setData("Text", ev.target.getAttribute('id'));
+   ev.dataTransfer.setDragImage(ev.target,0,0);
+   return true;
+}
+function dragEnter(ev) {
+   event.preventDefault();
+   return true;
+}
+function dragOver(ev) {
+    return false;
+}
+function dragDrop(ev) {
+   var src = ev.dataTransfer.getData("Text");
+   ev.target.value=window[src].innerHTML;
+   ev.stopPropagation();
+   return false;
+}
+
+
+
+</script>
+
+
+
+
+
+<style>
+r {color:#F44;}
+#terbox {
+margin-left:75px;
+}
+ #infopanel {
+position:absolute;
+bottom:0%;
+left:60.5%;
+width:39%;
+top:60%;
+margin-top:36px;
+border:1px solid #48F;
+overflow:hidden;
+
+}
+#infopanell {
+padding-left:10px;
+overflow-y:scroll;
+height:65%;
+}
+ #histh {
+position:absolute;
+bottom:0%;
+left:40.5%;
+width:20%;
+top:60%;
+margin-top:36px;
+border:1px solid #48F;
+overflow:hidden;
+
+}
+#hist hr {
+margin-top:0px;
+margin-top: 0;
+}
+#hist {
+overflow-y:scroll;
+position:static;
+padding:0 5px 0 5px;
+text-align:center;
+height:70%;
+box-shadow:0px 0px 5px #DDD inset ;
+z-index:1;
+}
+#hist .otitle {
+position:fixed;
+padding:5px 0 5px 0 ;
+margin:-5px;
+}
+#hist .btn-menu {
+overflow:hidden;
+}
+body {
+background:#DDD;
+}
+.omenu {
+padding-left:5%;
+font-size:18px;
+padding:5px;
+border-right:2px solid #48F;
+-webkit-transition:border 0.2s, background 0.2s ,opacity .4s, height .4s, padding .3s;
+min-height:23px;
+overflow: hidden;
+overflow-y: ;
+}
+.omenu:hover {
+background:#48F;
+cursor:pointer;
+}
+.otitle {
+
+text-align:center;
+padding-left:20%;
+padding-right:20%;
+font-size:20px;
+background:#6AF;
+padding-bottom:10px;
+margin-bottom:10px;
+}
+
+containter {
+position:fixed;
+top:35px;
+}
+#tcn {/*nav*/
+position:fixed;
+width:15%;
+
+height:94%;
+top:35px;
+left:0;
+text-align:center;
+}
+#tco {/*navcentraloptions*/
+position:fixed;
+width:25%;
+border:1px solid #26F;
+height:94%;
+top:35px;
+left:15.3%;
+overflow-y:scroll;
+
+}
+#tmain {
+position:absolute;
+border:1px solid black;
+left:40.5%;
+right:0;
+height:60%;
+top:35px;
+overflow-y:scroll;
+
+}
+
+#tcn a {
+text-decoration:none;
+color:black;
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.btn-menu {
+width:80%;
+text-align:center;
+}
+#tcontent {
+margin-left:40.5%;
+}
+#treganwser {
+
+margin-left:42%;
+font-size:23px;
+
+}
+.inp-text {
+width:175px;
+z-index:9999;
+}
+#tfill {
+z-index:999;
+
+margin:10px;
+}
+#tmain .btn-menu {
+width:120px;
+
+}
+#tco hr , #histh hr, #infopanel hr{
+border:1px solid #26F;
+background:#26F;
+margin-bottom:0px;
+}
+.tc {
+border:1px solid #48F;
+}
+.fc {
+border:1px solid #F44;
+}
+.kc {
+border:1px solid #F84;
+}
+.gc {
+border:1px solid #49C42E;
+}
+.gc:hover {
+background:#49C42E;
+}
+.tc:hover {
+background:#48F;
+}
+.fc:hover {
+background: #F44;
+}
+.kc:hover {
+background:#F84;
+}
+#imgs {
+position:relative;
+}
+select.atv {
+-webkit-transition:border-radius 0.2s;
+
+}
+select.atv:active {
+border-bottom-left-radius:0px;
+border-bottom-right-radius:0px;
+}
+ @import url(http://fonts.googleapis.com/css?family=Ubuntu);
+h2 {
+font-family: 'Ubuntu', sans-serif;
+color:#444;
+}
+@media (max-height: 600px) {
+	#tcn {
+		overflow-y:scroll;
+	}
+}
+@media (max-width: 750px) {
+	#tco {
+		left:0;
+		width:40.5%;
+	}
+	#tcn {
+		
+		display:none;
+	  }
+}
+@media (max-width: 600px) {
+	#infopanel,#histh {
+		position:inherit;
+		display:none;
+	}
+	#tmain {
+		height:90.5%;
+	}
+}
+@media (max-width: 400px) {
+	#infopanel,#histh {
+		position:inherit;
+		display:inherit;
+	}
+	#tmain,#infopanel,#histh,#tco {
+		position:static;
+	}
+}
+@media  (max-height: 400px) and (min-width: 850px)
+{
+	#histh {
+		left:80%;
+			right:0;
+			top:0;
+				width:20%;	
+				height: 50%;
+	  }
+	#infopanel {
+		left:80%;
+		right:0;
+		top:50%;
+		width:20%;
+	  }
+	 #tmain{
+	 	right:20%;
+	 	height:90%;
+	 }
+	 #tmain .btn-b {
+		 /*  */
+		 right: 22% !important;
+	   }
+} 
+.keyhint {
+font-size: 15px;
+text-align: right;
+float: right;
+background: rgb(153, 153, 153);
+padding: 1px 3px 1px 3px;
+border-radius: 3px;
+color: rgb(68, 68, 68);
+-webkit-transition: opacity .6s, background .4s, color .4s;
+opacity:0;
+}
+.omenu:hover .keyhint {
+    /*  */
+    box-shadow:0px 0px 3px #888;
+    background: #666;
+    color:#000;
+   
+  }
+ #tco, #histh, #infopanel, #tmain {
+ -webkit-transition:opacity .6s , top .5s, width .5s, left .5s, bottom .5s, right .5s;
+ }
+</style>
+	<!@RJSX alert()>
+
+
+	
+	<script>
+
+
+function a()
+{
+var correct = $('#cont');
+correct.addClass('nonev2style');
+}
+/*$.each($('.omenu'), function(i, el){//animation
+    $(el).css({'opacity':0.1});
+    setTimeout(function(){
+       $(el).animate({
+        'opacity':.8
+       }, 150);
+    },10 + ( i * 100 ));
+
+}
+)
+;*/
+var map = []; // Or you could call it "key"
+onkeydown = onkeyup = function(e){
+    e = e || event; // to deal with IE
+    map[e.keyCode] = e.type == 'keydown';
+    if( map[13] ){ // CTRL+SHIFT+A
+    calkr();
+      map=[];
+    }
+    if (map[17] && map[18] ) {
+    	setTimeout(function(){
+    		   for (i=0;$(".keyhint").length>i;i++)
+			    	{
+			    	$(".keyhint")[i].style.opacity=0.9;
+			    	}
+    		
+    	},100)
+    	
+    	setTimeout(function(){
+    		   for (i=0;$(".keyhint").length>i;i++)
+			    	{
+			    	$(".keyhint")[i].style.opacity=0;
+			    	}
+    		
+    	},4000)
+    }
+    if((map[17] && map[18] & map[96]) || (map[17] && map[18] & map[48])){ // CTRL+alt+0
+    	fillt('formula');   	 mapler();
+    }
+    else if((map[17] && map[18] & map[97]) || (map[17] && map[18] & map[49])){ // CTRL+alt+0
+    	fillt('add') ;  	 mapler();
+    }
+           else if((map[17] && map[18] & map[98]) || (map[17] && map[18] & map[50])){ // CTRL+alt+0
+    	fillt('szor') ;  	 mapler();
+    }
+     else if((map[17] && map[18] & map[99]) || (map[17] && map[18] & map[51])){ // CTRL+alt+0
+    	fillt('gyok') ;  	 mapler();
+    }
+     else if((map[17] && map[18] & map[100]) || (map[17] && map[18] & map[52])){ // CTRL+alt+0
+    	fillt('negyz');   	 mapler();
+    }
+  	 else if((map[17] && map[18] & map[101]) || (map[17] && map[18] & map[53])){ // CTRL+alt+0
+    	fillt('besz');   	 mapler();
+    }
+     else if((map[17] && map[18] & map[102]) || (map[17] && map[18] & map[54])){ // CTRL+alt+0
+    	fillt('toa') ;  	 mapler();
+    }
+      else if((map[17] && map[18] & map[103]) || (map[17] && map[18] & map[55])){ // CTRL+alt+0
+    	fillt('szamtani') ;  	 mapler();
+    }
+          else if((map[17] && map[18] & map[104]) || (map[17] && map[18] & map[56])){ // CTRL+alt+0
+    	fillt('primfel') ;  	 mapler();
+    }
+          else if((map[17] && map[18] & map[105]) || (map[17] && map[18] & map[57])){ // CTRL+alt+0
+    	fillt('mesel') ;  	 mapler();
+    }
+           else if(map[17] && map[18] && map[70]) { // CTRL+alt+0
+    	fillt('fakt') ;  	 mapler();
+    }
+               else if(map[17] && map[18] && map[83]) { // CTRL+alt+s
+    	fillt('sintg') ;  	 mapler();
+    }
+               else if(map[17] && map[18] && map[75]) { // CTRL+alt+s
+    	fillt('atlszam') ;  	 mapler();
+    }
+               else if(map[17] && map[18] && map[65]) { // CTRL+alt+a
+    	fillt('szamrend') ;  	 mapler();
+    }
+}
+function mapler() {//hinttörlés
+	   	setTimeout(function(){
+    		   for (i=0;$(".keyhint").length>i;i++)
+			    	{
+			    	$(".keyhint")[i].style.opacity=0;
+			    	}
+    		
+    	},100)
+	map=[];
+	
+}
+a();
+tapcalk= {};
+
+tapcalk.set = function() {
+infopanel.style.top="100%"
+infopanel.style.opacity="0";
+histh.style.top="100%"
+histh.style.opacity="0";
+tco.style.width="0"
+tco.style.opacity="0";
+tmain.style.left="15%";
+tmain.style.height="auto"
+tmain.style.bottom="0";
+
+setTimeout(function(){
+	histh.style.display="none";
+	infopanel.style.display="none";
+	tco.style.display="none";
+},500)
+return 'set';
+}
+
+tapcalk.unset = function() {
+
+
+
+
+	histh.style.display="block";
+	infopanel.style.display="block";
+	tco.style.display="block";
+setTimeout(function(){
+infopanel.style.top="60%"
+infopanel.style.opacity="1";
+histh.style.top="60%"
+histh.style.opacity="1";
+tco.style.width="25%"
+tco.style.opacity="1";
+tmain.style.left="40.5%";
+tmain.style.height="60%";
+},100);
+return 'set';
+}
+/*$.each($('.omenu'), function(i, el){//animation
+    $(el).css({'opacity':0.1});
+    setTimeout(function(){
+       $(el).animate({
+        'opacity':.8
+       }, 150);
+    },10 + ( i * 100 ));
+
+);*/
+</script>
+
+	<script src="main.js" type="text/javascript"></script>
+	<script src="../rontap/main.js" type="text/javascript" onload="a()"></script>
+	
+	</body>
+
+</html>

@@ -1,0 +1,39 @@
+/*HOLO*/
+.focim {
+background: #999;
+color:black;
+}
+body {
+background:#444 !important;
+color:#DDD !important;
+}
+.ter a {
+color:#DDD;
+}
+#navv3 {
+background: #666;
+
+}
+#aholder a div{
+color:#DDD;
+}
+img.box.boxyt {
+background: #444 !important;
+}
+.btn-menu {
+background:transparent;
+}
+.ptext {
+background: #aaa;
+color: #222;
+}
+.ptitle {
+background: #666;
+}
+pre {
+border-left: 2.6em solid #666;
+}
+table:not(.norjsx) tr td:nth-child(2) {
+font-weight: 500;
+background: #555;
+}

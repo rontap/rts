@@ -1,0 +1,259 @@
+/*
+RONTAP RON-JAVASCRIPT-X  rjsx
+*/
+//-------------------------------------------------------------------------------
+//GLOBAL VAR'S
+//-------------------------------------------------------------------------------
+var coa;
+var specnav;
+brix=true;
+rjsx_ver ="2.9RC1";
+lognr=0;
+
+yo="It Works!";
+if (exists('specnav')==false)
+{
+console.log('[RJSX] RTS tagmake: Defaults');
+specnav=false;
+}
+
+if (localStorage.rts_color!='blue')
+{
+switch(localStorage.rts_color){
+case ('sarga') : body.innerHTML+='<style>body {background-color:hsl(25, 79%, 85%); }#focim{color:hsl(32, 100%, 50%); }#ter{background-image: -webkit-linear-gradient(top,hsl(32, 100%, 50%),hsl(30, 100%, 40%)); }#ter a:hover{background-image: -webkit-linear-gradient(top,hsl(30, 100%, 40%),hsl(32, 100%, 50%)); }</style>';break;
+case ('feher') :body.innerHTML+='<style>/*FEHER*/body {background-color:#EEEEEE; }#focim{color:#444; }#ter {background-image: -webkit-linear-gradient(top,#DDD,#AAA);}#ter a { color:#222; }#ter a:hover{background-image: -webkit-linear-gradient(top,#AAA,#DDD); }</style>';break;
+case ('fekete') :body.innerHTML+='<style>/*FEKETE*/body {background-color:#333; color:white;}#focim{color:#EEE; }#ter {background-image: -webkit-linear-gradient(top,#DDD,#AAA);}#ter a { color:#222; }#ter a:hover{background-image: -webkit-linear-gradient(top,#AAA,#DDD); }</style>';break;
+case ('lila') :body.innerHTML+='<style>/*LILA*/body {background-color:hsl(259, 42%, 65%); color:black;}#focim{color:hsl(259, 32%, 35%); }#ter{background-image: -webkit-linear-gradient(top,#994BD5,#883BC5); }#ter a:hover{background-image: -webkit-linear-gradient(top,hsl(30, 100%, 40%),hsl(32, 100%, 50%)); }</style>';break;
+	}
+}
+//$rdr redirect
+//-------------------------------------------------------------------------------
+//NEW CODE 2.1+------------------------------------------------------------------
+
+function $STDall(run) {//KILLCODE
+
+	if (run==true)
+	{
+		body.innerHTML='<h1>Végzetes hiba történt a program futása közben.</h1>A program a további károk elkerülésének végett leállította magát.<br> Sajnáljuk, a munkája elveszett<br>Javaslatok: Frissítse a ';
+		body.innerHTML+='<a href="" onclick="body.innerHTML=converted;"><b>Weboldalt</b></a><hr>RJSX '+rjsx_ver;
+		console.error("[RJSX][ERROR] fatal error, quitting code NOW.");
+	}
+}
+function $rdr(sitename) {//redirect to site
+	document.location=sitename+'.html';
+}
+//exists rjsx2.6
+//LÉTEZIK-E HA IGEN AKKOR TRUE HA NEM AKKOR FALSE
+function exists(call) {
+window[call];
+if (window[call]!=undefined)
+	{
+	return true;	
+	}
+else 
+	{
+	return false;
+	}
+}
+	
+//X-FUNCTION
+	function x(run)
+	{
+	run.innerHTML="";
+	}
+	
+	function gox(cal)//atiranyitas
+	{
+	document.location=cal;
+	}
+
+//-------------------------------------------------------------------------------
+//APIS
+//-------------------------------------------------------------------------------
+//RJSX COMPATIBLE AGENT 
+	if (exists('manimg')==false)
+	{
+	
+	appver="RJSX\n TAPIS/main windows ";
+		sited="ver.html";
+		//navname="Rontap Weboldal"; //hogy jelenik majd meg
+		navplus="-";
+		coa=false;		
+		pack="rontap.mainHelp/rjsx";
+		moretag=true;
+		//holvan	
+		//chg1="Fizcalk";
+		manimg='f_icons/web.png';
+		console.log('defaultmainimg');
+	}
+//LOG
+	console.info('[RJSX] initialized. ver:'+rjsx_ver);
+	function log(call) 
+	{
+		lognr++;
+		rjsxlog[lognr]=call;
+	}	
+	/*if (navigator.appName == "Microsoft Internet Explorer") {//IEKill
+        document.location = "ie.html"; 
+	}*/
+
+
+	function logprint() 
+	{
+	alt="";
+		for (i=0;i<rjsxlog.length;i++)
+		{
+			alt+=rjsxlog[i];
+			alt+='\n';
+		}
+	alt+="rjsxlog.event:acces.log\n";
+	alert(alt);
+	}
+
+//RND-FUNCTION EXPORTED TO RANDOM.RJSX
+//wait:folyamatjelző. lehet üres is
+
+//-------------------------------------------------------------------------------
+//CODE START HERE
+//-------------------------------------------------------------------------------
+ //--RTS TAGMAKE
+ if (moretag==true)
+	{
+	console.info('[RJSX] RTS tagmake');
+	
+	insert=' <link rel="stylesheet" type="text/css" href="rtsapiCSS.css">';
+	
+	body.innerHMTL+=insert;
+	
+	newrtsdata=' <link rel="stylesheet" type="text/css" href="newrtsapi.css">';
+	//newrtsdata+=' <link rel="stylesheet" type="text/css" href="rts.css">';
+	newrtsdata+='<div class="focim">';
+	
+	newrtsdata+='<div id="nev2">';
+	
+			newrtsdata+='<span id="nev22">';	
+				newrtsdata+='<span ><img src="'+manimg+'" id="rjsxlogo"  width="60px" alt="tapcalk-logo" ></span>';		
+			newrtsdata+='<span id="focim">'+navname+'</span>';
+			newrtsdata+='</span>';
+	newrtsdata+='</div>';
+	newrtsdata+='			<div id="ter">';
+	newrtsdata+='				<a href="start.html">Kezdőoldal</a>';
+if (specnav==false)
+	{
+	newrtsdata+='				<a href="webnotes_a2/WN_A2.html">WebNotes Kezdőoldal</a>';
+	newrtsdata+='				<a href="szemkieg2.html">rontapparty</a>';
+	newrtsdata+='				<a href="tapcalk.html" >tapcalk</a>';
+	}
+else {newrtsdata+=specnav;}
+	newrtsdata+='				<img src="gear.png" alt="beállítások" class="options">';
+	newrtsdata+='		<img src="keres.png" alt="beállítások" class="options"  id="et_last_option">';
+	newrtsdata+='			</div>		';				
+	newrtsdata+='		</div><br>';
+	
+
+							
+					text=body.innerHTML;	
+					converted=text.replace(/<rts>/g,newrtsdata);		
+					body.innerHTML=converted;
+			
+	}
+	//--RTAS COLLAPSE/INAPSE
+
+//EXTERNAL APIS
+
+//VERSION HISTORY
+/*++added use in package
+*/
+//-------------------------------------------------------------------------------
+//
+//-------------------------------------------------------------------------------
+
+
+
+//GEN.DATE/ABOUT
+//$ FUNCTIONS NEED 2BE PORTED 2 ROPI
+function $CloseAlert() {
+
+generalalert.innerHTML='';
+
+} 
+//1:OK
+//2:OK-VISSZA
+//3:OK-MEGSE
+//4:OK-MEGSE-UJRA
+function $DrawAlert(cim,szoveg,gomb,funkcio)//RAJZOL ALERT 
+{
+say='szia';
+say='<span id="generalalert" onkeydown="enter(event)" class="ui-widget-content">';
+say=say+'<div class="oualert" id="oualert">';
+say=say+'			<div class="alert">';
+say=say+'				<div id="cimalert">';
+say=say+				cim				;
+say=say+'				</div>';
+say=say+'					<hr class="hralert">';
+say=say+'				<div id="mainalert">';
+say=say+				szoveg;
+say=say+'				</div>';
+say=say+'					<hr class="hralert">';
+say=say+'				<div id="btnalert_container">';
+say=say+'		<span class="btnalert" id="ok-alert" onClick="'+funkcio+'$CloseAlert();">OK </span>|';
+if (gomb==2)
+{
+	say=say+'				<input class="btnalert" id="back-alert"> |';
+}
+if (gomb>2)
+{
+	say=say+'					<span class="btnalert" id="no-alert"> Nem/Mégse </span>|';
+}
+if (gomb==3) 
+{
+say=say+'					<span class="btnalert" id="re-alert"> Újra </span>		';	
+}
+say=say+'				</div>';
+say=say+'			</div>';
+say=say+'	</div>';
+say=say+'	</span>';
+//DRAGGABLE
+  
+  
+body.innerHTML+=say;
+ 
+   // $( "#generalalert" ).draggable();
+  
+}
+function $$SetupDrawAlert() 
+{
+	cim="Beállítások";
+	szoveg="RJSX bekapcsolása:<input type='checkbox'> ";
+	szoveg+="<br>Effektek kikapcsolása:<input type='checkbox'>";
+	szoveg+="<br>Autómatikus átirányítás a legújabb weboldalra:<input type='checkbox'>";
+	
+	$DrawAlert(cim,szoveg,1,"funkcio");
+}
+//$$SetupDrawAlert();
+cim="alma";
+szoveg="lipsum";
+function enter(event) {
+        if (event.which == 13 || event.keyCode == 13) {
+           alert('alma');
+            return false;
+        }
+        return true;
+    };
+    function $EventProgress()
+	{
+	progbar.value=progbar.value+1;
+	
+	}
+	function $DrawSelButton(nev,on,id) {
+	box='<button  class="btn-b" id="'+id+'" onClick="'+on+'">'+nev+'</button>';
+	navleft.innerHTML+=box;
+	
+}//
+function not(call) {
+if (call) {return false;}
+else {return true;}
+}
+//focim.style.marginLeft="65px";
+
+

@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<HTML>
+    <Head>
+        <title>Versus #TAG</title>
+      <meta charset="UTF-8">
+        <meta name="author" content="TAP">
+      <meta name="description" content="rontap">
+        <meta name="keywords" content="rontap,linux,elemential,tapsite,rts,rjsx">
+
+    <script>
+        navname="jómagam"; //hogy jelenik majd meg
+        coa=false;      
+        moretag=true;
+        specnav=true;
+        rjsxlocation="http://rontap.netne.net/tahr/";
+        //holvan
+        manimg="http://rontap.netne.net/rontap/f_icons/config-users.svg";
+        specnav=true;
+		specnavi = ['kezdőlap','új kérdés hozzáadás','tag felhő','adatok beállítása'];
+		specnavil = ['index.html','wizard.html','','http://elemential.net/lapis.php'];
+	</script>
+    </Head>
+    <body id="body">
+    <rts></rts>
+		<container id="tags">
+			<div class="tag big" id="kerd">Az Én kérdéseim</div>
+		</container>
+		<div id="pers" style="padding-top:100px;">
+		<article >
+									
+			<header>
+							
+				Mind meghalunk?
+				<container class="tags">
+				<b><span class="tag">Ezotériaa</span></b>
+				<span class="tag">Jövő</span>
+				<span class="tag">halál</span>
+				<span class="tag">Matematika</span>
+				</container>
+			</header>
+				<div class="tart">
+				A maják megjósolták az eljövendő halált, nincs mit tenni, mind meg fogunk halni.
+				<div class="epik">
+					<img src="clock.svg" width="15px"/> 35 perc van hátra /
+					<img src="people.svg" width="20px"/> 5763 ember szavazott /
+					<img src="man.svg" width="15px"/> <span class="user">Kattints ide a menedzseléshez</span> 
+				</div>
+				  <table class="ratings">
+				    <tr>
+				      <td style="width:96%;"></td>
+				      <td style="background:#ed1b2e;"></td>
+				    </tr>				    
+				  </table>
+				</div>
+		</article> 
+		    
+		<article>
+			<header>
+				42+69 az tényleg 999?
+				<container class="tags">
+				<b><span class="tag">Tudás</span></b>
+				<span class="tag">windows</span>
+				<span class="tag">Matematika</span>
+				
+			</container>
+			</header>
+				<div class="tart">
+				elég érdekes felvetés.
+				<div class="epik">
+					<img src="clock.svg" width="15px"/> 7 óra van hátra /
+					<img src="people.svg" width="20px"/> 5763 ember szavazott /
+					<img src="man.svg" width="15px"/> <span class="user">Kattints ide a menedzseléshez</span> 
+				</div>
+				     <table class="ratings">
+                    <tr>
+                      <td style="width:42%;"></td>
+                      <td style="background:#ed1b2e;"></td>
+                    </tr>                   
+                  </table>
+				</div>
+		</article> 
+		</span>
+		<span class="arholder">
+		<article>
+			<header>
+				Melyik számrendszerben nagyobb a 2 mint a 3?
+				<container class="tags">
+					
+				<b><span class="tag">Tudás</span></b>
+				<span class="tag">Matematika</span>
+				<span class="tag">számrendszer</span>
+				
+				
+			</container>
+			</header>
+				<div class="tart">
+				tényleg van ilyen számrendszer
+				<div class="epik">
+					<img src="clock.svg" width="15px"/> 4 nap van hátra /
+					<img src="people.svg" width="20px"/> 3 ember szavazott /
+					<img src="man.svg" width="15px"/> <span class="user">Kattints ide a menedzseléshez</span> 
+				</div>
+				     <table class="ratings">
+                    <tr>
+                      <td style="width:69%;"></td>
+                      <td style="background:#ed1b2e;"></td>
+                    </tr>                   
+                  </table>
+				</div>
+		</article> 
+		
+		</div>
+		
+		
+		 <footeri class="ok-footer orange" id="okf" onclick="sendme();">
+    	<img src="clock.svg" width="30px" id="imgkep">
+    	<span id="texti">Előzmények</span>
+    </footeri>		
+		
+    <script>
+
+		setTimeout(function(){
+
+			var topos = $('#tags').position();
+			$(window).scroll(function () {
+			 		if ($(window).scrollTop() > topos.top) {
+						tags.style.boxShadow = "10px 0px 10px #999";
+				 	} else {
+				  		tags.style.boxShadow = "0px 0px 0px #999";
+			 		}
+					});
+
+		},3000);		
+
+    sendtrue=false;
+      function sendme() {
+        if (!sendtrue) {
+          sendtrue=true;
+		  pers.style.webkitAnimation="mymove 1s";
+          pers.style.webkitTransform=" rotateY(360deg)";
+		  
+
+		  imgkep.src="man.svg";
+          kerd.innerHTML="Előzmények";
+          texti.innerHTML="Az Én kérdéseim";
+        }
+        else {
+			
+		  pers.style.webkitAnimation="mymoveo 1s";
+          pers.style.webkitTransform=" rotateY(0deg)";
+			
+          sendtrue=false;
+          imgkep.src="clock.svg";
+          kerd.innerHTML="Az Én kérdéseim";
+          texti.innerHTML="Előzmények";
+        }
+      
+      }
+      
+      for (i=0;i<document.getElementsByClassName("user").length;i++) {
+        document.getElementsByClassName("user")[i].innerHTML="<a href='statistics.html' class='noa'>"+document.getElementsByClassName("user")[i].innerHTML+"</a>"
+      }
+      
+    </script>
+    <style>
+
+	@-webkit-keyframes mymove 
+	{
+	0%   {-webkit-transform:rotate3d(0,1,0,0deg);}
+	100% {-webkit-transform:rotate3d(0,1,0,360deg);}
+	}
+
+    @-webkit-keyframes mymoveo 
+	{
+	0%   {-webkit-transform:rotate3d(0,1,0,360deg);}
+	100% {-webkit-transform:rotate3d(0,1,0,0deg);}
+	}	
+	
+        
+    #pers {
+      -webkit-transition:all 2s;
+	  -webkit-perspective:5px;
+	  -webkit-perspective-origin:50% 40%;
+	  -webkit-backface-visibility:hidden;
+    }
+    .noa {
+    -webkit-transition: all .4s; 
+    
+    }
+    .noa:hover {
+    color:#FFF !important;
+    }
+
+	#tags {
+	-webkit-transition: box-shadow 0.5s;
+	}	
+
+    </style>
+     <script src="master.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="master.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    <link rel="stylesheet" href="rjsx.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    <script src="http://rontap.netne.net/tahr/main.js" type="text/javascript"></script>
+    </Body>
+</HTML>

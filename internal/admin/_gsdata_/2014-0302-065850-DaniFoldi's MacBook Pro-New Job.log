@@ -1,0 +1,15 @@
+2014-03-02 06:58:55: -- New Job: ANALYSIS started by GoodSync Start on 'DaniFoldi's MacBook Pro' (GoodSync 4.4.9.9)
+2014-03-02 06:58:55: gdocs://www.googleapis.com/Elemential PHP apps Sync [DirectDest] [ansi] <-> ftp://elemential.host22.com/public_html/admin, WaitForLocksMinutes=20, ResolveConflicts=NewerFileWins
+2014-03-02 06:58:59: L: Files: 13 (excluded 0). Folders: 0 (excluded 1). Google Drive, Free: 13.9 GB, Total: 15.0 GB
+2014-03-02 06:59:02: R: Files: 13 (excluded 0). Folders: 0 (excluded 1). FTP: --------- Welcome to Pure-FTPd [privsep] ----------You are user number 29 of 500 allowed.Local time is now 00:58. Server port: 2 ...
+2014-03-02 06:59:02: Changes: 0, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0
+2014-03-02 06:59:02: -- Analysis Completed. Time 00:00:12, Speed: 1 files/s
+2014-03-02 06:59:02: == New Job: SYNC started by GoodSync Start on 'DaniFoldi's MacBook Pro'
+2014-03-02 06:59:02: gdocs://www.googleapis.com/Elemential PHP apps Sync [DirectDest] [ansi] <-> ftp://elemential.host22.com/public_html/admin, WaitForLocksMinutes=20, ResolveConflicts=NewerFileWins
+2014-03-02 06:59:04: Save State File gdocs://www.googleapis.com/Elemential PHP apps Sync/_gsdata_/_file_state_v4._gs
+2014-03-02 06:59:06: Save State File ftp://elemential.host22.com/public_html/admin/_gsdata_/_file_state_v4._gs
+2014-03-02 06:59:10: Deleted Recycled: gdocs://www.googleapis.com/Elemential PHP apps Sync/_gsdata_/_saved_/.htaccess
+2014-03-02 06:59:15: Deleted Recycled: ftp://elemential.host22.com/public_html/admin/_gsdata_/_saved_/allapot.php
+2014-03-02 06:59:17: Items Synced OK: 0, Errors: 0
+2014-03-02 06:59:17: == Sync Completed. Time: 00:00:15, Speed: 4.4 KB/s
+2014-03-02 06:59:18: 

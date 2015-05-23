@@ -1,0 +1,22 @@
+2014-02-14 20:57:55: -- New Job: ANALYSIS started by Periodic Timer on 'DaniFoldi's MacBook Pro' (GoodSync 4.4.7.5)
+2014-02-14 20:57:55: gdocs://www.googleapis.com/Elemential PHP apps Sync [DirectDest] [ansi] <-> ftp://elemential.host22.com/public_html/admin, WaitForLocksMinutes=20, ResolveConflicts=NewerFileWins
+2014-02-14 20:57:59: Not using cached state file, because remote state file has changed since last Sync:
+State file: gdocs://www.googleapis.com/Elemential PHP apps Sync/_gsdata_/_file_state_v4._gs
+name=_file_state_v4._gs folder=0 link=0 file=1 attrs=0 size=13152 mod-time=2014-02-05 21:01:27 cre-time=2014-01-25 22:54:42 ab=0 dsply= cmnt= != 
+name= folder=0 link=0 file=0 attrs=0 size=-1 mod-time=(null-time) cre-time=(null-time) ab=0 dsply= cmnt=
+2014-02-14 20:57:59: Deleting old mirror state file (left by unfinished sync): /Users/DaniFoldi/.goodsync/_mirrors_/gdocs-www.googleapis.com-Elemential PHP apps Sync/_file_state_v4._gs
+2014-02-14 20:57:59: L: State file does not exist (bad local continuation): gdocs://www.googleapis.com/Elemential PHP apps Sync/_gsdata_/_file_state_v4._gs
+2014-02-14 20:57:59: L: Files: 13 (excluded 0). Folders: 0 (excluded 1). Google Drive, Free: 14.0 GB, Total: 15.0 GB
+2014-02-14 20:58:01: R: Files: 13 (excluded 0). Folders: 0 (excluded 1). FTP: --------- Welcome to Pure-FTPd [privsep] ----------You are user number 25 of 500 allowed.Local time is now 14:57. Server port: 2 ...
+2014-02-14 20:58:02: Changes: 0, Conflicts: 0, CopyTime: 0, CopyState: 2968/0, Errors: 0
+2014-02-14 20:58:02: Right to Left: Copy State: 2968 
+2014-02-14 20:58:02: -- Analysis Completed. Time 00:00:12, Speed: 1 files/s
+2014-02-14 20:58:02: == New Job: SYNC started by Periodic Timer on 'DaniFoldi's MacBook Pro'
+2014-02-14 20:58:02: gdocs://www.googleapis.com/Elemential PHP apps Sync [DirectDest] [ansi] <-> ftp://elemential.host22.com/public_html/admin, WaitForLocksMinutes=20, ResolveConflicts=NewerFileWins
+2014-02-14 20:58:04: Save State File 
+- ERROR: Cannot upload state file: Server says: Bad Request (status code 400)
+2014-02-14 20:58:05: Save State File ftp://elemential.host22.com/public_html/admin/_gsdata_/_file_state_v4._gs
+2014-02-14 20:58:05: Sync finished with 1 errors. Click Errors button to see sync errors
+2014-02-14 20:58:07: Items Synced OK: 2968, Errors: 1
+2014-02-14 20:58:07: == Sync Completed. Time: 00:00:05, Speed: 748.5 KB/s
+2014-02-14 20:58:08: 

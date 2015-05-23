@@ -1,0 +1,792 @@
+<!doctype html>
+<script src="../polymer/bower_components/platform/platform.js"></script>
+
+<html>
+
+<head>
+    <title>Veres Péter Ginázium</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta charset="UTF-8">
+   <center><h1>Loading VPG site...</h1><br>
+       
+       </center>
+    
+ <link rel="import" href="../polymer/bower_components/core-style/core-style.html">
+    <link rel="shortcut icon" href="vpg.png">
+      <link rel="import" href="../polymer/bower_components/core-collapse/core-collapse.html">
+    <link rel="import" href="../polymer/bower_components/core-animated-pages/core-animated-pages.html">
+    <link rel="import" href="../polymer/bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="../polymer/bower_components/core-menu/core-menu.html">
+    <link rel="import" href="../polymer/bower_components/core-item/core-item.html">
+    <link rel="import" href="../polymer/bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="../polymer/bower_components/core-header-panel/core-header-panel.html">
+    <link rel="import" href="../polymer/bower_components/core-drawer-panel/core-drawer-panel.html">
+    <link rel="import" href="../polymer/bower_components/core-icons/core-icons.html">
+    <link rel="import" href="../polymer/bower_components/core-icons/iconsets/communication-icons.html">
+    <link rel="import" href="../polymer/bower_components/paper-icon-button/paper-icon-button.html">
+    <link href="//fonts.googleapis.com/css?family=RobotoDraft:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet" type="text/css">
+    <link rel="import" href="../polymer/bower_components/paper-checkbox/paper-checkbox.html">
+    <link href="master.css" rel="stylesheet" type="text/css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+    <script src="data.js"></script>
+    <script src="jquery.fakecrop.js"></script>
+    <link href="https://raw.githubusercontent.com/nathansmith/unsemantic/master/assets/stylesheets/unsemantic-grid-responsive.css" rel="stylesheet" type="text/css">
+    <style>
+      
+    </style>
+
+</head>
+<!-- 
+document.querySelector('core-drawer-panel').togglePanel(); ->switch
+-->
+
+<body unresolved>
+
+    
+    <core-drawer-panel id="drawerPanel">
+
+        <core-header-panel drawer>
+            <core-toolbar id="navheader'">
+                <span>Menu</span>
+            </core-toolbar>
+            <core-menu>
+
+                <core-item label="Bemutatkozás"   onclick="goto('hello')"></core-item>
+                <core-item label="A tanév rendje"   onclick="goto('tanev')"></core-item>
+                <core-item label="Alapítvány"       onclick="goto('alapitvany')"></core-item>
+                <core-item label="Szakterületek"    onclick="goto('szakterületek')"></core-item>
+                <core-item label="Dokumentumok"     onclick="goto('dokumentumok')"></core-item>
+                <core-item label="Felvételi és Szülőknek"onclick="goto('tanev')"></core-item>
+                <core-item label="Iskolaorvos"      onclick="goto('iskolaorvos')"></core-item>
+                <core-item label="Kiadványaink és Könyvtár"onclick="goto('konyv')"></core-item>
+                <core-item label="Közétkeztetés (Menza)"onclick="goto('menza')"></core-item>
+                <core-item label="Közösségi szolgálat"onclick="goto('kozosseg')"></core-item>
+                <core-item label="Osztályok "      onclick="goto('osztalyok')" ></core-item>
+                <core-item label="Örökdiák Egyesület"onclick="goto('orokdiak')"></core-item>
+                <core-item label="Ökoiskola"       onclick="goto('okosuli')" ></core-item>
+                <core-item label="Tanárok"          onclick="goto('tanarok')"></core-item>
+                <core-item label="Tankönyv"         onclick="goto('tankonyv')"></core-item>
+            </core-menu>
+        </core-header-panel>
+
+        <core-header-panel main>
+            
+            <core-toolbar id="mainheader">
+                <paper-icon-button id="navicon" icon="menu"></paper-icon-button>
+                <span flex><span class="hideonout">Békásmegyeri</span> Veres Péter Gimnázium</span>
+                <paper-icon-button icon="search" role="button" tabindex="0" onmouseenter="document.querySelector('#toast1').show()"></paper-icon-button>
+                <paper-icon-button icon="today" role="button" tabindex="0"></paper-icon-button>
+                <paper-icon-button icon="help" role="button" tabindex="0"></paper-icon-button>
+            </core-toolbar>
+            <div class="content">
+
+               
+                <div id="menuelements">
+                    <div id="homex">
+                        <h1 class="away anorex">Üdvözöljük a Veres Péter Gimnázium frissített weboldalán!</h1>
+                        <h2 class="card inline-table away anorex">OM azonosító: <span id="oma">035226</span></h2><br>
+                        <img src="szepvpg.jpg" onload="">
+                        <iframe frameborder="0" height="400" width="100%" marginheight="0" marginwidth="0" scrolling="no" src="http://maps.google.hu/maps?f=q&amp;source=s_q&amp;hl=hu&amp;geocode=&amp;q=veres+p%C3%A9ter+gimn%C3%A1zium&amp;aq=&amp;sll=47.15984,19.500732&amp;sspn=3.167436,10.821533&amp;ie=UTF8&amp;hq=veres+p%C3%A9ter+gimn%C3%A1zium&amp;hnear=&amp;cid=566384920003203945&amp;ll=47.59864,19.052761&amp;spn=0.006945,0.013733&amp;z=16&amp;iwloc=A&amp;output=embed" width="640"></iframe>
+                        <iframe src="../blog/index.php" width="100%"  style="scroll:" id="myf"></iframe>
+                    </div>
+                    
+                    <div id="osztalyok" >
+                        <h1 class="away">Osztályok</h1>
+                        <div class="away" id="tapad">Elballagott osztályok mutatása  <paper-checkbox class="blue" role="checkbox" tabindex="0" aria-checked="true" checked style="margin-left:15px;vertical-align:-3px;" onclick="osztalyballag();"></paper-checkbox></div>
+                        <div class="away plate" id="fillosztalyok">
+                            
+                            </div>
+                        <div class="away plate" id="fillelballagotosztalyok">
+                            
+                            </div>
+                        
+                        </div>
+                    <div id="iskolaorvos">
+
+<div class="card away inline-table" id="io-alap">
+    <paper-ripple></paper-ripple>
+<table>
+<tr>
+    <td>Iskolaorvos:</td>
+    <td>Dr. Székely Zsuzsanna (csecsemő-és gyermekgyógyász)</td>
+</tr>
+<tr>
+    <td>
+       <svg viewBox="0 0 24 24" style="pointer-events: none; width: 24px; height: 24px; display: block;"><g id="call"><path d="M6.6,10.8c1.4,2.8,3.8,5.1,6.6,6.6l2.2-2.2c0.3-0.3,0.7-0.4,1-0.2c1.1,0.4,2.3,0.6,3.6,0.6c0.6,0,1,0.4,1,1V20c0,0.6-0.4,1-1,1C10.6,21,3,13.4,3,4c0-0.6,0.4-1,1-1h3.5c0.6,0,1,0.4,1,1c0,1.2,0.2,2.4,0.6,3.6c0.1,0.3,0,0.7-0.2,1L6.6,10.8z"></path></g></svg>
+    </td>
+    <td>06-20-971-4251</td>
+</tr>
+<tr>
+    <td>
+     
+            <svg viewBox="0 0 24 24" style="pointer-events: none; width: 24px; height: 24px; display: block;"><g id="email"><path d="M20,4H4C2.9,4,2,4.9,2,6l0,12c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V6C22,4.9,21.1,4,20,4z M20,8l-8,5L4,8V6l8,5l8-5V8z"></path> </g></svg>
+     
+    </td>
+    <td>szzsuzsa7@gmail.com</td>
+</tr>
+
+</table>
+</div>
+<div class="card away inline-table" id="io-rendeles">
+    <paper-ripple></paper-ripple>
+    <table>
+        <tr>
+            <td>Rendelési idő:</td>
+            <td>Hétfő: 8:00-10:30 Szerda: 12:30-14:30</td>
+        </tr>
+        <tr>
+            <td>Konzultációs lehetőség:</td>
+            <td>Előzetesen egyeztetett időpontban.</td>
+        </tr>
+    </table>
+</div>
+<br>
+        <div class="away lh2">
+            <h2>Gyógytorna</h2>
+           <p>Iskolánkban lehetőség van gyógytornára és gyógyúszásra. Az órák időpontjai a 2013/2014-as tanév során: gyógytestnevelés hétfőnként 15.15-16.45. <br>gyógyúszás péntekenként 13.00-16.30 Jelentkezés Varga Szilvia gyógytestnevelő tanárnál az órák időpontjaiban.</p>
+            <br>
+            
+            <h2>Kampányoltások</h2>
+            <p>Az iskolák 6.osztályában tanulók MMR újraoltásban (élő, gyengített kanyaró-mumpsz-rubeola vírust tartalmazó vakcinával) és Diphtéria-tetanusz-pertussis emlékeztető oltásban részesülnek.
+                <br> A 6. osztályosok először az MMR oltást fogják megkapni. Az oltás időpontja a 6.a és 6.b osztály esetén : 2013.09.20. (péntek)<br> A Diphtéria-tetanusz-pertusis emlékeztető oltás időpontja: 2013.11.08 (péntek 1. és 2. órában).</p><p> Az iskolák 7. osztályában tanulók Hepatitis B (májgyulladás) elleni védőoltásban részesülnek. Az immunizálás 2 oltásból áll, amit 6 hónapos különbséggel kapnak a tanulók. Aki már részesült Hepatitis B ( Engerix-B ) vagy Hepatitis A és B ( Twinrix ) elleni kombinált oltásban, azt kérjük majd írásban jelezni és az oltási dokumentációt bemutatni, mert az mentesül a védőoltás beadása alól.
+                <br> A 7.a osztály a hepatitis B elleni első védőoltást 2013.09.16-án kapták.<br> A 7.b osztály a hepatitis B elleni első védőoltást 2013.09.23-án kapták.<br> <bb>A védőoltásoknak abszolút ellenjavallata nincs.</bb> 
+                <br>Az általános oltási ellenjavallatok: lázas betegség, immunológiai károsodás, súlyos oltási szövődmény korábbi előfordulása (anafilaxiás reakció). Az oltás elhalasztása szükséges lázas betegség, tervezett műtét előtt és után 1 hónappal, illetve az immunrendszer működését befolyásoló gyógyszerek szedése esetén.</p>
+            <br>
+           <h2>Szűrővizsgálatok</h2>
+        <p>A szűrővizsgálatok tapasztalatai Szűrővizsgálatok ideje és célja Jelenlegi rendelet alapján a 6., 8., 10. és 12. évfolyamon történnek.<br> Célja: a megelőzés, illetve a kóros elváltozások mielőbbi felismerése és kezelése <i>(lenne)</i>. Hátráltató tényezők:<br>
+            <li>Időfaktor: a kóros elváltozások rövid idő alatt is kialakulhatnak.</li>
+            <li>Tanuló: az elváltozások kezdetben nem fájnak, ezért nem törődnek vele, gyakran felesleges macerának tekintik a kivizsgálást, a gyógytornát stb. </li>
+            <li>Szülő: nem mindig veszi komolyan a jelzést vagy nem tudja hová, illetve kihez forduljon, nem tud mit kezdeni, ha a gyermek pl. nem akar gyógytornára járni.</li>
+            <li>Szakorvos: nem mindig maximális a hozzáállása (pl.”majd kinövi”), a tájékoztatás hiánya (következmények ismeretének hiánya).</li>
+        </p>
+                <h3>Fizikális vizsgálat</h3>
+        <p>Súly- és magasság mérés, vérnyomásmérés, a látás vizsgálata, szívritmus és szívzörej megítélése,pajzsmirigy tapintásos vizsgálata, ortopédiai vizsgálat. Vizsgálati eredmények összegzése.<br>
+            Miért fontos az ortopédiai elváltozások időbeli kiszűrése és kezelése? 
+            <br>Felmérések szerint hazánkban a fiatalok mintegy 2/3-ad részében a gerinc valamilyen fokú rendellenességei megtalálhatók. A rossz tartás a növekedés befejeződésével rögzül és egy megfordíthatatlan folyamatú deformitás jön létre.<br>
+            <bb>Következménye</bb>: a kor előrehaladtával kopásos gerincbetegségek alakulnak ki és fájdalom jelentkezik. A porcok rugalmassága, és a gerinc terhelhetősége csökken. Idegek összenyomódhatnak, becsípődhetnek. Pl. a deréktájéki fájdalom a leggyakoribb kín, amellyel az emberek 80%-a szembenéz élete során.<br>
+            </p>
+            <h3>Tartási rendellenességek</h3>
+            A tartási rendellenességek kialakulása általában a testtartásért felelős izmok közötti egyensúly megbomlására vezethető vissza. A görbületek fokozódására mindaddig számítani kell, amíg a gyermekek csontérése be nem fejeződik.<br> <bb>Elősegítő tényezők</bb><br>
+            <li>a mozgásszegény életmód, rossz testtartás (izmok elfáradnak, túlterheli a gerincoszlopot)</li>
+            <li>gyenge hátizomzat (a gerincnövekedésével a hátizomzat fejlődése,erősödése nem tud lépést tartani)</li>
+            
+           <br>
+            <paper-tabs selected="0" onload="">
+              <paper-tab onclick="switchtab('io',0,3);">Gerincferdülés</paper-tab>
+              <paper-tab onclick="switchtab('io',1,3);">Scheuermann-betegség</paper-tab>
+              <paper-tab onclick="switchtab('io',2,3);">kezelés és megelőzés</paper-tab>
+            </paper-tabs>
+            
+            <container class="away tabholder" id="io-tab">
+            <div id="io-tab-0" class="paper-tab-element">Gerincferdülés oka: valamelyik alsó végtag rövidülése következtében kialakuló ferde medenceállás - veleszületett - fiatalkorban szerzett elváltozás (gyenge hátizomzat, gyors növekedés)<br> Következménye: a csigolyák és a csigolya közti porckorongok megterhelése egyenetlenné válik,a hátizmok igénybe vétele is rendellenes. Ezek porckopáshoz és izomfájdalomhoz vezetnek.</div>
+            
+            <div id="io-tab-1"  class="paper-tab-element">A Scheuermann-betegség domború hát (serdülőkori görbe hát) különleges formája. Serdülőkorban kezdődik és 20 éves kor körül befejeződik. Hátterében a csigolyatestek zárólemezének csontosodási zavara áll.<br> <bb>Lényege</bb>: hogy a serdülés során egy vagy több csigolya deformálódik (előre ék alakban megkeskenyedik) a háti és/vagy az ágyéki szakaszon. Előfordulása: elég gyakori, a serdülők 1-8% -át érinti.<br>A betegség pontos oka nem ismert. Genetikus hátterét tekintve autoszomális domináns öröklésmenetet tételeznek fel. Diagnózis: A gerinc oldalirányú röntgen felvétele.<br> I. stádium: (8-10 éves kortól) Hanyag tartási stádium (jellemő tünet a fáradékonyság)<br> II." florid" stádium (kb. 12-18 éves kor között) az érintett szakasz merevebbé válik és a fájdalom is megjelenik a nagyfokú fáradékonyság mellett.<br> III. vagy késői stádium: A növekedés befejeztével a deformitás még jobban rögzül. Fájdalom, mozgáskorlátozottság az érintett gerincszakaszon, derék - és hátfájdalom jelentkezhet, ami végigkísérheti az egész életét.
+            </div>
+            <div id="io-tab-2"  class="paper-tab-element">
+                Tartási rendellenesség kezelése: a tartási rendellenesség korrigálása, a szövődmények (kopásos, degeneratív betegségek) elkerülése, statikailag kiegyenlített, kompenzált, kevésbé deformált, jól mozgó gerincoszlop.<br> Terápia: gyógytorna (egyénre szabott), gyógyúszás, fűző, műtét <bb>Testnevelés alóli felmentés többnyire nem indokolt</bb>, de bizonyos torna gyakorlatok végzése kerülendő.<br> Tartási rendellenességek megelőzése Optimális testsúly megőrzése, rendszeres úszás, testmozgás, az állóképesség megőrzése, javítása, megfelelő táplálkozás, vitaminpótlás (D-vitamin)
+          </div>  
+                </container>
+            <h3>Pajzsmirigy</h3>
+                Pajzsmirigy megnagyobbodás ill. alulműködése.<br> A pajzsmirigy csökkent működésekor említést érdemel a fáradékonyság, a lelki és fizikai lelassulás, a tanulási képesség csökkenése, az aluszékonyság, kedvetlenség és más hangulati zavarok. Amikor a pajzsmirigyhormon szintje még csak kismértékben tér el a normálistól, a tünetek nem jellegzetesek, így általában nem is tulajdonítanak nekik jelentőséget.<br> Enyhe fáradékonyságon és a koncentrációs képesség romlásán kívül más nem érzékelhető.
+            
+            </div>
+                    </div>
+                    <div id="tanev">
+                        <iframe src="https://www.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=6j0gq5dd8u6cfu69vlplmll838%40group.calendar.google.com&amp;color=%232F6309&amp;src=verespg.hu_fntn4fm5nch53mij31ac59lg60%40group.calendar.google.com&amp;color=%234A716C&amp;ctz=Europe%2FBudapest" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                    <div id="dokumentumok">
+                         
+                        <div class="away inline-table" flex slide-up list-cascade>
+                            <h1>Nyilvános Dokumentumok</h1>
+                    
+           <paper-button raisedbutton="" icon="file-download" class="colored" label="Helyi tanterv 2013" role="button" tabindex="0" aria-label='colored'></paper-button><br>
+            <paper-button raisedbutton=""icon="file-download" class="colored" label="Nevelési program 2013" role="button" tabindex="0" aria-label="colored"></paper-button><br>
+            <paper-button raisedbutton=""icon="file-download" class="colored" label="Az iskola házirendje 2013" role="button" tabindex="0" aria-label="colored"></paper-button><br>
+            <paper-button raisedbutton=""icon="file-download" class="colored" label="Minőségirányítási program" role="button" tabindex="0" aria-label="colored"></paper-button><br>
+            <paper-button raisedbutton=""icon="file-download" class="colored" label="Környezeti nevelési program" role="button" tabindex="0" aria-label="colored"></paper-button><br>
+            <paper-button raisedbutton="" icon="file-download" class="colored" label="Egészségnevelési program" role="button" tabindex="0" aria-label="colored"></paper-button><br>
+              <paper-button raisedbutton="" icon="file-download" class="colored " label="Szervezeti és Működési Szabályzat 2013" role="button" tabindex="0" aria-label="colored"></paper-button>
+                        </section>
+                      </div> 
+                            
+                      <div class="away inline-table" flex style="margin-left:100px;" id="imgholder">
+                        <h1>Képek</h1>
+                       
+                             <img src="Animg.jpg" class="load" >
+                           
+                    </div>
+                </div>
+                    <div id="alapitvany">
+                    
+                    <div class="away">
+            <h1>Alapítvány</h1>
+            
+                <div class="card away inline-table lh2" flex  animated slide-up>
+                <paper-ripple></paper-ripple>
+                <bb>A VPG Oktatási Alapítvány</bb> adószáma: 19655684-1-41<br><br>
+                Az alapítvány bankszámlaszáma:<br>
+                MAGNET BANK 16200168-00170574
+                
+                </div>
+           
+           <div class="inline-table" style="margin-top: 26px;position: absolute;">
+                <bb>Kérjük, támogassa a gimnáziumot adója 1%-ának felajánlásával!</bb><br><br>
+        <paper-button raisedbutton="" icon="file-download" class="colored" 
+                      label="Az Alapítvány 2012. évi közhasznúsági jelentése" 
+                      role="button" tabindex="0" aria-label='colored'></paper-button><br>
+        <paper-button raisedbutton="" icon="file-download" class="colored" 
+                      label="Az Alapítvány 2013. évi közhasznúsági jelentése" 
+                      role="button" tabindex="0" aria-label='colored'></paper-button>
+            </div>
+<br><br>
+<bb>Tisztelt Támogatónk!</bb><br><br>
+
+<span class="lh2">
+A Veres Péter Gimnázium diákjai, nevelőtestülete, szülői közössége és a magam nevében is köszönjük támogatását.<br>
+
+Köszönjük különösen azért, mert ebben a szűkösebb időszakban is támogatást nyújt egy olyan terület működtetéséhez, amelynek eredményei csak hosszabb távon realizálódnak a  társadalom  életében.<br><br>
+
+Bizonyára tudja, hogy ez a támogatás alapvetően az oktatási tevékenységen túli, de ahhoz szorosan kapcsolódó célok megvalósítását segítik.
+
+A művészeti tevékenység, a külföldi cserekapcsolatok, a táborok és a szociális ösztöndíj anyagi hátterét biztosítja.<br>
+
+Támogatását még egyszer megköszönve - a magán és az üzleti életben egyaránt - további sikereket kívánok.<br>
+                        
+Budapest, 2013. május 7.<br><br>
+                                        Tisztelettel:
+<div flex>
+    Papp Lajos alapítvány elnöke<br>
+    Papp György alapító nevében
+    </div>
+ </span>
+                                                           
+                        </div>
+ 
+                    </div>
+                    <div id="menza" >
+                        <div class="away">
+                        <h1>Közétkeztetés (Menza)</h1>
+
+                <div class="card away inline-table" flex>
+                    <paper-ripple></paper-ripple>
+                    Gimnáziumunk a Gyermekmenza Kft-től kapja az ebédet.<br><br>
+                    elérhetőség: info.obuda@gyermekmenza.hu
+                </div>
+
+                        <br>
+                             <h2>Étlap</h2>
+                        <table>
+                                <tr>
+                                    <th>Dátum</th>
+                                    <th>Normál</th>
+                                    <th>Cukormántes</th>
+                                    <th>Gluténmentes</th>
+                                    <th>Ovo-lakto Vegetariánus</th>
+                                    <th>Tej- Tojásmentes</th>
+                                    <th>Tejmentes</th>
+                                </tr>
+                            </table>
+                        <br>
+                        <h2>Étkezés</h2>
+
+ 
+
+<bb>Tisztelt Szülők!</bb><br>
+
+A Szolgáltató két javaslatot tett a helyzet megnyugtató tisztázására.<br><br>
+
+<li>Személyesen szeretnék találkozni az aláíró szülőkkel, ahol kötetlenül, és közvetlenül el tudják mondani véleményüket, illetve meg tudjuk hallgatni javaslataikat. Azt gondolom, ez is hatékony, és gyors eszköze lenne a levélben megfogalmazott felvetések kezelésének.<br>
+Javasolt időpont 2014.02.13-án, csütörtökön 17 óra 30 perc.</li><br>
+
+<li><i>"Felajánljuk valamennyi szülőknek (a levélből kiolvasható nem általános, hanem elszigetelt, a 6.b osztályban érintett családokat érintő kérdés dacára), hogy szervezett módon vegyenek részt kóstoláson, ahol saját maguk tudnak meggyőződni a választékról, tányérra kerülő ételek mennyiségéről, minőségéről. Javasoljuk, kezdjük el mielőbb, már február elején a kóstoltatást. Ennek keretén belül minden nap az étkeztetés idejében (12-13,30 között), akár egy hónapon keresztül tetszőleges, részünkre előre nem jelzett időpontban legfeljebb 5 szülő ebédeltetés alatt jöjjön, és személyesen kóstolja meg, véleményezze az az napi menüt."</i><br>
+A jelzett intervallumban (12:00-13:30 között) két héten át (2014. február 10-21 között) várjuk az érdeklődő szülőket.</li>
+<br><br>
+<center>Tisztelettel: Papp György</center>
+                        </div></div>                
+                    <div id="tanarok">
+                       <div class="away">
+                        <h1>Tanárok</h1>
+                          
+                        <div id="filltanars" ></div>
+                           
+                      </div>
+                        
+                    </div>
+                    <div id="kozosseg">
+                    <div class="away">
+                        <h1>Közösségi szolgálat</h1>
+          Az érettségi bizonyítvány 2016-tól nem adható ki, ha a diák nem teljesítette igazolhatóan a törvényben előirt <bb>50 óra</bb> közösségi szolgálatot!<br><br>
+
+<p class="justify away">A közösségi szolgálat teljesítésében a felelősségünk közös, ezért kérem, hogy kísérjék figyelemmel gyermekük ez irányú tevékenységét Önök is.<br>
+
+Tudjuk, hogy diákjaink kevés szabadidejében kell a közösségi szolgálat előírt óraszámát teljesíteni, ezért igyekszünk ezt a feladatot is értelmessé, közösségi szolgálatban résztvevő összes fél számára hasznossá tenni.<br>
+
+Jól tudjuk, az önkéntes munka nem ismeretlen sok diákunk számára. Szeretnénk, ha ezekről akár itt a gimnázium honlapján olvashatnánk beszámolókat, értékeléseket.<br><br>
+
+Szeretnénk bővíteni a közösségi szolgálat teljesítésének területeit is, hogy diákjaink minél több féle tapasztalatot szerezhessenek a közösségi szolgálat teljesítése kapcsán.<br>
+
+Ezért kérjük Önöket Szülőket, ha gyermekük már részt vesz önkéntes munkában, arról tájékoztassanak bennünket, illetve keressenek bennünket akkor is, ha környezetükben van olyan egyesület vagy szervezet, ahol diákjainkat szívesen fogadják a közösségi szolgálat teljesítésére, és a szervezet által végzett tevékenység a gimnázium nevelési elveivel összhangban áll.<br>
+
+Fontos ez azért, mert csak akkor számolható el hivatalosan a diákok által teljesített közösségi szolgálat óráinak száma, <bb>ha a gimnázium előzetesen szerződést köt</bb> a fogadó intézménnyel, szervezettel.<br>
+
+Kérdéseikkel és javaslataikkal forduljanak <bb>Vasváry Annamária</bb> szabadidő szervezőhöz, a közösségi szolgálat iskolai felelőséhez.</p>
+                        <div class="card away inline-table inway">
+                            <paper-ripple></paper-ripple>
+                            <b>Elérhetőségek:</b><br>
+                            email: szervezes@verespg.hu<br>
+                            telefon: 243-2710/117
+                        </div>
+                        <h2>Szervezetek, intézmények, amelyekkel már szerződést kötöttünk</h2>
+                         <div id="fillkozos" ></div>
+                        </div>
+                    </div>
+                    <div id="okosuli">
+                    <div class="away">
+                        <h1>Ökoiskola</h1>
+                        <b>Az ökoiskola eredményei és tervei 2013-ban:</b>
+
+<p>Az iskolakertet szépen lassan bővítjük, főleg gyógynövényekkel. Ezeket nem csak a kémia és biológia szakkörön használjuk fel – tea és illatanyagok készítésénél-, hanem a néptáncosok ruha raktárában és az osztálytermek illatosításába is alkalmazzuk. Új kezdeményezésként haszonnövényeket ültettünk az frissen kitisztított területekre, krumplit, retket, borsót, búzát és napraforgót. A városban felnövő generációnak nagy élmény volt a maguk által elültetett növények fogyasztása, Sajnos a nyári öntözés kicsit elmaradt, így a termés mennyisége is. De az íze mindent felülmúlt – a gyerekek szerint. Természetesen a növények fejlődését, gondozását, a felépítését mind-mind tanórai anyaghoz kapcsoltan dolgoztuk fel. A jövőben is szeretnénk ezt folytatni.</p><br>
+
+<p>Az önkormányzat pályázatának köszönhetően örökbe fogadtunk az iskola mellett egy elhanyagolt zöld területet, melyet a gyerekek volt diákok segítségével kitakarítottak és beültettek. Kedves kis tanulósarkot alakítottak ki ezzel a könyvtárunk közelében.</p>
+
+<p>A szülőket közös cselekvésre hívni a fenntarthatóság jegyében. Évente kétszer szervezünk iskolatakarítást és kertrendezést. Utána közös foci és röplabda meccseken egyenesítheti ki mindenki magát vagy a frissen fövő bogrács mellett beszélgethet.</p><br>
+
+<p>Új kapcsolatokat építettünk ki külföldi iskolákkal, mivel bekapcsolódtunk a <i>„Changing with the climate”</i>, Comenius programba. Ezt a programot nem csak az órai munkába vittük be, hanem a diákok egy francia és egy olasz iskola diákjaival is felvették a kapcsolatot. Közös feladatokat határoztak meg: a francia iskolával a papír története, előállítása, vizsgálata volt a téma. Az olaszokkal az energiatakarékosság az otthonainkban és az iskolában. Felmérés közös értékelés. Mindezt a gyerekek egymással levelezték le angol nyelven. Ezzel nem csak más szemszögből látták tennivalókat, hanem a közös gondolkodás és munka ízét is megérezték.</p>
+
+<p>Az ELTE, SOTE testvériskolának választott bennünket, amit a jó felvételi eredményeinknek és a diákjaink egyetemi helytállásának köszönhetünk. Az egyetemeken diákjaink bepillantást kapnak az egyetemi laborok működésébe és lebilincselő előadásokat hallgatnak.</p>
+
+<p>A MVM támogatásának köszönhetően a paksi atomerőműbe és az oroszlányi  hőerőműbe(ami bio-hőerőműként is működik) is ellátogathattunk diákjainkkal. A megújuló és nem megújuló energiaforrások előnyeiről és hátrányairól szakemberektől hallhattak.</p><br>
+
+<p>A madáretetőink már több éve életben tartják a lakótelepen élő madarakat, a most készült 6 db különböző típusú madárodúkat sajnos az idén még nem lakták be, de reméljük, jövőre már lesznek fiókáink.</p><br>
+
+<p>2 éve  diákokkal elkezdtünk az Őszike utcai idősek otthonában segíteni a kertgondozásban és a zenekarral karácsonyi és báli időszakban vidám színt viszünk a bentlakók napjaiba. A Kapcsolda program szinte az egész iskolát megmozgató esemény, hisz a gyerekeink kísérőként, szervezőként, foglalkoztatóként segítenek a gondozott gyerekeknek.<br><br>
+                         <paper-button raisedbutton="" icon="accessibility" class="colored" label="Még több a Közösségi szolgálatról" role="button" tabindex="0" aria-label='colored'></paper-button></p><br>
+
+<p>Az Óbuda Újságban többször megjelentünk a „Takarítsuk ki Óbudát” rendezvényen való eredményes szereplésünkért, a Kapcsolda programban való részvételünkért illetve a kerület több szociális intézményében a fellépéseinknek köszönhetően. A megjelenés az iskola honlapján is lassan megvalósul, az ökoiskola programja mellett a képes beszámolók is megtalálhatók, illetve segédanyagokat töltöttünk fel a felvételizők részére :Magyarország fás, fátlan és vízi társulásainak könnyebb megismeréséhez.</p><br>
+
+<h3>Tervezett, de meg nem valósult fejlesztések</h3>
+
+Az iskola környezetbarát anyagokat szeretett volna bevezetni az irodai munkában,sajnos ezt a fenntartó nem támogatja, további támogatókat keresünk.<br><br>
+
+A tele autó program még további szervezést igényel, mert sok szülő és gyermek a kényelmi okok miatt igyekszik ezt elkerülni. Sajnos egyre kevesebb a tömegközlekedéssel és gyalog vagy biciklivel iskolába járók száma is. A kérdőív eredményei azt mutatják, hogy az beutazási időt majd felére tudják így csökkenteni.<br><br>
+
+Szeretnénk egy egyszerű meteorológiai állomást készíteni a gyerekekkel.
+
+
+                        </div>
+                    </div>          
+                    <div id="orokdiak">
+                    <div class="away lh2">
+                    <h1>A Veres Péter Gimnázium Örökdiák Egyesülete</h1>
+
+        2011 decemberében <bb>Tiszavölgyi István</bb> címzetes igazgató úr ötletén elindulva, <bb>Papp György</bb> Igazgató Úr támogatásával, <bb>Számadóné Békéssy Szilvia</bb> tanárnő szervezésében, elkezdődött a Veres Péter Gimnázium Örökdiák Egyesületének létrehozása.
+        2012. március 09-én megtartotta hivatalos alakuló ülését és <bb>2012. szeptember 05-én a Fővárosi Törvényszék nyilvántartásba vette</bb>.
+        <br>A tiszteletbeli elnökséget Tiszavölgyi István, címzetes igazgató úr vállalta.
+        <br>Az iskola nagyközösségének az Egyesület megalakulását 2012. május 5-én, a Ballagáson jelentette be.
+
+        <h2>Az Egyesület célkitűzései:</h2>
+
+
+        <li>  információgyűjtés a Gimnáziumba járt diákokról, az általuk kitöltött adatlapok alapján, évkönyvek és anyakönyvek segítségével,</li>
+        <li>    osztálynévsorok, iskolai programok megjelenítése a honlapon,</li>
+        <li>    újság létrehozása, szerkesztése,</li>
+        <li>    levelezőlista elkészítése, az adatbázis folyamatos frissítése,</li>
+        <li>  közös programok szervezése az iskola jelenlegi tanulói és az itt végzettek között, pl.: Néptánc Gála, Zenei Gála, Színjátszókör előadásain való részvétel stb.,</li>
+        <li>    volt és jelenleg itt tanító tanárok felkutatása, tapasztalatcseréje, programokba való beillesztése,</li>
+        <li>    élménybeszámoló, életút, pályaválasztási előadások végzősöknek,</li>
+        <li>    rendszeres Öregdiák találkozók szervezése,</li>
+        <li>    Szabadegyetem létrehozása,</li>
+        <li>    jutalmazási, támogatási rendszer felállítása.</li>
+                        </div>
+                    </div>            
+                    <div id="tankonyv">
+                <div class="away">
+                <h1>Tankönyv</h1>
+                   
+
+A hivatalos tankönyvjegyzéken szereplő könyveket az iskola a Kellón keresztül rendeli meg. Az ehhez szükséges névre szóló rendelőlapokat (osztályonként csoportosítva) az osztályfőnökök továbbították a szülők részére<br> Ezen a rendelőlapon nyilatkozik minden szülő, hogy az osztály listájában szereplő tankönyvek közül melyeket szeretné gyermekének megrendelni.<br>
+            <li class="away">        
+     Akik normatív támogatásban részesülnek (és leadták az erre vonatkozó igénylőlapot), ők az ingyenességi kedvezményt csak a Kellón keresztüli rendelés esetében (= a kapott rendelőlapon rendelve) vehetik igénybe.
+                </li>
+            <li class="away">
+    Akik nem részesülnek normatív támogatásban, ők dönthetnek úgy, hogy bizonyos tanköny­veket nem rendelnek meg az iskolán keresztül (például ha már megvan a könyv a családban, vagy egyénileg szeretnék beszerezni), ez esetben a rendelőlapon ezt jelezniük kell. (Természe­tesen egy normatív támogatásban részesülő diák is megteheti, hogy nem tart igényt valamelyik tankönyvre.)
+                </li>
+                
+         Pótrendelésre szeptem­berben lesz lehetőség.
+<br>
+<br>
+
+<h2>A 2014/2015-es tanév tankönyvellátásának menete</h2>
+
+a tankönyvrendelet (17/2014. (III. 12.) EMMI rendelet) alapján<br>
+
+ 
+<div class="card away inline-table">
+<paper-ripple></paper-ripple>
+A <bb title="Könyvtárellátó" class="q">KELLO</bb> honlapján elérhető a publikus webshop,<br> amelyen keresztül bárki megvásárolhat tankönyveket saját részre.
+<br>
+A címe: <a href="http://webshop.kello.hu/">http://webshop.kello.hu/</a>
+</div>
+ 
+<br>
+Az iskola igazgatója minden év június 10-ig felméri, hogy hány tanulónak kell, vagy lehet biztosítani a tankönyvellátást az iskolai könyvtárból történő tankönyvkölcsönzés útján. Az iskolába belépő új osztályok tanulói esetén a felmérést a beiratkozás napjáig kell elvégezni.
+
+                  
+      <div class="content collapse card away" id="tk-collapse-1" onclick="outcollapse(this.id);">
+        <b>
+            <paper-ripple></paper-ripple>
+            Kattintson ide az idetartozó köznevelési törvény paragrafusainak a megjelenítéséhez!</b>
+               A köznevelési törvény (2011. évi CXC. tövény) 46. § (5) bekezdése alapján az elsőtől a nyolcadik évfolyamig az állam biztosítja, hogy a tanuló számára a tankönyvek téritésmentesen álljanak rendelkezésre.<br><br>
+
+    A köznevelési törvény 97. § (22) bekezdés alapján a 46. § (5) bekezdés szerinti térítésmentes tankönyvellátást első alkalommal a 2013/2014. tanévben az első évfolyamra beiratkozott tanulók számára, ezt követően felmenő rendszerben kell biztosítani.<br><br>
+
+    A tankönyvrendelet (17/2014. EMMI rendelet) 32. § (5) bekezdése alapján az állam által biztosított ingyenes tankönyveket -- a munkafüzetek kivételével -- az igazgató az iskola könyvtári állományába veszi, a továbbiakban az iskolai könyvtári állományban elkülönítetten kezeli, és a tanuló részére a tanév feladataihoz rendelkezésre bocsátja az iskola házirendjében meghatározottak szerint.<br>                    
+    </div>
+                    
+    
+<p>
+A felmérés alapján megállapítja, hogy hány tanuló esetében kell biztosítani a köznevelési törvény szerinti ingyenes tankönyveket, illetve hány tanuló esetében kell biztosítani a tankönyvtörvény szerinti normatív kedvezményt.<br>
+
+<i>A határidő elmulasztása jogvesztő, kivéve, ha az igényjogosultság feltételei ez után alakulnak ki. Tisztelettel kérjük a kedves szülőket, hogy ezt a határidőt tartsák be, mert a megkésett igénylőlapokat nem áll módunkban elfogadni.</i>
+<br><br>
+A felmérés eredményéről az igazgató minden év június 15-ig tájékoztatja a nevelőtestületet, az iskolaszéket, az iskolai szülői szervezetet és az iskolai diákönkormányzatot.
+<br>
+Az iskola igazgatója minden év június 17-ig meghatározza az iskolai tankönyvellátás rendjét, és erről tájékoztatja a szülőt, vagy a nagykorú cselekvőképes tanulót.
+</p>
+ 
+<div class="content collapse card away" id="tk-collapse-5" onclick="outcollapse(this.id);">
+        <b>
+            <paper-ripple></paper-ripple>
+            A tankönyvpiac rendjéről szóló 2001. évi XXXVII. törvény 8. § (4) bekezdése alapján normatív támogatásban részesülhet az a tanuló, aki</b>
+        <div class="away lh2"><li>tartósan beteg [szakorvos igazolja vagy a magasabb összegű családi pótlék],  </li>
+        <li>a szakértői bizottság szakértői véleménye alapján mozgásszervi, érzékszervi, értelmi- vagy beszédfogyatékos, több fogyatékosság</li> együttes előfordulása esetén halmozottan fogyatékos, autizmus spektrum zavarral vagy egyéb pszichés fejlődési zavarral (súlyos tanulási, figyelem- vagy magatartásszabályozási zavarral) küzd[szakorvos igazolja],</li>
+        <li>három vagy több kiskorú, vagy eltartott gyermeket nevelő családban él [a megállapított családi pótlék igazolja],</li>
+        <li>nagykorú és saját jogán iskoláztatási támogatásra jogosult [a megállapított családi pótlék igazolja],</li>
+        <li>rendszeres gyermekvédelmi kedvezményben részesülő [az erről szóló határozat igazolja].</li>
+        <li>Rendszeres gyermekvédelmi kedvezményre jogosult az a tanuló, akinek a családjában</li>
+       <li> az egy főre jutó havi jövedelem összege nem haladja meg az öregségi nyugdíj</li>
+        <li>mindenkori legkisebb összegének a 130%-át.</li>
+        <li>(Az öregségi nyugdíj minimális mértéke 2013-ban: 28500 Ft/hó)</li>
+               </div>                  
+    </div>
+
+
+
+
+A normatív támogatásra vonatkozó igényt az <paper-button raisedbutton=""icon="file-download" class="colored" label="Igénylőlap (pdf)" role="button"></paper-button> értelemszerű kitöltésével és benyújtásával kell bejelenteni.
+<g class="away block" justify>
+(Technikai megjegyzés: ha az Igénylőlapra bal egérgombbal kattintva esetleg hibaüzenetet kapunk, vagy nem jelenik meg semmi, az a böngésző hibája. Ez esetben jobb egérgombbal a "Link mentése másként" / "Hivatkozás mentése másként" / "Cél mentése másként" paranccsal mentsük le a pdf fájlt, majd a gépünkön található PDF-nézegető segítségével nyissuk meg.)
+</g>
+A hatályos tankönyvrendelet értelmében az igénylőlap benyújtásával egyidejűleg be kell mutatni a normatív kedvezményre való jogosultságot igazoló iratokat. A bemutatás tényét az iskola rávezeti az igénylőlapra.
+<br><br>
+Az iskolai tankönyvrendelésbe csak akkor lehet a hivatalos tankönyvjegyzékben nem szereplő könyvet felvenni, ha az iskolaszék és a diákönkormányzat azokkal egyetért (írásban).
+<br><br>
+Akik normatív támogatásban részesülnek, nekik csak azokat a tankönyveket kell megrendelniük, melyeket a könyvtárból szeretnének kölcsönözni (valamint a munkafüzeteket), saját példányt vásárolni a <bb>KELLO (Könyvtárellátó Nonprofit Kft.)</bb> honlapján keresztül lehet a szülőknek.<br>
+<br>
+A rendelőlap leadásának határideje 2014. április 25. (péntek).<br>
+<bb><i>A határidő elmulasztása esetén az iskola nem garantálja a listán szereplő tankönyvek beszerzését a tanuló számára.</i></bb>
+                    
+                </div>
+                </div>          
+                    <div id="konyv">
+                <div class="away">
+                    <h1>Könyvtár
+                        
+                    </h1>
+                     <div class=" card inline-table f-16" style="vertical-align: -18px;max-width:350px;" >
+                        <paper-ripple></paper-ripple>
+                        <table style="border-spacing:10px;"><tr>
+                        <td>
+                            <b>Nyitvatartás:</b>
+                            <br>H-P	8.00–15.30
+                        </td>
+                        <td>
+                            <b>Kapcsolat:</b>
+                            <br>+36 1 243+24-42/130 vagy verespeterkt@gmail.com
+                        </td>
+                        </tr></table>
+                        </div>
+                    <p>120 m2 alapterületű könyvtárunk – igazodva a tanulók és az oktatás igényeihez – információs bázisként segíti a pedagógiai program megvalósítását.</p>
+                    
+A könyvtár állománya közel 22 000 dokumentumból, könyvekből, folyóiratokból és kéziratokból áll. A folyóiratolvasó részleg átlagosan <bb>25 féle</bb> periodikával várja az érdeklődőket.<br>
+
+A 28 ülőhelyes olvasóterem tág lehetőséget biztosít a jelentős és értékes kézikönyvállomány tanulmányozására, könyvtári órák tartására, az iskolai tanulócsoportok növekedésével pedig egyre több tantárgyi óra színhelye is.<br>
+                    <br>
+Lehetőség van az internet elérésére is. Öt iskolai hálózatra kapcsolt gép áll a kutatni vágyók rendelkezésére. A szabadpolcos részben 12 fős tanulótér várja a diákokat. Az iskolai hálózatról elérhető az integrált könyvtári rendszer, a <a href="http://94.199.48.18/sziren_0093.htm" target="_blank">Sziren 9.</a>
+                    <p>
+
+A könyvtár mellett <i>stúdió</i> is működik, ahol a hangzó és képi anyagokat őrizzük, illetve azok rendszerezése és másolása történik.
+                        </p>
+                   <h2>Könyvtár alapdokumentumai</h2>
+                    <div class="content collapse card away" id="konyv-collapse-1" onclick="outcollapse(this.id);">
+                        <b> Küldetésnyilatkozat
+                            <paper-ripple></paper-ripple>
+                        </b>
+                        <div class="away">
+                                
+Könyvtárpedagógiai programunk legfontosabb feladatának a Veres Péter Gimnáziumban folyó képzés kiszolgálását tekintjük.<br<br>
+
+Alapvető célunk, hogy megismertessük a diákokat a könyvtárhasználati ismeretek alapjaival, valamint segítséget nyújtsunk az önálló tanulást, az igényes ismeretszerzést és feldolgozást segítő alapvető kompetenciák kialakításában és a tehetséggondozásban. Szervezett keretben erre szolgálnak a könyvtárhasználati órák, de egyénileg is nyújtunk segítséget.<br>
+
+Feladatunknak tekintjük, hogy iskolánk dolgozói és diákjai körében felkeltsük az érdeklődést könyvtári szolgáltatásaink iránt.
+<br><br>
+Immár hagyománnyá vált, hogy a tehetséges diákjaink részére versenyeket szervezünk, illetve támogatjuk őket a Bod Péter Könyvtárhasználati Versenyen való részvételben.
+<br>
+Szolgáltatásainkkal iskolánk programjaihoz kívánunk csatlakozni, szeretnénk intézményünk egyik <bb>szellemi központ</bb>jává válni.
+                        </div>
+                        
+                    </div>
+                    <div class="content collapse card away" id="konyv-collapse-3" onclick="outcollapse(this.id);">
+                        <b> A gyűjtőköri szabályzat alapdokumentumai:
+                            <paper-ripple></paper-ripple>
+                        </b>
+                        <div class="away">
+                   
+<li>A közoktatási törvény (1996. LXII. tv.)</li>
+<li>A Veres Péter Gimnázium pedagógiai programja</li>
+<li>A nevelési – oktatási intézmények működéséről szóló MKM rendelet (16/1998. I. 8.)</li>
+<li>Az iskolai tankönyvellátás rendjéről szóló rendelet (5/1998 II. 18. MKM)</li>
+  </div>
+                        </div>
+         
+<bb>Az iskolai könyvtár gyűjtőkörét meghatározó tényezők:</bb>
+A Veres Péter Gimnáziumban 8 + 4 évfolyamos képzés folyik. A könyvtár ennek megfelelően, a tananyaghoz igazítva állítja össze állományát. Mindent gyűjt tehát, ami a sikeres érettségihez illetve a tananyaghoz (és annak szakszerű kiegészítéséhez) szükséges lehet és a délutáni foglalkozások témájához illeszkedik.<br><br>
+
+Kapcsolatot építettünk ki a közeli Szabó Ervin fiókkönyvtárral, a Platán Könyvtárral, valamint a kerületi iskolák könyvtáraival.<br><br>
+
+<div class="content collapse card away" id="konyv-collapse-4" onclick="outcollapse(this.id);">
+                        <b> Dokumentum gyűjtésének procedúrája, kritériumok:
+                            <paper-ripple></paper-ripple>
+                        </b>
+     <div class="away">
+A helyi sajátosságoknak és a hagyományoknak megfelelően a hangzó anyagot és a videofelvételeket nem a könyvtár, hanem az <bb>erre külön kijelölt stúdió gyűjti</bb>, dolgozza fel és kölcsönzi. A multimédiás anyagok (CD-ROM-ok) lelőhelye a könyvtár.
+<br><br>
+<h3>Az állománygyarapítás módjai:</h3>
+<li> vétel</li>
+<li> ajándék</li>
+<li> csere</li>
+<br><br>
+A könyvtáraz iskolában oktatott különféle műveltségi területek (és az ehhez kapcsolódó témák) alapdokumentumait gyűjti, vagyis:
+
+<li>általános és szaklexikonok</li>
+<li>általános és szakenciklopédiák</li>
+<li>szótárak</li>
+<li>fogalomgyűjtemények</li>
+<li>összefoglalók</li>
+<li>adattárak</li>
+<li>tankönyvek</li>
+<li>térképek</li>
+<li>az adott műveltségi terület alapvető szakirodalma</li>
+<li>a napi tájékozódásra alkalmas dokumentumok (a tantárgyaknak és a korosztálynak megfelelő szinten)</li>
+<li>az előzőeknek megfelelő nem nyomtatott ismerethordozók</li><br>
+                            
+<h3>Az ismeretközlő, a szak- és szépirodalmi állomány gyűjtőköre:</h3>
+  </li>
+<li>a kétszintű érettségi vizsga követelményeinek megfelelő szép- és szakirodalom</li>
+<li>az egyes tantárgyak házi és ajánlott olvasmányai</li>
+<li>a munkáltató eszközként használatos dokumentumok</li>
+<li>a nevelés - oktatási munkát segítő pedagógiai szakirodalom</li>
+<li>a nevelési programhoz megvalósításához szükséges alkotások</li>
+<li>a különféle tantárgyak módszertani összefoglalói</li>
+<li>a tanítási órákon kívüli foglalkozásokhoz kapcsolódó dokumentumok</li>
+<li>az oktatási intézményt érintő dokumentumok</li>
+<li>az iskola névadójáról szóló dokumentumok</li>
+<li>az iskola történetével kapcsolatos dokumentumok</li>
+<li>az iskolai könyvtárban felhasználható tájékoztatási anyagok</li>
+<li>a könyvtári munka módszertani segédletei</li><br>
+                        
+<h3>Kéziratként gyűjti a könyvtár a következőket:</h3>
+
+<li>az iskolai háziversenyekre készült munkákat</li>
+<li>a kerületi, a budapesti és az országos versenyekre készült munkákat</li>
+<li>A tartóstankönyv-gyűjtemény tartalmazza azokat a könyveket, feladatgyűjteményeket, atlaszokat, amelyeket a tartóstankönyv-rendelet előírása szerint</li> <li>a diákok rendelkezésére bocsátunk.</li>
+
+<h3>A könyvtár gyűjtőköre dokumentumtípusok szerint :</h3>
+<li>könyvek</li>
+<li>időszaki kiadványok</li>
+<li>pályázatok, műsorfüzetek, kisnyomtatványok</li>
+<li>kéziratok (pályázati munkák, kollegák publikációi, iskolai rendezvények dokumentumai, plakátok)</li>
+<li>CD-ROM-ok</li>
+                          </div>
+                    </div>
+ 
+                    <h3>Könyvtárpedagógiai Program</h3>
+A Veres Péter Gimnáziumban 8 és 4 osztályos képzés folyik. Ennek kiszolgálását tekintjük a könyvtárpedagógiai programunk legfontosabb feladatának.<br><br>
+
+Alapvető célunk, hogy megfeleljünk mai, tudásalapú társadalmunk elvárásainak, és fölkészítsük diákjainkat a kompetencia alapú tanulásra: <bb>legyenek képesek az önálló ismeretszerzésre és az információkban való eligazodásra.</bb><br>
+
+Ezért a könyvtár egyik legfontosabb feladata, hogy megismertesse a diákokat a könyvtárhasználati ismeretek alapjaival. Erre szolgálnak a könyvtárhasználati és az egyéb tantárgyi könyvtári órák, de egyénileg is nyújtunk segítséget.<br>
+
+Feladatunknak tekintjük, hogy fölkeltsük és megtartsuk az érdeklődést iskolánk dolgozói és diákjai körében a könyvtári szolgáltatásaink iránt.<br>
+
+Hagyománynak tekinthető továbbá, hogy a tehetséges diákok részére versenyeket szervezünk, illetve <bb>támogatjuk őket a Bod Péter és a Győri Gáspár Könyvtárhasználati Versenyeken való részvételben</bb>.<br><br>
+
+Feladatunknak tekintjük, hogy felkészítsük tanulóinkat a megfelelő információszerzési, feldolgozási és átadási technikákra, valamint megismertessük velük az információkezelés jogi és etikai szabályait.<br>
+      Szolgáltatásainkkal iskolánk programjaihoz kívánunk csatlakozni, és célunk a pedagógiai munka segítése.<br>
+                    <div class="content collapse card away" id="konyv-collapse-2" onclick="outcollapse(this.id);">
+                        <b> A NAT 2007 (243/2003. XII. 17. Korm. rendelet) a tanulás fontos színtereként nevezi meg az iskolák könyvtárát:
+                            <paper-ripple></paper-ripple>
+                        </b>
+                        <div class="away f-16">
+          „A tanulás fontos színtere, eszköze az iskola könyvtára és informatikai bázisa. A hagyományos tantermi oktatást az iskola keretein belül is kiegészítik az egyéni tanulási formák, amelyekhez sokféle információforrás gyors elérésére van szükség. A könyvtár használata minden ismeretterületen nélkülözhetetlen. Az önálló ismeretszerzés érdekében a tanulóknak el kell sajátítaniuk a könyvtári ismeretszerzés technikáját, módszereit mind a nyomtatott dokumentumok, mind az elektronikus dokumentumok használata révén. Ismerniük kell a könyvtári keresés módját, a keresés eszközeit, a főbb dokumentumfajtákat, valamint azok tanulásban betöltött szerepét, információs értékét. El kell sajátítaniuk az adatgyűjtés, témafeldolgozás, forrásfelhasználás technikáját, az interneten való keresés stratégiáját."
+                        </div>
+              </div>
+                    <h1>Kiadványaink</h1>
+                    
+                    <span class="chip-long">
+                    <div class="chip inline-table long">
+                        <div class="chip-top mo">   
+                        <img src="docs/bali1_th.jpg" class="load">
+                        </div>            
+                        <div class="chip-bottom">                
+                            <bb>Furulyaiskola I.</bb><br>      
+                            <span>Bali János</span> 
+                        </div>   
+                    </div>
+                    <div class="chip inline-table long">
+                        <div class="chip-top mo">   
+                        <img src="docs/bali2_th.jpg" class="load">
+                        </div>            
+                        <div class="chip-bottom">                
+                            <bb>Furulyaiskola II.</bb><br>      
+                            <span>Bali János</span> 
+                        </div>   
+                    </div>  
+                    <div class="chip inline-table long">
+                        <div class="chip-top mo">   
+                        <img src="docs/baliz_th.jpg" class="load">
+                        </div>            
+                        <div class="chip-bottom">                
+                            <bb>Furulyaiskola Kíséretek</bb><br>      
+                            <span>Bali János</span> 
+                        </div>   
+                    </div>                    
+                    <div class="chip inline-table long">
+                        <div class="chip-top mo">   
+                        <img src="docs/20ev_th.jpg" class="load">
+                        </div>            
+                        <div class="chip-bottom">                
+                            <bb>A Gimnázium első 20 éve</bb><br>      
+                            <span>Jubileumi könyv</span> 
+                        </div>   
+                    </div>
+                    <h2>Sulikoktél</h2>
+                         <paper-button raisedbutton="" icon="file-download" class="colored" label="2010. December: Karácsony" role="button" tabindex="0" aria-label='colored'></paper-button>
+                         <paper-button raisedbutton="" icon="file-download" class="colored" label="2010. Október: Táborok" role="button" tabindex="0" aria-label='colored'></paper-button>
+                         <paper-button raisedbutton="" icon="file-download" class="colored" label="2010. Június: 2012-Világvége?" role="button" tabindex="0" aria-label='colored'></paper-button>
+                    </span>
+                    
+                </div>
+                        </div>
+                    <div id="hello">
+                        <div class="away">
+            <h1>Bemutatkozás</h1>
+
+A Veres Péter Gimnáziumot a III. kerületi önkormányzat alapította 1986-ban. Az iskola akkori igazgatója, Tiszavölgyi István és a tantestület olyan program megvalósítását kezdte el, amelynek célja a személyiség komplex fejlesztése.<br> Pedagógiai munkánk az emberi értékekre épül, és a személyiség harmonikus fejlesztését célozza. Az iskola két képzési formában – négy- és nyolc évfolyamos – közel hatszáz diákot nevel és oktat.<br> <hr>Jelenleg olyan átfogó programot kínálunk a diákoknak és a szülőknek, amelyben egységet alkot:
+ 
+<h2>1. A magas szintű tudás megszerzése</h2>
+<div class="away">    
+Támogatjuk a tehetséges és kreatív diákok szellemi fejlődését, az iskolai és az országos tanulmányi versenyekre való sikeres felkészülését. Elsősorban a matematika, fizika, informatika, történelem és az idegen nyelvi versenyeken érünk el országosan jegyzett eredményeket. A nálunk érettségizett diákok nem csak bejutnak a felsőoktatásba, hanem sikeresen befejezik azt.
+</div>
+ 
+<iframe height=371 width=600 src="//docs.google.com/spreadsheets/d/1t9bJNeWWKR7zocDtCT3puJBeJCj8akyub6UMja0B7Is/gviz/chartiframe?oid=698936533" seamless frameborder=0 scrolling=no></iframe>
+ 
+<h2>2. Az egészséges testi fejlődés</h2>
+<div class="away">    
+Diákjainknak a testnevelési órákon túl a sportolási lehetőségek széles választékát biztosítjuk iskolánkban. Megteremtettük a mindennapos testedzés lehetőségét a tanítási időhöz kapcsolódva. Az egészséges életmód kialakítása és a testi fejlődés szempontjából döntő a rendszeres sportolás – vagy az iskolában, vagy sportegyesületben.
+</div>
+
+                            
+<h2>3. A személyiség harmonikus fejlődése</h2>
+<div class="away">    
+Olyan kötelező, kötelezően választható, és végül szabadon választható tevékenységek rendszerét dolgoztuk ki, amelyben az oktatás mellett, hangsúlyos a néptánc, a hangszeres zene és az ének tanulása. Megszerzett tudásukat tanulóink az iskolában ünnepi alkalmakkor, a néptánc- és a zenei gálán, és az iskolán kívüli fellépéseiken, közönség előtt is bemutatják.
+<br><br>
+Az iskolai élet, a kirándulások és táborozások (kosárlabda- és röplabda tábor, erdélyi sítábor, kézműves-, erdélyi turisztikai- és tánctábor, a tiszai vízitúra) lehetőséget biztosítanak a közösségért és a közösen végzett munka örömének megismerésére. Az iskola ezeken kívül a szabadidő kulturált eltöltésére is számos lehetőséget kínál (tantárgyi szakkörök, filmklub, színjátszó kör, fotószakkör, néptánc, hangszeres zene, stb.).<br><br>
+
+Természetesen mindezt csak a fenntartó III. Tankerület, a működtető Óbuda-Békásmegyer Önkormányzata és a szülők által működtetett Alapítvány támogatásának köszönhetően tudjuk biztosítani diákjainknak. Szoros, a kölcsönösségen alapuló kapcsolatot alakítottunk ki a szülőkkel, egyre több olyan programot valósítunk meg, amelyen a tanár, a szülő és diák közösen vehet részt.<br><br>
+
+Meghatározó elvként valljuk és biztosítjuk, hogy az iskola által szervezett programokon, tanulmányi versenyeken, rendezvényeken, nyelvi cseréken és táborozáson minden érintett diákunk – a család anyagi helyzetétől függetlenül – részt vegyen, vehessen. Ebben is segíti munkánkat az oktatási alapítvány. Ezeken túl, három éve tanulmányi ösztöndíjat nyújt a tehetséges, szociálisan rászoruló diákoknak.<br><br>
+</div>
+<h2>A tanulmányi munka eredményei</h2>
+                            <div class="away">
+Gimnáziumunk mindig is kiemelt feladatának tartotta az egyetemi, főiskolai továbbtanulásra való sikeres felkészítést. Az elmúlt öt év felvételi dolgozatai átlaga alapján a középiskolák rangsorában iskolánk az országos listán az első tíz között szerepel. A gimnázium országos hírnevét, ismertségét többek között a tanulmányi versenyeken elért kiemelkedő eredményeinek köszönheti. Tanulóinknak jelenleg már mintegy 50%-a indul valamilyen országos versenyen, többségük az évek során egyre jobb eredményt ér el. A felkészülésben komoly segítséget jelentenek az iskola indulása óta megrendezett háziversenyek. Vannak olyan tanulmányi versenyek, amelyen az országos döntősök 5-10%-a VPG diákjai közül kerül ki. Az utóbbi időben a döntőbe jutottak száma évente 70 körüli volt, közülük 20-30-an értek el 1-10. helyezést.
+<br><br>
+Az igényeknek megfelelően a képzésben nagy jelentőséget tulajdonítunk az idegen nyelvek tanulásának. A nyolcosztályos rendszerben 5-10. évfolyamig az egyik osztály a <bb>német vagy az angol, a másik pedig az angol nyelvet tanulja</bb> emelt óraszámban. A 6. és a 7. évfolyamon az első nyelv mellett diákjaink latin és az 5. évfolyamon ógörög nyelvet tanulnak, a 9. osztálytól <bb>angol, német, olasz, francia, orosz vagy spanyol nyelvet választhatnak</bb> második idegen nyelvként.
+<br><br>
+<bb>A négyosztályos</bb> rendszerben első nyelvként szintén az angol vagy a német nyelvet tanulhatják emelt óraszámban a diákjaink, és ők is választhatják az angol, német, olasz, francia, orosz és a spanyol nyelvet második nyelvként. <br>Igény esetén a latin tanulását is biztosítjuk.
+<br><br>
+Nyelvoktatási rendszerünk hatékonyságát leginkább a végzős tanulóink nyelvvizsga bizonyítványainak mennyisége igazolja. Az országos rangsorban az <bb>első tízben</bb> szerepelünk.
+<br><br>
+Nagyban segíti az idegen nyelvek oktatását az iskola külföldi kapcsolatrendszere. Immár 25 éve partnerünk a stuttgarti <a href="http://www.merz-schule.de/">Merz-Schule</a>. A rendszeres cserék sokat segítettek abban is, hogy tanulóink európai látókörrel rendelkezzenek. Az angol nyelvi diákcsere rendszeres lehetősége is biztosított. Erdélyi testvériskolánk a székelyudvarhelyi Református Líceum, a Tanítóképző és az oklandi általános iskola.
+<br><br>
+A négyosztályos képzés cseréje egy lengyel középiskola.
+<br>
+A megfelelő szintű informatikaoktatás feltételei az iskolában adottak, az iskola valamennyi tanulója megszerzi a ma korszerűnek számító ismereteket. A kötelező képzés az ECDL vizsgák letételével zárul.
+<br><br>
+                                
+<h3>Intenzív hét</h3>
+Az intenzív hétnek több célja van. Az 5-8. évfolyamon projekteket készítenek, bővítik tudásukat, és részt vehetnek az iskola fejlesztési munkáiban. A felsőbb évfolyamok tanulói belső vizsgákra, nyelvvizsgára és érettségire készülnek magasabb óraszámban.
+<br><br>
+Belső vizsgarendszerünk felkészíti diákjainkat az írásbeli és a szóbeli megmérettetésekre, kialakítja a megfelelő vizsgarutint.
+<br>
+  </div>
+     <br>                
+<h2>És a tanórán kívül?</h2>
+                        <div class="away">
+A hagyományos tanórákon kívül a Veres Péter Gimnázium több olyan lehetőséget is kínál diákjainak, amely a középiskolák többségéből hiányzik.
+<br><br>
+Pedagógiai programunkba fontos szerepe van a <bb>néptánc</bb> oktatásának. A tánctanulásban fejlődik a diákok összpontosító képessége, a ritmusérzékük és térérzékelésük. A tánc javítja fizikai állóképességüket, testalkatukat, formálja mozgásuk koordinációját. A közös tánc fejleszti a közösségbe való tartozás érzését és igényét, alkalmazkodó és kapcsolatteremtő képességüket. A közönség előtti szereplés fejleszti önbizalmukat, kommunikációs technikájukat, önismeretüket, gazdagodik érzelmi életük. Gimnáziumunk és a stuttgarti Merz-Schule közötti kapcsolat egyik pillére a néptánc. A táncosok évente Baden-Württemberg fővárosába utaznak, edzőtáboroznak, fellépéseket tartanak. A népművészet, a népi kultúra megismerése, megbecsülése az identitás forrása, és nyitottabbá teszi tanulóinkat más kultúrák befogadására is.
+<br><br>
+Az átlagosnál nagyobb hangsúlyt kap a <bb>zenei képzés</bb>. Az idekerülő kisdiákok zenei műveltségük megalapozására két évig a délutáni foglalkozások keretében furulya- és szolfézsoktatásban részesülnek. A harmadik tanévben az érdeklődőbbek további zenetanulási lehetőségekből választhatnak: citera, furulya, fuvola, klarinét, rézfúvós hangszerek (trombita, vadászkürt, tenorkürt, harsona, tuba). Az iskolai zenekarban a legjobb növendékek szerepelhetnek. A színjátszó kör, a zenekar és a néptánccsoport sok helyről kap szereplési felkérést és a külföldi testvériskoláktól is kapnak meghívást. A tánccsoport még a felkészítő táborát is a német testvériskolával együtt tartja.
+<br><br>
+A testnevelési órákon kívül tanulóinknak délutáni sportfoglalkozásokat biztosítunk. A foglalkozásokon kosárlabda, labdarúgás, röplabda, tenisz, zenés gimnasztika közül lehet választani. Legeredményesebb versenyszámunk a röplabda, az iskola csapatai többször kerültek országos döntőbe.
+<br>
+Színjátszó kör, fotószakkör segíti a szabadidő hasznos eltöltését.
+  </div>
+<h2>Ökoiskola</h2>
+  <div class="away">
+Az iskola környezeti nevelési és egészségnevelési programja régóta működik, és igen magas szinten foglakozik a fenntarthatóság kérdéskörével.
+<br><br>
+Az ötödik, hatodik osztályban az osztályfőnöki délutánok keretében megismerkednek a diákok kerületünk és városunk épített és természeti értékeivel, valamint a környezetbarát, egészséges életvitellel.
+<br><br>
+Az épület környékén, belsejében és az udvaron a növényzetet folyamatosan ápoljuk, bővítjük. Nyitvatermő gyűjteményünk igen szép példányokkal büszkélkedhet. Az udvarban található növény fajokat fokozatosan feliratokkal látjuk el, így hívjuk fel rá a diákság figyelmét. Ezek a táblák a gyógy- és fűszernövények esetén felhasználási javaslatot is tartalmaznak. A gyógynövénykert betakarítása folyamatos, és szakköri keretek között meg is kóstolhatják az ismert vagy ismeretlen gyógynövényből készült teákat. Emellett a gyógynövények illóolaját is megpróbáltuk kinyerni, és természetes illatosítókat, szappant készítettünk belőle.
+<br>
+A hulladék szelektív gyűjtését sikeresen bővítettük, <bb>idén már a papír, elem, kerti hulladék, nyomtató patron mellett minden szinten elhelyeztünk PET palack gyűjtőket is</bb>.
+<br><br>
+A környezetbarát közlekedést segíti, hogy újabb biciklitárolót kaptunk a régi mellé, és a régit sikerült befedni.
+<br>
+</div>
+<h2>Oktatásunk erredményessége</h2>
+  <div class="away">
+Az iskolában folyó munka egyik fontos szelete az oktatómunka eredményessége. Az alábbi grafikonok erről a munkáról adnak tájékoztatást az érdeklődőknek. Az anyag tematikus bontásban került feldolgozásra. A megjelenített területek:
+<br>
+<li>A középszintű és emeltszintű érettségi- és a felvételi eredmények</li>
+<li>Az országos tanulmányi versenyek eredménye</li>
+<li>Az iskolai tanulmányi eredmények</li>
+<li>Az országos kompetenciamérések eredményei</li>
+      <br>
+Ezekre büszkék vagyunk. A nevelés eredményességét grafikusan nem ábrázolhatjuk. Erről autentikus tájékoztatást jelenlegi és volt diákjai és szüleik adhatnak, illetve némi bepillantást enged az iskola <bb>új, diákjaink által készítet</bb> honlapja.
+      <br><br>
+    
+      <paper-button raisedbutton="" icon="file-download" class="colored " label="a VPG korábbi éveinek prezentációi 2005-2013"  role="button" tabindex="0" aria-label="colored"></paper-button><br>
+      <paper-button raisedbutton="" icon="file-download" class="colored " label="A VPG tanulmányi átlagai osztályok, tantárgyak szerint 2013 (prezentáció)" role="button" tabindex="0" aria-label="colored"></paper-button>
+ </div>
+            </div>
+            </div>
+             </div>
+        </core-header-panel>
+
+    </core-drawer-panel>
+
+
+
+
+<script src="master.js"></script>
+
+</body>
+
+</html>

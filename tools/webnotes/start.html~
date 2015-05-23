@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<HTML>
+	<Head>
+		<title>.::WebNotes::.</title>
+	  <meta charset="UTF-8">
+		<meta name="author" content="TAP">
+	  <meta name="description" content="--73--">
+		<meta name="keywords" content="rontap,linux,TaPium">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="../newrtsapi.css">
+	
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="start.css">
+		<script src="../goog.js" type="text/javascript"></script>
+
+	</Head>
+<Body id="body">
+<style>
+
+</style>
+
+
+<span id="centraltext">Welcome To Webnotes<br></span>
+
+</div>
+
+<div id="nav">
+<wn onClick="$MenuWebNotes()">WebNotes</wn> 
+	<button class="btn-green" onClick="login()">Bejelentkezés</button>
+	<button class="btn-b" onClick="reg()">Regisztrálás</button>
+	<div id="lgo">
+	</div>
+	<div id="regi">
+	</div>
+</div>
+<img src="webfoto3.jpg" id="cimg">
+
+<div id="main">
+<TABLE id="regtable">
+<tr>
+	<th colspan="2" >
+	Bejelentkezés a Webnotesba
+	</th>
+		
+</tr>
+<tr>
+	<td>
+	Felhasználónév
+	</td>
+	
+	<td>
+	<input  placeholder="jani" class="csomag" id="usn">
+	</td>
+</tr>
+<tr>
+	<td>
+	Jelszó
+	</td>
+	
+	<td>
+	<input type="password" placeholder="*******" class="csomag" id="psw">
+	</td>
+</tr>
+<tr>
+	<td >
+	<input type="submit" value="bejelentkezés" id="submit" class="csomag">
+	</td>
+	<td>
+	<a href="#forgot"> elfelejtett jelszó </a>
+	</td>
+	
+	
+</tr>
+</TABLE>
+
+<TABLE id="regtable">
+<tr>
+	<th colspan="2">
+		Regisztrálás a Webnotes-ra
+	</th>
+</tr>
+
+
+<tr>
+	<td>
+	Felhasználónév
+	</td>
+	
+	<td>
+	<input  placeholder="jani" class="csomag" id="usn">
+	</td>
+</tr>
+<tr>
+	<td>
+	Jelszó
+	</td>
+	
+	<td>
+	<input type="password" placeholder="*******" class="csomag" id="usn">
+	</td>
+</tr>
+<tr>
+	<td>
+	Jelszó újra
+	</td>
+	
+	<td>
+	<input type="password" class="csomag" id="usn">
+	</td>
+</tr>
+<tr>
+	<td>
+	email cim
+	</td>
+	
+	<td>
+	<input placeholder="jani@példa.com" class="csomag" id="usn">
+	</td>
+</tr>
+<tr>
+	<td colspan="2">
+	<input type="submit" value="regisztrálás" class="csomag" id="submit">
+	</td>
+	
+	
+</tr>
+	
+</TABLE>
+
+<span id="wimg">
+
+Rólunk | Beállítások |  LAPIS | Nyelv (magyar) | Adatvédelem | További oldalak <br><i>(c) BoBarna, DeeSnow, RonTap</i>
+
+</span>
+<script>
+
+
+function login() {
+
+lgo.innerHTML='<hr>';
+lgo.innerHTML+=' Bejelentkezés: ';
+lgo.innerHTML+='<input type="text" class="inp-text" id="usn" placeholder="név vagy email">';
+lgo.innerHTML+='<input type="password" class="inp-text" id="psw" placeholder="jelszó">';
+lgo.innerHTML+='<input type="submit" class="csomag" id="go" value="Bejelentkezés!">';
+}
+</script>
+<script src="addons.rjsx" type="text/javascript"></script>
+<script src="../main.rjsx" type="text/javascript"></script>
+	</Body>
+	
+</HTML>

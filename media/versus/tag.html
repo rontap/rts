@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<HTML>
+    <Head>
+        <title>Versus #TAG</title>
+      <meta charset="UTF-8">
+        <meta name="author" content="TAP">
+      <meta name="description" content="rontap">
+        <meta name="keywords" content="rontap,linux,elemential,tapsite,rts,rjsx">
+
+    <script>
+        navname="versus home"; //hogy jelenik majd meg
+        coa=false;      
+        moretag=true;
+        specnav=true;
+        rjsxlocation="http://rontap.netne.net/tahr/";
+        //holvan
+        manimg="http://rontap.netne.net/rontap/f_icons/config-users.svg";
+        specnav=true;
+	specnavi = ['navigáció','én profilom','tag felhő'];
+	specnavil = ['index.html','me.html'];
+     </script>
+    </Head>
+
+ 
+    <body id="body">
+
+
+    <rts></rts>
+    
+		<container id="tags">
+			
+			<div class="tag big">Matematika</div>
+		</container>
+			<br><br><br>
+		
+		
+		<span class="arholder">
+				<article>
+			<header>
+				Mind meghalunk?
+				<container class="tags">
+				<b><span class="tag">Ezotéria</span></b>
+				<span class="tag">Jövő</span>
+				<span class="tag">halál</span>
+				<span class="tag">Matematika</span>
+				</container>
+			</header>
+				<div class="tart">
+				A maják megjósolták az eljövendő halált, nincs mit tenni, mind meg fogunk halni.
+				<div class="epik">
+					<img src="clock.svg" width="15px"/> 35 perc van hátra /
+					<img src="people.svg" width="20px"/> 5763 ember szavazott /
+					<img src="man.svg" width="15px"/> <span class="user">Józsi</span> tette fel a kérdést
+				</div>
+				</div>
+		</article> 
+		    
+		<article>
+			<header>
+				42+69 az tényleg 999?
+				<container class="tags">
+				<b><span class="tag">Tudás</span></b>
+				<span class="tag">windows</span>
+				<span class="tag">Matematika</span>
+				
+			</container>
+			</header>
+				<div class="tart">
+				elég érdekes felvetés.
+				<div class="epik">
+					<img src="clock.svg" width="15px"/> 7 óra van hátra /
+					<img src="people.svg" width="20px"/> 5763 ember szavazott /
+					<img src="man.svg" width="15px"/> <span class="user">Rontap</span> tette fel a kérdést
+				</div>
+				</div>
+		</article> 
+		</span>
+	<span class="arholder">
+		<article>
+			<header>
+				Melyik számrendszerben nagyobb a 2 mint a 3?
+				<container class="tags">
+					
+				<b><span class="tag">Tudás</span></b>
+				<span class="tag">Matematika</span>
+				<span class="tag">számrendszer</span>
+				
+				
+			</container>
+			</header>
+				<div class="tart">
+				tényleg van ilyen számrendszer
+				<div class="epik">
+					<img src="clock.svg" width="15px"/> 4 nap van hátra /
+					<img src="people.svg" width="20px"/> 3 ember szavazott /
+					<img src="man.svg" width="15px"/> <span class="user">Tolololo</span> tette fel a kérdést
+				</div>
+				</div>
+		</article> 
+		
+		</span>
+    <script>
+	
+	setTimeout(function(){
+			var topos = $('#tags').position();
+			$(window).scroll(function () {
+			 		if ($(window).scrollTop() > topos.top-50) {
+						tags.style.boxShadow = "10px 0px 10px #999";
+				 	} else {
+				  		tags.style.boxShadow = "0px 0px 0px #999";
+			 		}
+					});
+
+		},3000);	
+    
+function color() {
+    	a=Math.floor(Math.random()*360);
+	for (i=0;i<document.getElementsByClassName("tag").length;i++)
+	{
+	if (document.getElementsByClassName("tag")[i].innerHTML==document.getElementsByClassName("tag")[0].innerHTML)
+			{
+		
+		document.getElementsByClassName("tag")[i].style.background="hsl("+a+", 84%, 57%)";
+		}
+	}
+	
+}
+color();
+
+    </script>
+     <script src="master.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="master.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    <script src="http://rontap.netne.net/tahr/main.js" type="text/javascript"></script>
+	<style>
+		#tags {
+	-webkit-transition: box-shadow 0.5s;
+	}	
+	</style>
+    </Body>
+</HTML>
+
+

@@ -1,0 +1,6 @@
+#ErrorDocument 400 error.php?error=400. Valamit elírtuk az oldalban. Hamarosan biztos megjavítjuk!
+#ErrorDocument 401 error.php?error=401. Nincs jogod az oldal megtekintéséhez!
+#ErrorDocument 403 error.php?error=403. Az oldal nem megtekinthető. Reméljük, hamarosan megjavul!
+#ErrorDocument 404 error.php?error=404. A kért oldal nem található, biztos megette egy éhes kínai gyerek.
+#ErrorDocument 500 error.php?error=500. A server hibát észlelt. Kérjük, próbáld később, kb. 5 perc alatt az erre a célra képzett majmaink megjavítják a hibát.
+#ErrorDocument 418 error.php?error=418. I'm a teapot.

@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<!--WEBNOTES-MAIN-HTML: ALPHA3-->
+<HTML>
+	<Head>
+		<title>WebNotes - Beállítások </title>
+	  <meta charset="UTF-8">
+		<meta name="author" content="TAP">
+	  <meta name="description" content="web notes">
+		<meta name="keywords" content="notes,web,TaPium">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="newrtsapi.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="../goog.js" type="text/javascript"></script>
+<link href='http://fonts.googleapis.com/css?family=Graduate' rel='stylesheet' type='text/css'>
+	<style>
+	
+	#ta_holder {
+	margin-left:20%;
+	/*border-right:2px solid #222;*/
+	/*OPTION TO BETA!!!!!!
+	}
+	.btn-wahl {
+	border-right:5px solid #333;
+	-webkit-transition:border-right 0.3s;
+	}
+	.btn-wahl:hover {
+	border-right:5px solid #27D;
+	}
+	*/
+	</style>
+	</Head>
+	<Body id="body">
+<style>
+
+</style>
+
+<nav>
+	<div id="title">
+		<span id="titleweb">
+<img src="icon.png" alt="webnotes_logo" title="alma" width="32px" height="32px" />
+			WebNotes
+		</span>
+	<span id="annot">beta1</span>    
+	<span id="bar">
+		<span id="control_pics">
+			<img class="csomag" id="btn_cs" src="menu.png"  style="margin-left:0;border:1px solid #4B4B4B;" height="20px;"  onClick="document.location='./index.html'" width="20px" disabled >		
+	
+			<img class="csomag" id="set" src="set.png" height="20px;" disabled>
+			<img class="csomag"src="keres.png" height="20px;"  >
+			<img class="csomag"src="gear.png" height="20px;" onClick="Options();"  disabled>
+				</span>
+		<span class="csomag" id="user_cont">UserOptions</span>
+		
+		</span>
+	 </span>
+	</div>
+	
+</nav>
+<nav id="navleft" onClick="demin_navleft();">
+	<br>
+	<button  class="btn-b" id="btn_c" onClick="SaveOptions();">Beállítások Mentése</button>
+	<!--<hr>-->
+	<br><br>
+	<div id="notes">
+<div class="btn-wahl" id="optID1" onClick="SwitchOpt(1);">	Alapok</div>
+<div class="btn-wahl" id="optID2" onClick="SwitchOpt(2);" >	Kinézet</div>
+<div class="btn-wahl" id="optID3" onClick="SwitchOpt(3);" >	Offline</div>
+<div class="btn-wahl" id="optID4" onClick="SwitchOpt(4);" >	Exportálás és megosztás</div>
+<a href="#névjegy"><div class="btn-wahl" id="optID5" onClick="opt_aboutus()" >Névjegy</div></a>
+ 
+	  </div>  
+	
+	
+</nav>
+<br>
+<div id="centralbar">
+Beállítások - 
+			
+</div><br>
+
+<div id="orew_holder" >
+<i>beállítások betöltése...</i>
+<div id="export">
+	<div id="centralbarx">
+	Beállítások - Téma		
+	</div>
+	<img src="bg/bg1.png" width="75px" height="50px;" onClick="localStorage.wn_theme=1; document.location='options.html'">
+	<img src="bg/bg2.png" width="75px" height="50px;" onClick="localStorage.wn_theme=2; document.location='options.html'">
+	<img src="bg/bg15.png" width="75px" height="50px;"onClick="localStorage.wn_theme=15;document.location='options.html'">
+	<img src="bg/bg3.png" width="75px" height="50px;" onClick="localStorage.wn_theme=3; document.location='options.html'"><br>
+	<img src="bg/bg4.png" width="75px" height="50px;" onClick="localStorage.wn_theme=4; document.location='options.html'">
+	<img src="bg/bg5.png" width="75px" height="50px;" onClick="localStorage.wn_theme=5; document.location='options.html'">
+	<img src="bg/bg6.png" width="75px" height="50px;" onClick="localStorage.wn_theme=6; document.location='options.html'">
+	<img src="bg/bg7.png" width="75px" height="50px;" onClick="localStorage.wn_theme=7; document.location='options.html'"><br>
+	<img src="bg/bg8.png" width="75px" height="50px;" onClick="localStorage.wn_theme=8; document.location='options.html'">
+	<img src="bg/bg9.png" width="75px" height="50px;" onClick="localStorage.wn_theme=9; document.location='options.html'">
+	<img src="bg/bg10.png" width="75px" height="50px;"onClick="localStorage.wn_theme=10;document.location='options.html'">
+	<img src="bg/bg11.png" width="75px" height="50px;"onClick="localStorage.wn_theme=11;document.location='options.html'"><br>
+	<img src="bg/bg12.png" width="75px" height="50px;"onClick="localStorage.wn_theme=12;document.location='options.html'">
+	<img src="bg/bg13.png" width="75px" height="50px;"onClick="localStorage.wn_theme=13;document.location='options.html'">
+	<img src="bg/bg14.png" width="75px" height="50px;"onClick="localStorage.wn_theme=14;document.location='options.html'">
+	<img src="bg/bg16.png" width="75px" height="50px;"onClick="localStorage.wn_theme=14;document.location='options.html'">
+	
+	
+	<br>
+	<!--
+	<img id="colsel" style="background-color:red;">
+	<img id="colsel" style="background-color:green;">
+	<img id="colsel" style="background-color:blue;">
+	<img id="colsel" style="background-color:white;"><br>
+	<img id="colsel" style="background-color:#990099;">
+	<img id="colsel" style="background-color:red;">
+	<img id="colsel" style="background-color:red;">
+	<img id="colsel" style="background-color:red;"><br>
+	<img id="colsel" style="background-color:red;">
+	<img id="colsel" style="background-color:red;">
+	<img id="colsel" style="background-color:red;">
+	<img id="colsel" style="background-color:red;"><br>
+	<img id="colsel" style="background-color:red;">
+	<img id="colsel" style="background-color:red;">
+	<img id="colsel" style="background-color:red;">
+	<img id="colsel" style="background-color:black;">
+	-->
+	<input type="number" id="themnum" max="15" min="1"  class="inp-text" style="width:50px;">
+	<button class="btn-b" onClick="localStorage.wn_theme=themnum.value;document.location='options.html'">Téma megváltoztatása</button>
+	
+</div>
+<div id="névjegy">
+<div id="centralbarx">
+Beállítások - Névjegy
+			
+</div>
+<br>
+	<div class="orew" id="noteow_1">
+		<span id="cimo">
+	Webnotes NÉVJEGY
+		</span>
+		<div id="contc">
+	<textarea value="linux" class="prew" disabled style="height:150px;">	
+	WEBNOTES BETA2.3
+	
+Programozta: deesnow, rontap 
+Ötletek, tesztelés, magyar: bobarna 
+Fordítás: twinky (Angol) ; rontap, bobarna (Német)
+Köszönet: Kamubának a weboldal teszteléséért
+	</textarea>
+		</div>
+	</div>
+	
+	<div class="orew" id="noteow_1">
+		<span id="cimo">
+	KÖLSŐ EZKÖZÖK
+		</span>
+		<div id="contc">
+	<textarea value="linux" class="prew" disabled style="height:150px;">
+LAPIS bejelentkező (irta deesnow)
+RJSX (irta rontap)
+JQuery 
+
+Faenza ikonkészlet
+Ubuntu/Xubuntu/Gnome3 háttérképek CC liszensz alatt
+weboldalt a 000webhost tartja fenn
+	</textarea>
+	</div>
+	</div>
+	
+</div>
+</div>
+
+
+	</Body>
+	
+	<script src="addons.rjsx" type="text/javascript"></script>
+	<script src="maint.js" type="text/javascript"></script>
+	<script src="../main.rjsx" type="text/javascript"></script>
+	
+	<script>
+a=Number(localStorage.wn_theme);
+themnum.value=Number(a);
+</script>
+</HTML>

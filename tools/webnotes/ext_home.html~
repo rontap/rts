@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<!--WEBNOTES-MAIN-HTML: BETA1-->
+<HTML>
+	<Head>
+		<title>WebNotes - Home </title>
+		<meta charset="UTF-8">
+		<meta name="author" content="WEBNOTES">
+		<meta name="description" content="WebNotes">
+		<meta name="keywords" content="rontap,linux,webnotes,note,jegyzet">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+<LINK REL="SHORTCUT ICON"
+       HREF="/favicon.ico">
+	<link href='http://fonts.googleapis.com/css?family=Graduate' rel='stylesheet' type='text/css'>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="goog.js" type="text/javascript"></script>
+	
+	
+	</Head>
+	<Body id="body">
+<style>
+	#navleft {
+	width:100%;
+	}
+	.btn-wahl {
+	border-right:10px solid #26F;
+	}
+	.btn-wahl:hover {
+	border-right:30px solid #26F;
+	}
+body {
+height:350px;
+width:300px;
+}
+</style>
+
+<div id="errorsav">
+<img src="ie9.png" width="20px">
+A webnotes jelenleg kompatibilis nézetben fut.Így kevesebb funkció érhető el. Kérjük használjon google chromeot a megfelelő elményért! <a href="#nonew" onClick="errorsav.innerHTML='';">×</a>
+</div>
+
+<nav>
+	<div id="title">
+		<span id="titleweb">
+			WebNotes
+		</span>
+	<span id="annot">beta1</span>
+	<span id="bar">
+	
+<!--<select  name="autok" class="csomag" >	
+		<optgroup label="Jegyzettömbök">
+      <option value="Ferrari" class="csomag">NoteBook1</option>
+      <option value="Mercedes" class="csomag">NB2</option>
+      <option value="Renault" class="csomag">NB3</option>
+      <option value="BMW" class="csomag" onClick="alert('a');">NB4</option>
+	</optgroup>
+<optgroup label="opciók">
+		<option value="--" class="csomag">Új jegyzettömb...</option>
+		<option value="--" class="csomag">Jegyzettömb Törlése...</option>
+</optgroup>
+    </select>-->
+ 		
+    
+	<span id="control_pics">
+	<br>
+	
+			</span>
+		
+		
+	</span bar>
+	</div>	
+</nav>
+
+<nav id="navleft" onClick="demin_navleft();">
+	<br>
+	<button  class="btn-b" id="btn_c" onClick="AddNewNotize();">Új jegyzet...</button>
+	<!--<hr>-->
+	<br><br>
+	<div id="notes">
+<div class="btn-wahl" id="noteID1" oncontextmenu="Menu(1);return false;" onClick="SwitchNote(1);" ondblclick="RenameNote(1);">
+	Üdvözöljük
+</div>
+<a href="ext_edit.html"><div class="btn-wahl" id="noteID2" onClick="SwitchNote(2);" ondblclick="RenameNote(2);">
+	Karalabé
+</div>
+<div class="btn-wahl" id="noteID3" onClick="SwitchNote(3);" ondblclick="RenameNote(3);">
+	Gyorsjegyzet
+</div>
+ 
+	  </div>  
+	
+
+	 
+</nav>
+
+<br>
+
+
+	</Body>
+	<script src="main.rjsx" type="text/javascript"></script>
+	<script src="ajax.js"></script>
+	<script src="addons.rjsx" type="text/javascript"></script>
+	<script src="maint.js" type="text/javascript"></script>
+	
+</HTML>

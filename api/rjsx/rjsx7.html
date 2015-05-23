@@ -1,0 +1,293 @@
+<meta charset="UTF-8" />
+<body onresize="rjsx.footer();" id="body">
+<script src="main.js" type="text/javascript"></script>
+
+
+<link rel="stylesheet" type="text/css" href="main.css">
+<div class="focim" id="rfocim">
+<hr>
+<div id="nev22" class="ubuntu">
+	
+	<img src="f_icons/rts.png">
+	<span>
+	RJSX7
+	</span>
+</div>
+<span id="ter">
+	<a href="#"id="th1" onclick="rfocim.style.background='#48F'">linkA</a>
+	<a href="" id="th2">linkB</a>
+	<a href=""id="th3">linkC</a>
+	<a href="" id="th4">linkD</a>
+	<a href="" id="th5">linkE</a>
+</span>
+<img src="opt.png" id="set" onclick="settings();">
+</div>
+
+<span id="home"></span>
+
+
+
+<style>
+.focim #set {
+	height:40px;
+	width:40px;
+	position:fixed;
+	top:0px;
+	padding: 8px;
+	right:20px;
+	-webkit-transition:background .2s, height .3s;
+}
+.focim #set:hover {
+    /*  */
+    background:#48F;
+  }
+#ter a:hover{
+	 border-bottom: 0px; color: #fff;
+	 padding-bottom:12px;
+	 }
+#ter a { 
+
+	
+z-index: 10; 
+/*margin-top:-27px;*/
+display:inline-block;
+ }
+ #ter a {
+ 	
+ 	height:23px;
+ 	-webkit-transition:background .3s, color .3s, border .3s;
+ }
+ #ter #th1 { border-bottom:2px solid #48F;}
+ #ter #th2 { border-bottom:2px solid #F44;}
+ #ter #th3 { border-bottom:2px solid #22B94F;}
+  #ter #th4 { border-bottom:2px solid #F84; }
+  #ter #th5 { border-bottom:2px solid #62C;}
+    #ter #th6 { border-bottom:2px solid #666;}
+ #ter #th1:hover{ background: #48F; border-bottom:none ;}
+#ter #th2:hover {background:#F44; border-bottom:none ;}
+#ter #th3:hover{ background:#22B94F;  border-bottom:none ;}
+#ter #th4:hover{ background: #F84;  border-bottom:none ;}
+#ter #th5:hover{ background: #62C;  border-bottom:none ;}
+#ter #th6:hover{ background: #666;  border-bottom:none ;}
+#ter a {
+
+ z-index:10;
+ display:inline-block;
+ padding:17px;
+ margin:-29px 0px 0px 0px;
+ }
+#ter a :hover {
+    
+    border-bottom:none ;
+  }
+
+cim #ter a:hover {
+color:#DDD;
+}
+.focim #ter a:hover:after{ height: 100%; }
+
+
+
+.focim hr {
+width: 10%;
+background: white !important;
+top: 4px;
+border: none;
+position: fixed;
+opacity:0;
+height: 20px !important;
+padding: 0;
+margin: 0;
+margin-left: -10px;
+z-index: -1;
+}
+.focim {
+height: 29px;
+position:fixed;
+top:0;
+font-size:20px;
+background:#F1F1F1;
+padding:13px 10px 10px 10px;
+border-top:4px solid #444;
+width:100%;
+margin-bottom:120px;
+}
+
+#nev22{
+font-size:24px;
+padding-left: 50px;
+top:0;
+margin-top:-5px;
+padding-top:5px;
+
+display: inline-block;
+}
+#nev22 img {
+width:40px;
+height:40px;
+align:middle;
+position:fixed;
+top:8px;
+left:10px;
+}
+#nev22 span {
+    padding:20px 10px 11px 10px;
+   -webkit-transition:background .3s, height .3s;
+  }
+  #nev22 span:hover {    
+       background:#999;
+       cursor:pointer;
+    }
+#ter a {
+text-decoration:none;
+color:#444;
+padding-left:15px;
+padding-right:15px;
+margin-right: -6px;
+padding-bottom: 11px;
+}
+#ter {
+margin:0;
+padding:0;
+padding-top:5px;
+}
+body {
+background:#DDD;
+padding:0px 0px 0px 0px;
+margin:0px;
+font-family: 'PT Sans Caption', sans-serif;}
+/*FOOTER*/
+footer {
+	margin-top:25px;
+	height:50px;
+	width:auto;
+	background:#ffffff;
+	border-top:3px solid #48F;
+	padding:10px 10px 0px 15px;
+	-webkit-transition:height .3s;
+}
+footer #rtop {
+    display:inline-block;
+  	padding:10px ;
+    position: absolute;
+    right:40px;
+    margin-top:-10px;
+    transition:background 0.3s , color .3s;
+    -webkit-transition:background 0.3s , color .3s;
+  }
+footer #rtop:hover {
+    background:#4488FF;
+    cursor: pointer;
+    color:#FFFFFF;   
+  }
+  footer #rrelease {
+  		padding-top:3px;
+      font-size:10px;
+      font-weight:100;     
+    }
+    #content {
+
+    	margin:75px 5% 0px 5%;
+    }
+    footer #settings {
+			margin:10px 10% 0 10%;        
+      }
+</style>
+<div id="content">
+<button onclick="gen()">feltöltése</button>
+
+</div>
+<footer id="rjsx_footer">
+	Elemential
+	<div id="rtop" onclick="rjsx.gotop();">vissza a tetejére </div><br>
+	<div id="rrelease">RJSX 7 release notes</div>
+</footer>
+
+<script>
+	//
+	function gen() {
+		a="start"
+		for (i=0;i<200;i++)
+		{
+			a+=Math.random()+'-';
+		}
+		content.innerHTML=a;
+		rjsx.footer();
+		}
+	
+rjsx = {};
+rjsx.setopen=false;
+rjsx.checkboxcount=0;
+rjsx.gotop  = function() {
+  $('html, body').animate({ scrollTop: 0 }, 'normal');
+};
+
+rjsx.footer = function() 
+{
+if (window.innerHeight>=Math.max(document.body.scrollHeight, document.body.offsetHeight, document.body.clientHeight, document.body.scrollHeight, document.body.offsetHeight))
+	{
+		rjsx_footer.style.position='fixed';
+		rjsx_footer.style.bottom='0';
+		rjsx_footer.style.width='100%';
+		rjsx_footer.style.bottom=" 50px";
+	}
+else {
+		rjsx_footer.style.position='initial';
+		rjsx_footer.style.width='auto';
+		rjsx_footer.style.bottom="auto";
+	};
+};
+function settings()
+{
+	if (rjsx.setopen)
+	{
+	rjsx_footer.innerHTML=rjsx.setsave;
+	rjsx_footer.style.height="50px";
+	rjsx_footer.style.position='initial';
+	rjsx_footer.style.width='auto';	
+	rtop.style.marginTop= "-30px";
+	set.src="opt.png";
+	rjsx.setopen=false;	
+	setTimeout(function(){rjsx.footer();},150);
+	}
+	else
+	 {
+	rjsx.setsave=rjsx_footer.innerHTML;
+	rjsx_footer.style.position='fixed';
+	rjsx_footer.style.bottom='0';
+	rjsx_footer.style.width='100%';
+	rjsx_footer.style.height=window.innerHeight-68+'px';
+		a='<div id="settings">';
+		a+='<div class="ubuntu big uline">Globális Beállítások</div><br>';
+		a+="<table>"
+		a+='<tr><td>Mobil mód: </td>';
+		a+='<td>'+rjsx.checkbox('')+'</td></tr>';
+		a+='<tr><td>Éjszakai mód: </td>';
+		a+='<td>'+rjsx.checkbox('')+'</td></tr>';
+		a+='<tr><td><br style="margin-top:5px;">Weboldal design: </td>';
+		//a+='<td>'+rjsx.checkbox('')+'</td></tr>';
+		a+='<td><div id="aa" class="select" onclick="selecter('+"'aa'"+');"><center><span id="stitle">oldalstílus</span> &nbsp;<img src="triangle.png" height="10px"></center><div onclick="swselect(0);tema();" id="s0">0 : alapértelmezett (felül)</div><div onclick="swselect(1);tema();" id="s1">1 : jobboldalt, kompakt</div><div onclick="swselect(2);tema();" id="s2">2 : jobboldalt, normál</div></div>';
+		a+='</td></tr>'
+	a+='</table></div>';
+	rjsx_footer.innerHTML=a;
+	set.src="x.png";
+	rjsx.setopen=true;
+	}
+	
+}
+rjsx.checkbox = function(call,checked) {
+	rjsx.checkboxcount++;
+	if (checked) {check='checked';} 
+	else {check='';}
+	a='<div class="slide">	 '	;
+	a+='	<input type="checkbox" value="None" id="slide'+rjsx.checkboxcount+'" '+check+'> ';	
+	a+='	<label for="slide'+rjsx.checkboxcount+'" onclick="'+call+'"></label> ';
+	a+='</div>';
+	return a;
+};
+rjsx.footer();
+
+
+specnav=false;
+</script>
+</body>
