@@ -1,0 +1,210 @@
+<html>
+    <head>
+        <!-- ronda a kód, fél óra alatt készült el.-->
+        <title>Húsvét</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <style>
+            h1 {
+                
+            }
+            body {
+                font-family:sans-serif;
+                margin:50px 10%;
+                color:#222;
+                background:#f1f1f1;
+            }
+            #s2 span:last-child {
+               -webkit-animation:show .4s;
+            }
+            @-webkit-keyframes show { 0% {opacity:0;} 100% {opacity:1; } }
+            input { zoom: 2 ;}
+            button {
+                background:#DDD;
+                border-radius:4px 4px 0px 0px;
+                 border:none;
+                border-bottom:2px solid #48F;
+                margin:15px;
+                padding:20px;
+                cursor:pointer;
+                transition:.2s;
+                font-size:18px;
+            }
+            button:hover, button:active {
+                 background:#48F;
+                color:white;
+            }
+            #s5 input {
+                  margin: 4px;
+  vertical-align: -4;
+            }
+            #ajandek , #locsolas {
+                position:fixed;
+                top:0; left:0; right:0; bottom:0;
+                font-size:26px;
+                background:white;
+                text-align: center;
+                padding:70px;
+                cursor:wait;
+                display: none;
+            }
+            #prgbr {
+                position:fixed; bottom:0; height: 20px; left:0; background:#f84;
+            }
+            #s5 , #s4, #s5 , #s6 {display: none;}
+            small {
+                position: fixed;
+                left:0; right:0; bottom:0; text-align: center;
+                opacity:0;
+                transition:2s;
+                padding:20px;
+                color:#444 !important;
+                display:none;
+            }
+            #s3 { opacity:0; transition:.6s;}
+            small a { color:#444 !important; }
+        </style>
+       
+        <h1 id="s1">
+            Kedves <span id="nev">XY</span>!
+        </h1>
+        <h1 id="s2">           
+        </h1>
+        <div id="s3">
+            <button 
+        onclick="locsolas.style.display='block';s4.style.display='block'; progress();s3.style.display='none';s2.style.display='none';">igen</button>  
+            <button onclick="level()" id="nob">nem</button>
+        </div>
+        <div id="locsolas">Locsolás folyamatban...</div>
+        <div id="ajandek">Ajándék küldése folyamatban folyamatban...</div>
+        <div id="prgbr">&nbsp;</div>
+        
+        <h1 id="s4">
+        Kérjük válaszd ki hogy mit kapok!   
+            <div id="cfield" onclick="s5.style.display='block';">
+            
+            </div>
+        </h1>
+        <div id="s5">
+            <h3>Figyelj az egészségemre.</h3><br> 
+            <input type="checkbox">Nem eszek tojást<br>
+            <input type="checkbox">Nem eszek glutént<br>
+            <input type="checkbox">Nem eszek csokit<br>
+            <input type="checkbox">Nem iszok vizet<br>
+            <input type="checkbox">Nem eszek cukrot<br>
+            <input type="checkbox">Nem veszek levegőt<br>
+            <input type="checkbox">Nem veszek semmit<br>
+            <button onclick="ajandek.style.display='block';progress();s6.style.display='block';s5.style.display='none';s4.style.display='none';setTimeout(function(){el.style.opacity='1'},4000);el.style.display='block';">rendben</button>
+        </div>
+        
+        <h1 id="s6">
+        Kellemes Húsvéti ünnepeket!
+        </h1>
+        
+         <script>
+             //nev.innerHTML=location.hash.slice(1,Infinity).replace(/-/g,' ');
+            ext=["","","","","","","","","","","e","r","t","z","u","i","o","p","ő"," ","ú","ö","ü","ó","a","s","d","f","g","h","j","k","l","é","á","ű","í","y","c","v","b","n","m",",",".","!","?","E","R","T","Z","U","I","O","P","Ő","Ú","Ö","Ü","Ó","A","S","D","F","G","H","J","K","L","É","Á","Ű","Í","Y","C","V","B","N","M","0","1","2","3","4","5","6","7","8","9","-","@","_",":","=","q","w","Q","W","X","x"];
+             function decode(msg) {
+                 d="";
+                 msg=String(msg);
+                 for (i=0;i<msg.length;i=i+2) {
+                     d+=ext[msg[i]+msg[i+1]];
+                 }
+                 return d;
+             }
+             function encode(msg) {
+                 e="";
+                 for (i=0;i<msg.length;i++) {
+                     e+=ext.indexOf(msg[i]);
+                 }
+                 return e;
+             } 
+             if (location.hash!="") {
+                 nev.innerHTML=decode(location.hash.slice(1,Infinity));
+             }
+             else {
+              
+        var person = prompt("Kit szeretnél meglocsolni?", "");
+
+        if (person != null) {
+            alert('A most megváltozott TELJES webcímet küldd tovább neki!');
+            location.hash='#'+encode(person);
+            location.reload();
+        }
+
+             }
+             anger=0;
+             function level() {
+                 if (anger==0) {s2.innerHTML+='<br><i><br> Kérlek, hadd locsoljalak meg! Olyan nehéz volt eljönni idáig.</i>'
+                             nob.style.borderBottom="2px solid #f44";
+                                nob.onmouseover=function(){level()};
+                                anger++;
+                             }
+                 else if (anger<6) {
+                        nob.style.position="fixed";
+                        nob.style.top=(Math.random()*90+5)+'%'
+                        nob.style.left=(Math.random()*90+5)+'%'
+                        anger++;
+                 }
+                 else {
+                     document.body.innerHTML="<h1> Ennyire azért nem szeretem a csokit. :(</h1> <button onclick='location.reload()'>Újrapróbálom...</button>"
+                 }
+             }
+          //  if (location.hash!="") {
+                
+            count=0;
+             setTimeout(function(){ 
+             intv = setInterval(function(){
+                   
+                    if (count>=a.length-1) {clearInterval(intv); s3.style.opacity=1;}
+                   s2.innerHTML+='<span>'+a[count]+'</span>';
+                     count++;
+                },500)
+                },250);
+                
+          //  }
+            a=["Zöld"," erdőben"," jártam",'',", kék"," ibolyát"," láttam",'',", el akart"," hervadni",'',", szabad-e"," locsolni?"];
+            ajandekok=['Csokitojás','Hímestojás','Csokimikulás','Pénz','Főtt tojás'];
+             
+            for (i=0;i<ajandekok.length;i++) {
+                 cfield.innerHTML+='<button>'+ajandekok[i]+'</button>';
+            }
+           loaded=0;
+             function loadit() {
+                 return Math.round(Math.random()*10);
+             }
+             function progress() {
+                 c = setInterval(function(){
+                     prgbr.style.display="block";
+                     loaded+=loadit();
+                     console.log(loaded);
+                     prgbr.style.width=loaded+'%';
+                     if (loaded>100) { clearInterval(c); 
+                                     prgbr.style.display="none";
+                                     locsolas.style.display="none";
+                                     ajandek.style.display="none";
+                                      loaded=0;
+                                     }
+                 },200)          
+             }
+        </script>
+        <small id="el"><a href="http://elemential.net">Made by Elemential</a> | <a onclick=" location.hash='';location.reload();">Saját készítése</a></small>
+        
+        <!--gan-->
+
+        <script>
+         <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61587431-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+        </script>
+    </body>
+</html>
