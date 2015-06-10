@@ -1,0 +1,154 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-16">
+    <link href='http://fonts.googleapis.com/css?family=Dosis:400,500|Montserrat|Roboto+Condensed:400italic,400|Open+Sans:400italic,400,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <title>ollés</title>
+</head>
+<style>
+    p {
+        font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  margin: 5px 36px;
+  padding: 0 20px;
+  max-width: 800px;
+  margin-left: calc(50% - 400px);
+    }
+    body {
+        background:#B2593C;
+        position: fixed;top:0;left:0;right: 0;bottom:0;
+        transition:background 3s;
+    }
+    body.a2 ,body.a3 { background: #7BFFE0;}
+    h1 , h2 {
+        font-family: 'Montserrat', sans-serif;
+        
+    } 
+    container:nth-child(1) h1 { 
+        color:#FF9472;
+        text-align:center;
+        font-size:100px;
+        /*margin-top:calc(50% - 50px);*/
+    }
+    body:not(.a1):not(.a0) container:nth-child(1) *{
+        opacity: 0;
+    }
+    body:not(.a3):not(.a4) container:nth-child(2) *{
+        opacity: 0;
+    }
+        container:nth-child(1) h2 {
+            color:#7BFFE0;
+            position: fixed;
+             text-align:center;
+            z-index: 99;
+              top: 0;
+            left:0;
+            width: 100%;
+            font-size:80px;
+            opacity:0;
+            transition:top 1s, left 1.5s, opacity .9s,color 1s;
+            opacity:0;
+        }
+    .a1 container:nth-child(1) h2
+    {
+        top:-150px; opacity:1;
+        left:-150px;
+    }
+    .a1 container:nth-child(1)  h2.b 
+    {
+        top:150px; opacity:1;
+        left:150px;
+    }
+    .a2 container:nth-child(1)  h2.b,  .a3 container:nth-child(1)  h2.b{
+        top:20px;
+        
+        opacity: 1 !important;
+        color:#B2593C;
+    }
+    .a3 container:nth-child(1)  h2.b {
+        transition:margin-top .4s;
+        margin-top: 0px !important;
+    }
+    small {
+        position: fixed;
+        bottom:20px;
+        width:100%;
+        text-align: center;
+        font-family: 'Dosis', sans-serif;
+        zoom:1.2;
+        color:#ddd;
+    }
+    /*STAGE 2*/
+     container:nth-child(2) {
+        position: fixed;
+        top:200px;
+        transition: all .8s;
+    }
+    .a3 container:nth-child(2) {
+        opacity: 1;
+         top:120px;
+    }
+    olt {
+        background:rgba(100,100,100,0.5);
+        height: 2px;
+        margin:5px;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+</style>
+<script>
+    ista=0;
+    
+    function leptet(to) {
+        $('body').removeClass();
+         $('body').addClass('a'+to);
+    }
+    //innerHeight
+    function a() {
+         $('container:nth-child(1) h1').css('margin-top',(innerHeight/2)-60+'px')
+         $('container:nth-child(1) h2').css('margin-top',(innerHeight/2)-60+'px')
+    }
+      setTimeout(function(){
+         a();
+        
+          $(document).ready(function(){ 
+              document.oncontextmenu = function() {return false;};
+
+              $(document).mousedown(function(e){ 
+                if( e.button == 2 ) { ista--;
+                  leptet(ista);
+                  return false; 
+                } 
+                return true; 
+              }); 
+            });
+          
+          
+          $('body').click(function() {
+              ista++
+        leptet(ista);
+        
+    })
+          
+      },1000)  
+      window.onresize=function(){a();};
+</script>
+<body class="a0">
+        <container>
+                <h1>OLLÉS</h1>
+            
+            <h2 style="color:#17B28E;">retardált</h2>
+            <h2 class="b">autista</h2>
+            <small>Ollés két énje</small>
+        </container>
+    <container>
+        <p>
+            Ollés kettősége teljesen nyílvánvaló.
+            <olt></olt>
+        </p>
+    <p>Az autista énje meglepően magas, 142-es IQ-val rendelkezik, de mindemellett Down-kóros és meleg. Színeket és szagokat nem tud érzékelni, és a látása is nagyon rossz. </p>
+        <p>
+            Ellentétben a közhiedelemmel Ollés nem kiborg, és nem is klón, hanem egy Többszörösen visszacsatolt Tér-Idő Gábesz.
+        </p>
+    </container>
+</body>

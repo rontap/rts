@@ -1,0 +1,311 @@
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<head>
+    <meta name="viewport" content="width = device-width" />
+    <meta charset="UTF-8">
+    <script src="../api/note.js"></script>
+    <script>
+        fome = {
+            primaryColor: "#F84",
+            theme: 0
+        };
+        setTimeout(function () {
+            fome.devmode(false)
+        }, 1000)
+    </script>
+</head>
+ 
+<body>
+    <style>
+        #note {
+            max-width: 800px;
+            margin-left: calc(50% - 400px);
+            margin-top: 150px;
+        }
+        
+        #actionbar {
+            
+            margin: 0 -10px;
+            border  height: 45px;border-bottom: 1px solid #757575;
+            margin-bottom: 10px;
+              height: 45px;
+        }
+        
+        #actionbar paper-input {
+            margin: -19px 50px -15px 70px;
+            font-size: 20px;
+            position: absolute;
+        }
+        
+        #note textarea {
+            width: 100%;
+            border: none;
+            height: 350px;
+            resize: vertical;
+        }  
+        textarea,
+        input {
+            outline: none;
+        }
+        
+        paper-icon-button[icon="save"] /deep/ svg {
+            fill: #444;
+        }
+        
+        paper-icon-button[icon="save"] /deep/ *:not( paper-ripple) {
+            transition: .1s all;
+        }
+        
+        paper-icon-button[icon="save"].saved /deep/ svg {
+            fill: #48F;
+        }
+        
+        #actionbar paper-icon-button {
+            margin: 0px 7px;
+            margin-bottom: 5px;
+        }
+        
+        paper-icon-button[icon="save"] {
+            float: right;
+        }
+        
+        paper-icon-button[icon="add"] /deep/ svg {
+            fill: #444;
+        }
+        
+        #modis {
+            width: 300px;
+            border: none;
+            background: transparent;
+        }
+        
+        #note {
+            transition: all .4s;
+            -webkit-animation: showslide 1.5s;
+        }
+        
+        @-webkit-keyframes showslide {
+            0% {
+                opacity: 0;
+                margin-top: 170px;
+            }
+            40% {
+                opacity: 0;
+                margin-top: 170px;
+            }
+            100% {
+                opacity: 1;
+                margin-top: 150px;
+            }
+        }
+        
+        @media (max-height: 620px) {
+            #note {
+                margin-top: 0px;
+                height: 100%;
+            }
+            #note textarea {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            #note {
+                max-width: 100%;
+                margin-left: 0px;
+                margin-right: 0px;
+                padding: 20px;
+            }
+            #note textarea {
+                height: 250px;
+            }
+        }
+        
+        #switcher {
+            position: absolute;
+            transition: .4s;
+            margin: -10px;
+            height: 100%;
+            width: 0px;
+            display: block;
+            z-index: -1;
+            opacity:0;
+            background:white;
+        }
+        
+        .drawert #note {
+            max-width: 1000px;
+            margin-left: calc(50% - 500px);
+        }
+        
+        #note content {
+            display: block;
+            transition: all .4s;
+        }
+        
+        .drawert content {
+            padding-left: 250px;
+        }
+        
+        .drawert #switcher {
+            background: #00897B;
+            display: block;
+            width: 250px;
+            opacity:1;
+            z-index: 90;
+        }
+        
+        #namecon {
+            padding: 18px;
+            border-bottom: 1px solid #e7e7e7;
+            color: white;
+        }
+        
+        #actionbar paper-input /deep/ #underline * {
+            margin-top: 10px;
+        }
+        .drawert paper-icon-button[icon="add"] {
+            transition:background .4s, box-shadow .4s, margin-top .4s, zoom .4s, margin-left .4s;
+            background: white;
+              border-radius: 50%;
+              zoom: 1.3;
+              position: absolute;
+              margin-left: -51px !important;
+              z-index: 99;
+              margin-top: 15px !important;
+              box-shadow: 0px 2px 2px #444;
+        }
+        #note_lost {
+            margin:10px;
+        }
+        #note_lost div {
+              padding: 20px 20px;
+             cursor:pointer;
+            color:#f1f1f1;
+              margin-right: -10px;
+            border-right:3px solid transparent;
+            transition:.3s;
+        }
+        #note_lost div.on {
+            background:#26A69A;
+            border-right:3px solid #fff;
+        }
+    </style>
+    <div id="CONTAINER">
+
+        <div id="note" class="note-object card away">
+            <div id="switcher">
+                <div id="namecon">NoteIO</div>
+                <br><br>
+                <div id="note_lost">
+                    <div>First Note</div>
+                    
+                </div>
+            </div>
+            <content>
+
+                <div id="actionbar">
+                    <paper-icon-button icon="add" id="überfab" onclick="chgdrawer()"></paper-icon-button>
+                    <paper-input placeholder="name" id="nameis" is="name"></paper-input>
+                    <paper-icon-button id="saveicon" icon="save" onclick="as();"></paper-iconbutton>
+                </div>
+
+                <input disabled id="modis" is="modified">
+                <br>
+                <br>
+                <input disabled id="creatis" is="created" style="display:none;">
+                <input disabled id="statusis" is="status" style="display:none;">
+
+                <textarea id="input" is="content" onkeyup="$('#saveicon').removeClass('saved');" autocorrect="off" autocorrect="off" spellcheck="false"></textarea>
+            </content>
+        </div>
+        <!--
+        <hr>
+        <button onclick="update()">save</button>
+        -->
+
+    </div>
+    <script use>
+        function clicker() {
+        $('#note_lost div').click(function(){
+            $('#note_lost div').removeClass('on');
+            $(this).addClass('on');
+            note.load( $('#note_lost div').index($(this)) )
+        });
+            console.log('c');
+        }
+        clicker();
+        drawer=false;
+       function chgdrawer() {
+            $('body').addClass('drawert');
+            addNewNote();
+       }
+        function addNewNote() {
+            note.new();
+            
+            note_lost.innerHTML+="<div>Hello there</div>";
+            clicker();
+        }
+        window.onresize = function () {
+            $('#switcher').css('height', $('#note').height() + 20 + 'px');
+        }
+        setTimeout(function () {
+            $('#switcher').css('height', $('#note').height() + 20 + 'px');
+            setTimeout(function () {
+                $('#switcher').css('height', $('#note').height() + 20 + 'px');
+            }, 500);
+        }, 1400);
+
+        function as() {
+            update();
+            note.push(note.getById(note.current));
+            $('#saveicon').addClass('saved');
+            $('#switcher').css('height', $('#note').height() + 20 + 'px');
+            $('#note_lost div')[note.current].innerHTML=note.getById(note.current).name;
+        }
+
+        note.new();
+        note.pull(note.current, note.getById(note.current));
+
+        function update() {
+            temp = {
+                name: nameis.value,
+                content: input.value,
+
+            }
+            modis.value = modis.value.slice(0, modis.value.search('GMT'));
+            setTimeout(function () {
+                modis.value = modis.value.slice(0, modis.value.search('GMT'));
+            }, 600);
+            note.edit(note.current, temp);
+            note.status(21, '', true);
+            modis.value = note.getById(note.current).modified;
+            creatis.value = note.getById(note.current).created;
+            statusis.value = note.getById(note.current).status;
+
+        }
+        $(window).bind('keydown', function (event) {
+            if (event.ctrlKey || event.metaKey) {
+                if (String.fromCharCode(event.which).toLowerCase() == 's') {
+                    event.preventDefault();
+                    as();
+                    setTimeout(function () {
+                        $('#saveicon').addClass('saved');
+                    }, 250);
+                }
+            }
+        });
+    </script>
+
+
+    </div>
+
+    <fome-element></fome-element>
+    <splash-element></splash-element>
+
+    <link rel="import" href="../../polyfome/include_minimalist.html">
+
+</body>
+
+</html>
