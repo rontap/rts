@@ -8,19 +8,19 @@ Array.prototype.max = function() {
     Array.prototype.min = function() {
       return Math.min.apply(null, this)
     };
-    
+     
     appId="10";
     
     notes=[];
     //for (i=0;i<100;i++) { notes[i] = {}; };
-    note = {
+ note = {
         length:0,
         
     objects:[],
     elements : [ 'name' , 'content' ,'created' ,'modified' ,'status'],
     parse : function( id ) { return JSON.parse(localStorage['note'+appId+'_'+id]) ;}  ,  
     //stringify : function( id ) { return JSON.stringify(localStorage['note'+appId+'_'+id]) ;}  ,  
-    current:0,
+current:0,
     sel : function(what) {//important preprocessor
         var what;    
         
@@ -89,7 +89,7 @@ Array.prototype.max = function() {
         localStorage['note'+appId+'_'+what.id]= JSON.stringify(what);
         },
     pull: function(id,what) { //we need ID
-        note.status(30,'',true);
+	note.status(30,'',true);
         note.edit(note.current, note.parse(id));
         ext.updated();
         note.load(what, note.elements);
