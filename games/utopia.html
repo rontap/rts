@@ -3,7 +3,7 @@
 <link href='http://fonts.googleapis.com/css?family=Titillium+Web|Open+Sans|Roboto&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 <script src="utopia/gamepad.js"></script>
-<body class="main_menu">
+<body class="main_menu edit">
 
 
 <div id="main_menu">
@@ -117,7 +117,7 @@
        <div id="alert_boxes">
     <alert-box content="Challange Accepted" 
                text="You succesfully accepted this challange"
-               fabcolor="#48F" fabicon="done" fabaction="alert();"
+               fabcolor="#48F" fabicon="done" fabaction=""
                ></alert-box>
     </div>
     
@@ -235,7 +235,7 @@ rules.bullet = function(){
 function pause(){
     $("#rolo").toggleClass('shower');
 }
-
+rawLevelData=[];//we store everything to be able to save levels later
 function setRule(what,where,specials) {
     for (i=0;i<where.length;i++) //BASIC FUNCTIONS
     {   
@@ -244,6 +244,8 @@ function setRule(what,where,specials) {
        //  console.warn(grid[where[i][0]]);
         grid[where[i][0]][where[i][1]][grid[where[i][0]][where[i][1]].length]='rules.'+what+';'; //adding JS function
 
+		rawLevelData[rawLevelData.length]="setRule('"+what+','+where+','+specials+');';	
+		
         ycord=where[i][0];
         xcord=where[i][1];
         if (what=="block()") 
@@ -577,7 +579,8 @@ document.oncontextmenu = function() {return false;};
 </style>
 
 <script>
-    setRule("bullet()",[[3,4]])
+   // setRule("bullet()",[[3,4]])
+	ui.openlevel();
 </script>
 
 <!-- version history 

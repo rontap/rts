@@ -20,6 +20,10 @@ level.register( {
         setRule('wall("right")',[[4,14]],"right");
     }
 })
+
+
+
+
 //level.setField(15,7); 
 
  

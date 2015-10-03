@@ -9,22 +9,24 @@
       <style>
       nav {
           height:50px;
-          background:rgb(238, 238, 238);
+          background:transparent;
           position: fixed;
          top:0px;
           left:0;
           right:0px;
            transition: all .4s;
           z-index: 99;
+		   box-shadow: 0px 1px 2px transparent;
       }
           nav div {
-              color: #48F;
+              color: #white;
             display: inline-block;
             font-size: 35px;
             font-weight: 600;
             padding: 5px;
             padding-left: 60px;
               transition: all .4s;
+			     
           }
           nav.on {
               background:#48F;
@@ -51,7 +53,8 @@
     <polymer-element name="mw-bottom-navigator" noscript>
       <template>
           <footer>
-          <div class="fc">FOCUS</div><div class="fc" onclick="linkstoggle();" id="fc_linkson">LINKS ON</div> 
+          <div class="fc">FOCUS</div>														  <div class="fc" onclick="linkstoggle();" id="fc_linkson">LINKS ON</div> 
+			<div class="fc" id="night-toogle" onclick="$('body').toggleClass('night');$(this).toggleClass('on');">NIGHT MODE</div> 
           </footer>
 
           <style>
@@ -65,8 +68,10 @@
               border-top:1px solid #ddd;  
               }
               .fc {
+				  
                   display: inline-block;
                   padding: 5px 10px;
+				  margin-left:-5px;
                   transition: all .4s;
                   border-right:1px solid #ddd;
                   font-size: 14px;

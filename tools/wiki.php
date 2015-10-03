@@ -61,6 +61,7 @@ setTimeout(function() {
 	//definite
 	$('#mw-head-base').append('<div class="toc_nav"><paper-icon-button icon="view-day"></paper-icon-button><span>Tartalomjegyzék</span></div>');
     $('#mw-head-base').append('<div class="plang_nav"><paper-icon-button icon="language"></paper-icon-button><span>Nyelv</span></div>');
+	$('#mw-head-base').append('<div class="tools_nav"><paper-icon-button icon="settings-input-composite"></paper-icon-button><span>Eszközök</span></div>');
      
         $('.ujinfobox').addClass('card away maximise');
     
@@ -71,6 +72,9 @@ setTimeout(function() {
     })
     $('.plang_nav').click(function(){
 	   $('body').toggleClass('plangnav_open');
+    })
+	$('.tools_nav').click(function(){
+	   $('body').toggleClass('ptb_open');
     })
     $('#mw-fr-revisiontag').html('');
     $('.mw-editsection').html('');
@@ -95,7 +99,7 @@ function setImageToSVG(img,svg){
   img.src = "data:image/svg+xml;charset=utf-8,"+xml;
 }
 </script>
-
+<div id="main-background">&nbsp;</div>
 
 <div style="display:none;" id="new_age_images">
 <svg id="more_info_bar" viewBox="0 0 24 24" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" fit="" style="pointer-events: none; display: block;"><g><path d="M22 3h-15c-.69 0-1.23.35-1.59.88l-5.41 8.12 5.41 8.11c.36.53.97.89 1.66.89h14.93c1.1 0 2-.9 2-2v-14c0-1.1-.9-2-2-2zm-13 10.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm5 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm5 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" fill="#48F"></path></g></svg>
@@ -109,7 +113,19 @@ function setImageToSVG(img,svg){
 
 
 <style>
-    
+
+    #main-background {
+		    z-index: -1;
+    background-color: #80CBC4;
+    position: fixed;
+    top: 0;
+    width: 100%;
+		height:650px;
+		max-height:650px;
+		transition: background .6s;
+	}
+	
+	
    #more_info_bar { fill:#48F;}
     img[alt="Searchtool right.svg"] { width:20px; height:20px;}
    #new_age_images {
@@ -124,7 +140,7 @@ function setImageToSVG(img,svg){
      .navbox td:empty { display:none;}
     .navbox th span:first-child { display:none;}
     .navbox th span:last-child { font-size:25px; margin:10px;}
-.toc, #p-lang{
+.toc, #p-lang, #p-tb{
 	position:fixed;
 	top:50px;
 	bottom:0px;
@@ -139,7 +155,7 @@ function setImageToSVG(img,svg){
   margin-bottom: 26px !important;
  
 }
-    .toctoggle_open .toc ,.plangnav_open #p-lang {
+    .toctoggle_open .toc ,.plangnav_open #p-lang, #p-tb .body {
         left:0px;
     }
     .toc li a {
@@ -158,14 +174,22 @@ function setImageToSVG(img,svg){
     .toc li {
         list-style-type: none;
     }
-    .toc_nav paper-icon-button /deep/ core-icon{
+	.mw-head-base paper-icon-button /deep/ core-icon,
+	.nav-on.night .tools_nav paper-icon-button /deep/ core-icon{
+	fill:#DDD;	
+	}
+	
+    .nav-on .toc_nav paper-icon-button /deep/ core-icon{
         fill:#48F;
     }
-    .plang_nav paper-icon-button /deep/ core-icon{
+     .nav-on .plang_nav paper-icon-button /deep/ core-icon{
         fill:#22B94F;
     }
+	 .nav-on .tools_nav paper-icon-button /deep/ core-icon{
+        fill:#444;
+    }
         /*acitve*/
-        .toc_nav, .plang_nav {
+        .toc_nav, .plang_nav, .tools_nav {
             position:fixed;
             left:20px;
             top:50px;        
@@ -173,24 +197,30 @@ function setImageToSVG(img,svg){
          .plang_nav {
             top:90px;
         }
-        .toc_nav paper-icon-button,.plang_nav paper-icon-button {
+		.tools_nav {
+			top:130px;
+		}
+        .toc_nav paper-icon-button,.plang_nav paper-icon-button,.tools_nav paper-icon-button {
             vertical-align:-13px;
         }
 
-        .toctoggle_open  .toc_nav , .plangnav_open .plang_nav{
-            left:270px !important;
+        .toctoggle_open  .toc_nav , .plangnav_open .plang_nav, .ptb_open .tools_nav {
+            left:250px !important;
         }
+	.ptb_open #p-tb {
+		left:0;
+	}
     .toctoggle_open  .plang_nav {opacity:0;}
     .plangnav_open .toc_nav {opacity:0;}
         .toctoggle_open  .toc_nav span, .plangnav_open .plang_nav span{
             opacity:0;
         }
-        .toctoggle_open .mw-body , .plangnav_open .mw-body {
+        .toctoggle_open .mw-body , .plangnav_open .mw-body, .ptb_open .mw-body {
           padding-left:250px;
         } 
         .mw-body {
-        max-width:800px;
-        margin:50px auto;
+        max-width:1000px;
+        margin:80px auto;
         line-height:1.2;
         font-family: 'Noto Serif', serif;
         }
@@ -199,7 +229,7 @@ function setImageToSVG(img,svg){
 display:none !important;
 opacity:0;
 }
- #toctitle ,.toc,.mw-body,.toc_nav, #p-lang, .plang_nav  {/*expand navigation bar transition*/
+ #toctitle ,.toc,.mw-body,.toc_nav, #p-lang, .plang_nav, .tools_nav, #p-tb  {/*expand navigation bar transition*/
  transition:all .4s;
     }
 body {
@@ -210,13 +240,14 @@ body {
 text-align:center;
 font-size:3em;
 }
-h1,h2,.toc,.mw-headline,#p-lang {
+h1,h2,.toc,.mw-headline,#p-lang, #p-tb div {
 font-family: 'PT Sans', sans-serif;
     margin-top:30px;
     margin-bottom:10px;
+	color:#111;
 }
     .maximise {
-        width:800px;
+        width:1000px;
     }
     .focus_links a { /*focus linux*/
         transition:color .4s;
@@ -257,7 +288,7 @@ font-family: 'PT Sans', sans-serif;
    /* .gallery.mw-gallery-traditional*/
     #asGard {
         margin:0 auto;
-        width:800px;
+        width:1000px;
     }
     #asGard input {
         border:none;
@@ -266,22 +297,119 @@ font-family: 'PT Sans', sans-serif;
         padding:15px;
         margin:0;
     }
+	p {
+	    line-height: 1.4	;
+		    text-align: justify;
+		margin-bottom:10px;
+	}
+	
+	
+	#p-search {
+		position:fixed;
+		z-index:99;
+		top:0;
+		right:70px;
+		transition:.4s;
+	}
+	#p-search h3 {
+	display:none;	
+	}
+	body:not(.nav-on) #p-search {
+		top:-60px;
+		
+	}
+	#p-search button, #p-search input {
+	    padding: 10px;
+    	margin: 7px 3px;
+		border:none;
+		cursor:pointer;
+		
+	}
+	
+	/*
+	text noficitaion*/
+	.metadata {
+	
+		padding:5px;
+		background:white;
+		border-left:3px solid #48F;
+		    width: 100%;	
+	}
+	.metadata:not(.dablink) {
+		 margin:20px -4px 20px 5px;
+	}
+	
+	/*NIGHT*/
+	.night  :not(.metadata):not(.card)   {
+		background:#444;		
+		color:#ddd;	
+	}
+	.night {
+		background:#444;		
+	}
+	html /deep/ footer {		
+		color:#444 !important;
+		background:white !important;	
+	}
+	.night  a {
+		color:#aaa;
+	}
+	.night  a:visited {
+		color:#a7719f !important;
+	}
+	.night h1, .night h2 {
+	color:#FFF !important;	
+	}
 </style>
 
 <script>
-
- setTimeout(function(){
-        document.body.onscroll=function(){
-            if (window.scrollY>60) {
+	overcardCollapseHeight=1200;
+function scrollSetTer(){
+ document.body.onscroll=function(){
+			console.log(window.scrollY);
+            if (window.scrollY>overcardCollapseHeight) {
                 $('html /deep/ nav').addClass('on');
+				$('body').addClass('nav-on');
                 $('html /deep/ nav span').html(firstHeading.innerHTML);
             }
             else {
                 $('html /deep/ nav').removeClass('on');
+				$('body').removeClass('nav-on');
             }
+	 $('#main-background').css('top',(-1)*(window.scrollY/2));
         }
+      
         
-        for (var isv=0;isv<$('img').length;isv++)
+}
+	function plsSetScroll() {
+			
+ setTimeout(function(){
+       scrollSetTer();
+	   plsSetScroll();
+    },1000);
+		
+	}
+	
+	
+	plsSetScroll();
+	colorVariety=["26A69A","A1887F","29B6F6","7E57C2","BDBDBD","42A5F5","E57373","CE93D8","66BB6A","FFA726"];
+	
+	 setTimeout(function(){
+		 /*BG randomiser*/
+		 a=$('#firstHeading').text();
+		 b=String(a.charCodeAt(0)*a.charCodeAt(1));
+		 sel=b[b.length-1];
+		 $('#main-background').css('background','#'+colorVariety[sel]);
+		 
+		 if ($('.ujinfobox').length<1) {
+		 	$('#main-background').css('opacity',0);
+			overcardCollapseHeight=60;
+		 } 
+	 },1000);
+	
+	 setTimeout(function(){
+		
+		 for (var isv=0;isv<$('img').length;isv++)
         {   console.log($($('img')[isv]).css('width'));
             if ($($('img')[isv]).attr('width')>600) {
                 $($('img')[isv]).addClass('panorama');
@@ -290,6 +418,6 @@ font-family: 'PT Sans', sans-serif;
         }
         $('a[href*="wiki"]').each(function(){
             $(this).attr('href', 'wiki.php?q=http://hu.wikipedia.org'+$(this).attr('href'));
-        })
-    },3500);
+		});
+		 },3500);
 </script>

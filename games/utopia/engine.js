@@ -13,7 +13,7 @@ ui.openlevel = function() {
         level.open(level.s[oll]);
         
     }
-}
+} 
 ui.keymap= ['#48f','#62c','#f44'];
 move.right =   function(a) {  if (!move.prevent()) player.posy++;  }   
 move.left =    function(a) {  if (!move.prevent()) player.posy--;  }  
@@ -111,7 +111,7 @@ level.clear = function() {
     particles.innerHTML="";
 }
 dbg={};
-dbg.is=false;
+dbg.is=true;
 dbg.click = function(e) {
     if (dbg.is) {
     var xc = Math.round((e.layerX-25)/50);

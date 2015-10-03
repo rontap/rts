@@ -9,6 +9,7 @@
 </head>
 <body >
 <nav id="mnav">
+	.4
 	<div onclick=location.search=''><!--POWER MEK --></div>
 	|
 	<button>go back</button>
@@ -23,7 +24,7 @@
 		   onchange="$('body').toggleClass('night');"
 		   >NightMode
 	|
-	<button onclick="makefav();">add to favourites</button>
+	<button onclick="makefav();alert('Added to Favourites!')">add to favourites</button>
 	<select id="favs">
 		<option>favourites</option>
 	</select>
